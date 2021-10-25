@@ -1,0 +1,87 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hola
+    - Buenos días
+    - Buenas tardes
+    - Qué tal Vicky
+    - Qué pasa
+
+- intent: init
+  examples: |
+    - me llamo [maria](PER)
+    - mi nombre es [angela](PER)
+    - dicen que mi nombre es [Alejandro](PER)
+    - [Juan](PER)
+    - soy [Rocío](PER)
+    - [Casimiro](PER)
+    - pues me llamo [Isabel](PER)
+    - me conocen como [Ricardo](PER)
+
+- intent: question1_positive_flow
+  examples: |
+    - [genial](good_mood)
+    - me siento muy [bien](good_mood)
+    - últimamente me encuentro [fantásticamente](good_mood)
+    - Estos días estoy de muy buen humor
+    - No puedo quejarme la verdad
+    - Sinceramente, estoy [feliz](good_mood)
+    - tengo que decir que me encuentro muy en paz últimamente
+    - estoy [maravillosamente](good_mood)
+
+- intent: question2_positive_flow
+  examples: |
+    - question2_positive_flow
+
+- intent: question1_negative_flow
+  examples: |
+    - he tenido muchos problemas
+    - ha sido una semana de mierda
+    - me he sentido muy mal
+
+- intent: question2_negative_flow_scape
+  examples: |
+    - question2_negative_flow_scape
+
+- intent: question2_negative_flow_fallback
+  examples: |
+    - question2_negative_flow_fallback
+
+- intent: question2_negative_flow_rcmatch
+  examples: |
+    - question2_negative_flow_rcmatch
+
+- intent: goodbye_nicemood
+  examples: |
+    - adiós
+    - hasta luego
+    - hasta pronto
+    - hasta otro día
+
+- intent: goodbye_badmood
+  examples: |
+    - no quiero hablar más
+    - no tengo más ganas de hablar contigo
+    - no me encuentro bien
+    - se acabó la conversación
+    - no me apetece seguir hablando
+    - no me apetece
+    - no quiero más esto
+
+- synonym: good_mood
+  examples: |
+    - bien
+    - genial
+    - asombroso
+    - increíble
+    - increiblemente
+    - maravilloso
+    - maravillosamente
+    - fantásticamente
+    - fantástico
+    - feliz
+    - relajado
+    - tranquilo
