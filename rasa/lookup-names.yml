@@ -1,0 +1,12 @@
+version: "2.0"
+nlu:
+  - lookup: PER
+    examples: |
+     - casimiro
+     - rocio
+     - angelo
+     - isabel
+     - sheila
+     - maría
+     - albert
+     - marc

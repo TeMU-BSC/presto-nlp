@@ -50,5 +50,5 @@ responses:
   - text: "¡No sabes lo que me alegra leer esto 😀! Entonces, ¿no has sentido ninguna molestia emocional últimamente?"
 
 session_config:
-  session_expiration_time: 60- name: "SpacyNLP"
+  session_expiration_time: 60
   carry_over_slots_to_new_session: true
