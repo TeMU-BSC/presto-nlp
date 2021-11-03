@@ -6,15 +6,18 @@ intents:
   - goodbye_badmood
   - init
   - question2_negative_flow_rcmatch
-  - question2_negative_flow_fallback
-  - question2_negative_flow_scape 
+  # - question2_negative_flow_fallback --> Currently not in use
+  # - question2_negative_flow_scape --> Currently not in use
   - question1_negative_flow
-  - question2_positive_flow
+  # - question2_positive_flow --> Currently not in use
   - question1_positive_flow
+  - nlu_fallback
+  - chitchat
 
 entities:
   - good_mood
-  - PER
+  - PER # Está extrayéndolo de DietClassifier y Spacy. No parece funcionar muy bien; Se sustituirá por lookup_table
+  - bad_mood
 
 slots:  
   PER:
@@ -35,20 +38,25 @@ responses:
   - text: "Qué tal, {PER}, ¿cómo te has sentido estos días?"
 
   utter_question2_negative_flow_rcmatch:
-  - text: "response"
+  - text: "response to rcmatch"
 
-  utter_question2_negative_flow_fallback:
-  - text: "response"
+  # utter_question2_negative_flow_fallback:
+  # - text: "response to fallback"
 
   utter_question1_negative_flow:
-  - text: "response"
-
-  utter_question2_positive_flow:
-  - text: "¡Fántastico, nombre ! Recuerda que si en algún momento lo necesitas estoy aquí, mientras tanto, puedes usar algunas de las herramientas que te muestro"
+  - text: "Vaya, lamento escuchar esto, {PER}. ¿Podrías contarme más en profundidad qué has sentido?"
 
   utter_question1_positive_flow:
-  - text: "¡No sabes lo que me alegra leer esto 😀! Entonces, ¿no has sentido ninguna molestia emocional últimamente?"
+  - text: "¡No sabes lo que me alegra leer esto 😀! Recuerda que siempre que quieras podemos trabajar con las diversas herramientas que tengo disponible para ti. Puedes pedírmelas, escribiéndome, por ejemplo: 'usar herramientas'"
 
-session_config:
-  session_expiration_time: 60- name: "SpacyNLP"
-  carry_over_slots_to_new_session: true
+  #utter_question2_positive_flow:
+  #- text: "¡Fántastico, {PER} ! Recuerda que si en algún momento lo necesitas estoy aquí, mientras tanto, puedes usar algunas de las herramientas que te muestro a continuación:"
+  utter_please_rephrase:
+  - text: "Lo siento, no te he entendido. ¿Puedes decírmelo de otra forma?"
+  - text: "Creo que no te estoy entendiendo, ¿puedes decírmelo con otras palabras?"
+  
+  utter_chitchat/thanks:
+  - text: "Te agradezco tus palabras. Me hace muy feliz poder ayudarte 😊"
+  utter_chitchat/ask_name:
+  - text: "Mi nombre es Vicky, ¡encantada de conocerte!"
+  - text: "Me conocen como Vicky"

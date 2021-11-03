@@ -10,8 +10,8 @@ stories:
   - action: utter_init
   - intent: question1_positive_flow
   - action: utter_question1_positive_flow
-  - intent: question2_positive_flow
-  - action: utter_question2_positive_flow
+  #- intent: question2_positive_flow
+  #- action: utter_question2_positive_flow
 
 - story: sad path 1 - scape
   steps:
@@ -35,13 +35,13 @@ stories:
   - intent: question2_negative_flow_rcmatch
   - action: utter_question2_negative_flow_rcmatch
 
-- story: sad path 1 - fallback
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: init
-  - action: utter_init
-  - intent: question1_negative_flow
-  - action: utter_question1_negative_flow
-  - intent: question2_negative_flow_fallback
-  - action: utter_question2_negative_flow_fallback
+# - story: sad path 1 - fallback
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: init
+#   - action: utter_init
+#   - intent: question1_negative_flow
+#   - action: utter_question1_negative_flow
+#   - intent: question2_negative_flow_fallback
+#   - action: utter_question2_negative_flow_fallback
