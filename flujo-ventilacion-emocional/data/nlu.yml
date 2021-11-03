@@ -1,0 +1,122 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hola
+    - Buenos días
+    - Buenas tardes
+    - Qué tal Vicky
+    - Qué pasa
+
+- intent: init
+  examples: |
+    - me llamo [maria](PER)
+    - mi nombre es [angela](PER)
+    - dicen que mi nombre es [Alejandro](PER)
+    - [Juan](PER)
+    - soy [Rocío](PER)
+    - [Casimiro](PER)
+    - pues me llamo [Isabel](PER)
+    - me conocen como [Ricardo](PER)
+
+- intent: question1_positive_flow # Susceptible a implementar sentiment analysis
+  examples: |
+    - [genial](good_mood)
+    - me siento muy [bien](good_mood)
+    - últimamente me encuentro [fantásticamente](good_mood)
+    - Estos días estoy de muy buen humor
+    - No puedo quejarme la verdad
+    - Sinceramente, estoy [feliz](good_mood)
+    - tengo que decir que me encuentro muy en paz últimamente
+    - estoy [maravillosamente](good_mood)
+    - me he sentido muy [bien](good_mood) gracias por preguntar
+
+#- intent: question2_positive_flow --> A la espera de tratarlo con clinic
+#  examples: | 
+#    - question2_positive_flow
+
+- intent: question1_negative_flow # Susceptible a implementar sentiment analysis
+  examples: |
+    - he tenido muchos problemas
+    - ha sido una semana de [mierda](bad_mood)
+    - me he sentido muy [mal](bad_mood)
+    - lo he pasado [fatal](bad_mood)
+    - últimamente siento que todo me supera
+    - ha sido una semana muy [desagradable](bad_mood) para mí
+    - Pues sinceramente no estoy bien
+    - no estoy [tranquilo](good_mood)
+    - no me apetece seguir vivo
+
+# - intent: question2_negative_flow_scape --> No parece que sea necesario pues good bye bad mood cubre esto
+#   examples: |
+#     - question2_negative_flow_scape
+
+- intent: question2_negative_flow_fallback # No parece que haga falta actualmente, pero mantenemos hasta confirmar doble-stage fb
+  examples: |
+    - question2_negative_flow_fallback
+
+- intent: question2_negative_flow_rcmatch # Este intent llevará implementado custom element nlp para distorsiones
+  examples: |
+    - question2_negative_flow_rcmatch
+
+- intent: goodbye_nicemood
+  examples: |
+    - adiós
+    - hasta luego
+    - hasta pronto
+    - hasta otro día
+
+- intent: goodbye_badmood # Ejerce de scape
+  examples: |
+    - no quiero hablar más
+    - no tengo más ganas de hablar contigo
+    - no me encuentro bien
+    - se acabó la conversación
+    - no me apetece seguir hablando
+    - no quiero más estoeres genial
+    - no quiero contestarte
+  
+- intent: chitchat/ask_name
+  examples: |
+      - ¿Cómo te llameres genial
+      - ¿Podría saber tu nombre?´
+      - Cómo te suele llamar la gente
+      - cuál es tu nombre?
+
+- intent: chitchat/thanks
+  examples: |
+      - Muchas gracias por todo
+      - gracias por tu ayuda
+      - gracias por ayudarme
+      - eres genialeres genial
+      - me ayudas mucho
+      - me gusta hablar contigo
+      - necesitaba hablar contigo
+
+
+- synonym: good_mood
+  examples: |
+    - bien
+    - genial
+    - asombroso
+    - increíble
+    - increiblemente
+    - maravilloso
+    - maravillosamente
+    - fantásticamente
+    - fantástico
+    - feliz
+    - relajado
+    - tranquilo
+
+- synonym: bad_mood
+  examples: |
+    - mal
+    - fatal
+    - terrible
+    - horroroso
+    - horriblemente
+    - asqueroso
+    - desgraciado
