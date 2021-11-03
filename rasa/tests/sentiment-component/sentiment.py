@@ -1,22 +1,23 @@
 from rasa.nlu.components import Component
 from rasa.nlu import utils
 from rasa.nlu.model import Metadata
-from pysentimiento import SentimentAnalyzer, analyzer
+from rasa.nlu.classifiers.classifier import IntentClassifier
+from pysentimiento import SentimentAnalyzer
 import os
 
 
-class SentimentAnalyzer(Component):
+class IntentSentimentAnalyzer(IntentClassifier):
     """A pre-trained sentiment component"""
 
     name = "sentiment"
-    provides = ["entities"]
+    provides = ["intent"]
     requires = []
     defaults = {}
     language_list = ["es"]
     analyzer = SentimentAnalyzer(lang="es")
 
     def __init__(self, component_config=None):
-        super(SentimentAnalyzer, self).__init__(component_config)
+        super(IntentSentimentAnalyzer, self).__init__(component_config)
 
     def train(self, training_data, cfg, **kwargs):
         """Not needed, because the the model is pretrained"""
@@ -25,24 +26,23 @@ class SentimentAnalyzer(Component):
     def convert_to_rasa(self, label, score):
         """Convert model output into the Rasa NLU compatible output format."""
 
-        entity = {"value": label,
-                  "confidence": score,
-                  "entity": "sentiment",
-                  "extractor": "sentiment_extractor"}
+        intent = {"name": label,
+                  "confidence": score}
 
-        return entity
+        return intent
 
     def process(self, message, **kwargs):
         """Retrieve the text message, pass it to the classifier
             and append the prediction results to the message class."""
 
-        result = self.analyzer.predict(message)
+        result = self.analyzer.predict(message.data['text'])
+
         label = result.output
-        score = result.probas[label]
+        score = round(result.probas[label], 2)
 
-        entity = self.convert_to_rasa(label, score)
+        intent = self.convert_to_rasa(label, score)
 
-        message.set("entities", [entity], add_to_output=True)
+        message.set("intent", intent, add_to_output=True)
 
     def persist(self, *args):
         """Pass because a pre-trained model is already persisted"""
