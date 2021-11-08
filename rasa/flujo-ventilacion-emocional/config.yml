@@ -6,6 +6,7 @@ pipeline:
 # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
+  
   - name: WhitespaceTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
@@ -14,24 +15,28 @@ pipeline:
     analyzer: char_wb
     min_ngram: 1
     max_ngram: 4
+  - name: sentiment.IntentSentimentAnalyzer
+    epochs: 100
+    constrain_similarities: true
   - name: DIETClassifier
     epochs: 100
     constrain_similarities: True
-  - name: EntitySynonymMapper
+  # - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
     retrieval_intent: chitchat
     # Este componente sirve para ajustar el chitchat
   - name: FallbackClassifier
-    threshold: 0.6
-    ambiguity_threshold: 0.6
-  - name: "SpacyNLP"
-    # language model to load
-    model: "es_dep_news_trf"
-    case_sensitive: False
-  - name: SpacyEntityExtractor
-    # dimensions to extract
-    dimensions: ["PER"]
+    threshold: 0.4
+    ambiguity_threshold: 0.4
+  # - name: "SpacyNLP"
+  #   # language model to load
+  #   model: "es_dep_news_trf"
+  #   case_sensitive: False
+  # - name: SpacyEntityExtractor
+  #   # dimensions to extract
+  #   dimensions: ["PER"]
+ 
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/

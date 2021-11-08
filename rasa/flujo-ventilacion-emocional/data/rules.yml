@@ -7,12 +7,38 @@ rules:
   - intent: goodbye_nicemood
   - action: utter_goodbye_nicemood
 
+- rule: respond sentiment analysis only on initial flow
+  conversation_start: False
+  steps:
+  - intent: POS
+  - action: utter_POS
+
+# - rule: respond sentiment analysis only on initial flow
+#   conversation_start: True
+#   steps:
+#   - intent: NEG
+#   - action: utter_NEG
+
+# - rule: respond sentiment analysis only on initial flow
+#   conversation_start: True
+#   steps:
+#   - intent: NEU
+#   - action: utter_NEU
+
+
+- rule: Say hello anytime the user says hello
+  conversation_start: true
+  steps:
+  - intent: greet
+  - action: utter_greet
+
 - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
   steps:
   - intent: nlu_fallback
   - action: utter_please_rephrase
 
-- rule: respond to chitchat
+- rule: respond to chitchat 
   steps:
   - intent: chitchat
   - action: utter_chitchat
+

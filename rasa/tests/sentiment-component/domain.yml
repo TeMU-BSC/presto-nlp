@@ -7,11 +7,11 @@ intents:
 
 responses:
   utter_POS:
-  - text: "Me alegro"
+  - text: "No sabes lo que me alegra leer esto 😊"
   utter_NEG:
-  - text: "No me alegro"
+  - text: "Lamento leer esto. Déjame ayudarte"
   utter_NEU:
-  - text: "Me da igual"
+  - text: "A veces, a veces blanco. Todo depende del lugar."
 
 
 session_config:

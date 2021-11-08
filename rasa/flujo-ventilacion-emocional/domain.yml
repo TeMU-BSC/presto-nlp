@@ -5,19 +5,22 @@ intents:
   - goodbye_nicemood
   - goodbye_badmood
   - init
-  - question2_negative_flow_rcmatch
-  # - question2_negative_flow_fallback --> Currently not in use
-  # - question2_negative_flow_scape --> Currently not in use
-  - question1_negative_flow
-  # - question2_positive_flow --> Currently not in use
-  - question1_positive_flow
+  # - question2_negative_flow_rcmatch
+  # # - question2_negative_flow_fallback --> Currently not in use
+  # # - question2_negative_flow_scape --> Currently not in use
+  # - question1_negative_flow
+  # # - question2_positive_flow --> Currently not in use
+  # - question1_positive_flow
   - nlu_fallback
   - chitchat
+  - POS
+  - NEG
+  - NEU
 
 entities:
-  - good_mood
+  # - good_mood
   - PER # Está extrayéndolo de DietClassifier y Spacy. No parece funcionar muy bien; Se sustituirá por lookup_table
-  - bad_mood
+  # - bad_mood
 
 slots:  
   PER:
@@ -27,6 +30,12 @@ slots:
 responses:
   utter_greet:
   - text: "¡Hola, soy Vicky 👩‍⚕️ estoy aquí para ayudarte a cuidar eso tan importante como la salud mental. ¿Cómo te llamas?"
+  utter_POS:
+  - text: "¡No sabes lo que me alegra leer esto 😀! Recuerda que siempre que quieras podemos trabajar con las diversas herramientas que tengo disponible para ti. Puedes pedírmelas, escribiéndome, por ejemplo: 'usar herramientas'"
+  utter_NEG:
+  - text: "Vaya, lamento escuchar esto, {PER}. ¿Podrías contarme más en profundidad qué has sentido?"
+  utter_NEU:
+  - text: "A veces gris, a veces blanco, todo depende del lugar"
 
   utter_goodbye_nicemood:
   - text: "¡Estupendo! ya sabes que puedes hablarme siempre que lo necesites, ¡hasta pronto!"
