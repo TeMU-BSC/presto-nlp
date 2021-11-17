@@ -10,18 +10,6 @@ nlu:
     - Qué tal Vicky
     - Qué pasa
 
-# - intent: NEG
-#   examples: |
-#     - placeholder
-    
-# - intent: POS
-#   examples: |
-#     - placeholder
- 
-# - intent: NEU
-#   examples: |
-#     - placeholder
-
 - intent: init
   examples: |
     - me llamo [maria](PER)
