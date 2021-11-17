@@ -10,35 +10,17 @@ nlu:
     - Qué tal Vicky
     - Qué pasa
 
-- intent: NEG
-  examples: |
-    - he tenido muchos problemas
-    - ha sido una semana de mierda
-    - me he sentido muy mal
-    - lo he pasado fatal
-    - últimamente siento que todo me supera
-    - ha sido una semana muy desagradable para mí
-    - Pues sinceramente no estoy bien
-    - no estoy tranquilo
-    - no me apetece seguir vivo
+# - intent: NEG
+#   examples: |
+#     - placeholder
     
-- intent: POS
-  examples: |
-    - genial
-    - me siento muy bien
-    - últimamente me encuentro fantásticamente
-    - Estos días estoy de muy buen humor
-    - No puedo quejarme la verdad
-    - Sinceramente, estoy feliz
-    - tengo que decir que me encuentro muy en paz últimamente
-    - estoy maravillosamente
-    - me he sentido muy bien
+# - intent: POS
+#   examples: |
+#     - placeholder
  
-- intent: NEU
-  examples: |
-    - placeholder
-    - neu
-
+# - intent: NEU
+#   examples: |
+#     - placeholder
 
 - intent: init
   examples: |

@@ -15,12 +15,10 @@ pipeline:
     analyzer: char_wb
     min_ngram: 1
     max_ngram: 4
-  - name: sentiment.IntentSentimentAnalyzer
-    epochs: 100
-    constrain_similarities: true
+  - name: sentiment.SentimentEntityExtractor
   - name: DIETClassifier
     epochs: 100
-    constrain_similarities: True
+  #   constrain_similarities: True
   # - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100

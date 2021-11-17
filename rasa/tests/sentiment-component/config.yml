@@ -28,7 +28,7 @@ pipeline:
   # language model to load
   model: "es_core_news_sm"
   case_sensitive: False
-- name: "sentiment.IntentSentimentAnalyzer"
+- name: "sentiment.SentimentEntityExtractor"
 
 
 # Configuration for Rasa Core.

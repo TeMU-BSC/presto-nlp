@@ -1,35 +1,32 @@
 from rasa.nlu.components import Component
 from rasa.nlu import utils
 from rasa.nlu.model import Metadata
-from rasa.nlu.classifiers.classifier import IntentClassifier
 from pysentimiento import SentimentAnalyzer
 import os
 
 
-class IntentSentimentAnalyzer(IntentClassifier):
+class SentimentEntityExtractor(Component):
     """A pre-trained sentiment component"""
 
     name = "sentiment"
-    provides = ["intent"]
+    provides = ["entities"]
     requires = []
     defaults = {}
     language_list = ["es"]
     analyzer = SentimentAnalyzer(lang="es")
 
     def __init__(self, component_config=None):
-        super(IntentSentimentAnalyzer, self).__init__(component_config)
-
-    def train(self, training_data, cfg, **kwargs):
-        """Not needed, because the the model is pretrained"""
-        pass
+        super(SentimentEntityExtractor, self).__init__(component_config)
 
     def convert_to_rasa(self, label, score):
         """Convert model output into the Rasa NLU compatible output format."""
 
-        intent = {"name": label,
-                  "confidence": score}
+        entity = {"value": label,
+                  "confidence": score,
+                  "entity": "sentiment",
+                  "extractor": "sentiment_extractor"}
 
-        return intent
+        return entity
 
     def process(self, message, **kwargs):
         """Retrieve the text message, pass it to the classifier
@@ -40,10 +37,6 @@ class IntentSentimentAnalyzer(IntentClassifier):
         label = result.output
         score = round(result.probas[label], 2)
 
-        intent = self.convert_to_rasa(label, score)
+        entity = self.convert_to_rasa(label, score)
 
-        message.set("intent", intent, add_to_output=True)
-
-    def persist(self, *args):
-        """Pass because a pre-trained model is already persisted"""
-        pass
+        message.set("entities", [entity], add_to_output=True)
