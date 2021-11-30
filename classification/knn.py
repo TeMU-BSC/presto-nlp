@@ -10,14 +10,15 @@ from utils import read_rc_data
 import numpy as np
 import logging
 import pickle
-#### Just some code to print debug information to stdout
+
+# Just some code to print debug information to stdout
 np.set_printoptions(threshold=100)
 
 logging.basicConfig(format='%(asctime)s - %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     level=logging.INFO,
                     handlers=[LoggingHandler()])
-#### /print debug information to stdout
+# /print debug information to stdout
 
 # Load pre-trained Sentence Transformer Model. It will be downloaded automatically
 # model = 'distiluse-base-multilingual-cased-v1'  # best model for Spanish STS
@@ -25,7 +26,7 @@ model = 'distiluse-base-multilingual-cased-v2'
 model = SentenceTransformer(model)
 
 # Embed a list of sentences
-file = '../data/RC_data.xlsx'
+file = '../data/cognitive-distorsions/RC_data.xlsx'
 sentences, distorsions = read_rc_data(file)
 sentence_embeddings = model.encode(sentences)
 
