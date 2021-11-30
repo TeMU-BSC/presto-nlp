@@ -39,7 +39,7 @@ if __name__ == '__main__':
     model = SentenceTransformer(model)
 
     # Embed a list of sentences
-    file = '/home/casimiro/projects/presto-nlp/data/cognitive-distorsions/RC_data.xlsx'
+    file = '../data/cognitive-distorsions/RC_data.xlsx'
     sentences, distorsions = read_rc_data(file)
     sentence_embeddings = model.encode(sentences)
 
