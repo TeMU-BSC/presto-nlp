@@ -42,22 +42,93 @@ stories:
           - valorFamilia: valorFamilia
       - slot_was_set:
           - valorPareja: valorFamilia
+      - slot_was_set:
+          - valorSocial: valorSocial
       - action: utter_sobregeneralizacion
+  
+  - story: soloValores
+    steps:
+      - checkpoint: user_give_emotion
+      - intent: soloValores
+      - slot_was_set:
+          - valorFamilia: valorFamilia
+      - slot_was_set:
+          - valorPareja: valorPareja
+      - slot_was_set:
+          - valorSocial: valorSocial
+      - action: utter_soloValores
+      
 
+  - story: flecha-etiquetado
+    steps:
+      - checkpoint: user_give_emotion
+      - intent: etiquetado
+      - slot_was_set:
+          - valorFamilia: valorFamilia
+      - slot_was_set:
+          - valorPareja: valorPareja
+      - slot_was_set:
+          - valorSocial: valorSocial
+      - action: utter_etiquetado
+
+  - story: flecha-lectordementes
+    steps:
+      - checkpoint: user_give_emotion
+      - intent: lectordementes
+      - slot_was_set:
+          - valorFamilia: valorFamilia
+      - slot_was_set:
+          - valorPareja: valorPareja
+      - slot_was_set:
+          - valorSocial: valorSocial
+      - action: utter_lectordementes
+
+  - story: flecha-catastrofismo
+    steps:
+      - checkpoint: user_give_emotion
+      - intent: catastrofismo
+      - slot_was_set:
+          - valorFamilia: valorFamilia
+      - slot_was_set:
+          - valorPareja: valorPareja
+      - slot_was_set:
+          - valorSocial: valorSocial
+      - action: utter_catastrofismo
+
+  - story: flecha-absolutista
+    steps:
+      - checkpoint: user_give_emotion
+      - intent: pensamientoabsolutista
+      - slot_was_set:
+          - valorFamilia: valorFamilia
+      - slot_was_set:
+          - valorPareja: valorPareja
+      - slot_was_set:
+          - valorSocial: valorSocial
+      - action: utter_pensamientoabsolutista
+
+  - story: flecha-adivinación
+    steps:
+      - checkpoint: user_give_emotion
+      - intent: adivinacion
+      - slot_was_set:
+          - valorFamilia: valorFamilia
+      - slot_was_set:
+          - valorPareja: valorPareja
+      - slot_was_set:
+          - valorSocial: valorSocial
+      - action: utter_adivinacion
+  
+  - story: flecha-imperativos
+    steps:
+      - checkpoint: user_give_emotion
+      - intent: imperativos
+      - slot_was_set:
+          - valorFamilia: valorFamilia
+      - slot_was_set:
+          - valorPareja: valorPareja
+      - slot_was_set:
+          - valorSocial: valorSocial
+      - action: utter_imperativos
 
   
-  # story: descent_arrow_happyPath
-  #   steps:
-  #     - checkpoint: user_give_emotion
-  #     - intent: valores
-  #     - 
-
-  # - story: descendent arrow
-  #   steps: 
-  #     - action: utter_sentiment_NEG
-  #     - intent: capture_distorsion
-  #     - action: distorsion_form
-  #     # - action_loop: sentiment_form
-  #     - slot_was_set:
-  #         - distorsion: 
-

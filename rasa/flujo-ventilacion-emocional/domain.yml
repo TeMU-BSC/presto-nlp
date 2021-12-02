@@ -9,6 +9,7 @@ intents:
     use_entities:
       - valorFamilia
       - valorPareja
+      - valorSocial
     ignore_entities:
       - sentiment
   # - sobregeneralizacion:
@@ -17,18 +18,69 @@ intents:
   #     - valorPareja
   #     ignore_entities:
   #     - sentiment
-- etiquetado
-- deberias
-- lectordementes
-- adivinacion
-- pensamientoabsolutista
-- catastrofismo
+- etiquetado:
+    use_entities:
+      - valorFamilia
+      - valorPareja
+      - valorSocial
+    ignore_entities:
+      - sentiment
+- deberias:
+    use_entities:
+      - valorFamilia
+      - valorPareja
+      - valorSocial
+    ignore_entities:
+      - sentiment
+- lectordementes:
+    use_entities:
+      - valorFamilia
+      - valorPareja
+      - valorSocial
+    ignore_entities:
+      - sentiment
+- adivinacion:
+    use_entities:
+      - valorFamilia
+      - valorPareja
+      - valorSocial
+    ignore_entities:
+      - sentiment
+- pensamientoabsolutista:
+    use_entities:
+      - valorFamilia
+      - valorPareja
+      - valorSocial
+    ignore_entities:
+      - sentiment
+- catastrofismo:
+    use_entities:
+      - valorFamilia
+      - valorPareja
+      - valorSocial
+    ignore_entities:
+      - sentiment
+- soloValores:
+    use_entities:
+      - valorFamilia
+      - valorPareja
+      - valorSocial
+    ignore_entities:
+      - sentiment
+- imperativos:
+    use_entities:
+      - valorFamilia
+      - valorPareja
+      - valorSocial
+    ignore_entities:
+      - sentiment
 
 entities:
   # - sentiment
   # - PER
   - valorPareja
   - valorFamilia
+  - valorSocial
 
 # forms:
 #   sentiment_form:
@@ -63,19 +115,11 @@ slots:
   valorPareja:
     type: text
     influence_conversation: true
+  
+  valorSocial:
+    type: text
+    influence_conversation: true
 
-  # distorsion: 
-  #   type: categorical
-  #   auto_fill: true
-  #   influence_conversation: true
-  #   values:
-  #     - imperativos
-  #     - lector
-  #     - sobregeneralizacion
-  #     - adivinacion
-  #     - catastrofismo
-  #     - etiquetado
-  #     - absolutista
 
 
 forms:
@@ -88,6 +132,7 @@ forms:
     - adivinacion
     - pensamientoabsolutista
     - catastrofismo
+    - soloValores
     required_slots:
         sentiment:
           - type: from_entity
@@ -121,7 +166,7 @@ responses:
   utter_sentiment_NEU:
   - text: "entiendo, me gustaría que me contaras de manera más específica cómo tu te sientes en estos momentos"
 
-### test
+### test distorsions
 
   utter_sobregeneralizacion:
     - condition:
@@ -133,25 +178,152 @@ responses:
         - type: slot
           name: valorPareja
           value: valorPareja
-      text: "[sobregen]A veces, las relaciones amorosas suelen ser un punto de sufrimiento."
-
+      text: "[sobregen]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorSocial
+          value: valorSocial
+      text: "[sobregen]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
     - text: "[sobregen]Definitivamente no estás pasando por un buen momento. Te propongo un pequeño ejercicio, ¿te apetece?"
   utter_etiquetado:
-  - text: "[etiquet]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
+    - condition:
+      - type: slot
+        name: valorFamilia
+        value: valorFamilia
+      text: "[etiquet]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorPareja
+          value: valorPareja
+      text: "[etiquet]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorSocial
+          value: valorSocial
+      text: "[etiquet]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
+    - text: "[etiquet]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
   utter_lectordementes:
-  - text: "[lectordementes]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
+    - condition:
+      - type: slot
+        name: valorFamilia
+        value: valorFamilia
+      text: "[lectordementes]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorPareja
+          value: valorPareja
+      text: "[lectordementes]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorSocial
+          value: valorSocial
+      text: "[lectordementes]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
+    - text: "[lectordementes]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
   utter_deberias:
-  - text: "[deberias]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
+    - condition:
+        - type: slot
+          name: valorFamilia
+          value: valorFamilia
+      text: "[deberias]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorPareja
+          value: valorPareja
+      text: "[deberias]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorSocial
+          value: valorSocial
+      text: "[deberias]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
+    - text: "[deberias]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
   utter_pensamientoabsolutista:
-  - text: "[pensamientoabsolutista]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
+    - condition:
+        - type: slot
+          name: valorFamilia
+          value: valorFamilia
+      text: "[pensamientoabsolutista]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorPareja
+          value: valorPareja
+      text: "[pensamientoabsolutista]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorSocial
+          value: valorSocial
+      text: "[pensamientoabsolutista]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
+    - text: "[pensamientoabsolutista]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
   utter_adivinacion:
-  - text: "[adivinacion]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
+    - condition:
+        - type: slot
+          name: valorFamilia
+          value: valorFamilia
+      text: "[advinacion]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorPareja
+          value: valorPareja
+      text: "[adivinacion]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorSocial
+          value: valorSocial
+      text: "[adivinacion]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
+    - text: "[adivinacion]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
   utter_catastrofismo:
-  - text: "[catastrofismo]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
-  # utter_valores:
-  # - text: "respuesta valores solo"
-  # utter_sobregeneralizacion + valores:
-  # - text: "respuesta combinada"
+    - condition:
+        - type: slot
+          name: valorFamilia
+          value: valorFamilia
+      text: "[catastrofismo]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorPareja
+          value: valorPareja
+      text: "[catastrofismo]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorSocial
+          value: valorSocial
+      text: "[catastrofismo]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
+    - text: "[catastrofismo]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
+  utter_imperativos:
+    - condition:
+        - type: slot
+          name: valorFamilia
+          value: valorFamilia
+      text: "[imperativos]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorPareja
+          value: valorPareja
+      text: "[imperativos]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorSocial
+          value: valorSocial
+      text: "[imperativos]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
+    - text: "[imperativos]Definitivamente no estás pasando por un buen momento. Te propongo un pequeño ejercicio, ¿te apetece?"
+
+  #valores:
+  
+  utter_soloValores:
+    - condition:
+        - type: slot
+          name: valorFamilia
+          value: valorFamilia
+      text: "[solovalores]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorPareja
+          value: valorPareja
+      text: "[solovalores]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorSocial
+          value: valorSocial
+      text: "[solovalores]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
+    - text: "[solovalores]Definitivamente no estás pasando por un buen momento. ¿Qué crees que podría significar para ti esto que está ocurriendo en tu vida?"
 
 # chitchat responses
 

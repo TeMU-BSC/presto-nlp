@@ -104,12 +104,12 @@ nlu:
     - la verdad es que no paro de pensar en que soy idiota
     - no soy perfecto
     - soy lo peor
-    - mi amiga es idiota
+    - mi [amiga](valorSocial) es idiota
     - soy completamente idiota
     - soy asqueroso
     - es que soy imbecil no tengo remedio
     - he tenido problemas con mi antiguo jefe, es una mala persona
-    - he discutido con mi pareja es completamente estúpido
+    - he discutido con mi [pareja](valorPareja) es completamente estúpido
     - no soy nada inteligente
     - mi [marido](valorPareja) es rematadamente tonto
     - mi [hermana](valorFamilia) es guapísima me encantaría ser como ella
@@ -121,7 +121,7 @@ nlu:
     - mi [marido](valorPareja) es un vividor
     - mis compañeros son unos aprovechados
     - soy horrorosa, no le puedo gustar a nadie
-    - mi [amiga](valorFamilia) es deprimente
+    - mi [amiga](valorSocial) es deprimente
     - soy despreciable
 
 
@@ -140,9 +140,9 @@ nlu:
     - mi pareja tendría que ser más cariñoso conmigo
     - tengo que ser el mejor si no me despedirán
     - tengo que trabajar más
-    - mi familia tiene que ser más amable conmigo
+    - mi [familia](valorFamilia) tiene que ser más amable conmigo
     - No debo dejar a mi pareja sola
-    - Debo mantener relaciones sexuales con mi pareja más a menudo
+    - Debo mantener relaciones sexuales con mi [pareja](valorPareja) más a menudo
     - No debo ir sola por la calle
     - Debo ir siempre acompañada para que no me pase nada
     - No debería salir de casa
@@ -167,31 +167,31 @@ nlu:
     - estoy seguro de que no le caigo bien aunque me diga que sí
     - nunca me ha dicho nada, pero sé que piensa mal de mí
     - sé que me odian
-    - sé con seguridad que mi @hermano me detesta
+    - sé con seguridad que mi [hermano](valorFamilia) me detesta
     - estoy convencido de que no me quieren tanto como yo a ellos
     - estoy  muy seguro de que no me quieren
     - siempre me dice que me quiere, pero sé que no es verdad
     - nunca me ha dicho nada malo, pero sé que me odia
-    - mi familia piensa que soy un fracasado
-    - aunque mi pareja es bueno conmigo, sé que no me quiere
+    - mi [familia](valorFamilia) piensa que soy un fracasado
+    - aunque mi [pareja](valorPareja) es bueno conmigo, sé que no me quiere
     - estoy convencido de que mis alumnos se rien de mi
-    - mi vecino piensa que soy un desastre
-    - sé que a mis amigos no les gusto como soy
-    - Mi padre piensa que jamás seré una persona de provecho
-    - Todavía no me he independizado; Estoy seguro de que mi familia me considera una carga
+    - mi [vecino](valorSocial) piensa que soy un desastre
+    - sé que a mis [amigos](valorSocial) no les gusto como soy
+    - Mi [padre](valorFamilia) piensa que jamás seré una persona de provecho
+    - Todavía no me he independizado; Estoy seguro de que mi [familia](valorFamilia) me considera una carga
     - Aunque no me lo diga, sé que me desea lo peor
-    - Mi amigo sigue enfadado conmigo; sé que todavía no confía en mi 
+    - Mi [amigo](valorSocial) sigue enfadado conmigo; sé que todavía no confía en mi 
     - Estoy seguro de que la gente me ve como un bicho raro
-    - Siempre me preocupo por la salud mi pareja. Ella piensa que soy un exagerado, lo sé 
+    - Siempre me preocupo por la salud mi [pareja](valorPareja). Ella piensa que soy un exagerado, lo sé 
     - Si lloro en público, seguro que piensan que soy vulnerable.
     - Sé con certeza que quieren que me vaya del grupo
     - Seguro que piensan que estoy en los huesos, lo noto en como me miran.
     - Seguro que piensan que no sé afrontar las situaciones por mi mismo
-    - Mis padres piensan que no tendría que haber estudiado esta carrera, lo sé
+    - Mis [padres](valorFamilia) piensan que no tendría que haber estudiado esta carrera, lo sé
     - Mi compañero de piso piensa que soy un desordenado, lo sé
     - Estoy seguro de que si me independizo, mis padres pensarán que ya no les quiero.
     - Mi jefe piensa que nunca podré asumir responsabilidades, estoy convencido.
-    - Mi pareja ya no me mira como antes, seguro que está pensando en otro
+    - Mi [pareja](valorPareja) ya no me mira como antes, seguro que está pensando en otro
 
 - intent: pensamientoabsolutista
   examples: |
@@ -199,20 +199,20 @@ nlu:
     - Si ven que me lo estoy pasando bien no pensarán que soy responsable
     - Si no estoy siempre a disposición de los demás no me van a querer
     - O le permito que haga conmigo todo lo que quiere o me dejará por otra
-    - Si le digo a otro lo que pienso no querrá ser mi amigo
+    - Si le digo a otro lo que pienso no querrá ser mi [amigo](valorSocial)
     - O hago todo lo que los demás me dicen o me echarán del grupo
     - Si me equivoco no conseguiré nuca lo que me propongo
     - O lo hago perfecto o soy un desastre
     - Si no consigo todo lo que me propongo no merezco la pena
     - Si no estoy de acuerdo con mi jefe me echará del trabajo
-    - Si salgo con mis amigas mi novio pensará que no lo quiero 
-    - O comparte mi punto de vista o es que está en mi contra y no es mi amigo
+    - Si salgo con mis [amigas](valorSocial) mi [novio](valorPareja) pensará que no lo quiero 
+    - O comparte mi punto de vista o es que está en mi contra y no es mi [amigo](valorSocial)
     - Si descanso no me alcanzará el tiempo
     - O soy una buena persona o no merezco que me salgan las cosas bien
     - o apruebo el examen o no tendré futuro
     - si no soy el mejor en mi trabajo entonces me despedirán
     - si no dejo de comer seguiré estando gordo
-    - no aguanto más la situación con mi pareja o elige a su familia o me elige a mí
+    - no aguanto más la situación con mi [pareja](valorPareja) o elige a su [familia](valorFamilia) o me elige a mí
     - estoy muy agobiado estos días o apruebo las oposiciones o no sé qué haré
     - me encuentro muy cansada si no termino la investigación se acabó
     - me siento mal conmigo mismo si no hago ejercicio engordaré
@@ -230,23 +230,23 @@ nlu:
     - si suspendo el examen sé que no podré recuperarlo
     - me sentiré peor si explico lo que me pasa
     - sé que si voy a la excursión no dejaré de pensar en cómo estoy 
-    - estoy convencido de que no encontraré pareja
+    - estoy convencido de que no encontraré [pareja](valorPareja)
     - estoy seguro que nadie me querrá
     - aunque salga puntual voy a perder el bus
     - aunque llegue a la hora sé que me harán esperar
     - me sentiré fatal si voy a la entrevista
-    - me sentiré mal si quedo con mi pareja
+    - me sentiré mal si quedo con mi [pareja](valorPareja)
     - sé que no me integraré con el grupo de la uni
     - si voy de compras me sentiré culpable
     - estoy convencido de que no podré hacer dieta
     - sé que no puedo cambiar aunque lo intente
     - si vamos a comer voy a pasarlo mal
-    - si quedo con mis amigas sé que me dejarán tirada
+    - si quedo con mis [amigas](valorSocial) sé que me dejarán tirada
     - estoy convencida de que perderemos el partido
     - me sentiré mal aunque me perdone 
     - sé que no habrá nada que yo pueda comer
     - no voy a pasar la entrevista de trabajo
-    - sé que mis padres se decepcionarán si me ven
+    - sé que mis [padres](valorFamilia) se decepcionarán si me ven
     - cuando quedemos sé que irá mal
     - voy a hacer mal el trabajo
     - si voy de viaje irá mal
@@ -294,6 +294,17 @@ nlu:
     - si no cogen el teléfono es porque les ha pasado algo terrible, gravísimo
     - será lo peor de mi vida, insufrible
     - me saldrá fatal, seré el peor del mundo
+
+- intent: soloValores
+  examples: |
+    - pues nada que el otro día discutí con mi [marido](valorPareja) y todavía seguimos mal
+    - mi [mujer](valorPareja) ha perdido todo su dinero apostando y ya le dije que no lo hiciera más
+    - no aguanto más la actitud de mi [madre](valorFamilia), la odio
+    - mi [hermana](valorFamilia) se ha olvidado de mi cumpleaños y hemos discutido
+    - mis [amigas](valorSocial) han quedado este fin de semana y no me han avisado
+    - un [colega](valorSocial) ha tenido un accidente y está muy grave
+    - mi [padre](valorfamilia) me maltrata y me ha vuelto a hacer mucho daño
+
 
 
 
@@ -350,6 +361,13 @@ nlu:
     - novio
     - marido
     - pareja
+
+- synonym: valorSocial
+  examples: |
+    - amigo
+    - colega
+    - conocido
+    - vecina
 
 ##Look up tables:
 
