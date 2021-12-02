@@ -2,43 +2,33 @@ version: "2.0"
 
 rules:
 
+### greetings rules
+
+- rule: Say hello anytime the user says hello
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye_nicemood
   - action: utter_goodbye_nicemood
 
-- rule: respond sentiment analysis only on initial flow
-  conversation_start: False
-  steps:
-  - intent: POS
-  - action: utter_POS
 
-# - rule: respond sentiment analysis only on initial flow
-#   conversation_start: True
-#   steps:
-#   - intent: NEG
-#   - action: utter_NEG
-
-# - rule: respond sentiment analysis only on initial flow
-#   conversation_start: True
-#   steps:
-#   - intent: NEU
-#   - action: utter_NEU
-
-
-- rule: Say hello anytime the user says hello
-  conversation_start: true
-  steps:
-  - intent: greet
-  - action: utter_greet
+### fallback and chitchat rules
 
 - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
   steps:
   - intent: nlu_fallback
   - action: utter_please_rephrase
 
-- rule: respond to chitchat 
+- rule: respond to chitchat
   steps:
   - intent: chitchat
   - action: utter_chitchat
 
+- rule: Activate sentiment_form
+  steps:
+  - action: utter_greet
+  - action: sentiment_form

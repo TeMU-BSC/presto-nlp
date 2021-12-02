@@ -6,7 +6,8 @@ pipeline:
 # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
-  
+
+
   - name: WhitespaceTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
@@ -15,40 +16,46 @@ pipeline:
     analyzer: char_wb
     min_ngram: 1
     max_ngram: 4
-  - name: sentiment.SentimentEntityExtractor
+
   - name: DIETClassifier
     epochs: 100
-  #   constrain_similarities: True
+    constrain_similarities: true
+
   # - name: EntitySynonymMapper
-  - name: ResponseSelector
-    epochs: 100
-    retrieval_intent: chitchat
-    # Este componente sirve para ajustar el chitchat
-  - name: FallbackClassifier
-    threshold: 0.4
-    ambiguity_threshold: 0.4
+
   # - name: "SpacyNLP"
-  #   # language model to load
   #   model: "es_dep_news_trf"
   #   case_sensitive: False
   # - name: SpacyEntityExtractor
-  #   # dimensions to extract
-  #   dimensions: ["PER"]
- 
 
-# Configuration for Rasa Core.
-# https://rasa.com/docs/rasa/core/policies/
+  - name: sentiment.SentimentEntityExtractor
+    # other components to extrat entities:
+  
+
+  - name: RegexEntityExtractor
+    # use lookup tables to extract entities
+    use_lookup_tables: True
+    # use regexes to extract entities
+    use_regexes: True
+
+# other components
+  - name: FallbackClassifier
+    threshold: 0.5
+
+  - name: ResponseSelector  # Este componente sirve para ajustar el chitchat
+    epochs: 100
+    retrieval_intent: chitchat
+   
+# Configuration for Rasa Core. # # See https://rasa.com/docs/rasa/policies for more information.
+
 policies:
-# # No configuration for policies was provided. The following default policies were used to train your model.
-# # If you'd like to customize them, uncomment and adjust the policies.
-# # See https://rasa.com/docs/rasa/policies for more information.
+
+   - name: TEDPolicy
+     epochs: 100
+     constrain_similarities: true
    - name: MemoizationPolicy
      #max_history: 3 #Se ha añadido un ciclo de vida de 3 a los inputs. 
    - name: RulePolicy
    - name: UnexpecTEDIntentPolicy
      max_history: 5
      epochs: 100
-   - name: TEDPolicy
-     max_history: 5
-     epochs: 100
-     constrain_similarities: true

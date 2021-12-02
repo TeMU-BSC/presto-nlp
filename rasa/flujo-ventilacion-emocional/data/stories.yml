@@ -2,44 +2,69 @@ version: "2.0"
 
 stories:
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: init
-  - action: utter_init
-  - intent: POS
-  - action: utter_POS
+  - story: happy path with positive emotion
+    steps: 
+      - intent: greet
+      - action: utter_greet
+      - intent: inform_sentiment
+      - action: sentiment_form
+      # - action_loop: sentiment_form
+      - slot_was_set:
+          - sentiment: POS
+      - action: utter_sentiment_POS
 
-- story: sad path 1 - scape
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: init
-  - action: utter_init
-  - intent: NEG
-  - action: utter_NEG
-  - intent: goodbye_badmood
-  - action: utter_goodbye_badmood
+  - story: happy path with negative emotion
+    steps: 
+      - intent: greet
+      - action: utter_greet
+      - intent: inform_sentiment
+      - action: sentiment_form
+      # - action_loop: sentiment_form
+      - slot_was_set:
+          - sentiment: NEG
+      - action: utter_sentiment_NEG
+      - checkpoint: user_give_emotion
 
-# - story: sad path 1 - rcmatch
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: init
-#   - action: utter_init
-#   - intent: NEG
-#   - action: utter_NEG
-#   - intent: question2_negative_flow_rcmatch
-#   - action: utter_question2_negative_flow_rcmatch
+  
+  - story: happy path with neutral emotion
+    steps: 
+      - intent: greet
+      - action: utter_greet
+      - intent: inform_sentiment
+      - action: sentiment_form
+      # - action_loop: sentiment_form
+      - slot_was_set:
+          - sentiment: NEU
+      - action: utter_sentiment_NEU
 
-# # - story: sad path 1 - fallback
-# #   steps:
-# #   - intent: greet
-# #   - action: utter_greet
-# #   - intent: init
-# #   - action: utter_init
-# #   - intent: question1_negative_flow
-# #   - action: utter_question1_negative_flow
-# #   - intent: question2_negative_flow_fallback
-#   - action: utter_question2_negative_flow_fallback
+  - story: flecha-sobregeneralizacion
+    steps:
+      - checkpoint: user_give_emotion
+      - intent: sobregeneralizacion
+      - slot_was_set:
+          - valorFamilia: valorFamilia
+      - slot_was_set:
+          - valorPareja: valorFamilia
+      - action: utter_sobregeneralizacion
+
+  - story: flecha-etiquetado
+    steps:
+      - checkpoint: user_give_emotion
+      - intent: etiquetado
+      - action: utter_etiquetado
+  
+  # story: descent_arrow_happyPath
+  #   steps:
+  #     - checkpoint: user_give_emotion
+  #     - intent: valores
+  #     - 
+
+  # - story: descendent arrow
+  #   steps: 
+  #     - action: utter_sentiment_NEG
+  #     - intent: capture_distorsion
+  #     - action: distorsion_form
+  #     # - action_loop: sentiment_form
+  #     - slot_was_set:
+  #         - distorsion: 
+

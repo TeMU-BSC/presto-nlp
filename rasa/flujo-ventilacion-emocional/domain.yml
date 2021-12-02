@@ -1,71 +1,147 @@
 version: "2.0"
-
 intents:
-  - greet
-  - goodbye_nicemood
-  - goodbye_badmood
-  - init
-  # - question2_negative_flow_rcmatch
-  # # - question2_negative_flow_fallback --> Currently not in use
-  # # - question2_negative_flow_scape --> Currently not in use
-  # - question1_negative_flow
-  # # - question2_positive_flow --> Currently not in use
-  # - question1_positive_flow
-  - nlu_fallback
-  - chitchat
-  - POS
-  - NEG
-  - NEU
+- greet
+- inform_sentiment
+- goodbye_nicemood
+- chitchat
+- nlu_fallback
+- sobregeneralizacion
+  # - sobregeneralizacion:
+  #     use_entities:
+  #     - valorFamilia
+  #     - valorPareja
+  #     ignore_entities:
+  #     - sentiment
+- etiquetado
+- deberias
+- lectordementes
+- adivinacion
+- pensamientoabsolutista
+- catastrofismo
+
 
 entities:
-  # - good_mood
-  - PER # Está extrayéndolo de DietClassifier y Spacy. No parece funcionar muy bien; Se sustituirá por lookup_table
-  # - bad_mood
+  - sentiment
+  # - PER
+  - valorPareja
+  - valorFamilia
+
+# forms:
+#   sentiment_form:
+#     sentiment:
+#     - type: from_entity
+#     - entity: sentiment
+
+actions: 
+  - sentiment_form
+
 
 slots:  
-  PER:
+
+  # PER:
+  #   type: text
+  #   influence_conversation: false
+  #   # auto-fill: true
+
+  sentiment: 
+    type: categorical
+    # auto_fill: true
+    influence_conversation: true
+    values:
+      - NEU
+      - POS
+      - NEG
+
+  valorFamilia:
     type: text
-    influence_conversation: False
+    influence_conversation: true
+
+  valorPareja:
+    type: text
+    influence_conversation: true
+
+  # distorsion: 
+  #   type: categorical
+  #   auto_fill: true
+  #   influence_conversation: true
+  #   values:
+  #     - imperativos
+  #     - lector
+  #     - sobregeneralizacion
+  #     - adivinacion
+  #     - catastrofismo
+  #     - etiquetado
+  #     - absolutista
+
+
+forms:
+  sentiment_form:
+    required_slots:
+        sentiment:
+          - type: from_entity
+            entity: sentiment
+
+  # distorsion_form:
+  #   required_slots:
+  #       sentiment:
+  #         - type: from_entity
+  #           entity: distorsion
+
+
+
 
 responses:
-  utter_greet:
-  - text: "¡Hola, soy Vicky 👩‍⚕️ estoy aquí para ayudarte a cuidar eso tan importante como la salud mental. ¿Cómo te llamas?"
-  utter_POS:
-  - text: "¡No sabes lo que me alegra leer esto 😀! Recuerda que siempre que quieras podemos trabajar con las diversas herramientas que tengo disponible para ti. Puedes pedírmelas, escribiéndome, por ejemplo: 'usar herramientas'"
-  utter_NEG:
-  - text: "Vaya, lamento escuchar esto, {PER}. ¿Podrías contarme más en profundidad qué has sentido?"
-  utter_NEU:
-  - text: "A veces gris, a veces blanco, todo depende del lugar"
 
+# greets and goodbye responses
+
+  utter_greet:
+  - text: "¡Hola! soy Vicky 👩‍⚕️ estoy aquí para ayudarte a cuidar eso tan importante como la salud mental. ¿Qué tal te encuentras hoy?"
+  - text: "¡Hola! Estoy encantada de tenerte de nuevo por aquí. ¿Cómo te has sentido estos días?"
   utter_goodbye_nicemood:
   - text: "¡Estupendo! ya sabes que puedes hablarme siempre que lo necesites, ¡hasta pronto!"
 
-  utter_goodbye_badmood:
-  - text: "Entiendo que no es buen momento. Recuerda que mi intención es molestar lo menos posible, estaré aquí siempre que lo necesites para ayudarte. Hasta pronto 🙂"
+# descendent arrow responses
 
-  utter_init:
-  - text: "Qué tal, {PER}, ¿cómo te has sentido estos días?"
+  utter_sentiment_NEG:
+  - text: "Lo lamento. Parece que no estás pasando por un buen momento. Me gustaría conocer más a fondo qué te ocurre."
+  utter_sentiment_POS:
+  - text: "¡Me alegra leer esto! Recuerda que tienes a tu disposición herramientas para trabajar siempre que quieras"
+  utter_sentiment_NEU:
+  - text: "entiendo, me gustaría que me contaras de manera más específica cómo te sientes en estos momentos"
 
-  utter_question2_negative_flow_rcmatch:
-  - text: "response to rcmatch"
+### test
 
-  # utter_question2_negative_flow_fallback:
-  # - text: "response to fallback"
+  utter_sobregeneralizacion:
+    - text: "[sobregen]Definitivamente no estás pasando por un buen momento. Te propongo un pequeño ejercicio, ¿te apetece?"
+  utter_etiquetado:
+  - text: "[etiquet]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
+  utter_lectordementes:
+  - text: "[lectordementes]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
+  utter_deberias:
+  - text: "[deberias]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
+  utter_pensamientoabsolutista:
+  - text: "[pensamientoabsolutista]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
+  utter_adivinacion:
+  - text: "[adivinacion]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
+  utter_catastrofismo:
+  - text: "[catastrofismo]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
+  # utter_valores:
+  # - text: "respuesta valores solo"
+  # utter_sobregeneralizacion + valores:
+  # - text: "respuesta combinada"
 
-  utter_question1_negative_flow:
-  - text: "Vaya, lamento escuchar esto, {PER}. ¿Podrías contarme más en profundidad qué has sentido?"
+# chitchat responses
 
-  utter_question1_positive_flow:
-  - text: "¡No sabes lo que me alegra leer esto 😀! Recuerda que siempre que quieras podemos trabajar con las diversas herramientas que tengo disponible para ti. Puedes pedírmelas, escribiéndome, por ejemplo: 'usar herramientas'"
-
-  #utter_question2_positive_flow:
-  #- text: "¡Fántastico, {PER} ! Recuerda que si en algún momento lo necesitas estoy aquí, mientras tanto, puedes usar algunas de las herramientas que te muestro a continuación:"
-  utter_please_rephrase:
-  - text: "Lo siento, no te he entendido. ¿Puedes decírmelo de otra forma?"
-  - text: "Creo que no te estoy entendiendo, ¿puedes decírmelo con otras palabras?"
-  
-  utter_chitchat/thanks:
-  - text: "Te agradezco tus palabras. Me hace muy feliz poder ayudarte 😊"
   utter_chitchat/ask_name:
   - text: "Mi nombre es Vicky, ¡encantada de conocerte!"
   - text: "Me conocen como Vicky"
+
+  utter_chitchat/help_me:
+  - text: "Claro, estoy aquí precisamente para ayudar a cuidar de eso tan importante como la salud mental. ¿Por dónde quieres empezar?"
+  - text: "Mi misión es ayudarte a cuidar algo tan importante como la salud mental. Si te parece podemos empezar con una de las opciones que te muestro a continuación:"
+
+# fallback responses:
+
+  utter_please_rephrase:
+  - text: "Lo siento, no te he entendido. ¿Puedes decírmelo de otra forma?"
+  - text: "Creo que no te estoy entendiendo, ¿puedes decírmelo con otras palabras?"
