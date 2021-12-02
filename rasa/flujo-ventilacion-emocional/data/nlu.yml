@@ -42,6 +42,23 @@ nlu:
     - [pues no estoy bien porque mi familia no para de hacerme la vida imposible, estoy desesperado y quiero que me dejen en paz](sentiment)
 
 
+# - intent: inform_sentiment
+#   examples: |
+#     - mal
+#     - me siento demasiado bien
+#     - he tenido muchos problemas
+#     - ha sido una semana de mierda
+#     - lo he pasado fatal
+#     - Estos días estoy de muy buen humor
+#     - me he sentido genial gracias por preguntar
+#     - estoy genial
+#     - me quiero matar ahora mismo, no soporto ni un minuto más mi vida de mierda
+#     - pues no estoy bien porque mi familia no para de hacerme la vida imposible, estoy desesperado y quiero que me dejen en paz
+#     - no soy feliz
+#     - mi vida es una mierda
+#     - estoy harto
+
+
 - intent: sobregeneralizacion
   examples: |
     - casi nunca estoy bien
@@ -101,7 +118,7 @@ nlu:
     - Mi [madre](valorFamilia) es pesada
     - mi [hijo](valorFamilia) es terrible
     - soy una decepción para los demás
-    - mi [hermano](valorFamilia) es un vividor
+    - mi [marido](valorPareja) es un vividor
     - mis compañeros son unos aprovechados
     - soy horrorosa, no le puedo gustar a nadie
     - mi [amiga](valorFamilia) es deprimente
@@ -150,9 +167,9 @@ nlu:
     - estoy seguro de que no le caigo bien aunque me diga que sí
     - nunca me ha dicho nada, pero sé que piensa mal de mí
     - sé que me odian
-    - sé con seguridad que mi @hermano me detesta"
-    - "estoy convencido de que no me quieren tanto como yo a ellos
-    - estoy  muy seguro de que no me quieren"
+    - sé con seguridad que mi @hermano me detesta
+    - estoy convencido de que no me quieren tanto como yo a ellos
+    - estoy  muy seguro de que no me quieren
     - siempre me dice que me quiere, pero sé que no es verdad
     - nunca me ha dicho nada malo, pero sé que me odia
     - mi familia piensa que soy un fracasado

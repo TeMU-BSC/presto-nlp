@@ -17,26 +17,25 @@ pipeline:
     min_ngram: 1
     max_ngram: 4
 
-  - name: DIETClassifier
-    epochs: 100
-    constrain_similarities: true
-
-  # - name: EntitySynonymMapper
-
   # - name: "SpacyNLP"
   #   model: "es_dep_news_trf"
   #   case_sensitive: False
   # - name: SpacyEntityExtractor
 
   - name: sentiment.SentimentEntityExtractor
-    # other components to extrat entities:
-  
+  - name: DIETClassifier
+    epochs: 200
+    constrain_similarities: true
+  - name: EntitySynonymMapper
 
-  - name: RegexEntityExtractor
-    # use lookup tables to extract entities
-    use_lookup_tables: True
-    # use regexes to extract entities
-    use_regexes: True
+
+  # - name: RegexEntityExtractor
+
+
+  #   # use lookup tables to extract entities
+  #   use_lookup_tables: True
+  #   # use regexes to extract entities
+  #   use_regexes: True
 
 # other components
   - name: FallbackClassifier

@@ -5,7 +5,12 @@ intents:
 - goodbye_nicemood
 - chitchat
 - nlu_fallback
-- sobregeneralizacion
+- sobregeneralizacion:
+    use_entities:
+      - valorFamilia
+      - valorPareja
+    ignore_entities:
+      - sentiment
   # - sobregeneralizacion:
   #     use_entities:
   #     - valorFamilia
@@ -19,9 +24,8 @@ intents:
 - pensamientoabsolutista
 - catastrofismo
 
-
 entities:
-  - sentiment
+  # - sentiment
   # - PER
   - valorPareja
   - valorFamilia
@@ -76,6 +80,14 @@ slots:
 
 forms:
   sentiment_form:
+    ignored_intents: 
+    - chitchat
+    - etiquetado
+    - deberias
+    - lectordementes
+    - adivinacion
+    - pensamientoabsolutista
+    - catastrofismo
     required_slots:
         sentiment:
           - type: from_entity
@@ -107,11 +119,22 @@ responses:
   utter_sentiment_POS:
   - text: "¡Me alegra leer esto! Recuerda que tienes a tu disposición herramientas para trabajar siempre que quieras"
   utter_sentiment_NEU:
-  - text: "entiendo, me gustaría que me contaras de manera más específica cómo te sientes en estos momentos"
+  - text: "entiendo, me gustaría que me contaras de manera más específica cómo tu te sientes en estos momentos"
 
 ### test
 
   utter_sobregeneralizacion:
+    - condition:
+        - type: slot
+          name: valorFamilia
+          value: valorFamilia
+      text: "[sobregen]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
+    - condition:
+        - type: slot
+          name: valorPareja
+          value: valorPareja
+      text: "[sobregen]A veces, las relaciones amorosas suelen ser un punto de sufrimiento."
+
     - text: "[sobregen]Definitivamente no estás pasando por un buen momento. Te propongo un pequeño ejercicio, ¿te apetece?"
   utter_etiquetado:
   - text: "[etiquet]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"

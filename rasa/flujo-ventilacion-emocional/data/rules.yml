@@ -28,7 +28,7 @@ rules:
   - intent: chitchat
   - action: utter_chitchat
 
-- rule: Activate sentiment_form
-  steps:
-  - action: utter_greet
-  - action: sentiment_form
+# - rule: Activate sentiment_form
+#   steps:
+#   - intent: inform_sentiment
+#   - action: sentiment_form

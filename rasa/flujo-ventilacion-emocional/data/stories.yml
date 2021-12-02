@@ -8,7 +8,6 @@ stories:
       - action: utter_greet
       - intent: inform_sentiment
       - action: sentiment_form
-      # - action_loop: sentiment_form
       - slot_was_set:
           - sentiment: POS
       - action: utter_sentiment_POS
@@ -19,7 +18,6 @@ stories:
       - action: utter_greet
       - intent: inform_sentiment
       - action: sentiment_form
-      # - action_loop: sentiment_form
       - slot_was_set:
           - sentiment: NEG
       - action: utter_sentiment_NEG
@@ -32,7 +30,6 @@ stories:
       - action: utter_greet
       - intent: inform_sentiment
       - action: sentiment_form
-      # - action_loop: sentiment_form
       - slot_was_set:
           - sentiment: NEU
       - action: utter_sentiment_NEU
@@ -47,11 +44,7 @@ stories:
           - valorPareja: valorFamilia
       - action: utter_sobregeneralizacion
 
-  - story: flecha-etiquetado
-    steps:
-      - checkpoint: user_give_emotion
-      - intent: etiquetado
-      - action: utter_etiquetado
+
   
   # story: descent_arrow_happyPath
   #   steps:
