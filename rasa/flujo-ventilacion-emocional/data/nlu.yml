@@ -1,11 +1,5 @@
 version: "2.0"
-
 nlu:
-
-##  Intents:
-
-### Start conversation intents:
-
 - intent: greet
   examples: |
     - hey
@@ -14,50 +8,28 @@ nlu:
     - Buenas tardes
     - Qué tal Vicky
     - Qué pasa
-
-# - intent: greet_name
-#   examples: |
-#     - me llamo [maria](PER)
-#     - mi nombre es [angela](PER)
-#     - dicen que mi nombre es [Alejandro](PER)
-#     - [Juan](PER)
-#     - soy [Rocío](PER)
-#     - [Casimiro](PER)
-#     - pues me llamo [Isabel](PER)
-#     - me conocen como [Ricardo](PER)
-
-### descendent flow
-
+    
 - intent: inform_sentiment
   examples: |
-    - [mal](sentiment)
-    - [me siento demasiado bien](sentiment)
-    - [he tenido muchos problemas](sentiment)
-    - [ha sido una semana de mierda](sentiment)
-    - [lo he pasado fatal](sentiment)
-    - [Estos días estoy de muy buen humor](sentiment)
-    - [me he sentido muy bien gracias por preguntar](sentiment) 
-    - [estoy genial](sentiment)
-    - [me quiero matar ahora mismo, no soporto ni un minuto más mi vida de mierda](sentiment)
-    - [pues no estoy bien porque mi familia no para de hacerme la vida imposible, estoy desesperado y quiero que me dejen en paz](sentiment)
-
-
-# - intent: inform_sentiment
-#   examples: |
-#     - mal
-#     - me siento demasiado bien
-#     - he tenido muchos problemas
-#     - ha sido una semana de mierda
-#     - lo he pasado fatal
-#     - Estos días estoy de muy buen humor
-#     - me he sentido genial gracias por preguntar
-#     - estoy genial
-#     - me quiero matar ahora mismo, no soporto ni un minuto más mi vida de mierda
-#     - pues no estoy bien porque mi familia no para de hacerme la vida imposible, estoy desesperado y quiero que me dejen en paz
-#     - no soy feliz
-#     - mi vida es una mierda
-#     - estoy harto
-
+    - mal
+    - me siento demasiado bien
+    - he tenido muchos problemas
+    - ha sido una semana de mierda
+    - lo he pasado fatal
+    - Estos días estoy de muy buen humor
+    - me he sentido genial gracias por preguntar
+    - estoy genial
+    - me quiero matar ahora mismo, no soporto ni un minuto más mi vida de mierda
+    - pues no estoy bien porque mi familia no para de hacerme la vida imposible, estoy desesperado y quiero que me dejen en paz
+    - no soy feliz
+    - mi vida es una mierda
+    - estoy harto
+    - me encuentro fatal
+    - he tenido un buen día
+    - pues ahí andamos a ver qué pasa
+    - estresado
+    - amargado en el trabajo
+    - no muy bien
 
 - intent: sobregeneralizacion
   examples: |
@@ -82,18 +54,13 @@ nlu:
     - no me sale nada bien nunca
     - en mi trabajo nunca me tienen en cuenta
     - sé que no le caigo bien a nadie, nadie me quiere
-    - todos hacen lo mismo me dejan a un lado 
+    - todos hacen lo mismo me dejan a un lado
     - he vuelto a suspender es que siempre fracaso
-    - he tenido problemas en le trabajo nunca voy a encontrar nada 
+    - he tenido problemas en le trabajo nunca voy a encontrar nada
     - a todo el mundo les doy igual nadie quiere estar conmigo
     - todo el mundo me odia
     - a nadie le importo
     - siento que no me escucha nadie especialmente mi [novio](valorPareja)
-
-# - intent: sobregeneralizacion + valores
-#   examples: |
-#     - toda mi [familia](valor) piensa que soy una mierda
-#     - mi [padre](valor) piensa que soy mala persona
 
 - intent: etiquetado
   examples: |
@@ -124,10 +91,9 @@ nlu:
     - mi [amiga](valorSocial) es deprimente
     - soy despreciable
 
-
-- intent: deberias 
+- intent: deberias
   examples: |
-    - tengo que estudiar como sea 
+    - tengo que estudiar como sea
     - deberían de ser más amables conmigo
     - tengo que hacer muchas cosas pero nunca tengo tiempo
     - debería planificar las vacaciones y buscar con quién dejar a los - niños mientras yo no estoy
@@ -180,9 +146,9 @@ nlu:
     - Mi [padre](valorFamilia) piensa que jamás seré una persona de provecho
     - Todavía no me he independizado; Estoy seguro de que mi [familia](valorFamilia) me considera una carga
     - Aunque no me lo diga, sé que me desea lo peor
-    - Mi [amigo](valorSocial) sigue enfadado conmigo; sé que todavía no confía en mi 
+    - Mi [amigo](valorSocial) sigue enfadado conmigo; sé que todavía no confía en mi
     - Estoy seguro de que la gente me ve como un bicho raro
-    - Siempre me preocupo por la salud mi [pareja](valorPareja). Ella piensa que soy un exagerado, lo sé 
+    - Siempre me preocupo por la salud mi [pareja](valorPareja). Ella piensa que soy un exagerado, lo sé
     - Si lloro en público, seguro que piensan que soy vulnerable.
     - Sé con certeza que quieren que me vaya del grupo
     - Seguro que piensan que estoy en los huesos, lo noto en como me miran.
@@ -205,7 +171,7 @@ nlu:
     - O lo hago perfecto o soy un desastre
     - Si no consigo todo lo que me propongo no merezco la pena
     - Si no estoy de acuerdo con mi jefe me echará del trabajo
-    - Si salgo con mis [amigas](valorSocial) mi [novio](valorPareja) pensará que no lo quiero 
+    - Si salgo con mis [amigas](valorSocial) mi [novio](valorPareja) pensará que no lo quiero
     - O comparte mi punto de vista o es que está en mi contra y no es mi [amigo](valorSocial)
     - Si descanso no me alcanzará el tiempo
     - O soy una buena persona o no merezco que me salgan las cosas bien
@@ -229,7 +195,7 @@ nlu:
   examples: |
     - si suspendo el examen sé que no podré recuperarlo
     - me sentiré peor si explico lo que me pasa
-    - sé que si voy a la excursión no dejaré de pensar en cómo estoy 
+    - sé que si voy a la excursión no dejaré de pensar en cómo estoy
     - estoy convencido de que no encontraré [pareja](valorPareja)
     - estoy seguro que nadie me querrá
     - aunque salga puntual voy a perder el bus
@@ -243,7 +209,7 @@ nlu:
     - si vamos a comer voy a pasarlo mal
     - si quedo con mis [amigas](valorSocial) sé que me dejarán tirada
     - estoy convencida de que perderemos el partido
-    - me sentiré mal aunque me perdone 
+    - me sentiré mal aunque me perdone
     - sé que no habrá nada que yo pueda comer
     - no voy a pasar la entrevista de trabajo
     - sé que mis [padres](valorFamilia) se decepcionarán si me ven
@@ -295,6 +261,7 @@ nlu:
     - será lo peor de mi vida, insufrible
     - me saldrá fatal, seré el peor del mundo
 
+
 - intent: soloValores
   examples: |
     - pues nada que el otro día discutí con mi [marido](valorPareja) y todavía seguimos mal
@@ -306,45 +273,64 @@ nlu:
     - mi [padre](valorfamilia) me maltrata y me ha vuelto a hacer mucho daño
 
 
-
-
-
-# - intent: valores
-#   examples: |
-#     - mi [familia](valor) me odia
-#     - mi [padre](valor) me maltrata
-    
-
-
-# - intent: capture_distorsion
-
-#   - [exampl](distorsion)
-#   - [exampl](distorsion)
-
-
-### goodbye
 - intent: goodbye_nicemood
   examples: |
     - adiós
     - hasta luego
     - hasta pronto
     - hasta otro día
+    - adios
 
-### chitchat
-  
+- intent: confirm
+  examples: |
+    - sí
+    - claro
+    - vamos allá
+    - por supuesto
+    - genial 
+    - de acuerdo
+
+- intent: ready
+  examples: |
+    - ya
+    - ya he terminado
+    - listo
+    - ya he hecho el ejercicio
+    - continuar
+    
+- intent: deny
+  examples: |
+    - No
+    - mejor no
+    - no me apetece
+    - la verdad es que no quiero
+    - negativo
+
 - intent: chitchat/ask_name
   examples: |
-      - ¿Cómo te llamas?
-      - ¿Podría saber tu nombre?
-      - Cómo te suele llamar la gente
-      - cuál es tu nombre?
+    - ¿Cómo te llamas?
+    - ¿Podría saber tu nombre?
+    - Cómo te suele llamar la gente
+    - cuál es tu nombre?
 
+  
 - intent: chitchat/help_me
   examples: |
-      - ¿Puedes ayudarme?
-      - qué puedes hacer por mí
-      - quiero que me ayudes
-      - hablemos 
+    - ¿Puedes ayudarme?
+    - qué puedes hacer por mí
+    - quiero que me ayudes
+    - hablemos
+
+- intent: chitchat/how_are_u
+  examples: |
+    - ¿Cómo estás Vicky?
+    - ¿tienes sentimientos?
+    - Cómo te encuentras
+
+- intent: chitchat/something_curious
+  examples: |
+    - cuéntame alguna curiosidad
+    - dime algo que no sepa
 
 - synonym: valorFamilia
   examples: |
@@ -368,9 +354,3 @@ nlu:
     - colega
     - conocido
     - vecina
-
-##Look up tables:
-
-# - regex: PER
-#   examples: |
-#    - \b(marc|júlia|julia|jan|emma|martina|pol|nil|leo|àlex|álex|martí|mia|lucía|ona|biel|pau|sofía|sofia|laia|lucas|abril|hugo|maria|maría|noa|liam|bruno|aina|arlet|paula|eric|èric|éric|jana|arnau|carla|enzo|chloe|chlóe|lia|lía|max|aleix|mateo|sara|clàudia|claudia|gala|roc|gael|olívia|olivia|valentina|alma|lara|aran|arán|valèria|valeria|daniel|adam|nora|amira|thiago|daniela|mohamed|vega|amir|bruna|lucà|berta|oliver|alba|martín|clara|ian|axel|david|dylan|kai|vera|gerard|adrià|rayan|lola|aitana|alejandro|jordi|lluc|roger|guillem|carlota|unai|ivet|noah|mar|èlia|elia|pablo|blanca|joel|ariadna|josé|gabriel|lina|anna|erik|aaron|aarón|julen|teo|álvaro|greta|adrián|joan|marco|nour|marina|zoè|zoé|zoe|elna|quim|mario|elsa|triana|alan|manuel|izan|víctor|anas|anás|diego|gina|imran|leire|naia|jon|nico|blai|iris|núria|nuria|antonio|youssef|samuel|gal·la|iker|isaac|malak|nicolàs|nicolás|hèctor|héctor|oriol|aritz|victòria|victoria|aday|candela|inés|omar|eloi|índia|ana|ander|iria|iría|mariona|aya|dídac|fàtima|fátima|marcos|yasmin|adriana|queralt|alexandra|cloè|cloe|irene|laura|carlos|ares|elena|àngel|ángel|aura|ivan|iván|tasnim|maia|juan|miguel|àfrica|áfrica|eva|bru|leyre|màriam|mariam|alèxia|alexia|bernat|ainara|ainhoa|santiago|aniol|einar|luna|ares|haron|irina|joana|rim|yanis|albert|alícia|alicia|ismael|jannat|andrea|derek|jad|marta|matías|isabella|marcel|elian|elián|guim|helena|ibrahim|nina|rita|neizan|akram|alexander|arya|astrid|dàlia|dalia|isona|nahia|ària|aria|lua|miquel|asier|julieta|manuela|salma|guiu|nicole|adara|carmen|leonardo|luka|tomàs|tomás|amaia|elías|gabriela|kilian|matteo|pedro|sergi|dina|lea|león|marwa|amèlia|amelia|ayman|ilyas|sergio|xavier|yeray|alguer|amina|cesc|maya|alejandra|azahara|nayara|ritaj|ibai|rafael|rocío|sira|uriel|ali|alí|bianca|tanit|òscar|óscar|bruc|dànae|dánae|danae|haroun|iago|nerea|noel|noor|raül|raúl|xavi|xènia|xenia|coral|cèlia|celia|dario|darío|edgar|eiden|evan|iyad|javier|jimena|logan|mireia|theo|yassin|àyoub|áyoub|ada|anaís|anaïs|anais|ferran|khadija|leia|mateu|yahya|aurora|camila|francisco|antonella|aren|bilal|diana|israa|maryam|natàlia|natalia|pep|vinyet|zakaria|aitor|estel|hidaya|isabel|ishak|nayla|nizar|violeta|ainet|aisha|jesús|lluna|muhammad|nael|saül|saúl|siraj|uma|zainab|aroa|cora|dante|eira|enric|genís|lya|mel|rai|siena|wassim|yago|andrés|aran|arán|blau|cristián|eder|gaia|jaume|josep|maher|ot|rubèn|rubén|simon|simón|aicha|bosco|dana|hafsa|iu|ïu|june|magí|manel|pere|sebastian|sebastián|yasser|abraham|ahmed|amin|andreu|aron|arón|bayan|gonzalo|ikhlas|indara|joaquín|jorge|lena|lucca|roi|romeo|samara|basma|carolina|dafne|fèlix|félix|giulia|judit|luis|nara|neus|otger|rio|sami|thaís|thais|tom|íngrid|alaia|fatoumata|ignacio|inas|janna|jofre|judith|layan|milan|milán|ramon|ramón|razan|safae|safwan|sophie|sílvia|silvia|ziad|alice|aneu|àneu|eloy|irati|lluís|mei|màxim|naiara|naïm|naím|nel|nàdia|nadia|otto|sophia|ziyad|àngela|ángela|abigaïl|abigail|agnès|cataleya|cristina|dani|gil|gisela|hamza|islam|jinan|mark|nayra|saray|yael|yasmina|yousra|àsia|adonay|alessandro|assil|beth|duna|erick|guillermo|ismaïl|ismaíl|lian|nia|rodrigo|roma|samira|toni|yara|yassir|ayla|benjamín|bet|chiara|estela|hiba|kevin|leila|lila|mohamed amin|rosa|saad|yanira|abel|alberto|amal|antònia|antonia|artur|denís|denis|emília|emilia|erika|georgina|hajar|hug|israe|karim|kiara|lorenzo|mara|mila|míriam|miriam|naira|teresa|àlex|álex|alaa|amaya|brais|catalina|dan|danna|dayana|eduard|elisa|eyra|ezequiel|ilías|ishaq|ivette|juna|kira|lukas|marçal|miguel àngel|miguel ángel|mohammed|noha|nor|rània|rania|salim|salman|walid|achraf|aimar|alana|anis|anís|anwar|ariana|arwa|badr|bella|cèsar|césar|eneko|erin|ethan|fiona|freya|gianna|ilyan|irai|jonathan|josé antonio|kawtar|kylian|maximiliano|megan|máximo|nadir|nathan|nur|yaiza|younes|adán|alia|almas|aylen|bjorn|christian|dúnia|dunia|eidan|emily|jacob|juliette|kala|keyla|leah|macarena|mariama|mauro|miranda|musa|naomi|nayeli|pia|pía|rebeca|reda|sabrina|safa|saja|sam|sarayma|soraya|abrar|afnan|aiden|alae|amjad|amàlia|amalia|anir|aray|elliot|eren|esther|eudald|farah|fernando|gorka|grau|ibrahima|ignasi|iona|jair|jared|josuè|josué|leonor|mael|manal|noemí|noemi|oleguer|rawan|ruth|sofia maria|sofía maría|thàlia|thalia|tiago|tristan|tristán|wissal|abdullah|amanda|ana maria|ana maría|aseel|atenea|avril|briana|caleb|daniella|guifré|hannah|israel|itziar|jordan|jordán|josé luis|juan manuel|juno|lis|matilda|mohamed ali|mohamed alí|moussa|neo|niko|noè|noé|raquel|ricard|riu|selva|sia|sohaib|sol|ton|txell|zaid|adhara|alexis|alfonso|anabia|anton|antón|arianna|arç|assia|brianna|charlotte|dània|dania|eire|elisabeth|enrique|erica|eros|etna|evelyn|francesc|gianluca|guerau|hoorain|indira|jade|janat|keira|khloe|kènia|kenia|leandro|mariana|melissa|michelle|mikel|mohamed amir|montserrat|mustafa|mustafà|mustafá|nassim|nisrin|riyad|sandra|sulaiman|sulaimán|tian|tània|tania|valentino|wasim|yasmine|ènia|enia|aminata|anastàsia|anastasia|anouar|arij|ayaan|cayetana|chams|dara|darek|eduardo|edurne|eider|elio|emanuel|fabio|fàtima zahra|fátima zahra|hanna|hassan|hawa|jacobo|jairo|john|josé maria|josé maría|juan josé|juliet|kenzo|mahamadou|mirha|nagore|nazaret|nouh|pilar|riad|rym|salomé|sanad|sasha|saüc|sauc|sheila|silya|tamara|thomas|unay|yassine|yousef|zayd|àgata|ágata|aida|aïda|aída|aissatou|amelie|amélie|ania|anthony|antia|aram|artai|ashley|ayan|beatriz|cai|damián|eden|elba|elizabeth|emma maria|emma maría|emmanuel|enoc|esteban|eyad|eyden|fatou|firdaus|heura|iman|itzel|jordina|juan antonio|karam|laila|layla|leyla|lily|liv|luc|luisa|lília|lilia|majd|mamadou|mathias|matt|meritxell|milena|mouhamed|mònica|mónica|naila|naya|neyzan|nit|noah|norah|noèlia|noelia|olau|paola|ryan|samantha|shams|sienna|sulayman|tim|uxia|valentín|verònica|verónica|yasin|yassmin|abdellah|adama|ahmad|amara|anuar|arlette|arturo|asil|ava|awa|aylin|bryan|carles|damià|ekaitz|elaia|elisabet|emilio|frida|glòria|gloria|idaira|ilan|inaya|isaías|ivar|jara|jonatan|jonatán|julià|kamar|kayla|lleó|lojain|luana|luqman|lyan|lídia|lidia|markel|matthew|meghan|milo|mina|moisès|moisés|natasha|natura|owen|patrick|rené|ricardo|robert|sabina|safaa|salvador|sarah|sidra|sigrid|sinai|sirin|sultan|susana|sònia|sonia|yasir|abdoulaye|adriel|aidan|ailen|alain|alaya|alessandra|amadou|amine|angie|arthur|asmae|ayesha|barae|bela|brayan|caterina|cleo|daoud|daria|daría|dikra|dàmaris|dámaris|damaris|eileen|emma victoria|esraa|fatima zohra|fatumata|firdaous|firdaws|foix|francisco javier|ginebra|hana|hania|harun|ikram|iratxe|irune|ivanna|janet|juliana|karla|lars|levi|liz|llibert|llorenç|luke|malena|maria victòria|maría victoria|marwan|maverick|mohamed amine|muhammad ali|nabil|nacho|neil|nolan|otman|pau|qamar|ranim|rayhana|rinad|rital|roque|roqué|rut|sajid|sarai|solaiman|solayman|tatiana|telmo|ulises|wiam|xana|yaakoub|yannick|agatha|agustín|ahlam|alen|alessia|alexa|alexandre|alina|allegra|anaya|angelina|angèlica|angélica|arai|ariadne|arian|ariel|aris|arlet|aymane|bastian|bastián|binta|camèlia|camelia|carme|ciro|claudi|daiana|dolores|dèlia|delia|edith|edna|eithan|eizan|emran|ender|ernest|erola|estrella|eva maria|eva maría|fabián|farouk|felipe|ferdaous|firas|gara|gio|giovanni|guadalupe|hanae|helga|ian mateo|imad|insaf|issa|iñaki|joaquim|jonàs|jonás|josé manuel|julián|junaid|jèssica|jessica|kamila|karina|kora|lilith|loay|lokman|lucas gabriel|mae|maé|magalí|maram|maria del mar| maría del mar|matheo|matilde|maysaa|meriem|mia valentina|mia victòria|mia victoria|minerva|miral|muhammad musa|mustapha|naima|narcís|natanael|nyan|olga|olímpia|olimpia|paco|paloma|paül|paúl|reem|roman|román|rosario|samar|samay|samba|samir|santi|serigne fallou|simo|simó|sofia elena|sofía elena|taha|vicente|wael|william|wissam|zaira|ànnia|annia|adela|aila|aiman|ainoa|akane|alai|alec|alisa|amy|anass|andre|andré|andrea|andy|anne|armaan|artau|assua|ayat|aylan|ayleen|aysha|balma|bernardo|borja|brian|claire|coraima|david nicolás|dennís|dennis|dorian|dua|efrèn|efrén|elin|eliot|elisenda|enara|eshaal|estefania|estefanía|federico|feras|flora|fran|francesca|francisco josé|gabriel alejandro|gemma|ghazal|gian|grace|hadi|halima|haniya|haroon|hayat|haytam|hind|hèlia|helia|idir|idris|igor|ilaf|imane|iraia|isabela|isla|issam|itiel|ivana|jack|jael|jayden|jeremy|joshua|juan pablo|juana|judy|jàson|jasón|kamal|kaoutar|karen|katerina|kay|kenneth|khalid|kinan|kiran|koa|lau|leonard|llum|luay|luciana|lujain|mahdi|maialen|marcelo|margot|maría del carmen|maría josé|maximilián|mercè|micaela|michael|milana|mohamad|mohamed reda|momina|mouad|muhammad ayaan|muhammad ismail|nahuel|naroa|nasser|nausica|nekane|nermin|nicola|nika|nikol|nikola|nilo|nim|noam|odei|olympia|om|omnia|othman|quer|rahaf|rihab|riham|rimas|roa|roaya|roberto|robin|robín|rodaina|rohaan|romaisa|rosalia|rosalía|saira|samia|samy|selena|serena|sila|souhaib|soulayman|thiago david|tina|tommaso|tura|unax|valentí|valery|viggo|viktor|xevi|yacoub|yann|yannis|yaser|yazid|yeiko|yusuf|zara|zeus|zineb|abdelkader|abderrahman|abeera|adai|adam|adil|afrika|agustí|ainhara|aitana sofia|aixa|aleksandra|alissa|alisson|alix|alonso|amani|amar|amer|anahi|andrei|anouk|anqi|antoni|anuk|anya|aquiles|arcadi|arham|arkan|aroosh|asees|asmaa|athena|aurah|ayana|ayax|azlan|baraa|beltran|beltrán|belén|benet|biorn|bruc|cala|camilo|carlotta|carmela|carmina|cayetano|celeste|celine|chadi|christopher|daenerys|daira|darel|declan|denzel|desirée|doha|ekai|eliana|elise|eliza|elm|enea|enya|esperanza|esteve|fallou|feliu|ferriol|filip|flàvia|flavia|galla|garbí|gaspar|gia|ginesta|guido|gurfateh|gurtaj|haider|haitam|haitham|haleema|hanaa|haoyu|hassan ali|hussain|ian alexander|idoia|ikram|ilai|isa|isidro|isis|isra|ivy|jaden|jaime|jannah|jasleen|javi|jep|jero|jerónimo|jihan|joanna|joao|johan|jorgina|josefa|josé miguel|juan carlos|juan miguel|jun|kael|kailani|katherine|keila|kendra|laia|lexa|leònidas|leónidas|liah|liam alejandro|lionel|lisa|lois|lorien|luken|maha|maiol|malik|malva|margarita|mari|maria cristina|maría cristina|maria isabel|maría isabel|mariela|maroua|matheus|mauricio|mehdi|melanie|melina|melisa|mia antonella|mike|miran|miren|miya|mohammad|moiz|muhammad arham|muhammad azlan|muhammad mustafa|mya|nader|nairobi|najwa|nasim|neret|nicol|nikita|nimrat|nuh|nuno|nura|nut|octavi|odín|oier|olaya|omaira|oriana|ousmane|pepe|petra|piero|quirze|remedios|renad|rida|robin|rodayna|roeya|roy|sabela|sabrin|safia|safuan|sandro|scarlett|sekou|selma|seraj|sinay|soufian|sundus|tarek|tassnim|telma|tessa|thiago alejandro|tobías|tommy|travis|usama|uxue|vanessa|vincent|violetta|vladimir|wania|wisal|xinyi|yaneli|yareli|yerai|yerian|yolanda|yosef|youness|yuchen|yulia|yuri|yusra|yuxi|zaynab|àlvar|AarÃ³n|AbdalÃ¡|Abd al-Aziz|AbdÃ­as|AbdÃ³n|Abdul Latif|Abel|Abelardo|Abraham|AbsalÃ³n|Abundio|Acacio|Achiuta|Acisclo|Adalberto|AdÃ¡n|Adi Shankara|Adolfo|AdriÃ¡n|Adrista|Afrodisio|AgamenÃ³n|Agapito|Agastia|Agatoclio|AghÃ¡sura|Agni|AgustÃ­n|Aitor|Aksapada GÃ³tama|Aladino|Alarico|Albano|Alberto|Albino|AlcibÃ­ades|Alcide|Alcides|Aldo|Alec|Alejandro|Alejo|Alfonso|Alfredo|Ã lvaro|Amadeo|Amado|Amador|Amancio|Amara-kosha|Amara Simja|Ambarisha|Ambrosio|Amenhotep|AmÃ©rico|AmÃ­lcar|Amit|AmÃ³s|Amsha|Anacleto|AnanÃ­as|Anastasio|Anatolio|Andhaka|Andoni|Andrei|AndrÃ©s|AndrÃ³nico|Ã ngel|AnÃ­bal|Aniceto|Anselmo|Antenor|Antoni|Antonino|Antonio|Apolinar|Apolo|Apolonio|Aquiles|Argimiro|Ariel|Aristarco|ArÃ­stides|AristÃ³teles|Armand|Armando|Arnaldo|Arnau|Arnulfo|ArquÃ­medes|Arsenio|Arturo|Aryaman|Ascanio|AsdrÃºbal|Ashuatama|Ashuin|AÅka|Astika|Asura|Atanasio|Aubrey|Augurio|Augusto|Aureliano|Aurelio|Avelino|Axel|Bakasura|Bala Krisna|Balarama|Balbino|Baldomero|Balduino|Baltasar|BanÃ¡sura|BartolomÃ©|Basilio|BaudhÄ yana|Bautista|Beato|Belisario|BeltrÃ¡n|Benedetto|Benedicto|Benigno|Benito|BenjamÃ­n|Bento|Berengario|BernabÃ©|Bernardino|Bernardo|Bernhard|Bernie|Berto|Betuel|Bhaga|Bhajan|Bharadvaya|Bharata|Bhavaviveka|Bhima|BhishmÃ¡|Bhrigu|Biagio|Bienvenido|BjÃ¶rn|Blas|Bo|Bobo|Bogdan|Bogumil|BogusÅ aw|Boleslao|Boni|Bonifacio|Borja|Bosco|Boutros|Boyan|Braulio|Brian|Brihaspati|Brijadratha|BronisÅ aw|Bruno|Burgess|Calixto|Camilo|Cancio|CÃ¡ndido|Canek|Canuto|Carlos|Carmelo|Casimiro|Casio|Casiodoro|Casto|Cayetano|Cayo|Cecilio|Ceferino|Celedonio|Celestino|Celso|CÃ©sar|Chandra|ChÃ¡raka|ChiÃ¡vana|Cipriano|Ciriaco|Cirilo|Ciro|Claudio|Clemente|Columbano|Conrado|Constancio|Constantino|Cornelio|Cosme|Crescencio|Crisanto|CrisÃ³stomo|CrispÃ­n|CristiÃ¡n|CristÃ³bal|CuauhtÃ©moc|CzesÅ aw|Dadhichi|Daksha|Dalmacio|DÃ¡maso|DamiÃ¡n|Daniel|Danijel|Danilo|Dardo|DarÃ­o|Dasharatha|David|Demetrio|Demi|Deodato|Deogracias|Desiderio|Devabhuti|Devala|Dhritarashtra|Diego|Dieus|Dimas|Diodoro|Dionisio|Dobromir|Domingo|Donato|Doroteo|Drona|Drupada|Durvasa|Duryodhana|Edelmiro|Edgar|Edmundo|Eduardo|Edwin|Eero|EfraÃ­m|Egidio|Eleazar|Eleuterio|ElÃ­as|Eliseo|Eloy|Emerico|Emeterio|Emigdio|Emiliano|Emilio|Enoc|EnÃ³s|Enrique|Enzo|Epifanio|Erasmo|Eric|Ernesto|EsaÃº|Esdras|Espartaco|Esprit|Estanislao|Esteban|Etelfrido|Ethelbaldo|Eudes|Eugenio|Eulogio|Eusebio|Eustacio|Eustaquio|Evangelista|Evaristo|Ezequiel|FabiÃ¡n|Fabio|Fabricio|Facundo|Faustino|Fausto|Federico|Feliciano|Felipe|FÃ©lix|FermÃ­n|Fernando|Fidel|FilemÃ³n|Finnian|FiÃ³dor|Florencio|Florentino|FloriÃ¡n|Forrest|Fortunato|Francisco|FroilÃ¡n|Fructuoso|Fulgencio|Gabino|Gabriel|Gamaliel|Gana|Gandharva|Ganesha|Garga Muni|Garuda|Gaspar|GastÃ³n|Gaudencio|Gautama|GedeÃ³n|Geoffrey|George|Gerardo|GermÃ¡n|Germano|Gerson|Gervasio|Gianluca|Gianni|Gilberto|GinÃ©s|Gisbert|Gobrias|Godofredo|Goliat|Gonzalo|Gopala|GorÅ |Gottlieb|Govinda|Gregorio|Gritsa MadÃ¡|Guido|GuillÃ©n|Guillermo|Gumaro|Gustavo|Guy|Hamza|Haroldo|Harry|Hassan|HÃ©ctor|Heihachi|HeihachirÅ |Heinz|Heliodoro|Henrik|Henrique|HerÃ¡clides|Heraclio|Hercle|HÃ©rcules|Heriberto|Herman|Hermann|Hermenegildo|Herodes|Higinio|Hilario|HipÃ³lito|Hisashi|Homero|Homobono|Honorato|Honorio|Horacio|Horatio|Hormisdas|Huberto|Hugo|Humberto|Iaksa|Ian|IchirÅ |Ignacio|Iker|Iksuaku|Indalecio|Isaac|Isaak|IsaÃ­as|Isidoro|Isidro|Ismael|Israel|Italo|IvÃ¡n|Ivo|Jacinto|Jacobo|Jael|Jaganatha|Jaime|Jair|Jairo|Jalaiuda|Jarischandra|Jarsha Vardhana|Javier|Jean-FranÃ§ois|Jean-Pierre|Jeffrey|Jemachandra|Jenaro|JeremÃ­as|JerÃ³nimo|Jirania KashipÃº|JirÅ |Joachim|JoÃ£o|JoaquÃ­n|Job|Joel|Johann|Jon|Jorge|JosÃ©|Joseba|Josefino|JosÃ© Luis|JosÃ© MarÃ­a|JosÃ­as|Josmar|Jossmar|Josu|JosuÃ©|Juan|Juan Bautista|Juanelo|Juantxo|JudÃ¡|Julen|JuliÃ¡n|Julio|Kailash|Kalidasa|KankurÅ |Kanua|Kardama|Karttikeya|Kavi|Kedara|Kedarnath|Kemuel|Kenneth|KenzÅ |Kepa|Kinnara|KintarÅ |Kintuillang|KojirÅ |Koldobika|Ksatri|KumbhÃ¡ Karna|Kuru|Kushika|LabÃ¡n|Ladislao|Lain|Laksman Sen|Lalo|Laureano|Lautaro|LÃ¡zaro|Leandro|Leonardo|Leopoldo|LevÃ­|Levy|Licas|Lior|LoÃ¯c|Lokapala|Lorenzo|Lubomir|Lucas|Ludovico|Luis|Madhusudan|Maffeo|Maia Asura|MajÃ¡|Malcolm|Mamerto|Mansur|Manu|Manuel|Marcelino|Marcelo|Marcos|Mariano|Mario|MartÃ­n|Matariswan|Mateo|Mauricio|MÃ¡zatl|Medardo|Miguel|Mikel|Miqueas|Mirko|Miroslav|Modesto|Moritz|Mstislav|Muawiya|Muhammad|MustafÃ¡|Nahuel|Nahum|Nala|NÃ¡maste|Nandi|Narakasura|NatÃ¡n|Nataraja|Nath|NehemÃ­as|Nelson|Nepomuk|NÃ©stor|NicolÃ¡s|Nikita|Nimi|NÃ­riti|NoÃ©|Norberto|OdÃ³n|Oier|Olaf|Omar|OnesÃ­foro|OrdoÃ±o|Orlando|Ã scar|Osmar|Osvaldo|Oswaldo|Pablo|Panagiotis|PÃ¡ndava|PandÃº|PÃ¡nfilo|PantaleÃ³n|Paolo|Parashurama|Pariksit|ParsuÃ¡|Paryania|Pascual|Patricio|Pedro|Philippe|Pol|Pradiumna|Premislao|Primitivo|Prisciliano|PrithÃº|Prudencio|Publio|Pulaja|Puloman|PÃºrusha|Purushottama|Quirico|Radomir|RadosÅ aw|Rafael|RaghÃº|Raimundo|Rainer|Raju|RÃ¡ksasa|Rama|RaÃºl|Ravana|Regis|Remigio|Renato|RenÃ©|Reto|Reza|Ribhu|Ricardo|Rigoberto|Rinchen Gyaltsen|Rishabha|Rishikesh|Roberto|Rodolfo|Rodrigo|Rogelio|Roger|Roland|Rosendo|SaburÅ |Sadrac|Sagara|SajÃ¡deva|Sakya Trizin|SalomÃ³n|Salvador|Sambor|Samuel|Sancho|Sanjaya|Santiago|Å arÅ«nas|Satrayit|SaÃºl|SebastiÃ¡n|Selim|SenÃ©n|Sergio|ShalivÃ¡jana|Sharabha|ShinzÅ |ShirÅ |Shiva|Siddha|Sidonio|SimÃ³n|Slavko|Slawomir|Srivatsa|Stefano|Sudraka|Sukra|SuleimÃ¡n|Suyog|Taichi|Takumi|Tal|Tiberio|Timoteo|Tinia|Tito|TobÃ­as|Togarma|TomÃ¡s|Tonatiuh|Toussaint|Tuastri|Ubaidallah|Ubaldo|Uranius|Urbano|UrÃ­as|Uriel|Urso|VÃ¡clav|Vadim|Vairochana|Vaiu|Vajrapani|Vala|Valerio|ValÃ©ry|Vali|Vanaspati|Vasudeva|Vicente|VÃ­ctor|Vidura|VikramÄ ditya|Vishnu|Vishua Karma|Vito|Vladimiro|Vladislao|VsÃ©volod|Warren|Wenceslao|William|Wojciech|XicohtÃ©ncatl|Yada Bharata|YajnÃº|YanameyaiÃ¡|Yaromir|Yasu|Yasunari|Yazid|Yogui|Yudhishthira|Yusuf|Yves|ZabulÃ³n|ZacarÃ­as|Zanobi|Zaqueo|Zbigniew|Zeferino|Zoran)\b

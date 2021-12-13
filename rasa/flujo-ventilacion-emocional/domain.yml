@@ -1,10 +1,21 @@
 version: "2.0"
 intents:
 - greet
-- inform_sentiment
+- inform_sentiment:
+   use_entities:
+    - sentiment
 - goodbye_nicemood
 - chitchat
 - nlu_fallback
+- confirm:
+    ignore_entities:
+      - sentiment
+- ready:
+    ignore_entities:
+      - sentiment
+- deny:
+    ignore_entities:
+      - sentiment
 - sobregeneralizacion:
     use_entities:
       - valorFamilia
@@ -76,7 +87,7 @@ intents:
       - sentiment
 
 entities:
-  # - sentiment
+  - sentiment
   # - PER
   - valorPareja
   - valorFamilia
@@ -165,165 +176,202 @@ responses:
   - text: "¡Me alegra leer esto! Recuerda que tienes a tu disposición herramientas para trabajar siempre que quieras"
   utter_sentiment_NEU:
   - text: "entiendo, me gustaría que me contaras de manera más específica cómo tu te sientes en estos momentos"
+  # utter_valor_familia:
+  # - text: "Podríamos decir que la familia y pasar tiempo con tu $valorFamilia es importante para ti. ¿Es así?"
+  # utter_valor_pareja:
+  # - text: "Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos. La pareja parece un elemento central en tu vida.¿Es así?"
+  # utter_valor_social:
+  # - text: "Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti. ¿Es así?"
+  # utter_valor_global_segundopaso:
+  # - text: "Cuidar las cosas que hacen que nuestra vida tenga sentido es importante para cuidar nuestro bienestar emocional."
 
-### test distorsions
+### distorsions and values intervention:
 
+## Sobregeneralizacion
   utter_sobregeneralizacion:
     - condition:
         - type: slot
           name: valorFamilia
           value: valorFamilia
-      text: "[sobregen]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
+      text: "Podríamos decir que la familia y pasar tiempo con ellos es importante para ti. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho fuese verdad. Cuando lo tengas, tan solo avísame."
     - condition:
         - type: slot
           name: valorPareja
           value: valorPareja
-      text: "[sobregen]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
+      text: "Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho fuese verdad. Cuando lo tengas, tan solo avísame."
     - condition:
         - type: slot
           name: valorSocial
           value: valorSocial
-      text: "[sobregen]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
-    - text: "[sobregen]Definitivamente no estás pasando por un buen momento. Te propongo un pequeño ejercicio, ¿te apetece?"
-  utter_etiquetado:
-    - condition:
-      - type: slot
-        name: valorFamilia
-        value: valorFamilia
-      text: "[etiquet]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
-    - condition:
-        - type: slot
-          name: valorPareja
-          value: valorPareja
-      text: "[etiquet]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
-    - condition:
-        - type: slot
-          name: valorSocial
-          value: valorSocial
-      text: "[etiquet]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
-    - text: "[etiquet]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
-  utter_lectordementes:
-    - condition:
-      - type: slot
-        name: valorFamilia
-        value: valorFamilia
-      text: "[lectordementes]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
-    - condition:
-        - type: slot
-          name: valorPareja
-          value: valorPareja
-      text: "[lectordementes]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
-    - condition:
-        - type: slot
-          name: valorSocial
-          value: valorSocial
-      text: "[lectordementes]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
-    - text: "[lectordementes]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
-  utter_deberias:
-    - condition:
-        - type: slot
-          name: valorFamilia
-          value: valorFamilia
-      text: "[deberias]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
-    - condition:
-        - type: slot
-          name: valorPareja
-          value: valorPareja
-      text: "[deberias]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
-    - condition:
-        - type: slot
-          name: valorSocial
-          value: valorSocial
-      text: "[deberias]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
-    - text: "[deberias]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
-  utter_pensamientoabsolutista:
-    - condition:
-        - type: slot
-          name: valorFamilia
-          value: valorFamilia
-      text: "[pensamientoabsolutista]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
-    - condition:
-        - type: slot
-          name: valorPareja
-          value: valorPareja
-      text: "[pensamientoabsolutista]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
-    - condition:
-        - type: slot
-          name: valorSocial
-          value: valorSocial
-      text: "[pensamientoabsolutista]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
-    - text: "[pensamientoabsolutista]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
-  utter_adivinacion:
-    - condition:
-        - type: slot
-          name: valorFamilia
-          value: valorFamilia
-      text: "[advinacion]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
-    - condition:
-        - type: slot
-          name: valorPareja
-          value: valorPareja
-      text: "[adivinacion]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
-    - condition:
-        - type: slot
-          name: valorSocial
-          value: valorSocial
-      text: "[adivinacion]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
-    - text: "[adivinacion]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
+      text: "Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho fuese verdad. Cuando lo tengas, tan solo avísame."
+    - text: "Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho fuese verdad. Cuando lo tengas, tan solo avísame. "
+
+  utter_intervention_sobregeneralizacion:
+    - text: "Me gustaría que en estos días, preguntaras a un amigo sobre esta hipótesis que planteas y te causa tanto malestar. Escúchalo con antención, y luego, apunta en un papel aquellas diferencias que percibas con tu hipótesis inicial."
+
+  
+  ## Catastrofismo
   utter_catastrofismo:
     - condition:
         - type: slot
           name: valorFamilia
           value: valorFamilia
-      text: "[catastrofismo]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
+      text: "Podríamos decir que la familia y pasar tiempo con ellos es importante para ti. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
     - condition:
         - type: slot
           name: valorPareja
           value: valorPareja
-      text: "[catastrofismo]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
+      text: "Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
     - condition:
         - type: slot
           name: valorSocial
           value: valorSocial
-      text: "[catastrofismo]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
-    - text: "[catastrofismo]Lamento que estés pasando por un mal momento. Me gustaría proponerte un ejercicio ¿qué te parece?"
+      text: "Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
+    - text: "Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame. "
+
+  utter_intervention_catastrofismo:
+    - text: "Me gustaría que en estos días, preguntaras a un amigo sobre esta hipótesis que planteas y te causa tanto malestar. Escúchalo con antención, y luego, apunta en un papel aquellas diferencias que percibas con tu hipótesis inicial."
+
+## imperativos
+
   utter_imperativos:
     - condition:
         - type: slot
           name: valorFamilia
           value: valorFamilia
-      text: "[imperativos]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
+      text: "Podríamos decir que la familia y pasar tiempo con ellos es importante para ti. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
     - condition:
         - type: slot
           name: valorPareja
           value: valorPareja
-      text: "[imperativos]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
+      text: "Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
     - condition:
         - type: slot
           name: valorSocial
           value: valorSocial
-      text: "[imperativos]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
-    - text: "[imperativos]Definitivamente no estás pasando por un buen momento. Te propongo un pequeño ejercicio, ¿te apetece?"
+      text: "Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
+    - text: "Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame. "
 
-  #valores:
-  
-  utter_soloValores:
+  utter_intervention_imperativos:
+    - text: "Me gustaría que te pusieras como obligación durante esta semana realizar algo que, aunque te parezca improductivo, te guste y te proporcione felicidad."
+
+## lector de mentes y adivinacion
+
+  utter_lector:
     - condition:
         - type: slot
           name: valorFamilia
           value: valorFamilia
-      text: "[solovalores]A veces, las relaciones familiares suelen ser un punto de conflicto en nuestro día a día."
+      text: "Podríamos decir que la familia y pasar tiempo con ellos es importante para ti. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
     - condition:
         - type: slot
           name: valorPareja
           value: valorPareja
-      text: "[solovalores]A veces, las relaciones amorosas suelen ser un punto de conflicto en nuestro día a día."
+      text: "Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
     - condition:
         - type: slot
           name: valorSocial
           value: valorSocial
-      text: "[solovalores]A veces, las relaciones sociales suelen ser un punto de sufrimiento."
-    - text: "[solovalores]Definitivamente no estás pasando por un buen momento. ¿Qué crees que podría significar para ti esto que está ocurriendo en tu vida?"
+      text: "Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
+    - text: "Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame. "
+
+  utter_intervention_lector:
+    - text: "Me gustaría que cogieras un papel y apuntaras en un lado aquellos datos a favor y en otro aquellos datos en contra que tienes para el pensamiento/hipótesis que me has planteado en nuestra conversación"
+
+  utter_adivinacion:
+    - condition:
+        - type: slot
+          name: valorFamilia
+          value: valorFamilia
+      text: "Podríamos decir que la familia y pasar tiempo con ellos es importante para ti. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
+    - condition:
+        - type: slot
+          name: valorPareja
+          value: valorPareja
+      text: "Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
+    - condition:
+        - type: slot
+          name: valorSocial
+          value: valorSocial
+      text: "Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
+    - text: "Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame. "
+
+  utter_intervention_adivinacion:
+    - text: "Me gustaría que cogieras un papel y apuntaras en un lado aquellos datos a favor y en otro aquellos datos en contra que tienes para el pensamiento/hipótesis que me has planteado en nuestra conversación" 
+  ## absolutista
+
+  utter_pensamientoabsolutista:
+    - condition:
+        - type: slot
+          name: valorFamilia
+          value: valorFamilia
+      text: "Podríamos decir que la familia y pasar tiempo con ellos es importante para ti. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
+    - condition:
+        - type: slot
+          name: valorPareja
+          value: valorPareja
+      text: "Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
+    - condition:
+        - type: slot
+          name: valorSocial
+          value: valorSocial
+      text: "Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
+    - text: "Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame. "
+  utter_intervention_pensamientoabsolutista:
+    - text: "Me gustaría que cogieras tu móvil, y abrieras una nota. En ella, simula que un amigo te plantea el problema que me has planteado a mí, y escríbele un mensaje dándole tu punto de vista y planteándole alguna herramienta o solución para su problema."
+  ## etiquetado
+  utter_etiquetado:
+    - condition:
+        - type: slot
+          name: valorFamilia
+          value: valorFamilia
+      text: "Podríamos decir que la familia y pasar tiempo con ellos es importante para ti. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
+    - condition:
+        - type: slot
+          name: valorPareja
+          value: valorPareja
+      text: "Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
+    - condition:
+        - type: slot
+          name: valorSocial
+          value: valorSocial
+      text: "Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame."
+    - text: "Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos. Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame. "
+  utter_intervention_etiquetado:
+    - text: "Coge un papel o el móvil y escríbete un pequeño mensaje reformulando aquellas construcciones negativas sobre ti."
+
+
+## interventions commands
+  
+  utter_deny_intervention:
+    - text: "De acuerdo, no hay ningún problema si en estos momentos no te apetece. Recuerda que siempre que quieras podemos charlar 😊"
+  utter_askfor_intervention: 
+    - text: "Estupendo. Cuidar las cosas que hacen que nuestra vida tenga sentido es importante para cuidar nuestro bienestar emocional. Me gustaría proponerte un pequeño ejercicio, ¿te apetece?"
+      buttons:
+        - title: Vamos a ello
+          payload: /confirm
+        - title: Mejor no
+          payload: /deny
+
+##valores:
+  
+#   utter_soloValores:
+#     - condition:
+#         - type: slot
+#           name: valorFamilia
+#           value: valorFamilia
+#       text: "Verdaderamente, parece que no estás pasando por un buen momento. ¿Qué crees que puede significar para ti este problema familiar ?"
+#     - condition:
+#         - type: slot
+#           name: valorPareja
+#           value: valorPareja
+#       text: "Verdaderamente, parece que no estás pasando por un buen momento. ¿Qué crees que significa para ti este hecho con tu pareja"
+#     - condition:
+#         - type: slot
+#           name: valorSocial
+#           value: valorSocial
+#       text: "Verdaderamente, parece que no estás pasando por un buen momento. ¿Qué crees que podría significar para ti este hecho en tu entorno social?"
+
 
 # chitchat responses
 
@@ -334,6 +382,13 @@ responses:
   utter_chitchat/help_me:
   - text: "Claro, estoy aquí precisamente para ayudar a cuidar de eso tan importante como la salud mental. ¿Por dónde quieres empezar?"
   - text: "Mi misión es ayudarte a cuidar algo tan importante como la salud mental. Si te parece podemos empezar con una de las opciones que te muestro a continuación:"
+
+  utter_chitchat/how_are_u:
+  - text: "Como todo el mundo, tengo días mejores y días peores. Algo que me anima siempre es poder ayudarte 😊"
+  - text: "Estoy genial, muchas gracias, por preocuparte por mí 🥰"
+
+  utter_chitchat/something_curious:
+  - text: "¿Sabías que en Islandia hay una tradición navideña llamada 'Jólabókaflóðið' que consiste en regalar libros y pasar la noche leyéndolos acompañado por tus seres queridos y de chocolate?"
 
 # fallback responses:
 
