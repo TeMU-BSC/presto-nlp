@@ -8,7 +8,6 @@ nlu:
     - Buenas tardes
     - Qué tal Vicky
     - Qué pasa
-    
 - intent: inform_sentiment
   examples: |
     - mal
@@ -30,7 +29,6 @@ nlu:
     - estresado
     - amargado en el trabajo
     - no muy bien
-
 - intent: sobregeneralizacion
   examples: |
     - casi nunca estoy bien
@@ -61,7 +59,6 @@ nlu:
     - todo el mundo me odia
     - a nadie le importo
     - siento que no me escucha nadie especialmente mi [novio](valorPareja)
-
 - intent: etiquetado
   examples: |
     - soy idiota
@@ -90,7 +87,6 @@ nlu:
     - soy horrorosa, no le puedo gustar a nadie
     - mi [amiga](valorSocial) es deprimente
     - soy despreciable
-
 - intent: deberias
   examples: |
     - tengo que estudiar como sea
@@ -124,7 +120,6 @@ nlu:
     - Debería dejar de existir
     - Debería alejarme de la gente que quiero para no hacerles daño
     - Debería dejarlo todo y empezar de cero
-
 - intent: lectordementes
   examples: |
     - siempre está sonriendo, pero sé que me odia
@@ -158,7 +153,6 @@ nlu:
     - Estoy seguro de que si me independizo, mis padres pensarán que ya no les quiero.
     - Mi jefe piensa que nunca podré asumir responsabilidades, estoy convencido.
     - Mi [pareja](valorPareja) ya no me mira como antes, seguro que está pensando en otro
-
 - intent: pensamientoabsolutista
   examples: |
     - O me tranquilizo o perderé el control
@@ -190,7 +184,6 @@ nlu:
     - si no cumplo con todas mis tareas no puedo desconectar
     - estoy frustrado porque si no me compro una casa no estaré bien
     - me siento atrapado o me voy de viaje pronto o no sé que haré
-
 - intent: adivinacion
   examples: |
     - si suspendo el examen sé que no podré recuperarlo
@@ -221,7 +214,6 @@ nlu:
     - sé que me dejaré de tomar la medicación
     - estoy segura de que no haré bien lo que se espera de mí
     - voy a estar sola, aunque me rodee de gente
-
 - intent: catastrofismo
   examples: |
     - es lo más grave que podía haber pasado
@@ -260,8 +252,6 @@ nlu:
     - si no cogen el teléfono es porque les ha pasado algo terrible, gravísimo
     - será lo peor de mi vida, insufrible
     - me saldrá fatal, seré el peor del mundo
-
-
 - intent: soloValores
   examples: |
     - pues nada que el otro día discutí con mi [marido](valorPareja) y todavía seguimos mal
@@ -271,8 +261,6 @@ nlu:
     - mis [amigas](valorSocial) han quedado este fin de semana y no me han avisado
     - un [colega](valorSocial) ha tenido un accidente y está muy grave
     - mi [padre](valorfamilia) me maltrata y me ha vuelto a hacer mucho daño
-
-
 - intent: goodbye_nicemood
   examples: |
     - adiós
@@ -280,16 +268,15 @@ nlu:
     - hasta pronto
     - hasta otro día
     - adios
-
 - intent: confirm
   examples: |
     - sí
     - claro
     - vamos allá
     - por supuesto
-    - genial 
+    - genial
     - de acuerdo
-
+    - /confirm
 - intent: ready
   examples: |
     - ya
@@ -297,7 +284,7 @@ nlu:
     - listo
     - ya he hecho el ejercicio
     - continuar
-    
+    - /ready
 - intent: deny
   examples: |
     - No
@@ -305,33 +292,28 @@ nlu:
     - no me apetece
     - la verdad es que no quiero
     - negativo
-
+    - /deny
 - intent: chitchat/ask_name
   examples: |
     - ¿Cómo te llamas?
     - ¿Podría saber tu nombre?
     - Cómo te suele llamar la gente
     - cuál es tu nombre?
-
-  
 - intent: chitchat/help_me
   examples: |
     - ¿Puedes ayudarme?
     - qué puedes hacer por mí
     - quiero que me ayudes
     - hablemos
-
 - intent: chitchat/how_are_u
   examples: |
     - ¿Cómo estás Vicky?
     - ¿tienes sentimientos?
     - Cómo te encuentras
-
 - intent: chitchat/something_curious
   examples: |
     - cuéntame alguna curiosidad
     - dime algo que no sepa
-
 - synonym: valorFamilia
   examples: |
     - familia
@@ -341,13 +323,11 @@ nlu:
     - hermana
     - abuelo
     - abuela
-
 - synonym: valorPareja
   examples: |
     - novio
     - marido
     - pareja
-
 - synonym: valorSocial
   examples: |
     - amigo

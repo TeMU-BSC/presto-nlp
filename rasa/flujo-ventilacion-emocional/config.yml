@@ -39,7 +39,7 @@ pipeline:
 
 # other components
   - name: FallbackClassifier
-    threshold: 0.5
+    threshold: 0.4
 
   - name: ResponseSelector  # Este componente sirve para ajustar el chitchat
     epochs: 100
@@ -53,8 +53,9 @@ policies:
      epochs: 100
      constrain_similarities: true
    - name: MemoizationPolicy
-     #max_history: 3 #Se ha añadido un ciclo de vida de 3 a los inputs. 
+    #  max_history: 3 #Se ha añadido un ciclo de vida de 3 a los inputs. 
    - name: RulePolicy
    - name: UnexpecTEDIntentPolicy
      max_history: 5
      epochs: 100
+     tolerance: 0.5
