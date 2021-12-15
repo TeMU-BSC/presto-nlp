@@ -28,6 +28,13 @@ rules:
   - intent: chitchat
   - action: utter_chitchat
 
+## gratitude
+- rule: everytime the user says thanks.
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+
+
 # - rule: Activate sentiment_form
 #   steps:
 #   - intent: inform_sentiment

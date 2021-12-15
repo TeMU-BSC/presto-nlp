@@ -284,39 +284,63 @@ stories:
       - action: utter_deny_intervention
 ##solovalores 
 
-  # - story: soloValores_familia
-  #   steps:
-  #     - checkpoint: user_give_emotion
-  #     - intent: soloValores
-  #     - slot_was_set:
-  #         - valorFamilia: valorFamilia
-  #     - action: utter_valor_familia
-  #     - intent: 
-  #     - action: 
-  # - story: soloValores_pareja
-  #   steps:
-  #     - checkpoint: user_give_emotion
-  #     - intent: soloValores
-  #     - slot_was_set:
-  #         - valorFamilia: valorPareja
-  #     - action: utter_valor_pareja
-  #     - intent: confirm
-  #     - action: utter_valor_pareja2
-  #     - intent: confirm
+  - story: soloValores_familia
+    steps:
+      - checkpoint: user_give_emotion
+      - intent: soloValores
+      - slot_was_set:
+          - valorFamilia: padres
+      - action: utter_valor_familia
+      - intent: confirm
+      - action: utter_confirm_valor
 
-  # - story: soloValores_social
-  #   steps:
-  #     - checkpoint: user_give_emotion
-  #     - intent: soloValores
-  #     - slot_was_set:
-  #         - valorFamilia: valorSocial
-  #     - action: utter_valor_social
-  #     - intent: 
-  #     - action: 
+  - story: soloValores_pareja
+    steps:
+      - checkpoint: user_give_emotion
+      - intent: soloValores
+      - slot_was_set:
+          - valorPareja: marido
+      - action: utter_valor_pareja
+      - intent: confirm
+      - action: utter_confirm_valor
+
+  - story: soloValores_social
+    steps:
+      - checkpoint: user_give_emotion
+      - intent: soloValores
+      - slot_was_set:
+          - valorSocial: amiga
+      - action: utter_valor_social
+      - intent: confirm
+      - action: utter_confirm_valor
   
-  #     - slot_was_set:
-  #         - valorPareja: valorPareja
-  #     - slot_was_set:
-  #         - valorSocial: valorSocial
-  #     - action: utter_soloValores
-  #     - checkpoint: distorsion_non_detected
+  - story: deny_flecha_valor_social
+    steps:
+      - checkpoint: user_give_emotion
+      - intent: soloValores
+      - slot_was_set:
+          - valorSocial: amigo
+      - action: utter_valor_social
+      - intent: deny
+      - action: deny_valor
+
+  - story: deny_flecha_valor_familia
+    steps:
+      - checkpoint: user_give_emotion
+      - intent: soloValores
+      - slot_was_set:
+          - valorFamilia: padres
+      - action: utter_valor_familia
+      - intent: deny
+      - action: deny_valor
+
+  - story: deny_flecha_valor_pareja
+    steps:
+      - checkpoint: user_give_emotion
+      - intent: soloValores
+      - slot_was_set:
+          - valorPareja: marido
+      - action: utter_valor_pareja
+      - intent: deny
+      - action: deny_valor
+

@@ -314,6 +314,13 @@ nlu:
   examples: |
     - cuéntame alguna curiosidad
     - dime algo que no sepa
+- intent: thanks
+  examples: |
+    - gracias
+    - te lo agradezco
+    - muy agradecido por todo lo que haces Vicky
+    - muchísimas gracias por todo
+    - de verdad no sé cómo agradecértelo
 - synonym: valorFamilia
   examples: |
     - familia
