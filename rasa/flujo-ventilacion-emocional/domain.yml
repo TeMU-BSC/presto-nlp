@@ -55,7 +55,6 @@ intents:
 - thanks:
     ignore_entities:
     - sentiment
-
 entities:
 - sentiment
 - valorPareja
@@ -102,7 +101,7 @@ responses:
   utter_valor_social:
   - text: Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti. ¿Es así?
   utter_valor_familia:
-  - text: Podríamos decir que la familia y compartir tiempo con {valorFamilia} es importante para ti.
+  - text: Podríamos decir que la familia y compartir tiempo con ellos es importante para ti. ¿Es así?
   utter_valor_pareja:
   - text: Parece que tu pareja es un elemento central en tu vida. ¿Es así?
   utter_confirm_valor:
