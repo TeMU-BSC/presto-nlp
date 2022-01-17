@@ -31,7 +31,7 @@ class SentimentEntityExtractor(Component):
     def process(self, message, **kwargs):
         """Retrieve the text message, pass it to the classifier
             and append the prediction results to the message class."""
-
+        print(message.data)
         result = self.analyzer.predict(message.data['text'])
 
         label = result.output
