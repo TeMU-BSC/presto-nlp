@@ -1,0 +1,23 @@
+# Extend the official Rasa SDK image (change the version to whatever you need)
+FROM rasa/rasa:2.8.15-full
+
+# Switch to root user
+USER root
+
+# Use subdirectory as working directory
+WORKDIR /app
+
+# Copy any additional custom requirements, if necessary (uncomment next line)
+COPY /requirements.txt ./
+
+# Copy sentiment analyzer to working directory
+#COPY /presto-nlp/sentiment.py ./
+
+# Add a folder to python path
+ENV PYTHONPATH "${PYTHONPATH}:/app/sentiment.py"
+
+# Install extra requirements for worker, if necessary (uncomment next line)
+RUN pip install -r requirements.txt --no-cache-dir -U 
+
+# Switch back to a non-root user
+USER 1001

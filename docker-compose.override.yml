@@ -1,0 +1,11 @@
+version: "3.4"
+
+services:
+  rasa-production:
+    image: presto-nlp/rasa:2.8.15
+    volumes:
+      - ./sentiment.py:/app/sentiment.py
+  rasa-worker:
+    image: presto-nlp/rasa:2.8.15
+    volumes:
+      - ./sentiment.py:/app/sentiment.py
