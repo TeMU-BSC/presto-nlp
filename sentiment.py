@@ -31,12 +31,17 @@ class SentimentEntityExtractor(Component):
     def process(self, message, **kwargs):
         """Retrieve the text message, pass it to the classifier
             and append the prediction results to the message class."""
-        print(message.data)
-        result = self.analyzer.predict(message.data['text'])
+        
+        # Skip the training to fix error when executing `rasa train` command
+        # TODO: find an alternative to check for the 'text' key and skip training
+        try: 
+            result = self.analyzer.predict(message.data['text'])  
 
-        label = result.output
-        score = round(result.probas[label], 2)
+            label = result.output
+            score = round(result.probas[label], 2)
 
-        entity = self.convert_to_rasa(label, score)
+            entity = self.convert_to_rasa(label, score)
 
-        message.set("entities", [entity], add_to_output=True)
+            message.set("entities", [entity], add_to_output=True)
+        except KeyError:
+            entity = None
