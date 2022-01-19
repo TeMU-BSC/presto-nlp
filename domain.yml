@@ -106,7 +106,7 @@ responses:
   - text: Parece que tu pareja es un elemento central en tu vida. ¿Es así?
   utter_confirm_valor:
   - text: A veces, las cosas que son importantes para nosotros no acaban de ir como nos gustaría y nos protegemos de ellas por el daño que nos hacen. Aquí te proponemos formas y estrategias para poder lidiar con el malestar mientras te acercas a lo que para ti es relevante.
-  deny_valor:
+  utter_deny_valor:
   - text: Comprendo. Me gustaría, entonces, que me contaras de manera más específica qué te ocurre.
   utter_sobregeneralizacion:
   - condition:
