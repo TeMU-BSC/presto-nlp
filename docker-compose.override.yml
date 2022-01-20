@@ -3,9 +3,14 @@ version: "3.4"
 services:
   rasa-production:
     image: presto-nlp/rasa:2.8.15
+    build:
+      context: ./presto-nlp
+      dockerfile: RasaDockerfile
     volumes:
-      - ./sentiment.py:/app/sentiment.py
+      - ./presto-nlp/:/app/
   rasa-worker:
     image: presto-nlp/rasa:2.8.15
+    depends_on: 
+      - rasa-production
     volumes:
-      - ./sentiment.py:/app/sentiment.py
+      - ./presto-nlp/:/app/
