@@ -1,10 +1,11 @@
-Following the instructions here:
 
+OS:
+Ubuntu 20 or 18 LTS
 Intance details:
 t2.medium
-SecurityGroup:
+SecurityGroup - Open ports:
 ssh, http, https
-Disk Space:
+Storage:
 100gb
 
 ## FIRST INSTALL
@@ -17,12 +18,12 @@ Download and run the install script:
 
 Grant acess to github:
 ```
-  sudo chown -R ubuntu /etc/rasa
+  sudo chown ubuntu /etc/rasa
   cd /etc/rasa
   ssh-keygen -t ed25519 -C "your_email@example.com"
   eval "$(ssh-agent -s)"
   ssh-add ~/.ssh/id_ed25519
-  cat ~/.ssh//id_ed25519.pub
+  cat ~/.ssh/id_ed25519.pub
 
 ```
 Open github and create a new deploy key on the repo using the result of the previous command

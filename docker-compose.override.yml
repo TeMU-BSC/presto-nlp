@@ -4,13 +4,13 @@ services:
   rasa-production:
     image: presto-nlp/rasa:2.8.15
     build:
-      context: ./presto-nlp
+      context: ~/presto-nlp
       dockerfile: RasaDockerfile
     volumes:
-      - ./presto-nlp/:/app/
+      - ~/presto-nlp/:/app/
   rasa-worker:
     image: presto-nlp/rasa:2.8.15
     depends_on: 
       - rasa-production
     volumes:
-      - ./presto-nlp/:/app/
+      - ~/presto-nlp/:/app/
