@@ -2,6 +2,8 @@ version: "2.0"
 
 stories:
 
+# ask first for primary emotion: 
+
   - story: happy path with positive emotion
     steps: 
       - intent: greet
@@ -21,9 +23,8 @@ stories:
       - slot_was_set:
           - sentiment: NEG
       - action: utter_sentiment_NEG
-      - checkpoint: user_give_emotion
+      - checkpoint: user_give_emotion_NEG
 
-  
   - story: happy path with neutral emotion
     steps: 
       - intent: greet
@@ -34,313 +35,159 @@ stories:
           - sentiment: NEU
       - action: utter_sentiment_NEU
 
-### Intervencion y flecha para sobregeneralizacion:
+### Intervencion y flecha:
+  # - story: wrap_up_given_sentiment
+  #   steps:
+  #     - checkpoint: user_give_emotion_NEG
+  #     - or: 
+  #       - intent: alternat
+  #       - intent: factual
+  #     - action: utter_out_of_scope-wrap_up
 
-  - story: flecha-sobregeneralizacion
+  - story: wrap_up_given_sentiment
     steps:
-      - checkpoint: user_give_emotion
+      - or: 
+        - intent: alternat
+        - intent: out_of_scope-wrap_up
+      - action: utter_out_of_scope-wrap_up
+      - or: 
+        - intent: alternat
+        - intent: out_of_scope-wrap_up
+      - action: utter_out_of_scope-wrap_up
+      - or:
+        - intent: alternat
+        - intent: out_of_scope-wrap_up
+      - action: utter_wrap_up_action
+
+  - story: chatting distorsions_without negat emotion
+    steps: 
+      - or:
+        - intent: sobregeneralizacion
+        - intent: lectordementes
+        - intent: pensamientoabsolutista
+        - intent: etiquetado
+        - intent: catastrofismo
+        - intent: adivinacion
+        - intent: deberias
+      - action: utter_ventilacion_1
+      - or:
+        - intent: sobregeneralizacion
+        - intent: lectordementes
+        - intent: pensamientoabsolutista
+        - intent: etiquetado
+        - intent: catastrofismo
+        - intent: adivinacion
+        - intent: deberias
+      - action: utter_ventilacion_2
+      - checkpoint: distorsion_ready
+
+  - story: chatting distorsions
+    steps: 
+      - checkpoint: user_give_emotion_NEG
+      - or:
+        - intent: sobregeneralizacion
+        - intent: lectordementes
+        - intent: pensamientoabsolutista
+        - intent: etiquetado
+        - intent: catastrofismo
+        - intent: adivinacion
+        - intent: deberias
+      - action: utter_ventilacion_1
+      - or:
+        - intent: sobregeneralizacion
+        - intent: lectordementes
+        - intent: pensamientoabsolutista
+        - intent: etiquetado
+        - intent: catastrofismo
+        - intent: adivinacion
+        - intent: deberias
+      - action: utter_ventilacion_2
+      - checkpoint: distorsion_ready
+
+  - story: intervencion_sobre
+    steps:
+      - checkpoint: distorsion_ready
       - intent: sobregeneralizacion
-      - slot_was_set:
-          - valorFamilia: valorFamilia
-      - slot_was_set:
-          - valorPareja: valorPareja
-      - slot_was_set:
-          - valorSocial: valorSocial
-      - action: utter_sobregeneralizacion
-      - action: utter_flecha_test
-      - intent: ready
-      - action: utter_askfor_intervention
-      - intent: confirm
-      - action: utter_intervention_sobregeneralizacion
+      - action: utter_intervencion_general
+      - action: utter_intervencion_sobre
 
-  - story: flecha-sobregeneralizacion
+  - story: intervencion_etiquetado
     steps:
-      - checkpoint: user_give_emotion
-      - intent: sobregeneralizacion
-      - slot_was_set:
-          - valorFamilia: valorFamilia
-      - slot_was_set:
-          - valorPareja: valorPareja
-      - slot_was_set:
-          - valorSocial: valorSocial
-      - action: utter_sobregeneralizacion
-      - action: utter_flecha_test
-      - intent: ready
-      - action: utter_askfor_intervention
-      - intent: deny
-      - action: utter_deny_intervention
-
-### Intervencion y flecha para catastrofismo:
-
-  - story: flecha-catastrofismo
-    steps:
-      - checkpoint: user_give_emotion
-      - intent: catastrofismo
-      - slot_was_set:
-          - valorFamilia: valorFamilia
-      - slot_was_set:
-          - valorPareja: valorPareja
-      - slot_was_set:
-          - valorSocial: valorSocial
-      - action: utter_catastrofismo
-      - action: utter_flecha_test
-      - intent: ready
-      - action: utter_askfor_intervention
-      - intent: confirm
-      - action: utter_intervention_catastrofismo
-
-  - story: flecha-catastrofismo
-    steps:
-      - checkpoint: user_give_emotion
-      - intent: catastrofismo
-      - slot_was_set:
-          - valorFamilia: valorFamilia
-      - slot_was_set:
-          - valorPareja: valorPareja
-      - slot_was_set:
-          - valorSocial: valorSocial
-      - action: utter_catastrofismo
-      - action: utter_flecha_test
-      - intent: ready
-      - action: utter_askfor_intervention
-      - intent: deny
-      - action: utter_deny_intervention
-### Intervencion y flecha para imperativos:
-
-  - story: flecha-imperativos
-    steps:
-      - checkpoint: user_give_emotion
-      - intent: imperativos
-      - slot_was_set:
-          - valorFamilia: valorFamilia
-      - slot_was_set:
-          - valorPareja: valorPareja
-      - slot_was_set:
-          - valorSocial: valorSocial
-      - action: utter_imperativos
-      - action: utter_flecha_test
-      - intent: ready
-      - action: utter_askfor_intervention
-      - intent: confirm
-      - action: utter_intervention_imperativos
-
-  - story: flecha-imperativos
-    steps:
-      - checkpoint: user_give_emotion
-      - intent: imperativos
-      - slot_was_set:
-          - valorFamilia: valorFamilia
-      - slot_was_set:
-          - valorPareja: valorPareja
-      - slot_was_set:
-          - valorSocial: valorSocial
-      - action: utter_imperativos
-      - action: utter_flecha_test
-      - intent: ready
-      - action: utter_askfor_intervention
-      - intent: deny
-      - action: utter_deny_intervention
-
-  ### Intervencion y flecha para mentes y adivinacion:
-
-  - story: flecha-adivinacion
-    steps:
-      - checkpoint: user_give_emotion
-      - intent: adivinacion
-      - slot_was_set:
-          - valorFamilia: valorFamilia
-      - slot_was_set:
-          - valorPareja: valorPareja
-      - slot_was_set:
-          - valorSocial: valorSocial
-      - action: utter_adivinacion
-      - action: utter_flecha_test
-      - intent: ready
-      - action: utter_askfor_intervention
-      - intent: confirm
-      - action: utter_intervention_adivinacion
-
-  - story: flecha-adivinacion
-    steps:
-      - checkpoint: user_give_emotion
-      - intent: adivinacion
-      - slot_was_set:
-          - valorFamilia: valorFamilia
-      - slot_was_set:
-          - valorPareja: valorPareja
-      - slot_was_set:
-          - valorSocial: valorSocial
-      - action: utter_adivinacion
-      - action: utter_flecha_test
-      - intent: ready
-      - action: utter_askfor_intervention
-      - intent: deny
-      - action: utter_deny_intervention
-
-  - story: flecha-lector
-    steps:
-      - checkpoint: user_give_emotion
-      - intent: lectordementes
-      - slot_was_set:
-          - valorFamilia: valorFamilia
-      - slot_was_set:
-          - valorPareja: valorPareja
-      - slot_was_set:
-          - valorSocial: valorSocial
-      - action: utter_lector
-      - action: utter_flecha_test
-      - intent: ready
-      - action: utter_askfor_intervention
-      - intent: confirm
-      - action: utter_intervention_lector
-
-  - story: flecha-lector
-    steps:
-      - checkpoint: user_give_emotion
-      - intent: lectordementes
-      - slot_was_set:
-          - valorFamilia: valorFamilia
-      - slot_was_set:
-          - valorPareja: valorPareja
-      - slot_was_set:
-          - valorSocial: valorSocial
-      - action: utter_lector
-      - action: utter_flecha_test
-      - intent: ready
-      - action: utter_askfor_intervention
-      - intent: deny
-      - action: utter_deny_intervention
-
-## etiquetado
-
-  - story: flecha-etiquetado
-    steps:
-      - checkpoint: user_give_emotion
+      - checkpoint: distorsion_ready
       - intent: etiquetado
-      - slot_was_set:
-          - valorFamilia: valorFamilia
-      - slot_was_set:
-          - valorPareja: valorPareja
-      - slot_was_set:
-          - valorSocial: valorSocial
-      - action: utter_etiquetado
-      - action: utter_flecha_test
-      - intent: ready
-      - action: utter_askfor_intervention
-      - intent: confirm
-      - action: utter_intervention_etiquetado
+      - action: utter_intervencion_general
+      - action: utter_intervencion_etiquetado
 
-  - story: flecha-etiquetado
+
+  - story: intervencion_lectordementes
     steps:
-      - checkpoint: user_give_emotion
-      - intent: etiquetado
-      - slot_was_set:
-          - valorFamilia: valorFamilia
-      - slot_was_set:
-          - valorPareja: valorPareja
-      - slot_was_set:
-          - valorSocial: valorSocial
-      - action: utter_etiquetado
-      - action: utter_flecha_test
-      - intent: ready
-      - action: utter_askfor_intervention
-      - intent: deny
-      - action: utter_deny_intervention
+      - checkpoint: distorsion_ready
+      - intent: lectordementes
+      - action: utter_intervencion_general
+      - action: utter_intervencion_lectordementes
 
-## absolutista
-
-  - story: flecha-absolutista
+  - story: intervencion_adivinacion
     steps:
-      - checkpoint: user_give_emotion
+      - checkpoint: distorsion_ready
+      - intent: adivinacion
+      - action: utter_intervencion_general
+      - action: utter_intervencion_adivinacion
+
+  - story: intervencion_deberias
+    steps:
+      - checkpoint: distorsion_ready
+      - intent: deberias
+      - action: utter_intervencion_general
+      - action: utter_intervencion_deberias
+
+  - story: intervencion_catastrofismo
+    steps:
+      - checkpoint: distorsion_ready
+      - intent: catastrofismo
+      - action: utter_intervencion_general
+      - action: utter_intervencion_catastrofismo
+
+  - story: intervencion_pensamientoabsolutista
+    steps:
+      - checkpoint: distorsion_ready
       - intent: pensamientoabsolutista
-      - slot_was_set:
-          - valorFamilia: valorFamilia
-      - slot_was_set:
-          - valorPareja: valorPareja
-      - slot_was_set:
-          - valorSocial: valorSocial
-      - action: utter_pensamientoabsolutista
-      - action: utter_flecha_test
-      - intent: ready
-      - action: utter_askfor_intervention
-      - intent: confirm
-      - action: utter_intervention_pensamientoabsolutista
+      - action: utter_intervencion_general
+      - action: utter_intervencion_pensamientoabsolutista
 
-  - story: flecha-absolutista
-    steps:
-      - checkpoint: user_give_emotion
-      - intent: pensamientoabsolutista
-      - slot_was_set:
-          - valorFamilia: valorFamilia
-      - slot_was_set:
-          - valorPareja: valorPareja
-      - slot_was_set:
-          - valorSocial: valorSocial
-      - action: utter_pensamientoabsolutista
-      - action: utter_flecha_test
-      - intent: ready
-      - action: utter_askfor_intervention
-      - intent: deny
-      - action: utter_deny_intervention
-##solovalores 
 
-  - story: soloValores_familia
-    steps:
-      - checkpoint: user_give_emotion
-      - intent: soloValores
-      - slot_was_set:
-          - valorFamilia: padres
-      - action: utter_valor_familia
-      - intent: confirm
-      - action: utter_confirm_valor
+      #   - intent: sobregeneralizacion
+      #   - intent: lectordementes
+      #   - intent: pensamientoabsolutista
+      #   - intent: etiquetado
+      #   - intent: catastrofismo
+      #   - intent: adivinacion
+      #   - intent: deberias
+      # - action: utter_intervention
 
-  - story: soloValores_pareja
-    steps:
-      - checkpoint: user_give_emotion
-      - intent: soloValores
-      - slot_was_set:
-          - valorPareja: marido
-      - action: utter_valor_pareja
-      - intent: confirm
-      - action: utter_confirm_valor
+    
+  # - story: end_intervention
+  #   steps:
+  #   - checkpoint: end_intervention
+  #   - or:
+  #       - intent: ready
+  #       - intent: thanks
+  #       - intent: confirm
+  #   - action: utter_youre_welcome
 
-  - story: soloValores_social
-    steps:
-      - checkpoint: user_give_emotion
-      - intent: soloValores
-      - slot_was_set:
-          - valorSocial: amiga
-      - action: utter_valor_social
-      - intent: confirm
-      - action: utter_confirm_valor
-  
-  - story: deny_flecha_valor_social
-    steps:
-      - checkpoint: user_give_emotion
-      - intent: soloValores
-      - slot_was_set:
-          - valorSocial: amigo
-      - action: utter_valor_social
-      - intent: deny
-      - action: deny_valor
+  - story: alert_non_emergency
+    steps: 
+    - intent: alert
+    - action: utter_alert
+    - intent: inform_sentiment
+    - action: utter_sentiment_NEG
 
-  - story: deny_flecha_valor_familia
-    steps:
-      - checkpoint: user_give_emotion
-      - intent: soloValores
-      - slot_was_set:
-          - valorFamilia: padres
-      - action: utter_valor_familia
-      - intent: deny
-      - action: deny_valor
+  - story: alert_emergency
+    steps: 
+    - intent: alert
+    - action: utter_alert
+    - intent: emergency
+    - action: utter_emergency
 
-  - story: deny_flecha_valor_pareja
-    steps:
-      - checkpoint: user_give_emotion
-      - intent: soloValores
-      - slot_was_set:
-          - valorPareja: marido
-      - action: utter_valor_pareja
-      - intent: deny
-      - action: deny_valor
+
+
 

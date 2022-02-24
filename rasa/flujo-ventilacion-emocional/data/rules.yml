@@ -28,11 +28,23 @@ rules:
   - intent: chitchat
   - action: utter_chitchat
 
-## gratitude
-- rule: everytime the user says thanks.
+### unlikely hoping wrap up works
+
+- rule: every time we receive unlikely intent in wrap-up take those actions below
   steps:
-  - intent: thanks
-  - action: utter_thanks
+    - action: action_unlikely_intent
+    - action: utter_out_of_scope-wrap_up
+
+# - rule: out-of-scope
+#   steps:
+#   - intent: out_of_scope
+#   - action: utter_out_of_scope
+
+# ## gratitude
+# - rule: everytime the user says thanks.
+#   steps:
+#   - intent: thanks
+#   - action: utter_thanks
 
 
 # - rule: Activate sentiment_form

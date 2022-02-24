@@ -22,45 +22,55 @@ intents:
 - ready:
     ignore_entities:
     - sentiment
-- deny:
-    ignore_entities:
-    - sentiment
 - sobregeneralizacion:
-    ignore_entities:
-    - sentiment
-- etiquetado:
-    ignore_entities:
-    - sentiment
-- deberias:
     ignore_entities:
     - sentiment
 - lectordementes:
     ignore_entities:
     - sentiment
-- adivinacion:
+- pensamientoabsolutista:
     ignore_entities:
     - sentiment
-- pensamientoabsolutista:
+- etiquetado:
     ignore_entities:
     - sentiment
 - catastrofismo:
     ignore_entities:
     - sentiment
+- adivinacion:
+    ignore_entities:
+    - sentiment
+- deberias:
+    ignore_entities:
+    - sentiment
+- deny:
+    ignore_entities:
+    - sentiment
 - soloValores:
     ignore_entities:
     - sentiment
-- imperativos:
-    ignore_entities:
-    - sentiment
+- deny_valor:
+    use_entities: true
+- alternat:
+    use_entities: true
+- out_of_scope-wrap_up:
+    use_entities: true
 - thanks:
     ignore_entities:
     - sentiment
+- youre_welcome:
+    use_entities: true
+- emergency:
+    use_entities: true
+- alert:
+    use_entities: true
 entities:
 - sentiment
 - valorPareja
 - valorFamilia
 - valorSocial
 - valorfamilia
+- name
 slots:
   sentiment:
     type: rasa.shared.core.slots.CategoricalSlot
@@ -97,7 +107,7 @@ responses:
   utter_sentiment_POS:
   - text: ¡Me alegra leer esto! Recuerda que tienes a tu disposición herramientas para trabajar siempre que quieras
   utter_sentiment_NEU:
-  - text: entiendo, me gustaría que me contaras de manera más específica cómo tu te sientes en estos momentos
+  - text: Entiendo, me gustaría que me contaras de manera más específica cómo te sientes en estos momentos
   utter_valor_social:
   - text: Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti. ¿Es así?
   utter_valor_familia:
@@ -106,155 +116,17 @@ responses:
   - text: Parece que tu pareja es un elemento central en tu vida. ¿Es así?
   utter_confirm_valor:
   - text: A veces, las cosas que son importantes para nosotros no acaban de ir como nos gustaría y nos protegemos de ellas por el daño que nos hacen. Aquí te proponemos formas y estrategias para poder lidiar con el malestar mientras te acercas a lo que para ti es relevante.
-  deny_valor:
+  utter_deny_valor:
   - text: Comprendo. Me gustaría, entonces, que me contaras de manera más específica qué te ocurre.
-  utter_sobregeneralizacion:
-  - condition:
-    - name: valorFamilia
-      type: slot
-      value: valorFamilia
-    text: Podríamos decir que la familia y pasar tiempo con ellos es importante para ti.
-  - condition:
-    - name: valorPareja
-      type: slot
-      value: valorPareja
-    text: La pareja parece un elemento central en tu vida. Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos.
-  - condition:
-    - name: valorSocial
-      type: slot
-      value: valorSocial
-    text: Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti.
-  - text: Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos.
-  utter_intervention_sobregeneralizacion:
-  - text: Me gustaría que en estos días, preguntaras a un amigo sobre esta hipótesis que planteas y te causa tanto malestar. Escúchalo con antención, y luego, apunta en un papel aquellas diferencias que percibas con tu hipótesis inicial.
-  utter_catastrofismo:
-  - condition:
-    - name: valorFamilia
-      type: slot
-      value: valorFamilia
-    text: Podríamos decir que la familia y pasar tiempo con ellos es importante para ti.
-  - condition:
-    - name: valorPareja
-      type: slot
-      value: valorPareja
-    text: La pareja parece un elemento central en tu vida. Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos.
-  - condition:
-    - name: valorSocial
-      type: slot
-      value: valorSocial
-    text: Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti.
-  - text: Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos.
-  utter_intervention_catastrofismo:
-  - text: Me gustaría que en estos días, preguntaras a un amigo sobre esta hipótesis que planteas y te causa tanto malestar. Escúchalo con antención, y luego, apunta en un papel aquellas diferencias que percibas con tu hipótesis inicial.
-  utter_imperativos:
-  - condition:
-    - name: valorFamilia
-      type: slot
-      value: valorFamilia
-    text: Podríamos decir que la familia y pasar tiempo con ellos es importante para ti.
-  - condition:
-    - name: valorPareja
-      type: slot
-      value: valorPareja
-    text: La pareja parece un elemento central en tu vida. Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos.
-  - condition:
-    - name: valorSocial
-      type: slot
-      value: valorSocial
-    text: Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti.
-  - text: Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos.
-  utter_intervention_imperativos:
-  - text: Me gustaría que te pusieras como obligación durante esta semana realizar algo que, aunque te parezca improductivo, te guste y te proporcione felicidad.
-  utter_lector:
-  - condition:
-    - name: valorFamilia
-      type: slot
-      value: valorFamilia
-    text: Podríamos decir que la familia y pasar tiempo con ellos es importante para ti.
-  - condition:
-    - name: valorPareja
-      type: slot
-      value: valorPareja
-    text: La pareja parece un elemento central en tu vida. Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos.
-  - condition:
-    - name: valorSocial
-      type: slot
-      value: valorSocial
-    text: Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti. .
-  - text: Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos.
-  utter_intervention_lector:
-  - text: Me gustaría que cogieras un papel y apuntaras en un lado aquellos datos a favor y en otro aquellos datos en contra que tienes para el pensamiento/hipótesis que me has planteado en nuestra conversación
-  utter_adivinacion:
-  - condition:
-    - name: valorFamilia
-      type: slot
-      value: valorFamilia
-    text: Podríamos decir que la familia y pasar tiempo con ellos es importante para ti.
-  - condition:
-    - name: valorPareja
-      type: slot
-      value: valorPareja
-    text: La pareja parece un elemento central en tu vida. Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos.
-  - condition:
-    - name: valorSocial
-      type: slot
-      value: valorSocial
-    text: Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti.
-  - text: Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos.
-  utter_intervention_adivinacion:
-  - text: Me gustaría que cogieras un papel y apuntaras en un lado aquellos datos a favor y en otro aquellos datos en contra que tienes para el pensamiento/hipótesis que me has planteado en nuestra conversación
-  utter_pensamientoabsolutista:
-  - condition:
-    - name: valorFamilia
-      type: slot
-      value: valorFamilia
-    text: Podríamos decir que la familia y pasar tiempo con ellos es importante para ti.
-  - condition:
-    - name: valorPareja
-      type: slot
-      value: valorPareja
-    text: La pareja parece un elemento central en tu vida. Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos.
-  - condition:
-    - name: valorSocial
-      type: slot
-      value: valorSocial
-    text: Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti.
-  - text: Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos.
-  utter_intervention_pensamientoabsolutista:
-  - text: Me gustaría que cogieras tu móvil, y abrieras una nota. En ella, simula que un amigo te plantea el problema que me has planteado a mí, y escríbele un mensaje dándole tu punto de vista y planteándole alguna herramienta o solución para su problema.
-  utter_etiquetado:
-  - condition:
-    - name: valorFamilia
-      type: slot
-      value: valorFamilia
-    text: Podríamos decir que la familia y pasar tiempo con ellos es importante para ti.
-  - condition:
-    - name: valorPareja
-      type: slot
-      value: valorPareja
-    text: La pareja parece un elemento central en tu vida. Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos.
-  - condition:
-    - name: valorSocial
-      type: slot
-      value: valorSocial
-    text: Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti.
-  - text: Las cosas que son importantes para nosotros nos pueden generar mayor malestar cuando las cosas no van como esperamos.
-  utter_intervention_etiquetado:
-  - text: Coge un papel o el móvil y escríbete un pequeño mensaje reformulando aquellas construcciones negativas sobre ti.
-  utter_flecha_test:
+  utter_alert:
   - buttons:
-    - payload: /ready
-      title: Continuemos
-    text: Me gustaría que te tomaras unos segundos para pensar que pasaría si esto que me has dicho se hiciera realidad. Cuando lo tengas, tan solo avísame.
-  utter_deny_intervention:
-  - text: De acuerdo, no hay ningún problema si en estos momentos no te apetece. Recuerda que siempre que quieras podemos charlar 😊
-  utter_askfor_intervention:
-  - buttons:
-    - payload: /confirm
-      title: Vamos a ello
-    - payload: /deny
+    - payload: /emergency
+      title: Tengo miedo de hacerme daño
+    - payload: /inform_sentiment
       title: Mejor no
-    text: Estupendo. Cuidar las cosas que hacen que nuestra vida tenga sentido es importante para cuidar nuestro bienestar emocional. Me gustaría proponerte un pequeño ejercicio, ¿te apetece?
+    text: Me sabe mal que te encuentres así, déjame ayudarte. ¿Qué te ocurre?
+  utter_emergency:
+  - text: Comienza flujo info emergencias suicidio
   utter_chitchat/ask_name:
   - text: Mi nombre es Vicky, ¡encantada de conocerte!
   - text: Me conocen como Vicky
@@ -264,31 +136,51 @@ responses:
   utter_chitchat/how_are_u:
   - text: Como todo el mundo, tengo días mejores y días peores. Algo que me anima siempre es poder ayudarte 😊
   - text: Estoy genial, muchas gracias, por preocuparte por mí 🥰
+  utter_chitchat/who_are_u:
+  - text: Detrás de Vicky somos un equipo multidisciplinar dedicado al bienestar de la salud mental tanto en atención primaria, atención especializada y salud laboral.
   utter_chitchat/something_curious:
   - text: ¿Sabías que en Islandia hay una tradición navideña llamada 'Jólabókaflóðið' que consiste en regalar libros y pasar la noche leyéndolos acompañado por tus seres queridos y de chocolate?
   utter_please_rephrase:
   - text: Lo siento, no te he entendido. ¿Puedes decírmelo de otra forma?
   - text: Creo que no te estoy entendiendo, ¿puedes decírmelo con otras palabras?
+  utter_default:
+  - text: repite porfi
   utter_thanks:
   - text: gracias a ti por charlar este rato conmigo y dejar que te ayude en algo tan importante como lo es la salud mental.
+  utter_youre_welcome:
+  - text: 😊 Un placer, recuerda que estoy aquí siempre que lo necesites.
+  utter_out_of_scope-wrap_up:
+  - text: alternativo cuentame mas
+  - text: alternativo otro texto cuentame mas
+  - text: alternativo otro texto 2 cuentame mas
+  utter_wrap_up_action:
+  - text: intervencion en alternativo
+  utter_ventilacion_1:
+  - text: 1. ventilacion
+  utter_ventilacion_2:
+  - text: 2. ventilacion
+  utter_intervencion_general:
+  - text: '¡Vaya! Parece que hemos detectado una serie de pensamientos que pueden estar jugándote malas pasadas en tu día a día, son aquellos que llamamos sesgos o distorsiones cognitivas y que afectan a nuestro estado de ánimo. '
+  utter_intervencion_sobre:
+  - text: intervencion sobre
+  utter_intervencion_adivinacion:
+  - text: intervencion adivinacion
+  utter_intervencion_catastrofismo:
+  - text: intervencion catastrofismo
+  utter_intervencion_deberias:
+  - text: intervencion deberias
+  utter_intervencion_etiquetado:
+  - text: intervencion etiquetado
+  utter_intervencion_lectordementes:
+  - text: intervencion lectordementes
+  utter_intervencion_pensamientoabsolutista:
+  - text: intervencion pensamientoabsolutista
 actions:
 - sentiment_form
 - deny_valor
 - confirm_valor
 forms:
   sentiment_form:
-    ignored_intents:
-    - chitchat
-    - etiquetado
-    - deberias
-    - lectordementes
-    - adivinacion
-    - pensamientoabsolutista
-    - catastrofismo
-    - soloValores
-    - confirm
-    - deny
-    - ready
     required_slots:
       sentiment:
       - entity: sentiment
