@@ -1,20 +1,5 @@
 version: "2.0"
 nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hola
-    - Buenos días
-    - Buenas tardes
-    - Qué tal Vicky
-    - Qué pasa
-    - hola vicky soy [María](name)
-    - buenos días Vicky me llamo [Rocío](name)
-    - soy [Ángela](name), hola
-    - Buenas noches mi nombre es [Casimiro](name)
-    - Mi nombre es [Gerard](name), qué tal
-    - bon dia Vicky
-    - bona tarda, vicky soy [Francisco](name)
 - intent: inform_sentiment
   examples: |
     - mal
@@ -39,6 +24,8 @@ nlu:
     - bastante jodido
     - estoy muy agobiada
     - muy horrible todo
+
+### Specifics
 - intent: sobregeneralizacion
   examples: |
     - Todo me sale mal
@@ -860,128 +847,7 @@ nlu:
     - sé que me dejaré de tomar la medicación
     - estoy segura de que no haré bien lo que se espera de mí
     - voy a estar sola, aunque me rodee de gente
-- intent: alert
-  examples: |
-    - me quiero morir
-    - quiero matarme
-    - matar
-    - suicidio
-    - ideas de muerte
-    - desaparecer para siempre
-    - voy a hacerme daño
-    - ayuda urgente
-    - emergencias
-    - sos
-    - quiero acabar con todo
-    - dejar de existir
-- intent: out_of_scope-wrap_up
-  examples: |
-    - he peleado con mi marido
-    - he suspendido un examen
-    - me he caido en el recreo
-    - he perdido mi trabajo
-    - he perdido todo mi dinero
-    - mi marido ha perdido su trabajo
-    - me han rechazado una beca
-    - no me dan la beca que he pedido
-    - he quemado la comida
-    - me he resfriado
-    - pues que me van a operar
-    - he discutido con mi [pareja](valorPareja)
-    - he vuelto a suspender
-    - he tenido problemas en el trabajo
-    - Se me ha quemado la comida
-    - No he dormido en toda la noche
-    - he engordado cuatro kilos
-    - he tenido problemas con mi antiguo jefe
-    - tengo cosas pendientes por hacer
-    - Todavía no me he independizado
-    - Mi [amigo](valorSocial) sigue enfadado conmigo
-    - me preocupo por la salud mi [pareja](valorPareja)
-    - No aguanto más la situación con mi [pareja](valorPareja)
-- intent: emergency
-  examples: |
-    - /emergency
-- intent: goodbye_nicemood
-  examples: |
-    - adiós
-    - hasta luego
-    - hasta pronto
-    - hasta otro día
-    - bye
-    - adeu
-    - see you
-    - chao
-    - ciao
-    - deu
-- intent: confirm
-  examples: |
-    - sí
-    - claro
-    - vamos allá
-    - por supuesto
-    - genial
-    - de acuerdo
-    - /confirm
-    - yes
-- intent: ready
-  examples: |
-    - ya
-    - ya he terminado
-    - listo
-    - ya he hecho el ejercicio
-    - continuar
-    - /ready
-- intent: deny
-  examples: |
-    - No
-    - mejor no
-    - no me apetece
-    - la verdad es que no quiero
-    - negativo
-    - /deny
-- intent: chitchat/ask_name
-  examples: |
-    - ¿Cómo te llamas?
-    - ¿Podría saber tu nombre?
-    - Cómo te suele llamar la gente
-    - cuál es tu nombre?
-- intent: chitchat/help_me
-  examples: |
-    - ¿Puedes ayudarme?
-    - qué puedes hacer por mí
-    - quiero que me ayudes
-    - hablemos
-- intent: chitchat/how_are_u
-  examples: |
-    - ¿Cómo estás Vicky?
-    - ¿tienes sentimientos?
-    - Cómo te encuentras
-- intent: chitchat/something_curious
-  examples: |
-    - cuéntame alguna curiosidad
-    - dime algo que no sepa
-- intent: chitchat/who_are_you
-  examples: |
-    - quién te ha creado
-    - quién está detrás
-    - para quien trabajas
-    - quienes te han desarrollado
-    - que equipo es el que te ha hecho
-- intent: thanks
-  examples: |
-    - gracias
-    - te lo agradezco
-    - muy agradecido por todo lo que haces Vicky
-    - muchísimas gracias por todo
-    - de verdad no sé cómo agradecértelo
-    - moltes gracies
-    - gracies
-- intent: youre_welcome
-  examples: |
-    - de nada
-    - no hay de qué
-    - nada nada
+
 - intent: catastrofismo
   examples: |
     - Mi futuro es desolador
@@ -1002,7 +868,7 @@ nlu:
     - Me noto el corazón muy acelerado, me dará un ataque de pánico y será horroroso
     - Me he equivocado en el nombre de un informe, mi jefa me va a matar, nunca más confiará en mí, esto ya no puede ser peor
     - Que no me responda al mensaje sería lo peor del mundo, lo peor que me podría pasar
-    - He engordado 4 kgs, esto es tremendo, inaceptable, no valgo para nada
+    - He engordado 4 kilos, esto es tremendo, inaceptable, no valgo para nada
     - Si me deja mi [mujer](valorPareja), será horrible, el fin, me moriré
     - Mi [hijo](valorFamilia) no me ha llamado para decirme que ha llegado, seguro que han tenido un accidente
     - Si me diagnostican un cáncer sería lo peor del mundo, se acabaría toda mi vida
@@ -1026,7 +892,7 @@ nlu:
     - eso no lo podré soportar, seguro, será demasiado
     - No puedo aguantar más esta situación
     - Las lluvias seguro que serán dantescas, destrozarán toda la cosecha, será mi ruina
-    - Has visto cómo me ha mirado el jefe?. Seguro que piensa que soy estúpido, el peor empleado
+    - mi jefe seguro que piensa que soy estúpido, el peor empleado
     - Después de esto que ha pasado nada será igual nunca más
     - He pillado a mi [hijo](valorFamilia) fumando un porro. Es horroroso, acabará siendo un despojo humano.
     - Esto es insoportable
@@ -1046,7 +912,7 @@ nlu:
     - Será terrible
     - Pasará seguro y será insoportable
     - Me saldrá algo malo seguro, una enfermedad grave, no podré tolerarlo
-    - No entregué el trabajo a tiempo.  Esto es terrible, seguro que me despiden
+    - No entregué el trabajo a tiempo. Esto es terrible, seguro que me despiden
     - Esto es lo peor del mundo
     - Me pasó algo inaguantable, lo peor
     - No lo podré tolerar, imposible,
@@ -1095,1042 +961,130 @@ nlu:
     - será lo peor de mi vida, insufrible
     - auténticamente terrible
     - me saldrá fatal, seré el peor del mundo
-- intent: alternat
+
+### Sensitives
+- intent: alert
   examples: |
-    - A veces las cosas no salen como yo esperaba y esto me cuesta de asumir
-    - Mi hermano algunas veces no cumple con su palabra
-    - Algunas veces hago las cosas de la misma forma
-    - Hay personas con una actitud que me desagrada
-    - Algunas personas no me queiren
-    - Tengo la sensacion de que pocas veces me salen las cosas como espero
-    - Muchos días me encuentro mal, aunque algunos me encuentro bien
-    - Puedo equivocarme pero esto no siginfica que lo haga todo mal
-    - Algunas personas no estan tant pendientes de mi como me gustaria
-    - A veces hay personas que no me quieren tanto como yo querria
-    - Me cuesta sentirme querida, esto no siginifca que nadie me quiera
-    - A menudo tengo probelmas, todos tenemos problemas a veces
-    - Me questa sacar fuerzas para conseguir lo que quiero, pero tengo claro que necesito hacerlo.
-    - Algunas veces me equivoco, esto no quier decir que lo haga todo mal
-    - Me cuesta hacer mi tarea, tendré que centrarme en ella
-    - A veces no estoy bien
-    - A veces me equivoco pero esto no significa que siempre me salgan las cosas mal
-    - Mi hermano a veces me ignora
-    - Mi pareja a veces hace cosas que no me gustan
-    - Hay pocas veces en las que me encuentro bien
-    - Algunas veces no me sale bien lo que hago
-    - Hay cosas que me gustaria cambiar a mi alrededor para ver que las cosas estan bien
-    - Mi familia a veces no me tiene en cuenta
-    - A veces mis compañeros hablan mal de mi, pero otras veces se que dicen cosas buenas
-    - me gustaria que mi pareja hiciese más cosas por mi, tnego la percepcion que hace pocas
-    - A menudo me encuentro mal
-    - Estoy desmotivada porque acostumbramos a hacer lo mismo y  me gustaria probar otras cosas
-    - Algunas personas me odian
-    - Mis padres no me prestan la atencion que me gustaria
-    - A menudo me discuto con mi hermano, estaria bien poder hablarlo y encontrar una forma de entendernos
-    - Algunas cosas me salen mal pero otras las puedo hacer bien
-    - me cuesta sentir que he hecho suficiente y necesito hacer más para sentirme bien
-    - A veces me salen cosas mal
-    - Algunas veces no me tienen en cuenta en el trabajo y esto me hace sentir mal
-    - A veces no le caigo bien a algunas personas, no le puedo caer bien a todo el mundo
-    - Algunas personas me dejan de lado, pero tengo a otras que me quieren y apoyan
-    - Suspender algunas veces no te hace un fracasado, igual me iria bien buscar ayuda para estudiar
-    - Puede que haya tenido problemas hoy, pero esto no significa que nunca vaya a encontrar otro trabajo
-    - No le puedo importar a todo el mundo, lo realmente importante es poder estar con las personas que me quieren
-    - me parece que no caigo bien a la mayoria de gente puedo hacer algo para emjorar mis habilidades sociales
-    - Hay gente a la que no le importo, tambien hay muchas personas que si que se preocupan por mi
-    - A veces me gustaria que las personas estubieran más atentas a lo que digo, puedo decirles que para mi es importante que me escuchen
-    - Hoy se me ha quemado la comida porque me he despistado, mañana estaré más atento
-    - A veces es dificil ver el final de las cosas malas, pero con esfuerzo las cosasa van mejorando
-    - Ha sido un duro golpe, pero con algunas herramientas y ayuda puedo volver a estar bien
-    - Para depende que cosas no se puede confiar en todo el mundo
-    - A veces tengo la sensación de que pasan de mi
-    - Siempre habrá momentos en que la gente no me comprenda, pero en muchos otros si me entienden
-    - Siempre habrá algo que a uno se le de bien, fallar a veces no te hace un fracasado
-    - A veces tendría que hacer más
-    - A veces hago las cosas mal
-    - No tengo pruebas que demuestren que nunca podré ser buen padre
-    - Hay días que me cuesta dormir
-    - Hay días en que me afectan más las cosas
-    - Aunque ahora no lo crea, voy a poder mejorar
-    - Si me esfuerzo, tengo opciones de cambiar
-    - Aunque haya gente que me ignore, no quiere decir que todo el mundo lo haga
-    - Me cuesta sentirme comprendida, eso no implica que nadie me entienda
-    - Puede ser que algún día mis amigos no se hayan portado bien, aunque eso no pasa siempre
-    - Fallar en algunas cosas no implica generalizarlo a todos los ámbitos
-    - No tengo que hacerlo todo bien
-    - Si lo intento, tengo opciones de conseguir un buen trabajo
-    - En la vida nada es estable, el cambio forma parte del proceso
-    - Fracasar en ciertas ocasiones no te convierte en un fracasado
-    - Habrá gente que me va a querer y otra que no
-    - Haber fracasado anteriormente no implica tener que hacerlo en un futuro
-    - Aunque ahora este triste, puedo mejorar y llegar a ser feliz
-    - La ansiedad no es algo estable, puede dejar de estar
-    - La tristeza no es estable, puede dejar de estar
-    - No tengo que caerle bien a todo el mundo
-    - Pueden haber peligros y eso no convierte el mundo en peligroso
-    - Aunque sienta que hay gente que no me valora, seguro que hay alguien que si
-    - Si estudio suficiente seguramente aprobaré el examen
-    - Si estudio suficiente, seguramente sea capaz de sacarme una carrera
-    - Haber tenido un mal día no convierte en todos los días malos
-    - Puedo encontrar a alguien en quien poder confiar
-    - Aunque haya tenido malas experiencias, no hay que desconfiar de todo el mundo
-    - Si me esfuerzo puedo conseguir muchas cosas
-    - Fracasar a veces no implica fracasar siempre
-    - Puede haber gente que no me haga caso a veces, no siempre
-    - Me puedo sentir incomprendido a veces
-    - Aunque ahora no lo vea, puedo tener éxito
-    - Que me hayan hecho daño no implica que siempre sea así
-    - Hay gente en la que puedo confiar
-    - Hay gente egoísta, no todo el mundo lo es
-    - Haber cometido errores no me convierte en un mal marido
-    - Haber cometido errores no me convierte en una mala madre
-    - Fallar a veces no implica tener que fallar siempre
-    - Hay noches en las que duermo mal, pero puedo mejorar
-    - Mostrar debilidades no es algo negativo
-    - No hay que hacer las cosas bien siempre, fallar es humano
-    - Aunque no me gusten ciertas cosas de mi, puedo acpetarme
-    - Casi siempre hay opciones de poder hacer cambios
-    - Muchas veces la gente puede cambiar
-    - No tenemos que ser fuertes en todas las ocasiones
-    - Suspender una vez no implica que volveré a suspender
-    - Siempre habrá gente mejor y peor en determinadas cosas
-    - Me puede salir algo mal, eso no implica que todo me salga mal
-    - A veces el dolor mejora
-    - Hay momentos de caos pero otros tranquilos
-    - Hay algunas cosas con las que puedo disfrutar
-    - Aunque a veces me cuesta, puedo llevar a cabo las cosas que me propongo
-    - A veces me salen algunas cosas mal
-    - No puedo tener todo bajo control siempre
-    - Que alguien no me salude, no implica que nadie lo haga
-    - Se pueden olvidar de mi en ocasiones, no siempre
-    - No le tengo que caer bien a todo el mundo
-    - Puede haber algunas situaciones que considere injustas
-    - Me puedo sentir mal a veces, no siempre
-    - Puedo tener la percepción de que nadie me escucha aunque no sea siempre así
-    - A veces no me siento valorado por mi jefe
-    - Que me haya tenido parejas infieles, no implica que todas lo sean
-    - A veces me puedo sentir mal tratado por mi familia
-    - Engordar un kilo no implica tener que seguir engordando
-    - La perfección no existe
-    - A veces puedo sentir que mis padres no me escuchan
-    - A veces me puedo sentir poco comprendido aunque me apoyen
-    - Que algo vaya mal a veces no implica que sea así siempre
-    - Que ahora no vaya bien no quiere decir que no pueda ir bien
-    - Puedo haber cometido un error a veces y aprender de ello
-    - No hay ningún hombre igual a otro
-    - No hay ningún jefe igual a otro
-    - A veces puedo sentir que me miran mal, no es así siempre
-    - Que haya gente egoista no quiere decir que todo el mundo lo sea
-    - Que haya perros que ataquen no quiere decir que todos lo hagan
-    - Si me esfuerzo tengo opciones de conseguir mi sueño
-    - Que esté solo ahora no quiere decir que vaya a estarlo siempre
-    - Que ahora no tenga amigos no implica que nunca los vaya a tener
-    - Puede haber gente que le parezca más simpático que a otros
-    - El insomnio puede mejorar
-    - Hay días en los que duermo peor
-    - Hay días en los que duermo menos
-    - A veces me puedo sentir juzgado por mis padres
-    - Que ahora no sepa cocinar, no quiere decir que no pueda aprender
-    - Que no se me den bien ahora los deportes, no quiere decir que no pueda aprender
-    - A veces me pueden criticar
-    - Que haya gente que no quiera salir conmigo, no quiere decir que nunca vaya a haber nadie
-    - Que ahora no le encuentre sentido, no implica que no le vaya a encontrar
-    - Aunque no me lo parezca hay gente a la que le importan mis problemas
-    - Aunque me sienta incomprendido a veces, no implica que mis amigos no me entiendan
-    - Si no lo intento no sabré si puedo lograrlo
-    - Que me haya pasado alguna vez, no tiene porque ser así siempre
-    - Fallar a veces no me convierte en un desastre
-    - Aunque crea que hago el ridículo, no tiene porque ser así
-    - Aunque ahora no tenga amigos, puedo tenerlos en un futuro
-    - Aunque yo me sienta un inútil, no puedo saber lo que piensan los demás
-    - Puede que tenga un problema dificil de solucionar, pero esto no significa que lo vaya a tener toda la vida.
-    - Que a veces no podamos terminar una cosa no significa que en otro momento podamos empezar y acabar otras cosas
-    - A veces tenemos la sensación de que estamos atrapados, podemos bucar alternativas o ver que hemos hecho en situaiones parecidas.
-    - No puedo saber lo que piensa el ascensorista de mi si no le pregunto
-    - No puedo saber si le gusto o no si no le pregunto
-    - Creo que no me quiere
-    - Pienso que la gente me odia, pero realmente no sé si es verdad
-    - Tengo la sensación que yo quiero más a la gente de lo que me quieren
-    - Si mi pareja me dice que me quiere lo más probable es que sea verdad
-    - Me trata bien aunque a veces me hace pensar que me odia
-    - he estudiado mucho, lo más seguro es que pueda aprobar el examen
-    - No podemos predecir lo que pueda pasar en el futuro
-    - Creo que me odia
-    - Si me dice que me quiere lo más seguro es que sea verdad, no tiene porque mentirme
-    - Como me ayuda supongo que soy una persona importante para ella
-    - Si me dice que si, lo más probable es que le caiga bien
-    - No puedo sacar conclusiones con la información que tengo ya que nunca me lo han dicho
-    - Creo que me odian
-    - Quiero mucho a mis amigos y a veces pienso que ellos a mi no tanto
-    - No puedo saber lo que piensa, pero puedo fijarme en los hechos para saber si me quiere
-    - No tengo nada que justifique mi pensameinto de que me odia si nunca me ha dicho nada malo
-    - como puedo saber lo que piensa mi familia de mi si nunca se lo he preguntado?
-    - Si una persona hace cosasa buenas para ti, que te hace pensar que no te quiere?
-    - Mis alumnos se rien pero no se de que
-    - No puedo saber que piensa mi vecino de mi si nunca he hablado con él
-    - A veces, por lo que me dicen,  pienso que a mis amigos no les gusto como soy, pero realmente ellos siguen siendo mis amigos
-    - Por como me mira creo que mi hermano me detesta
-    - Pienso que la gente no me quiere
-    - tengo la sensacion de que mi hermano me detesta, será mejor que lo hable con él
-    - He visto a mi madre reirse y no se de que, le puedo preguntar para estar más tranquila
-    - Por como me habla creo que piensa que soy tonto
-    - A veces pienso que la gente cree que no valgo para nada
-    - En realidad no tengo la suficiente información para saber si piensan que soy torpe
-    - Para saber si le caigo mal a alguien lo mejor será preguntarselo.
-    - Algo me hace pensar que mi padre crre que soy un inutil, mejor le pregunto y salgo de dudas
-    - Tengo la sensacion que el entrenador no confia en mi
-    - Algunas veces he defraudado a la gente
-    - No se bien si le caigo bien o no porque no le he preguntado
-    - Quizás no lo piensa porque no me lo ha dicho
-    - Puede que no lo piense, pues sigue saliendo conmigo.
-    - No lo sé ciertamente, pero pienso que no me aguantan.
-    - Tengo la sensación de que se averguenzan de mi, no lo sé seguro.
-    - Creo que no está satisfecho pero esto no quiere decir que sea así.
-    - No sé si me odia porque, aunque yo lo piense, nunca me lo ha dicho.
-    - Que lo piense no quiere decir que sea cierto.
-    - Creo que mi entrenador piensa que no valgo, pero no lo sé bien.
-    - Puede que me tenga manía, pero no lo sé seguro. Debería preguntarle.
-    - Tengo la sensación de que mi pareja no confía en mí.
-    - Creo que mis amigos quieren verme fracasar, pero no lo sé seguro, pues no tengo pruebas.
-    - Una cosa es pensarlo y otra es estar seguro. Y nadie me ha dicho que haga el ridículo, por lo que no lo sé seguro.
-    - Quizás se están riendo de mí pero no lo sé seguro.
-    - No tengo indicios de que me quiera dejar, pues no me lo ha planteado nunca.
-    - Que esté enfadado conmigo no significa que vaya a despedirme, aunque pueda hacerlo.
-    - Tengo la sensación de que no les caigo bien, pero no estoy seguro.
-    - Creo que ya no me quiere como antes, pero no lo sé. Quizás si le pregunto, salgo de dudas.
-    - Que me estén mirando no tiene porqué significar que piensen que soy raro.
-    - Puede que piensen que huelo mal.
-    - Es lo que creo; lo que ella piensa no puedo saberlo sin preguntarle
-    - Creo que mi pareja piensa que soy un caprichoso, pero no lo sé bien.
-    - No puedo estar seguro de que no quiera ser mi amigo basándome únicamente en la mirada
-    - No sé si mi pareja confía en mí. No tengo pruebas de que no lo haga.
-    - Puede que mis padres piensen que soy una carga. Quizás es bueno que lo contraste con ellos.
-    - Creo que piensa que soy un lastre; pero no lo sé a ciencia cierta.
-    - No sé lo que piensa mi peluquero de mi aspecto si no le pregunto
-    - El policía me mira pero no puedo saber por qué lo hace ni qué está pensando.
-    - No estoy seguro de lo que piensan mis padres acerca de mí. Debería preguntarles.
-    - Si no me lo ha dicho, no puedo saber lo que espera de mí o no.
-    - Creo que la gente piensa que soy ridículo; eso no quiere decir que realmente lo piensen.
-    - No sé lo que piensa realmente; al fin y al cabo, sigue conmigo y nunca me ha dicho que sea aburrido.
-    - Puede que mis amigos lo piensen, pero no tengo pruebas de que lo piensen de verdad.
-    - Si no les pregunto, no puedo estar convencido de que no quieran ser mis amigos.
-    - Creo que piensan que estoy loco, pero no estoy seguro.
-    - Creo que no quieren pasar tiempo conmigo, pero no lo tengo muy claro porque no me lo han dicho.
-    - No puedo saber bien por qué motivo no me saludó, a no ser que le pregunte.
-    - Quizás no me ha respondido por otros motivos que no sé.
-    - No estoy del todo seguro, pero creo que la gente no me soporta.
-    - No sé lo que piensa mi abuelo; debería preguntarle para confirmarlo.
-    - Puede que mi novio piense que soy un inmaduro.
-    - A veces mis compañeros me hacen pensar que no quieren que siga en el equipo.
-    - No puedo saber lo que piensa basándome en lo que me ha escrito. Mejor le pregunto.
-    - No estoy seguro pero, creo que mi pareja no me ve tan atractivo como antes.
-    - A través de una mirada no puedo saber si me quiere o no. Como mucho, lo puedo intuir.
-    - Quizás mi pareja cree que hay cosas que no hago bien.
-    - Creo que mis amigos lo piensan, pero no lo sé con seguridad.
-    - Quizás no me soporta. Si no se lo pregunto, seguiré con la duda.
-    - No estoy seguro de si mis compañeros quieren saber algo de mí o no.
-    - Quizás algún profesor puede tener un mal concepto de mí. Debería preguntarle.
-    - Creo que no le caigo bien a mi primo. Le preguntaré para salir de dudas.
-    - Quizás mis padres lo piensan, pero no estoy seguro ya que nunca me lo han dicho.
-    - Puede que mi profesor de música no confíe en mi talento, no estoy seguro.
-    - Desconozco los motivos por los que ya no me llama; puede que se haya cansado de mí.
-    - Es cierto que está más distante conmigo, pero eso no quiere decir que ya no le importe.
-    - Si no me acerco, no podré saber si quiere conocerme o no.
-    - Creo que no le intereso, pero no puedo saberlo si no me lo dice.
-    - Quizás piensan que digo estupideces, pero puede que no lo piensen; no estoy seguro.
-    - Creo que no quiere ni verme. Le preguntaré y saldré de dudas.
-    - Quizás no le gusta mi actitud. Hablaré con él para asegurarme.
-    - Puede que mi presencia le incomode. Le preguntaré a ver.
-    - No puedo saber si mi familia quiere que me vaya de casa si no me lo han dicho nunca.
-    - Puede que el director del colegio me tenga manía; no estoy seguro.
-    - No se me acercan, pero no sé exactamente por qué no lo hacen.
-    - ¿Cómo puedo saber lo que prefiere mi hermano si nunca se lo he preguntado?
-    - No puedo saber lo que piensa mi vecino si no le pregunto
-    - Creo que mi tutor piensa que no aprobaré. Lo hablaré con él a ver si es así.
-    - Debería pregúntale a mi jefe qué es lo que piensa de mí, para poder sacar conclusiones.
-    - Quizás no me invita a la fiesta, pero no puedo saberlo con seguridad.
-    - Creo que no quiere casarse conmigo. Le preguntaré si se lo ha planteado.
-    - Puede que no le caiga bien, pero no estoy convencido. Voy a preguntarle
-    - Se están riendo y no se muy bien por qué motivo.
-    - Si no les pregunto, no puedo saber qué es lo que piensan de mi aspecto físico.
-    - Creo que mi pareja me miente, pero no lo sé bien. Convendría hablarlo.
-    - No sé lo que pasa por la mente de los demás; quizás algunos piensan que soy débil y otros no.
-    - No puedo saber qué quiere hacer conmigo mi jefe; tengo hipótesis pero no sé si son ciertas.
-    - Quizás mi madre piensa que me costará encontrar trabajo.
-    - Puede que piensen que soy un vago; no obstante, nunca me lo han dicho.
-    - Quizás en ocasiones he decepcionado a mis hijos; pero no estoy seguro de que sea siempre.
-    - Que estén quedando con los amigos no quiere decir que ya no me quieran.
-    - ¿Como puedes saber lo que piensa tu hijo? Quizás conviene preguntarle.
-    - Quizás creen que debería mejorar en algunos aspectos, pero nunca me han dicho que no me soporten.
-    - No sé lo que piensa el cartero de mí; apenas trato con él.
-    - Quizás cree que mi caso no tiene solución.
-    - Creo que no me quiere volver a ver, pero no lo sé seguro.
-    - No sé lo que piensa el grupo de mí; nunca me han dicho que no me quieran en el grupo.
-    - Quizás mi padre lo piensa; no estoy totalmente convencido.
-    - Puede que mi familia piense en lo mejor para mí y esté preocupada por mi futuro.
-    - ¿Realmente lo sé, o bien lo pienso como una posibilidad?
-    - Puede que esté enfadado conmigo, pero eso no quiere decir que ya no confíe en mí.
-    - No sé con certeza qué impresión genero a la gente.
-    - Quizás piensa que en ocasiones me preocupo demasiado. Lo hablaré con ella y saldré de dudas.
-    - Puede que algunos piensen que soy vulnerable. Otros quizás no lo piensan.
-    - No tengo la certeza de que me quieran excluir, pues no me lo han hecho saber.
-    - La mirada no es base suficiente para saber qué es lo que piensan. Será mejor preguntarles
-    - Puede que piensen que tengo dificultades de afrontamiento.
-    - Quizás mis padres lo piensen; hablaré con ellos.
-    - Creo que lo piensa; no obstante, nunca me lo ha dicho.
-    - No sé lo que pensarán mis padres; quizás sienten pena por que me vaya.
-    - Quizás mi jefe lo piensa, aunque por el momento nunca me lo ha comentado.
-    - No puedo saber realmente lo que piensa mi pareja; será mejor que le pregunte.
-    - Creo que piensan mal de mi
-    - Tengo la sensación que me mienten
-    - A veces pienso que la gente quiere hacermedaño
-    - No me han saludado, puede que no me hayan visto
-    - También me pueden mirar simplemente para saber que estoy haciendo
-    - Yo pienso que estoy gorda y esto me hace creer que todo el mundo piensa lo mismo
-    - No me ha saludado , igual no me ha visto
-    - Pienso que me quieren fuera de casa, mejor se lo pregunto
-    - Creo que no le caigo del todo bien a mi compañero de trabajo.
-    - Tengo la sensacion que mis amigas no me cuentan todo lo que hablan entre ellas.
-    - A veces me parece que la gente cree que soy tonta
-    - Me parece que mi jefe no esta del todo satisfecho con mi trabajo. Puedo hablar con él.
-    - Tengo la sensacion de que el entrenador ya no confia en mi
-    - Me hubiera gustado ayudar a mi amigo, sin embargo esta vez mis actividades pendeintes no me lo permitieron, él sabe que siempre que puedo le ayudo con mucho gusto.
-    - Tengo la sensación, aunque no lo sé seguro, que mis vecinos me ven como un mal presidente.
-    - Me iria bien ponerme a estudiar ahora
-    - me gustaria que la gente suese más amable conmigo
-    - La casa esta sucia podria dedicar una tarde a limpiarla
-    - Se acercan las vacaciones es mejor que me ponga ya a organizarlas por si salen imprevistos
-    - Si acabo los tiemas abiertos de trabajo antes de vacaciones, estaré más tranquilo
-    - Es importante para mi sacar este curso, me voy a centrar en ello
-    - Me gustaria que la gente fuese más amable conmigo
-    - Si estudio ahora iré más preparado al examen
-    - Me iria bien organizarme el tiempo para poder hacer lo que necesito
-    - Puedo considerar otras opciones
-    - Estaria bien si intento controlar más la cantidad de como
-    - Podria fijarme más en lo que como e intentar adelgazar
-    - Puedo esforzarme más si quiero conseguir mejores resultados
-    - Puedo pedirle a mi pareja que sea más cariñosa conmigo
-    - Si me implico en trabajo no tengo porque tener ningun problema
-    - En el trabajo esta bien que haga lo que este en mi mano para que las cosas se terminen a tiempo
-    - Puedo decir a mi familia que me gustaria que fuesen más amables conmigo
-    - Si me organizo el teimpo no me pondré tant nervioso y todo saldrá bien
-    - Me iria bien trabajar mi asertividad para mejorar mis relaciones con las personas
-    - Esta bien que me implique con las cosas que me importan
-    - Ya soy responsable, igual en algunas cosas podria mejorar
-    - me gustaria que la gente fuera más amable conmigo
-    - Me sentiria mejor si todo me saliera bien, pero a veces no es así
-    - me gustaria se más bueno en mi trabajo
-    - Me sentiria mejor conmigo mismo si dedicara algo de tiempo a cuidar mi imagen
-    - Puedo probar a ser más amable con la gente para que se acerquen a mi
-    - me gustaria que se diera cuanta de que no estoy bien, se lo voy a decir para que no siga preguntandome.
-    - Tengo varios objetivos y me gustaría cumplirlos, pero es normal no llegar a todo lo que me propongo
-    - Es imposible ser perfecto en todo lo que hago, pero intentaré hacerlo lo mejor que pueda
-    - Me gusta tener la casa ordenada y limpia
-    - Es normal cometer errores, lo importante es aprender de ellos
-    - No me gusta mostrarme vulnerable, pero hacerlo con personas que me importan es un signo de confianza
-    - Si muestro mis sentimientos a los demás me podran comprender más facilmente
-    - A veces es bueno contar con la ayuda de los demás
-    - Puedo derrumbarme y es algo sano, no tengo que ser siempre fuerte
-    - Llorar es una expressión más de mis emociones y no soy débil por ello
-    - Está bien tener una actitud positiva ante la vida, pero a veces cuando las cosas van mal puedo sentirme triste y esto es igualmente válido
-    - Tengo mis inseguridades y está bien reconocerlas para poder trabajar con ellas
-    - Los demás forman parte de mi vida y está bien tenerlos en cuenta a la hora de tomar mis decisiones
-    - Es normal que las personas que me quieren quieran saber sobre mi vida
-    - Me gustaría priorizarme sobre los demás para cuidarme
-    - Para mí es importante estar feliz, pero los altibajos son una parte natural de la vida
-    - Cuando me siento mal puedo contárselo a los demás
-    - Creo que es bueno ser amable, pero sin dejar de ser uno mismo y expresar las propias opiniones
-    - Me gustaría tenerme más en cuenta y cuidarme más
-    - Todos estamos nerviosos a veces, no me juzgarán por ello
-    - Puedo trabajar para tener más iniciativa
-    - A veces siento que digo tonterías, aunque quizás solo lo son para mí
-    - Aunque a veces me da reparo está bien decir lo que pienso, ya que así los demás podrán entenderme mejor
-    - Aunque me gusta que a la gente le gusten mis publicaciones de instagram, el ser reconocido y querido no depende solo de esto
-    - Los buenos amigos y las personas que nos quieren suelen aportarnos mucho más que las personas que nos siguen en las redes sociales
-    - Me gusta que la gente me conozca
-    - Aunque me interesa conocer mi estado de salud, es mejor que no me alarme si no hay motivos para ello, puedo consultar a un médico en caso de duda
-    - Hay muchas cosas que puedo hacer para intentar estar bien, y las que implican algún daño para mi organismo, como consumir alcohol, no son las mas aconsejables
-    - Aunque a veces mi realidad es dificil y las drogas me permiten evadirme, las drogas no van a solucionar mis problemas, podría tener otras opciones en cuenta
-    - Estaría bien conocer a más gente, podrian aportarme cosas nuevas
-    - Aunque no me apetece salir a la calle, es posible que si lo hago me siente bien, quizás podría intentarlo
-    - No me apetece mucho hacer cosas con mis amigos, pero si lo hago es posible que lo pase bien, podría intentarlo
-    - Me hubiera gustado tener pareja a mi edad, pero a veces las cosas no suceden como planeamos y pueden salir bien igualmente
-    - Me gustaría tener hijos, si puede ser de aquí a no mucho tiempo mejor.
-    - Me gustaría casarme y tener hijos, aunque si las cosas ocurren de otra manera también estará bien
-    - Me gustaría viajar mucho a lo largo de mi vida
-    - Me gusta verme bien cuando salgo a la calle, aunque no pasa nada por no ir siempre arreglado
-    - Es posible que haya ganado algo de peso, podría fijarme un poco mas en mi dieta
-    - Me gustaría adelgazar, puedo hacer dieta para ello
-    - Me gustaría independizarme
-    - Me gustaría ganar más dinero, puedo intentar buscar otro trabajo
-    - Me gustaría tener un piso más grande, cuando pueda podría buscar uno de mayor tamaño
-    - Me gustaría tener éxito en mi trabajo
-    - Lo importante es que todos hagamos bien el trabajo, independientemente de quien sea el mejor
-    - Los estudios son importantes y está bien dedicar tiempo en ellos, aunque también hay otras cosas importantes
-    - Me gusta terminar las tareas que empiezo, aunque es normal no poder llegar a todo a veces
-    - Ahora estoy con mis amigos y quiero disfrutar de ellos, en otro momento dedicaré el tiempo a estudiar
-    - Me gusta ser bueno en lo que hago
-    - Los demás no son ni mejores ni peores. Todos somos únicos, con nuestras cualidades y nuestros defectos
-    - Me gusta que la gente me aprecie, pero es muy dificil caerle bien a todos. Hay gente a la que le voy a gustar más, y gente a la que le voy a gustar menos
-    - Me gusta que los demás me consideren simpatico, aunque es normal que cada uno tenga su opinión sobre mi
-    - Me gusta tener una buena imagen, aunque esforzarse por aparentarlo ante los demás puede ser un gasto de energía innecesario
-    - Me gusta que se me considere inteligente, aunque lo más importante es que yo lo sepa
-    - Esta bien combinar hablar de uno mismo, con escuchar a los demás hablar de si mismos
-    - Puedo seleccionar con quien compartir mis cosas íntimas, siempre hay personas en las que se puede confiar
-    - A veces pienso que es mejor ser cauteloso con lo que digo delante de ciertas personas, aunque es bueno que todos podamos expresar nuestra opinión
-    - Me gustaría tener más amigos, pensaré en cómo conocer más gente que me resulte interesante
-    - Me gusta tener muchos amigos, aunque quizás es más importante la calidad que la cantidad
-    - Me gusta estar en todos los planes que hacen mis amigos aunque si no estoy en alguno, no tiene porque significar algo malo
-    - Los amigos hacen cosas juntos, aunque las buenas amistades no dependen solo de eso
-    - Creo que está bien que los demás tengan en cuenta mi opinión
-    - Todos somos diferentes y tenemos reacciones diferentes ante la vida. Hay gente que nos entenderá y otra a quien le costará más trabajo.
-    - No hace falta esperar a que me pregunten para decir a los demás como estoy, puedo dar yo el paso y contarlo
-    - No siempre decimos todo lo que pensamos a los demás, todos tenemos derecho a guardarnos ciertas opiniones para nosotros mismos y es algo normal
-    - Me gusta que me acepten como soy, pero puedo entender que hayan cosas de mí que a otro puedan no gustarle
-    - Mis amigos pueden no darse cuenta de que a veces me enfado, y por eso es mejor que lo exprese yo en confianza y así seguro que lo sabrán, de esta manera podremos arreglarlo
-    - Me gusta que mis padres me cuiden, pero tengo que asumir responsabilidades sobre mí mismo
-    - Me ayuda que mis padres me den dinero, pero quizás podría empezar a ganar mi propio dinero para ser autosuficiente
-    - Es bueno que mi familia sepa como me siento, tanto si son épocas en que estoy más feliz o epocas en que lo estoy menos, para que puedan entenderme y ayudarme si lo necesito.
-    - Es normal que la gente que nos quiere tenga opiniones sobre nosotros y las manifieste.
-    - Puedo procurar que mi familia entienda que la privacidad es importante para mi
-    - Para mi la familia es fundamental, pero también es importante cuidar de mí misma
-    - Quiero que mis hijos esten a salvo, aunque no va a sucederles nada malo si no estoy todo el tiempo encima de ellos
-    - Es importante que cuide de mis hijos y a la vez es bueno dejar que exploren algunas cosas por su cuenta
-    - Me sienta mal que mis hijos me vean triste, aunque quizás podría compartir más mis sentimientos con ellos y enseñarles que es algo sano
-    - Para mi estar con mi familia es lo más importante, aunque estar también con mis amigos puede enriquecer mi vida
-    - No me siento del todo bien cuando se preocupan por mi, aunque aceptar que eso significa que les importo puede ser bueno
-    - Es importante que mi marido y yo nos cuidemos mutuamente
-    - Me gusta que mi pareja sepa que me pasa algo incluso sin decirselo, pero expresar los sentimientos propios también es saludable
-    - Me gusta recibir apoyo de mi pareja, aunque no tiene porque estar de acuerdo con todo
-    - Me gusta que mi pareja esté pendiente de mi, aunque entiendo que también tiene cosas de las que ocuparse
-    - Me gusta que mi pareja y yo pasemos tiempo juntos, pero es sano que esté también con sus amigos
-    - Me inquieto cuando mi pareja no me respode rápido a los whatsapps, pero es normal que tarde si está ocupado haciendo otras cosas
-    - Aunque me gusta compartirlo todo con mi pareja, cada uno puede tener gustos distintos y esto puede enriquecer nuestra relación
-    - Me siento mal cuando no sé que está haciendo mi pareja, pero puede ser sano que cada uno tenga su espacio en el dia a dia
-    - Aunque me preocupa que mi pareja esté sola, es importante que sea autónoma
-    - Me gustaría tener relaciones sexuales con mi pareja más a menudo, podría decírselo y así podríamos hablar sobre ello
-    - No me siento cómoda yendo sola por la calle, aunque puede que sea más una sensación que un peligro real
-    - Me siento más segura cuando alguien me acompaña, pero por ir sola no tiene porque pasarme nada malo
-    - A pesar de sentirme más segura cuando estoy en casa, salir a la calle me puede sentar bien
-    - Siento que estoy mejor cuando estoy solo, pero quizas los demás podrían aportarme cosas buenas
-    - Tengo bastantes pensamientos negativos que hacen que no me sienta bien, podría intentar pensar en cosas más agradables que me hagan sentir mejor
-    - Me sentaría bien intentar preocuparme menos por las cosas que suceden a mi alrededor
-    - Me gustaría saber cual es el motivo de mis preocupaciones, para entender mejor como me siento
-    - Me gusta tenerlo todo bajo control, aunque me podría sentar bien ser más espontánea
-    - Me gusta sentirme seguro
-    - He hecho cosas malas en mi vida, y aunque a veces creo que merezco ser castigado, puedo aprender de ello y no volver a hacer las mismas cosas
-    - Auque a veces pienso en acabar con todo para dejar de sufrir, hay muchas alternativas para sentirme mejor
-    - A veces creo que los demás estarían mejor sin mi, quizás tengo estos pensamientos porque estoy pasando por un mal momento, podría pedir ayuda
-    - Ahora mismo no le encuentro mucho sentido a mi vida, pero probablemente sea porqué no me siento bien
-    - Aunque a veces siento que estando cerca de los demás les hago daño, es posible que esté pasando por alto las cosas buenas que les aporto
-    - No es necesario dejarlo todo para encauzar nuestra vida, nuestros errores pueden servirnos como punto de partida para empezar a mejorar
-    - Cuando necesitamos algo esta bien que lo podamos pedir/decir
-    - Puedo trabajar para intentar actuar de forma más correcta
-    - Todos comentemos errores a veces
-    - A veces no elegimos las dificultades que tenemos, podemos intentar buscar la mejor solución a los problemas que tenemos
-    - Si noto que necesito más cariño  lo puedo decir si no, a veces es difícil que los demás lo noten
-    - Puedo entrenarme para ser más asertivo
-    - Puedo mejorar algunas cosas de mi forma de ser que no me gustan
-    - Las personas somos diferentes, no siempre caemos bien a todos y es normal
-    - Intentaré ir más a ver a mis padres
-    - Me gustaria que las otras personas fuesen más comprensivas
-    - Intentaré acercarme más a la gente
-    - Podria intentar reducir las cosas pendeintes por hacer, pero es normal tener algunas cosas por hacer
-    - Me gustaria que mi familia fuese más comprensiva en lo que me pasa
-    - Se ha acabado la relación con mi pareja por diferentes motivos
-    - Intentaré hacer las cosas lo mejor que pueda, también para sentirme bien conmigo misma
-    - Mi hermana es diferente a mi y hace las cosas a su manera, podria hablar con ella asertivamente cuando las cosas que hace me molesten.
-    - Intentaré esforzarme al máximo en mi trabajo.
-    - Me gustaria tener más paciencia con mi hijo, para entenderle mejor
-    - Todos cometemos errores y esto es normal, intentaré hacer las cosas aportando lo mejor de mi
-    - No siempre estamos felices y esto es normal, no me puedo forzar a sentir felicidad siempre
-    - Actualmente cuando me miro al espejo no me veo bien
-    - Me molesta como se comportan algunas personas a veces, pero no todos podemos estar siempre de acuerdo
-    - He fallado en el encargo que tenia del trabajo y ahora me siento mal, la proxima vez intentaré hacerlo mejor
-    - En ocasiones me equivoco y las cosas me salen mal
-    - Mi tio no me cae demasiado bien
-    - Muchas veces nos fijamos solo en los errores, seguro que puedes buscar momentos en los que te hayas sentido inteligente
-    - cuando las cosas no salen como espero es dificil pensar bien de mi, pero en realidad muchas veces acierto
-    - Me he equivocado de nuevo
-    - Puedo hacer cosas mal pero eso no me define como persona
-    - Mi amiga me ha dicho ciertas cosas que no comparto y esto me ha hecho enfadar, a veces no nos ponemos de auerdo
-    - A veces me equivoco, pero muchas otras hago las cosas bien
-    - Le he hablado mal a mi madre, he dicho cosas que no queria y ahora me siento mal conmigo mismo
-    - Me he vuelto a equivocar, igual podria intentar estar más atento
-    - Mi jefe y yo tenemos formas diferentes de ver las cosas y no nos entendemos
-    - No me gusta como responde mi pareja cuando discutimos
-    - Puede que hoy me haya equivocado, pero otras veces suelo tener una respuesta inteligente
-    - Se ha vuelto a equivocar, le puedo dar otra oportunidad
-    - Les expliqué mi problema y esperaba otra cosa de ellos, me han fallado esta vez.
-    - He intentado arreglar mi ordenador y en lugar de esto lo he estropeado más, mejor lo llevaré a reparar.
-    - Esta vez mi amiga no ha tenido en cuenta lo que yo necesitaba
-    - me he equivocado de nuevo
-    - No me siento bien conmigo misma y así es dificil que me abra a acercarme a otras personas
-    - Hoy mis compañeros han hecho algo que me ha dolido, mañana intentaré hablarlo
-    - Algunas veces mi hermana solo piensa en ella y no se da cuenta
-    - A veces no juego bien y pierdo
-    - Si inetnto hacer las cosas con más calma seguramente la mayoria de cosas me saldran mejor
-    - En algunas cosas no soy bueno pero otras si me salen bien
-    - Las cosas no han salido bien hoy
-    - he fracasado una vez, pero ello no significa que todo vaya a ser así siempre
-    - Puedo ser muy útil en algunas cosas
-    - Algunas cosas me resultan difíciles, pero otras me resultan más fáciles
-    - Algunas personas hacen actos que no son buenos, pero no todo el mundo es igual
-    - A veces me pongo un poco inaguantable
-    - A mi hermana se le dan algunas cosas bien
-    - A veces me equivoco, en otras ocasiones acierto con lo que hago.
-    - A veces actúa de una manera que parece pensar más en él
-    - A veces aunque no me guste me equivoco, otras no
-    - Mis amigos tienen virtudes que admiro, pero a veces también se equivocan
-    - En ocasiones mi mujer no me cuenta toda la verdad
-    - A veces hago cosas que no me gustan
-    - En ocasiones mi padre me dice o hace acciones que no comparto
-    - Pienso que algunos aspectos de mi vida no han salido como me gustaría
-    - Me gustaría ser más responsable en el trabajo/en casa
-    - Mi hijo a veces parece no pensar bien en las consecuencias de sus actos
-    - Parece que a mi mejor amigo le ha ido muy bien en el trabajo
-    - Intento hacer todo lo que puedo por mis hijos, aunque a veces no llego a más
-    - Hay aspectos de mi que me gustaría mejorar
-    - A veces siento que mis amigos no me aprecian suficiente, pero otras veces no es así ya que si no no serían mis amigos.
-    - Mis padres a veces me insisten mucho en que estudie/ayude en casa
-    - Mi mujer es muy insistente en algunos temas
-    - A veces siento que soy una persona horrible, pero ciertamente algunas cosas las hago bien
-    - Me gustaría tener un mejor trabajo / mejorar en los estudios
-    - A mi hermano se le da muy bien estudiar, a mi se me dan bien otras cosas
-    - Admiro la dedicación que pone mi amigo en el trabajo
-    - Mi compañero a veces me interrumpe y me desconcentra, aunque luego si necesitas algo siempre está dispuesto a ayudar
-    - Mi compañera es muy habilidosa en el trabajo, aunque a veces también comete errores
-    - Cuando las cosas no salen como me gustaría me siento disgustado
-    - me gustaría que me fuera mejor en las relaciones / en el trabajo / en casa
-    - A mi marido hay algunas cosas que le preocupan menos
-    - Hay ciertos temas que no domino, aunque de otros temas sí que tengo conocimiento
-    - Hay ciertas cosas que a mi mujer le cuesta contarme
-    - Hay ciertas actividades que no me gustan, en otras me divierto
-    - Mi amiga es muy insistente con cosas que le interesan
-    - Ella a menudo está alegre, aunque no siempre está igual
-    - En ocasiones soy serio, aunque en otras puedo ser divertido
-    - Considero listos a mis amigos, aunque cometen errores también
-    - A veces creo que pienso sólo en mi, pero no siempre es así
-    - Es un persona que parece tener muchos proyectos
-    - A mi marido le preocupa mucho el dinero, aunque si es necesario gastar lo hace.
-    - Tengo la sensación que mi jefe no cuenta suficiente conmigo, pero no siempre es así
-    - Me gustaria en ciertos aspectos conformarme con menos
-    - En el trabajo/estudios/relaciones me gustaría mejorar
-    - En mi familia a veces nos enfadamos por cosas poco importantes
-    - A veces me cuesta que mi hija obedezca a lo que pido
-    - Mis compañeros hablan mucho y se distraen
-    - A veces pienso sobre las personas, aunque no siempre es así
-    - Valoro mucho algunas cualidades de mi amiga
-    - No todo se me da bien, pero algunas cosas sí
-    - Me gustaría cambiar algunos aspectos de mi persona, aunque con otros me siento bien siendo como soy
-    - me parece que mis amigos a menudo están felices, aunque no siempre son así
-    - me gustaría que mi tía me preguntara menos sobre mi vida
-    - a veces siento la necesidad de explicarle a los demás lo que me disgusta/me enfada
-    - Hay cosas con las que me resulta dificil enfrentarme
-    - Parece que mi amiga afronta los problemas, aunque puede que le resulte difícil
-    - Algunas situaciones me asustan
-    - mi padre a menudo se enfada por cosas poco importantes
-    - mi jefe tiene una manera de hablar que a veces me hace sentir que no valora mi trabajo.
-    - A veces siento que mi marido no es tan sensible con mis preocupaciones como a mi me gustaría
-    - Siento que mi marido a veces puede parecer que no se preocupa por nosotros
-    - Me preocupa el dinero e intento no malgastarlo en cosas de poca utilidad
-    - mi compañero tiene una manera de hablar que parece saberlo todo, aunque no siempre es así
-    - He hecho algunas cosas que no me gustan
-    - A veces siento que mi amiga no tiene suficiente consideración con los demás
-    - En ocasiones me molesta como me habla mi madre
-    - Me gustaría mejorar en algunas cosas, aunque hay otras que están bien
-    - Me gusta como es mi amigo, aunque hay algunas cosas de él que no comparto
-    - A veces tengo la impresión que puedo ser insistente si el tema me preocupa
-    - Admiro muchas cualidades de mi mujer, aunque a veces se equivoca
-    - A menudo se me hace difícil interactuar con mis hijas, sobretodo si están molestas o enfadadas
-    - Me gustaría que cuando habla del trabajo, ella me hablara de manera más humilde
-    - A alguien le gusta a veces presumir de lo que consigue.
-    - Según lo que hablemos, mi amigo se muestra muy orgulloso de sí mismo
-    - Me gustaría que mi jefe se dirigiera a mi de manera más humilde
-    - Ella tiene algunas cualidades que me gustan
-    - Según lo que hagamos, mis amigos pueden ser más divertidos
-    - Algunas cosas no las hago como desaría
-    - A mis amigos les cuesta a veces ser sinceros
-    - Si algo no me interesa, me cuesta ponerme con ello
-    - Las cosas que me aterran me resultan difíciles de afrontar
-    - Prefiero tomar precauciones si algo no veo claro
-    - Me gustaría que mi hijo se implicara más en algunas cosas que para mi son importantes
-    - Hay tareas que me cuestan más de hacer y siento que me gustaría poder hacerlas más rápido.
-    - A veces siento que mi amiga piensa demasiado en su beneficio
-    - Es una persona que hace actos con los que no estoy de acuerdo
-    - Me gustaría que mis amigos comprendieran más lo que me preocupa
-    - Preferiría que mi jefe me hablara de una manera más cercana
-    - A veces hace actos que a mi parecen no son suficientemente educados
-    - Hay cosas que él hace que no comparto
-    - Me gustaría que mi hijo fuera más respetuoso conmigo
-    - Ella es una persona que a veces se muestra cohibida
-    - Hay algunas cosas que hago que desearía hacerlas mejor
-    - Mi madre insiste mucho cuando quiere que haga algo
-    - A veces mi hijo se comporta de una manera que me disgusta
-    - Siento que me gustaría hacerlo mejor
-    - mi hermano no parece preocuparse mucho por algunas cosas que a mi me preocupan mucho
-    - mis compañeros a veces me piden favores que me parecen demasiado
-    - Siento que no puedo gustar a nadie, pero si lo pienso hay personas a las que les gusto
-    - Cuando mi amiga tiene un problema, le cuesta hablar de otra cosa
-    - Hay cosas de mi mismo que no me gustan, pero otras están bien así y mis amigos lo valoran
-    - mi novia a menudo es un poco pesada en algunas cosas
-    - Me he vuelto a equivocar hoy, intentaré mejorar mañana
-    - He vuelto a meter la pata hoy  pero esto no me define como persona
-    - A veces esta bien pensar en lo que cadauno quiere, esto no significa que no te importen los demás.
-    - A veces perdo el control y digo casas que pueden dañar a la gente, me iria bien mejorar mi reacción.
-    - Puedo practicar para poder hacer las cosas más desprisa, si me ayuda a sentirme mejor
-    - Puede que necessite entrenar algo más para llegar al máximo nivel que tiene mi equipo
-    - Tengo algunas constumbres que hago simpre igual, como muchas personas, pero esto no me define.
-    - En ocasiones mi compañero habla mucho y esto me molesta
-    - Mis padres a menudo no me comprenden, pero en muchas otras ocasiones intentan estar a mi lado.
-    - Se me esta haciendo dura esta etapa de mi hijo, pero tengo que entender que forma parte de su proceso de desarrollo..
-    - A veces soy patosa y tengo poca destreza, pero esto no me define.
-    - Me gustaria mejorar y ser más persistente en mis propositos.
-    - Éste señor a veces hace conductas que considero poco adecuadas.
-    - En ocasiones puedo dar rabia a la gente pero esto no significa que me vaya a odiar.
-    - Me gustatia coger más forma física.
-    - Mi hermana a menudo piensa solo en ella, aunque algunas veces no es así
-    - No siempre me podrá ayudar, algunas veces tendrá cosas que hacer que también serán importantes
-    - Es importante que las cosas esten limpias, aunque no siempre estaran impolutas y esto también esta bien
-    - A veces me equivoco, como todos, pero esto no me define como persona
-    - Puede que no siempre estemos de acuerdo con el resto de gente, cada uno tenemos nuestras ideeas y creencia, pero esto no nos situa en posiciones opuestas, podemos entendernos
-    - Las cosas estan bien aunque no sean perfectas
-    - El problema con la familia de mi pareja me agobia, seria mejor que lo hablasemos y así podriamos encontrar un equilibrio entre nosotros y la familia
-    - Lo importante es hacer bien mi trabajo y cumplir con los objetivos, si es así no habrá ningun problema
-    - Necesito un descanso para poder seguir rindiendo y que las cosas salgan como espero
-    - Para mi es importante aprovar las oposiciones, pero si no salen podria valorar otras alternativas
-    - Puedo controlar otros factores para no subir de peso
-    - Todos necesitamos comer, puedo estar más atento al tipo de comida que como
-    - Este examen es importante, aunque el futuro es mucho más
-    - Es importante que nos impliquemos en el trabajo y seamos resonsables, si cumplo con lo acordado todo estará bien
-    - Puedo controlar lo que como para así no subir más de peso
-    - Hay otras formas que nos ayudn a no engordar si no siempre podemos hacer ejercicio
-    - Es importante implicarnos en lo que hacemos aunque a veces no sale perfeto y también está bien
-    - Las cosas que hacemos con empeño y dedicación estan bien aunque no las veamos perfectas
-    - Es normal que a veces no nos sintamos bien, forma parte de la evolución de la vida
-    - Todos a veces ganamos y otras perdemos, pero lo importante es intentar las coasa que queremos hacer
-    - Me sentiria mejor conmigo mismo si estubiera más delgado
-    - Me iria bien hacer un horario apra desconectar aun que no haya terminado mis tareas
-    - Puedo mirar las cosas que si he conseguido y seguir luchando para poder comprarme una casa
-    - Me iria bien ir de viaje para despejarme, pero puedo mirar de encontrar otras opciones también válidas.
-    - Que me quieran no depende de cómo hago las cosas
-    - La persona que quiera estar conmigo me aceptará como soy
-    - Todos podemos equivocarnos en algún momento y eso no implica que no haga bien mi trabajo
-    - Puedo mostrar mi enfado de forma asertiva para hacer valer mis derchos
-    - Puedo conseguir un balance entre hacer bien las cosas y descansar, ambas cosas son importates
-    - Mi felicidad no depende sólo de que me quiera
-    - Mi valor como persona no depende de si tengo pareja
-    - Ser madre es una decisión, no me define como mujer
-    - A veces puedo no saber qué hacer y puedo aprenderlo
-    - Para estar saludable necesito comer lo adecuado
-    - Puedo ser feliz aunque no esté delgada
-    - Puedo no estar de acuerdo con alguien y ser aceptada por esa persona
-    - Aunque esté nervioso la presentación puede salirme como espero
-    - Además del trabajo hay muchas otras cosas importantes en la vida
-    - Una de las funciones de la tristeza es que los otros nos den consuelo y se acerquen
-    - En una relación de pareja ambos tienen derecho a tomar sus propias decisiones
-    - Ser buena persona implica más cosas que cuidar de los demás
-    - Mi valor como persona no depende sólo de mi trabajo
-    - Que me quieran no depende de cómo estoy
-    - Tener exigencias demasiado altas es lo que me podrían llevar al fracaso.
-    - Incluso las personas más sabias no lo saben todo.
-    - Ser buena persona es algo relativo, cada quien me querrá por lo que esa persona considere
-    - Descansar forma parte de hacer bien me trabajo
-    - Mi valor como persona no depende sólo de cómo hago las cosas
-    - Hacer bien mi trabajo implica hacer lo necesario, ni más ni menos
-    - No necesito controlar mi peso constantemente para estar a gusto con mi cuerpo
-    - Hay cosas que también se pueden ser fáciles de conseguir sin necesidad de tanto esfuerzo
-    - Enviar mensajes a mi hija sólo sirve para tranquilizarme un rato, no puedo controlar las cosas que le pasan
-    - Los cuerpos perfectos no existen, dependen de los gustos de cada persona.
-    - Hacer bien mi trabajo implica dedicar el esfuerzo justo, no necesito esforzarme de más
-    - Una relación sana se basa en el respeto mutuo, no en imponer al otro lo que tiene que hacer
-    - Realizarme cómo mujer es mucho más que ser esposa y madre
-    - El ejercicio es saludable en su justa medida, hacer demasiado también puede ser perjudicial
-    - Mis amistades no me definen como persona
-    - El descanso también forma parte de ser una persona activa
-    - Puedo salir bien en un exámen aunque haya algunas cosas que no me sepa
-    - Para mantener mi casa limpia puedo limpiarla a vece a fondo y otras veces no tanto
-    - A veces puedo comer mucho e igual mantenerme en mi peso
-    - Puedo hacer bien mi trabajo aunque a veces las cosas no estén perfectas
-    - Decir que no a los demás es poner límites, no implica que me vayan a rechazar
-    - A veces puedo no tener ganas de salir con mis amigos y ellos pueden entenderlo
-    - Las redes sociales no reflejan la realidad de lo que los demás piensan sobre mi
-    - Las personas a las que les gusto me aprecian con mis virtudes y mis defectos
-    - Las calorías que consumo no es lo único que influye en mi peso
-    - La forma de vestir es un gusto personal y a algunos le puede gustar y a otro no
-    - Me arreglo para mi y sentirme a gusto conmigo
-    - Si me siento triste habrá personas que querrán darme apoyo
-    - Las personas que quieran estar conmigo aceptarán mis estados de ánimo
-    - A veces puedo ser generoso y a veces no,  porque doy sin desgastarme, así me cuido
-    - El ejercicio físico es bueno para mí salud, lo hago para estar sana, y hay días que también necesito descansar
-    - Tengo derecho a cambiar de opinión
-    - No hace falta ser la mejor en todo para ser una persona valiosa
-    - Mi pareja me puede querer y a la vez decirme que no algunas veces
-    - Me puede querer aunque a veces no pueda estar pendiente de mi
-    - Equivocarme forma parte de aprender a hacerlo lo mejor posible
-    - Puedo disfrutar de la vida independiente del peso que tenga
-    - Algunas cosas se pueden controlar y otras no
-    - La tranquilidad no es permanente, lo importante es poder aceptar todas mis emociones
-    - Ser aceptada por los demás implica que respeten mis decisiones
-    - El enfado se puede expresar de forma asertiva y me sirve para poner límites
-    - Ninguna emoción es buena ni mala ni duran permanentemente
-    - Permitir que mi hija se equivoque forma parte también del proceso de educación
-    - Llamarla no influye en las cosas que le pueden pasar
-    - Mi peso corporal depende de diversos factores y mirándome al espejo no lo controlo
-    - Una relación sana se basa en la confianza mutua
-    - La confianza es la base de una relación sana
-    - Un exceso de control me desgasta y puede ser perjudicial para conseguir lo que quiero
-    - Confío en que quien me quiere
-    - Hay muchas cosas que me dan valor además de la belleza
-    - Confío que mi pareja me quiere
-    - Puedo hacer las cosas incluso teniendo miedo
-    - Puedo sentirme realizado y tener éxito aunque no sea el mejor
-    - Que no me llame puede deberse a diversos motivos que no tienen que ver con que me quiera
-    - Ser útil no es lo único que me da valor como persona
-    - Ser popular no es la única señal de valoación de los demás hacia mi
-    - Si mi marido me respeta y me quiere aceptará que a veces yo también puedo tener la razón
-    - La belleza es relativa, para algunos seré guapa y para otros no
-    - Si marido se enfada yo también tengo derecho a expresar mi punto de vista y él ha de respetarlo
-    - Los demás pueden estar orgullosos de mi sin que tenga que ser la mejor
-    - Mi felicidad no depende de mi peso corporal
-    - En los momentos en los que paro y no hago también encuentro el sentido de mi vida
-    - Le doy sentido a mi vida haciendo cosas útiles o simplemente contemplándola
-    - La eficacia es sólo una de muchas virtudes que puedo tener
-    - Las personas tienen derecho a no contar ciertas cosas y eso no implica que nos estén engañando
-    - Si mi pareja me quiere y me respeta aceptará que lo complazca en algunas cosas y en otras no
-    - Como mujer tengo también derecho a cuidar de mí aunque eso implique dejar de cuidar al otro
-    - Ser mujer es mucho más que ser madre y esposa
-    - Puedo sentir intranquilidad y no perder el control
-    - Puedo ser responsable y también pasármelo bien
-    - Las personas pueden quererme aunque a veces les diga que no
-    - Si quiere estar conmigo ha de aceptar que hará conmigo sólo las cosas que yo le permita
-    - La amistad se basa en la sinceridad y poder decirle al otro lo que pienso
-    - Un grupo basado en el respeto admite que podamos no querer lo que la mayoría
-    - Equivoarme formar parte del aprendizaje para poder conseguir mis metas
-    - La perfección es un ideal que me hace sentir que no hago nada lo suficientemente bien
-    - Yo merezco la pena más allá de mis logros
-    - Un buen jefe valora las opiniones de sus empleados porque pueden ser enriquecedoras
-    - En una relación sana de pareja también puedo dedicar tiempo amistades
-    - Puedo tener buenos amigos y no compartir siempre las mismas opiniones
-    - El descanso es necesasario para ser más eficiente y aprovechar mejor el tiempo
-    - Hago lo mejor puedo con eso es suficiente
-    - El esfuerzo en si es impotante para mi mismo, no para la nota en si
-    - Igual no pueden llamarme cada día, puedo fijarme en otras cosas que demuestren que les importo
-    - tener o no pareja no es el unico factir que defina mi felicidad
-    - Hay muchas opciones de demostrar que soy bueno en mi profesion
-    - Lo importante es que me esfuerce en estudiar y sacar buena nota, no tanto la nota final en si.
-    - Las oposiciones son importantes, pero en la vida hay muchas más cosas a tener en cuenta.
-    - La intención es que me hagan un regalo para mi cumpleaños, despues éste puede gustarme más o menos.
-    - Es importante que me dedique tiempo a mi misma para estar mejor.
-    - Es importante escuchar y hablar con mi jefa lo que tengo que hacer en el trabajo, si lo hago asertivamente puedo exponerle mis opiniones.
-    - A veces las cosas no salen totalmente como las habíamos previsto y esto no esta mal.
-    - tengo la sensacion que la gente solo se acerca a mi cuando a mi no me apetece y me molesta.
-    - Si dedico tiempo a buscar empleo acabará saliendo uno.
-    - Son mis padres nos quieren a mi hermano y a mi aunque a veces cometamos errores.
-    - Algunas cosas se pueden controlar pero no todas. He organizado bien la fiesta pensando en como me gustaria que fuese.
-    - A veces no voy a querer hacer todo lo que me propone mi pareja, puede que no me guste, pero si me quiere, esto no va acambiar la relación.
-    - Aunque a momentos me pueda ir bien la ayuda de otros, realmente tengo capacidades para poder afrontar sola una primera entrevista.
-    - Son mis amigos, seguro que pueden entender que no siempre este disponible por WhatstApp, todo tenemos otras cosas importante que hacer.
-    - Si mi amiga me respeta entenderá que no siempre pueda decirle que si, y va a seguir contando conmigo.
-    - Hay mucho matices en las relaciones.
-    - Si tienen ganas de conocerme van a querer salir más conmigo aunque el primer día me hayan visto más distante.
-    - No podemos tenerlo todo controlado siempre pero esto no significa que las cosas tengan que ir mal.
-    - Puede que a veces no me puedan escuchar tanto como me gustaria a mi.
-    - A veces puede que ve las cosas diferentes que yo pero esto no significa que no me quiera.
-    - Otras veces has ido y te has sentido bien, esta vez puede ser igual
-    - No podemos saber si les va a gustar antes de enseñarlo
-    - Te has preparado bien, no hay motivos para pensar que saldrá mal
-    - Al salir con amigos puedo sentirme mal, pero es una buena forma de intentar estar mejor
-    - Si vas bien preparado no hay motivo para suspender
-    - Estar bien no predice que vaya a pasar algo malo, es mejor disfrutar de estar bien
-    - Antes de enseñarlo es dificil saber que va a pensar otra gente, es mejor enseñarlo
-    - No puedes saber que pasará en la fiesta antes de ir, puedes provar a ir y ver como va
-    - Si te has preparado bien para el examen no tiene porque ir mal, no podemos saber que passará antes de hacerlo
-    - No podemos saber si será así, de todas formas es normal no hacerlo todo bien el primer dia de trabajo
-    - A veces algunas cosas salen mal, pero esto no significa que sieempre todo vaya mal
-    - Puedes esperar a que acabe y prepararte bien para todos los examenes, así es más facil que vaya bien
-    - ya superé otras entrevistas antes, puedo superar esta también
-    - el tiempo es cambiante, y aunque haga mal tiempo aún podemos disfrutar los días
-    - si estudio es menos probable que me quede en blanco en el examen.
-    - hasta que no le muestre como soy, no puedo saber si le gusto
-    - si cuido de mi relación es más fácil superar las dificultades que aparezcan en pareja
-    - sin hacerlo no puedo saber cuál será el resultado
-    - me lo pasé genial en otras fiestas, quizás en esta disfrute del momento también
-    - voy a intentar quedar con él, no puedo saber que querrá si no le pregunto
-    - el concepto que tienen mis padres de mí no depende de un solo hecho
-    - se ha preparado mucho y es muy capaz, puede pasar estas pruebas
-    - hasta que no lo intente no puedo saber el resultado, lo haré lo mejor posible
-    - es mejor probar y ver qué ocurre a desistir sin intentarlo
-    - cuando estoy con amigos es posible que pueda disfrutar el momento
-    - ha habido momentos mejores, puede volver a cambiar, no es algo fijo
-    - podría conocer gente otra vez si me lo propongo, ya lo hice en el pasado
-    - si lo intento podría ir bien, puedo darme esa oportunidad
-    - cuando actúo en dirección a mis valores es muy posible que se produzcan cambios a mejor
-    - mis amigos han estado a mi lado en otras ocasiones complicadas, son una fuente de apoyo
-    - siempre he tenido gente a mi lado, puedo seguir cuidando estas relaciones e incluso conocer más gente
-    - hasta ahora he mejorado y si me sigo cuidando puedo mejorar aún más
-    - cuando hago cosas nuevas puedo enriquecer mi vida
-    - si lo intento quizás lo logre
-    - con esfuerzo es muy posible que continúe abstinente, y aunque falle, puedo volver a intentarlo
-    - si me esfuerzo es menos probable equivocarse
-    - entrenando duro es posible que gane la carrera
-    - cada cambio es una oportunidad, incluso fallar puede ser una oportunidad
-    - he podido superar muchas cosas en el pasado, esta podría ser una más
-    - intentaré disfrutar las vacaciones sin adaptándome a las circunstancias
-    - cuando me he esforzado en el pasado he conseguido cosas que parecían imposibles
-    - tengo la capacidad de influir en mi vida a través de mis acciones
-    - hasta que no lo haga no puedo saber cómo me sentiré
-    - para saber si me gusta debo probarlo antes
-    - si lo intento quizás salga bien, además cada intento pueden ser un aprendizaje
-    - aunque no me suela sentir cómodo con gente nueva, eso me abre la puerta a conocer nuevos amigos
-    - no siempre me he sentido un fracasado, así que es posible que en un futuro no me sienta así
-    - aunque no me gustaría que pasara algo malo, si sucede podría afrontarlo con éxito
-    - es poco probable que ocurra algo malo el rato que esté fuera de casa
-    - ahora estoy en una buena época y si sucede algún contratiempo podré enfrentarlo de forma competente
-    - si lo hago lo mejor posible es posible que sea suficiente
-    - no puedo adivinar que piensan los otros de mí, es mejor ser uno mismo y ver que sucede
-    - puedo superar el examen como pude superar otros en el pasado
-    - si no hago el examen seguro lo suspendo, es preferible hacerlo y tener la oportunidad de aprobarlo
-    - si soy previsor y cuido mis finanzas es difícil que me arruine
-    - si aprovecho ahora que el negocio funciona para planificar los siguientes pasos, es posible que vaya bien
-    - puedo ir a la cita sin expectativas, disfrutar el momento y ser natural, así sentiré menos presión
-    - mi familia me quiere y me han apoyado en otras situaciones difíciles
-    - hasta que no cuente cómo me siento no sé si me entienden o no
-    - la mejor forma de disfrutar el momento presente es no anticipar que pasará
-    - hasta que no vaya no se como me sentiré
-    - mi pareja es de las personas que mejor me conoce y justamente es por como soy por lo que está conmigo
-    - hasta que no lo haga no se si cumpliré sus expectativas
-    - hasta que no llegue el momento no se puede saber si daré la talla
-    - hacerlo es el primer paso, así me daré la oportunidad de hacerlo bien
-    - cuando conoces gente nueva es posible conocer a gente que encaje contigo
-    - si voy a la fiesta podría disfrutar cosas y conocer nuevos amigos
-    - si estudio es probable que lo haga mejor que si no estudio
-    - si me esfuerzo ya es motivo de satisfacción sea cual sea el resultado
-    - que ahora me sienta mal no quiere decir que en la fiesta me sienta mal, e incluso si así fuera podría disfrutar ciertos aspectos de la fiesta
-    - ya he aprobado un parcial, si continúo así probablemente pueda aprobar el curso
-    - en el período de prueba no tengo por qué hacerlo perfecto, es una oportunidad para aprender y hacerlo cada día mejor
-    - si me ayudan es más fácil que consiga lo que me propongo
-    - decir cómo me siento es una posibilidad para sentirme mejor
-    - si busco quizás encuentre un sitio donde vivir que cumpla las características que me gustarían
-    - es difícil saber cómo sentiré hasta que no salga a la calle
-    - al quedar con mis amigos puedo pasarlo bien y eso podría mejorar mi situación
-    - en la fiesta puedo aprovechar para conocer gente nueva o estrechar lazos, puedo aprovechar yo e iniciar las conversaciones
-    - si soy responsable y cumplo las reglas lo más probable es que mantenga el empleo
-    - si me esfuerzo y trabajo duro es posible que cuenten conmigo para el ascenso
-    - aunque me sienta extraño al volver a clase, no tiene por qué ser malo
-    - si vuelvo a clase la gente quizás se sorprenda y se alegre de verme
-    - llamando a mi hermano es posible que me sienta mejor y él se alegre
-    - si comparto mis emociones y pensamientos es más probable que alguien pueda entenderme
-    - hasta que no haga las pruebas de acceso no se como me irán
-    - no sé si suspenderé el examen, y si pasa aún tengo la oportunidad de recuperarlo
-    - si explico lo que me pasa puede que me sienta más comprendido y eso me haga estar mejor
-    - si voy a la excursión es menos probable que piense sobre cómo estoy
-    - hay mucha gente en el mundo, quizás encuentre a alguien que encaje conmigo y quiera ser mi pareja
-    - ya me quisieron en el pasado, es posible que en el futuro pueda conocer gente que me quiera
-    - si voy con tiempo es menos probable que pierda el bus
-    - no se si me harán esperar, pero aunque tenga que esperar es algo que vale la pena.
-    - la entrevista es una oportunidad, puede ayudar a sentirme mejor y ser una oportunidad
-    - cuando mi pareja y yo compartimos tiempo juntos solemos disfrutar, si quedamos puede ayudar a sentirme mejor
-    - quizás la universidad sea una oportunidad para conocer gente con la que tenga cosas en común
-    - hasta que no vaya no puedo saber cómo me sentiré, es mejor probar
-    - si empiezo a cuidarme y a comer sano es posible que instaure hábitos más saludables y mejore mi relación con la comida
-    - he cambiado en muchas cosas a lo largo de mi vida, y puedo volver a hacerlo si me lo propongo
-    - otras veces que salí a comer lo pasé bien, es probable que vuelva a disfrutarlo
-    - si quedo con mis amigas puedo pasar un buen rato, es posible que ellas también tengan ganas de verme
-    - sea cual sea el resultado del partido, lo importante es disfrutar el momento y jugar lo mejor posible
-    - no puedo saber cómo me sentiré hasta que no me perdone
-    - es posible que haya platos que me gusten, o quizás sea una oportunidad para probar cosas nuevas
-    - hasta que no haga la entrevista no sabré si la paso o no, y aún sin pasarla, puedo aprender cosas para futuras entrevistas
-    - mis padres me quieren y me valoran, se alegrarán de verme
-    - cuando quedo con gente cabe la posibilidad de pasarlo bien
-    - no hace falta hacer el trabajo perfecto, si me esfuerzo quizás lo consigo
-    - el ir de viaje es una oportunidad para vivir nuevas experiencias
-    - si ahora me centro en preparar la prueba, es menos probable que vaya mal
-    - hasta que el médico no me de los resultados no sé si serán buenas o malas noticias, y aunque sean malas eso me permitirá buscar la mejor solución
-    - si trabajo día a día para crear el hábito, es menos probable que deje de tomarme la medicación
-    - en el pasado ya conseguí los objetivos que me propuse, ahora puedo volver a hacerlo
-    - si me rodeo de gente es menos probable que me sienta sola
-    - Si me esfuerzo y dedico tiempo a estudiar es más seguro que pueda aprovar
-    - He ido a diferentes cenas con ellos y hemos etsado agusto, puede ser igual esta vez
-    - Tengo que probarlo para saber como me va a salir
-    - Si tengo carné de conducir y conduzco de forma precavida no tiene porque pasarme nada
-    - Si me esfuerzo en estudiar es más probable que pueda aprovar
-    - Aunque haya invertido menos tiempo del que pensaba, si el trabajo está bien le va a gustar a mi jefe.
-    - No puedo saber como irá el cumpleaños antes de ir, he ido a otros y me lo he pasado bien.
-    - Puede que haciendo dieta mejora la imagen que tengo de mi cuerpo.
-    - Si hablo con ellos y les explico mi pnto de vista es probable que ellos inenten entenderme
-    - No podemos saber con anteacion lo que va a ocurrir en una relación, influyen muchas cosas
-    - Puede que me vaya mal en el examen, pero si me lo preparo es más probable que aprueve.
-    - Puede que me equivoque en el dibujo pero si no lo pruebo no lo sabré
-    - Algunas veces cuando estoy con mi familia me siento ctiricado, pero no siempre es así y hoy no sé como irá.
-    - Tengo que probar ir de fiesta con ellas para saber como me sentire. Si no estoy agusto siempre puedo irme a casa.
-    - Puede que si busco ayuda experta el negocio vaya bien, tengo que probar para saber que passará.
-    - Si le cuento con detalle y calam todo a mi hermano es probable que me acabe comprendiendo como otras veces.
-    - Tengo la sensación que mi pareja me quiere menos. Algo ha cambiado en la relación.
-    - Si estudio mucho y me siento bien preparado es más facil que no me ponga nervioso ante el examen.
-    - Cuanto más seguro me sienta del contenido de la exposición más facil es que me salga bien
-    - No puedo saber con antelación lo que va a hacer el entrenador, tendré que esperar a ver a quein convoca.
-    - Intentaré estar muy atento y concentrado en este partido para evitar mis errores, el partido puede ir genial.
-    - No puedo sber que pasará antes de chutar.
-    - Tengo la sensación de que les parezco pesado a mis compañeros de trabajo. Pero realmente nunca me lo han dicho.
-    - Intentaré este año cumplir mis objetivos, a ver como va.
-    - Puede que al salir a la calle me de un ataque de ansiedad, pero en muchas ocasiones he salido y no ha pasado nada.
-    - No puedo saber con antelación lo que va a pasar. Si no me siento bien puedo dejar este trabajo y buscar otro.
-    - Tengo la sensacion que mi pareja se cansará de mi en algun momento y me dejará.
-    - Intentaré hacer lo que esté en mi mano para conseguir esta beca que quiero y sinó ya veré que otras opciones puedo tener.
-    - Puedo repasar todo lo que necesito y así estoy más segura de lo que estoy haciendo.
-    - Puede que me equivoque en algun momento de la entrevista, pero de ser así no pasaria nada grave.
-    - No puedo saber lo que va a pensar mi padre de mi antes que hacer nada.
-    - Intentaré el lunes esforzarme para poder levantarme de la cama a la hora que toca.
-    - Puedo salir antes y así ir con tiempo tranquila.
-    - No puedo predecir como me voy a sentir en una situación que no he vivido.
-    - Ha ido mal, pero podemos solucinarlo
-    - Aunque falles, la mayoria de cosas se pueden reparar y buscar una buena alternativa
-    - Esta bien intentar lo que nos importa, no podemos saber como irá
-    - No podemos saber como irá, a vecesa algunas cosas salen mal pero podemos hacer algo para que mejoren
-    - La reunion no ha salido como esperaba
-    - Ha habido más fallos de los que esperaba pero aun así podemos intentar resolverlo
-    - Lo que me está pasando es duro, no es agradable, pero lo puedo soportar
-    - A veces estoy incómodo en algunas fiestas, pero luego me lo paso bien
-    - Puede que me salga mal, pero lo he de intentar. De la experiencia se aprende
-    - Si suspendo el examen de mañana me enfadaré después de todo lo que he estudiado, pero me servirá de base para el próximo
-    - Después de esto Me costará recuperarme, pero saldré adelante
-    - Me noto el corazón muy acelerado, debo de estar nervioso
-    - Me he equivocado en el nombre de un informe, seguramente mi jefa me dirá que me he de fijar más en estos detalles
-    - Que no me responda al mensaje sería algo incómodo para mí, pero llevadero
-    - He cogido algo de peso, tengo que empezar a cuidar mi alimentación un poco más.
-    - Si me deja mi mujer, pasaré una temporada muy dura, pero saldré adelante
-    - Mi hijo no me ha llamado para decirme que ha llegado, seguro que ha encontrado caravana y/o le está costando aparcar
-    - Puede que me diagnostiquen un cáncer, entonces tendré que ver qué puedo hacer, qué pronóstico y tratamientos existen
-    - Si no me quiere, puedo encontrar otra persona con quien poder ser feliz
-    - Será caro, pero podré hacerle frente
-    - Puede quen salga algo mal, hay (tendré) que prestar atención
-    - Si no apruebo el examen de la próxima semana, tendré que estudiar más para la recuperación
-    - He tenido un error que puedo subsanar
-    - A lo mejor va mal, pero estoy preparado
-    - Esto no me gusta, pero le puedo hacer frente
-    - Mi hijo me está dando algún disgusto, pero es cosa de la edad, no es para tanto
-    - A veces me pongo nervioso en sitios cerrados y pequeños, (a ver cómo es la consulta)
-    - Seguro que no es para tanto
-    - Puede que no sea tan malo como yo pienso
-    - Si pasa algo, estaré para apoyarla
-    - Al final no es para tanto
-    - Pero sigo teniendo muchas cosas buenas
-    - Esta situación está siendo difícil, pero sé que mejorará.
-    - Probablemente también habrá cosas positivas
-    - No me gusta, pero tengo márgen de maniobra, puedo hacer cosas
-    - He pasado cosas mucho peores
-    - He de tolerar ciertas cosas que no me gustan y centrarme en las que me gustan
-    - Puede que las lluvias afecten a la cosecha, tendré que estar atento, algo podré hacer para que no sea tan grave
-    - Creo que el jefe me ha mirado con cara de enfado, igual tiene un mal día
-    - Después de esto que ha pasado será difícil y llevará un tiempo que retome mi vida normal, pero lo conseguiré, saldré adelante.
-    - Tengo que hablar con él de los problemas que pueden derivarse si hace ciertas cosas
-    - A veces soy un poco exagerada/o
-    - Bueno, todavía no sé lo que va a pasar
-    - No ha sido para tanto, aún estoy aquí y puedo hacer cosas para cambiar eso
-    - No soy el rey de las fiestas e incluso a veces paso malos momentos, pero conozco gente nueva y merece la pena
-    - no ha sido para tanto, la próxima vez lo haré mejor
-    - suelo pensar siempre igual y luego no es para tanto
-    - todo el mundo se equivoca de vez en cuando
-    - estoy pudiendo con ello a pesar de las dificultades
-    - voy a intentarlo, lo haré con ganas
-    - Todo el mundo puede tener malos días
-    - Si me deja mi mujer, lo pasaré mal, pero con ayuda de la familia, amigos y profesionales si hiciese falta, lo superaré
-    - me pasan cosas duras pero doy lo mejor de mí
-    - tendré que hacer un esfuerzo para volver a mi antigua normalidad.
-    - Puedo centrarme en lo que depende de mí
-    - a ver cómo me va la presentación, he trabajado duro
-    - puede ser que pase y puede que no, otras veces me he adelantado en exceso a lo negativo
-    - Que me diagnostiquen eso sería duro, pero hay buenos tratamientos y siempre se puede hacer algo
-    - Si me dicen algo les explicaré el porqué y trataré de que no vuelva a pasar.
-    - si lo pienso bien, he pasado cosas peores
-    - visto con distancia, no fue para tanto y evoluciné mucho como persona
-    - he de vivir el momento presente, ya veremos que pasa finalmente
-    - pienso esto a menudo y luego hasta me río de ciertas cosas que pensaba que eran horrorosas
-    - Aunque me pueda salir mal, lo habré intentado y me servirá para (cosas similares) en el futuro.
-    - En  5 meses he engordado 5 Kg, a partir de ahora le dedicaré más tiempo a una alimentación buena (equilibrada)
-    - aunque fue duro al principio, aprendí mucho de aquella experiencia
-    - buscaré varias opciones, seguro que finalmente no es tan caro
-    - tengo cosas buenas, muy buenas y otras malas o muy malas, como todo el mundo
-    - poseo virtudes y cualidades buenas, seguro que podré encontrar a otra persona con quien ser feliz
-    - incluso en ese caso, siempre hay margen de cambio
-    - sigo vivo, con salud, amigos, familia y energía para perseguir mis metas y propósitos
-    - puede que me ponga algo nerviosa, pero lo llevo bien preparado, me irá bien
-    - suelo ser bastante pesimista, luego normalmente no es tan malo como me había imaginado
-    - el sabrá lo que hace,y si lo hace, es que realmente no vale la pena
-    - iré a por todos, luego ya veremos lo que pasa
-    - me notaba un poco inseguro, pero en general ha ido bastante bien
-    - mejor no anticipar tanto, luego, muchas veces no es como había predicho
-    - fueron momentos duros, pero aquí estoy, una versión mejorada de mi misma
-    - mejor ocuparme en prepararme que preocuparme por fututras consecuencias imposibles de discernir (prever)
-    - bueno, miraré diferentes presupuestos y, además, lo puedo pagar a plazos
-    - he de saber a qué me enfrento. Al principio cuesta más,  pero a largo plazo merece la pena
-    - no lo he pasado bien en ese momento, pero aquí estoy, lo he podido tolerar
-    - casi todo en esta vida tiene solución o, por lo menosw, margen de mejora
-    - me lo ha hecho pasar mal, no estoy en mi mejor momento, pero remontaré seguro
-    - ahora en la distancia veo que fue duro, pero no tanto
-    - pasaré un mal trago, puede que me ponga nerviosa, pero todos los estados y emociones pasan
-    - nada es para siempre, cada día estaré un poco mejor
-    - a veces soy un poco exagerado, paso a paso, ya veremos qué me encuentro
-    - puedo prepararme un poco el discurso, además, si me pongo nervioso... ¿quién no se ha puesto nervioso alguna vez hablando en público? es algo normal
-    - no podemos escoger el momento en que nos suceden algunas cosas, pero sí como respondemos ante ellas
-    - Me requerirá tiempo y esfuerzo, pero puedo afrontarlo y hacerlo bastante bien
-    - Al final hasta e lo malo se aprende, y realmente no fue para tanto
-    - Puede que no me salga tan bien como yo querría, pero estará bien en líneas generales, seguro
-    - Esto que ha pasado no es motivo de despido, y aún si así fuera, tengo paro, ahorros, y muchas opciones opciones de encontrar otro trabajo en relativamente poco tiempo
-    - Ahora pienso esto, pero otras veces he estado solo y no ha pasado nada del otro  mundo. Sólo es (será) un periodo diferente
-    - Si fuese mortal no estaría aquí hoy. Pude con ello y hoy soy alguien diferente, mejor en muchos ámbitos incluso
-    - aunque este ha sido un error serio, he demostrado muchas veces que soy una trabajadora muy competente y en quien se puede confiar. además, eso es lo que me han dicho las jefas y compañeros en más de una ocasión
-    - sí que fue duro al principio, pero tras la tormenta llega la calma, hoy día estoy a gusto con mi carrera
-    - Si mantengo la calma no tiene porque llegar a ser tan tremendo, y si aún así fuera, considero que temgo razón, he de defender mis derechos y opiniones
-    - Calma. Primero miraré si tiene garantía, luego llamaré al servicio técnico, etc.. Voy a centrarme primero en posibles soluciones antes de imaginarme el fin del mun do por algo así, jejeje
-    - Por mi experiencia, a veces me pongo algo catastrofista y luego no es tan malo
-    - bueno, trataré de serenarme y respirar profundo. He ido muchas veces en metro sin que me haya pasado nada.
-    - a día de hoy hasta me hace gracia aquello, además de que aprendí mucho
-    - puede que lleven el móvil silenciado, o que esté conduciendo. Esperaré a que me llamen
-    - mejor centrarse en ir paso a paso, a ver qué sucede finalmente
-    - en la vida hay cosas que no nos gustan, pero no suelen ser tan terribles como nos imaginamos
-    - igual sale algo mal, puede ser, ¿quién no se ha equivocado alguna vez?
-    - No tengo grandes ilusiones puestas en el futuro, pero puedo intentar buscar opciones que me motiven
-    - No podemos saber lo que pasará. mejor esperemos a los resultados
-    - No tiene porque pasarles nada malo, de todas formas puedo intentar estar preparado para lo que pueda suceder
-    - Puede que no me ateindan al telefono por razones muy variadas
-    - Seguramente podré hacer algo para subsanar el hecho de no haber podido ir
-    - A veces algunas cosas pueden salir mal, pero no podemos anticipar como irá todo
-    - He intentado muchas cosas y aún no he encontrado la solución a mi problema.
-    - Puedo intentar mejorar en las cosas que se que no gustan en el trabajo, así me sentiré más segura de mi misma.
-    - Puede que cometa algunos errores en la presentación, pero igual que les puede passar a todos
-    - No podemos saber que va a pasar, estoy preparada y formada para emprender mi negocio
-    - Son mis amigo de siempre pueden entender que no me apetezca salir tanto durante una temporada
-    - La comida con mis padres no ha salido lo bien que esperaba.
-    - La cita no ha ido lo bien que queria, pero hemos pasado un buen rato
-    - Me duele la cabeza, puede ser por muchos motivos. Me tomaré algo y si no me pasa podria ir al médico
-    - Realmente no podemos saber lo que va a pasar mañana, no hay ahora ningun motivo aparente para que me anulen el vuelo
-    - Actualmente gran parte de la población que tiene Covid no son ingresado a la uci.
-    - No ha ido todo lo bien que esperaba.
-    - Será mejor que me calme y haga unas respiraciones tranquila.
-    - Tengo que pensar con calma i seguramente veo que aun tengo opciones de arreglarlo de alguna manera.
-    - Creo que no le he caido demasiado bien
-    - Es mejor si intento tranquilizarme y ver las cosas con más perspectiva, segramente habrá algo que hacer
-    - he recibido algunas malas noticias ultimamente, pero también hay cosas que han sido buenas.
-    - Es posible que algunas cosas salgan mal pero no todas
-    - A veces me pasan cosa malas como a todo el mundo, pero cuando me pasan a mi me afecta más
-    - Puede que la entrevista no haya ido com esperaba, pero no sé que es lo uqe va a pasar
-    - A veces pasan cosas que nos dejan muy afectados, aunque no pedamos el sentido de la vida
-    - me equivoco más a menudo de lo que me gustaría
-    - No puedo saber como saldrá antés de hacerlo
-    - Aunque nos enfademos podemos resolverlo y volver a llevarnos bien
-    - No puedo anticipar lo que va a pasar. Es mejor que conduzca tranquila y atenta.
-    - Durante mi charla puede que haya personas que se aburran i se vayan
-    - Puede ser dificil aguantar mucho estr´s, lo llevaré mejor si me planifico y busco opciones para reducir el estrés.
-    - SI realmente se rompen todos los platos tampoco pasa nada, tse puede reparar la situación.
-    - Puede ser que haya pasado algo importante pero no tiene que ser tant terrible como para que nunca vaya a tener solución.
-    - Hoy es un día importante, voy a hacerlo lo mejor que pueda. A pesar de ello todos podemos cometer errores.
-    - Esperaba hacerlo mejor
-    - No me gustaria que me viera en este estado, ya que podria cambiar la imagen de mi que tiene.
-    - Calma, no puedo saber lo que va a pasar. Voy bien preparada.
-    - Me esperaba tener un futuro más prometedor a mi edad, pero aun estoy a tiempo de mejorarlo.
-    - Lo más habitual es que las personas se enfaden y después puedan retomar la relación de amistad.
+    - me quiero morir
+    - quiero matarme
+    - matar
+    - suicidio
+    - ideas de muerte
+    - desaparecer para siempre
+    - voy a hacerme daño
+    - ayuda urgente
+    - emergencias
+    - sos
+    - quiero acabar con todo
+    - dejar de existir
+
+- intent: emergency
+  examples: |
+    - /emergency
+
+### Greetings and commands
+- intent: greet
+  examples: |
+    - hey
+    - hola
+    - Buenos días
+    - Buenas tardes
+    - Qué tal Vicky
+    - Qué pasa
+    - hola vicky soy [María](name)
+    - buenos días Vicky me llamo [Rocío](name)
+    - soy [Ángela](name), hola
+    - Buenas noches mi nombre es [Casimiro](name)
+    - Mi nombre es [Gerard](name), qué tal
+    - bon dia Vicky
+    - bona tarda, vicky soy [Francisco](name)
+
+- intent: goodbye_nicemood
+  examples: |
+    - adiós
+    - hasta luego
+    - hasta pronto
+    - hasta otro día
+    - bye
+    - adeu
+    - see you
+    - chao
+    - ciao
+    - deu
+- intent: confirm
+  examples: |
+    - sí
+    - claro
+    - vamos allá
+    - por supuesto
+    - genial
+    - de acuerdo
+    - /confirm
+    - yes
+- intent: ready
+  examples: |
+    - ya
+    - ya he terminado
+    - listo
+    - ya he hecho el ejercicio
+    - continuar
+    - /ready
+- intent: deny
+  examples: |
+    - No
+    - mejor no
+    - no me apetece
+    - la verdad es que no quiero
+    - negativo
+    - /deny
+- intent: thanks
+  examples: |
+    - gracias
+    - te lo agradezco
+    - muy agradecido por todo lo que haces Vicky
+    - muchísimas gracias por todo
+    - de verdad no sé cómo agradecértelo
+    - moltes gracies
+    - gracies
+- intent: youre_welcome
+  examples: |
+    - de nada
+    - no hay de qué
+    - nada nada
+
+
+### Chitchats
+
+- intent: chitchat/ask_name
+  examples: |
+    - ¿Cómo te llamas?
+    - ¿Podría saber tu nombre?
+    - Cómo te suele llamar la gente
+    - cuál es tu nombre?
+- intent: chitchat/help_me
+  examples: |
+    - ¿Puedes ayudarme?
+    - qué puedes hacer por mí
+    - quiero que me ayudes
+    - hablemos
+- intent: chitchat/how_are_u
+  examples: |
+    - ¿Cómo estás Vicky?
+    - ¿tienes sentimientos?
+    - Cómo te encuentras
+- intent: chitchat/something_curious
+  examples: |
+    - cuéntame alguna curiosidad
+    - dime algo que no sepa
+- intent: chitchat/who_are_you
+  examples: |
+    - quién te ha creado
+    - quién está detrás
+    - para quien trabajas
+    - quienes te han desarrollado
+    - que equipo es el que te ha hecho
+
+### Entities
 - synonym: valorFamilia
   examples: |
     - familia

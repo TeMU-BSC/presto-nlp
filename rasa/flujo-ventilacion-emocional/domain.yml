@@ -4,6 +4,8 @@ config:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+### Intents and entities list
 intents:
 - greet:
     use_entities: true
@@ -23,25 +25,25 @@ intents:
     ignore_entities:
     - sentiment
 - sobregeneralizacion:
-    ignore_entities:
+    use_entities:
     - sentiment
 - lectordementes:
-    ignore_entities:
+    use_entities:
     - sentiment
 - pensamientoabsolutista:
-    ignore_entities:
+    use_entities:
     - sentiment
 - etiquetado:
-    ignore_entities:
+    use_entities:
     - sentiment
 - catastrofismo:
-    ignore_entities:
+    use_entities:
     - sentiment
 - adivinacion:
-    ignore_entities:
+    use_entities:
     - sentiment
 - deberias:
-    ignore_entities:
+    use_entities:
     - sentiment
 - deny:
     ignore_entities:
@@ -69,9 +71,10 @@ entities:
 - valorPareja
 - valorFamilia
 - valorSocial
-- valorfamilia
 - name
 slots:
+  anything:
+    type: text
   sentiment:
     type: rasa.shared.core.slots.CategoricalSlot
     initial_value: null
@@ -96,6 +99,8 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: true
+    
+### Responses:
 responses:
   utter_greet:
   - text: ¡Hola! soy Vicky 👩‍⚕️ estoy aquí para ayudarte a cuidar eso tan importante como la salud mental. ¿Qué tal te encuentras hoy?
@@ -150,9 +155,9 @@ responses:
   utter_youre_welcome:
   - text: 😊 Un placer, recuerda que estoy aquí siempre que lo necesites.
   utter_out_of_scope-wrap_up:
-  - text: alternativo cuentame mas
-  - text: alternativo otro texto cuentame mas
-  - text: alternativo otro texto 2 cuentame mas
+  - text: look here!
+  # - text: alternativo otro texto cuentame mas
+  # - text: alternativo otro texto 2 cuentame mas
   utter_wrap_up_action:
   - text: intervencion en alternativo
   utter_ventilacion_1:

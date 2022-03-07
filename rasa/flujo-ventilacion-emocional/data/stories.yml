@@ -2,9 +2,9 @@ version: "2.0"
 
 stories:
 
-# ask first for primary emotion: 
+# Emotion classification: 
 
-  - story: happy path with positive emotion
+  - story: EmotionClassification - positive emotion
     steps: 
       - intent: greet
       - action: utter_greet
@@ -14,9 +14,9 @@ stories:
           - sentiment: POS
       - action: utter_sentiment_POS
 
-  - story: happy path with negative emotion
+  - story: EmotionClassification - negative emotion
     steps: 
-      - intent: greet
+      - intent: greet 
       - action: utter_greet
       - intent: inform_sentiment
       - action: sentiment_form
@@ -25,7 +25,7 @@ stories:
       - action: utter_sentiment_NEG
       - checkpoint: user_give_emotion_NEG
 
-  - story: happy path with neutral emotion
+  - story: EmotionClassification - neutral emotion
     steps: 
       - intent: greet
       - action: utter_greet
@@ -35,55 +35,44 @@ stories:
           - sentiment: NEU
       - action: utter_sentiment_NEU
 
-### Intervencion y flecha:
-  # - story: wrap_up_given_sentiment
-  #   steps:
-  #     - checkpoint: user_give_emotion_NEG
-  #     - or: 
-  #       - intent: alternat
-  #       - intent: factual
-  #     - action: utter_out_of_scope-wrap_up
+### Inquiries non distortions
 
-  - story: wrap_up_given_sentiment
-    steps:
-      - or: 
-        - intent: alternat
-        - intent: out_of_scope-wrap_up
-      - action: utter_out_of_scope-wrap_up
-      - or: 
-        - intent: alternat
-        - intent: out_of_scope-wrap_up
-      - action: utter_out_of_scope-wrap_up
-      - or:
-        - intent: alternat
-        - intent: out_of_scope-wrap_up
-      - action: utter_wrap_up_action
-
-  - story: chatting distorsions_without negat emotion
-    steps: 
-      - or:
-        - intent: sobregeneralizacion
-        - intent: lectordementes
-        - intent: pensamientoabsolutista
-        - intent: etiquetado
-        - intent: catastrofismo
-        - intent: adivinacion
-        - intent: deberias
-      - action: utter_ventilacion_1
-      - or:
-        - intent: sobregeneralizacion
-        - intent: lectordementes
-        - intent: pensamientoabsolutista
-        - intent: etiquetado
-        - intent: catastrofismo
-        - intent: adivinacion
-        - intent: deberias
-      - action: utter_ventilacion_2
-      - checkpoint: distorsion_ready
-
-  - story: chatting distorsions
+  - story: non distorsion - negative emotion
     steps: 
       - checkpoint: user_give_emotion_NEG
+      - intent: nlu_fallback
+      - slot_was_set:
+          - sentiment: NEG
+      - action: utter_chitchat/something_curious
+      - intent: nlu_fallback
+      - slot_was_set:
+          - sentiment: NEG
+      - action: utter_chitchat/how_are_u
+      - intent: nlu_fallback
+      - slot_was_set:
+          - sentiment: NEG
+      - action: utter_chitchat/ask_name
+
+
+  - story: non distorsion - positive emotion
+    steps: 
+      - checkpoint: user_give_emotion_NEG
+      - intent: nlu_fallback
+      - slot_was_set:
+          - sentiment: POS
+      - action: utter_chitchat/something_curious
+
+
+
+### Distortions inquiries
+
+
+
+  - story: chatting distorsions - two steps WITHOUT EMOTION INIT
+    steps: 
+      # - action: sentiment_form
+      - slot_was_set:
+          - sentiment: NEG
       - or:
         - intent: sobregeneralizacion
         - intent: lectordementes
@@ -93,6 +82,9 @@ stories:
         - intent: adivinacion
         - intent: deberias
       - action: utter_ventilacion_1
+      # - action: sentiment_form
+      - slot_was_set:
+          - sentiment: NEG
       - or:
         - intent: sobregeneralizacion
         - intent: lectordementes
@@ -103,6 +95,38 @@ stories:
         - intent: deberias
       - action: utter_ventilacion_2
       - checkpoint: distorsion_ready
+
+
+  - story: chatting distorsions - two steps
+    steps: 
+      - checkpoint: user_give_emotion_NEG
+      # - action: sentiment_form
+      - slot_was_set:
+          - sentiment: NEG
+      - or:
+        - intent: sobregeneralizacion
+        - intent: lectordementes
+        - intent: pensamientoabsolutista
+        - intent: etiquetado
+        - intent: catastrofismo
+        - intent: adivinacion
+        - intent: deberias
+      - action: utter_ventilacion_1
+      # - action: sentiment_form
+      - slot_was_set:
+          - sentiment: NEG
+      - or:
+        - intent: sobregeneralizacion
+        - intent: lectordementes
+        - intent: pensamientoabsolutista
+        - intent: etiquetado
+        - intent: catastrofismo
+        - intent: adivinacion
+        - intent: deberias
+      - action: utter_ventilacion_2
+      - checkpoint: distorsion_ready
+
+### Interventions
 
   - story: intervencion_sobre
     steps:
@@ -117,7 +141,6 @@ stories:
       - intent: etiquetado
       - action: utter_intervencion_general
       - action: utter_intervencion_etiquetado
-
 
   - story: intervencion_lectordementes
     steps:
@@ -153,16 +176,6 @@ stories:
       - intent: pensamientoabsolutista
       - action: utter_intervencion_general
       - action: utter_intervencion_pensamientoabsolutista
-
-
-      #   - intent: sobregeneralizacion
-      #   - intent: lectordementes
-      #   - intent: pensamientoabsolutista
-      #   - intent: etiquetado
-      #   - intent: catastrofismo
-      #   - intent: adivinacion
-      #   - intent: deberias
-      # - action: utter_intervention
 
     
   # - story: end_intervention
