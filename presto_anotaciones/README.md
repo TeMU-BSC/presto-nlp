@@ -4,7 +4,7 @@
 ### Anotate if it has a distortion
 
 ```
-prodigy textcat.manual presto_distortion presto-nlp/presto_anotaciones/datos-jsonl.jsonl --label yes,no
+prodigy textcat.manual presto_distortion datos-jsonl.jsonl --label yes,no
 ```
 
 When done with the day save like: 
