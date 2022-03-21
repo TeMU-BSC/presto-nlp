@@ -16,7 +16,7 @@ prodigy db-out presto_distortion > presto_first_level.jsonl
 ### Anotate the type of distortion
 
 ```
-prodigy textcat-modified presto_type presto_distortion.jsonl -F recipe.py
+prodigy textcat-modified presto_type presto_first_level.jsonl -F recipe.py
 ```
 
 When done with the day save like: 
