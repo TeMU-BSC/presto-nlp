@@ -72,7 +72,7 @@
 {"id": "24t", "text": "estoy segura que mañana lloverá"}
 {"id": "25d", "text": "la gente del trabajo me odia"}
 {"id": "25da", "text": "Pienso que la gente me odia, pero realmente no sé si es verdad"}
-{"id": "25t", "text": "Mi hermana es muy amable se que tiene muchos amigos "}
+{"id": "25t", "text": "Se que mi hermana es muy amable y que tiene muchos amigos "}
 {"id": "26d", "text": "estoy convencido de que no me quieren tanto como yo a ellos"}
 {"id": "26da", "text": "Tengo la sensación que yo quiero más a la gente de lo que me quieren"}
 {"id": "26t", "text": "Estoy convencido de que todo saldrá bien "}
@@ -186,13 +186,13 @@
 {"id": "62t", "text": "ese tío es asquerosamente rico"}
 {"id": "63d", "text": "soy completamente imbécil"}
 {"id": "63da", "text": "He fallado en el encargo que tenia del trabajo y ahora me siento mal, la proxima vez intentaré hacerlo mejor"}
-{"id": "63t", "text": "no hay nada peor que quedarse sin cenar"}
+{"id": "63t", "text": "quedarse sin cenar es lo peor"}
 {"id": "64d", "text": "no soy inteligente"}
 {"id": "64da", "text": "En ocasiones me equivoco y las cosas me salen mal"}
 {"id": "64t", "text": "¡qué guapa que eres!"}
 {"id": "65d", "text": "mi tio es insoportable"}
 {"id": "65da", "text": "Mi tio no me cae demasiado bien"}
-{"id": "65t", "text": "es completamente estúpido pensar...."}
+{"id": "65t", "text": "Es completamente estúpido pensar que puedes ir a la luna andando"}
 {"id": "66d", "text": "no soy inteligente"}
 {"id": "66da", "text": "Muchas veces nos fijamos solo en los errores, seguro que puedes buscar momentos en los que te hayas sentido inteligente"}
 {"id": "66t", "text": "en el deporte soy un poco torpe"}
@@ -216,7 +216,7 @@
 {"id": "72t", "text": "la música del bar es inaguantable mejor buscamos un sitio más tranquilo"}
 {"id": "73d", "text": "es que soy imbecil no tengo remedio"}
 {"id": "73da", "text": "Me he vuelto a equivocar, igual podria intentar estar más atento"}
-{"id": "73t", "text": "Esta decisión no parece del todo inteligente"}
+{"id": "73t", "text": "Esta decisión no es del todo inteligente"}
 {"id": "74d", "text": "he tenido problemas con mi antiguo jefe, es una mala persona"}
 {"id": "74da", "text": "Mi jefe y yo tenemos formas diferentes de ver las cosas y no nos entendemos"}
 {"id": "74t", "text": "Soy la pequeña de mi familia, tengo dos hermanos mayores"}
@@ -225,13 +225,13 @@
 {"id": "75t", "text": "Mi amigo es de Brasil, aunque hace dos años que vive en Barcelona y dice que le gusta mucho"}
 {"id": "76d", "text": "no soy nada inteligente"}
 {"id": "76da", "text": "Puede que hoy me haya equivocado, pero otras veces suelo tener una respuesta inteligente"}
-{"id": "76t", "text": "Cuando me comparto con la gente de mi classe veo que soy bastante alto"}
+{"id": "76t", "text": "Cuando me comparo con la gente de mi classe veo que soy bastante alto"}
 {"id": "77d", "text": "es rematadamente tonto"}
 {"id": "77da", "text": "Se ha vuelto a equivocar, le puedo dar otra oportunidad"}
 {"id": "77t", "text": "Este sitio es muy oscuro, me gustaria más si pusieran un poco de luz"}
 {"id": "78d", "text": "Las personas son hipócritas, confías en ellas y te mienten"}
 {"id": "78da", "text": "Les expliqué mi problema y esperaba otra cosa de ellos, me han fallado esta vez."}
-{"id": "78t", "text": "El ruido que hacen las obras es insoportable, espero que acaben pronto"}
+{"id": "78t", "text": "El ruido que hacen las obras es insoportable"}
 {"id": "79d", "text": "Soy muy gafe, estropeo todo lo que toco."}
 {"id": "79da", "text": "He intentado arreglar mi ordenador y en lugar de esto lo he estropeado más, mejor lo llevaré a reparar."}
 {"id": "79t", "text": "Me siento inutil leyendo cosas que no entiendo"}
@@ -243,7 +243,7 @@
 {"id": "81t", "text": "si no vienes, te lo vas a perder"}
 {"id": "82d", "text": "O soy perfecto, o soy un desastre"}
 {"id": "82da", "text": "A veces me equivoco, como todos, pero esto no me define como persona"}
-{"id": "82t", "text": "a veces me tengo el dilema: o me quedo en casa o salgo"}
+{"id": "82t", "text": "a veces tengo el dilema de,  o me quedo en casa o salgo"}
 {"id": "83d", "text": "Si no estás conmigo, estás contra mí"}
 {"id": "83da", "text": "Puede que no siempre estemos de acuerdo con el resto de gente, cada uno tenemos nuestras ideeas y creencia, pero esto no nos situa en posiciones opuestas, podemos entendernos "}
 {"id": "83t", "text": "o comemos arroz o pasta"}
@@ -273,10 +273,10 @@
 {"id": "91t", "text": "Si no le hago la comida a mi pareja no conseguirá su meta de estar más delgada porque no se sabe cocinar"}
 {"id": "92d", "text": "si no soy el mejor en mi trabajo entonces me despedirán"}
 {"id": "92da", "text": "Es importante que nos impliquemos en el trabajo y seamos resonsables, si cumplo con lo acordado todo estará bien"}
-{"id": "92t", "text": "O llego a mi trabajo a las 8 que es la hora perfecta o más tarde no consigo dónde aparcar el coche"}
+{"id": "92t", "text": "O llego a mi trabajo a las 8 que es la hora perfecta o más tarde no consigo aparcar el coche"}
 {"id": "93d", "text": "O está todo bien organizado o no voy a ir al viaje"}
 {"id": "93da", "text": "Puedo controlar lo que como para así no subir más de peso"}
-{"id": "93t", "text": "Si le permito a mi hijo que se enfade cuando tiene razón aprenderá que es una emoción como cualquier otra"}
+{"id": "93t", "text": "Si no  le permito a mi hijo que se enfade no aprenderá que es una emoción como cualquier otra"}
 {"id": "94d", "text": "siempre estamos igual o encontramos la forma de entendernos o yo me voy de casa"}
 {"id": "94da", "text": "Hay otras formas que nos ayudan a no engordar si no siempre podemos hacer ejercicio"}
 {"id": "94t", "text": "O descanso o luego no rindo en el gimnasio ni puedo hacer los movimientos perfectos"}
@@ -288,10 +288,10 @@
 {"id": "96t", "text": "O encuentro una pareja de baile o las clases que he hecho no servirán para bailar sola"}
 {"id": "97d", "text": "si no estoy siempre bien me agobio mucho"}
 {"id": "97da", "text": "Es normal que a veces no nos sintamos bien, forma parte de la evolución de la vida"}
-{"id": "97t", "text": "Si alguien del grupo no sabe jugar a uno de los juegos nuevos de ordenador le decimos en broma que es un ignorante"}
+{"id": "97t", "text": "Si alguien del grupo no sabe jugar  o le enseñamos o es facil que pierda "}
 {"id": "98d", "text": "sino quedo el primero en la carrera habré perdido"}
 {"id": "98da", "text": "Todos a veces ganamos y otras perdemos, pero lo importante es intentar las cosas que queremos hacer"}
-{"id": "98t", "text": "Si como bien dice mi padre si por comer a gusto me vuelvo obeso bienvenida sea una talla más de pantalón"}
+{"id": "98t", "text": "O me esfuerzo mucho en conseguir lo que quiero o me resutará bastante difícil "}
 {"id": "99d", "text": "si no estoy delgado no soy feliz"}
 {"id": "99da", "text": "Me sentiria mejor conmigo mismo si estubiera más delgado"}
 {"id": "99t", "text": "Si soy feliz por cómo estoy aprendiendo a bailar me volveré una volveré bailarina profesional"}
@@ -313,7 +313,7 @@
 {"id": "105d", "text": "aunque ahora mismo estoy bien, estoy convencida de que va a pasar algo malo"}
 {"id": "105da", "text": "Estar bien no predice que vaya a pasar algo malo, es mejor disfrutar de estar bien"}
 {"id": "105t", "text": "en la entrevista, sé que me evaluarán"}
-{"id": "106d", "text": "estoy segura de que no les va a gustar."}
+{"id": "106d", "text": "estoy segura de que me voy a equivocar por mucho que me prepare"}
 {"id": "106da", "text": "Antes de enseñarlo es dificil saber que va a pensar otra gente, es mejor enseñarlo"}
 {"id": "106t", "text": "si digo como me siento, me sentiré vulnerable "}
 {"id": "107d", "text": "No iré a la fiesta porque seguro que hago el ridículo"}
@@ -357,7 +357,7 @@
 {"id": "119t", "text": "irá mal en ocasiones"}
 {"id": "120d", "text": "No podría haber ido peor"}
 {"id": "120da", "text": "Ha ido mal, pero podemos solucinarlo"}
-{"id": "120t", "text": "la clase de catalán duró 3 horas. Fue horrible. (no relacionado con uno mismo o una vivencia emocional relevante)"}
+{"id": "120t", "text": "la clase de catalán duró 3 horas. Fue horrible."}
 {"id": "121d", "text": "Las consecuencias serían insoportables… fracasaría y sería horrible."}
 {"id": "121da", "text": "Aunque falles, la mayoria de cosas se pueden reparar y buscar una buena alternativa"}
 {"id": "121t", "text": "Me sabe fatal que no llegaras a tiempo"}
@@ -366,55 +366,55 @@
 {"id": "122t", "text": "ja ja ja, qué gracioso, ¡eres terrible!"}
 {"id": "123d", "text": "Todo irá mal"}
 {"id": "123da", "text": "No podemos saber como irá, a vecesa algunas cosas salen mal pero podemos hacer algo para que mejoren"}
-{"id": "123t", "text": "las consecuencias del indendio han sido terribles "}
+{"id": "123t", "text": "las consecuencias del incendio han sido terribles "}
 {"id": "124d", "text": "La reunión fue un desastre"}
 {"id": "124da", "text": "La reunion no ha salido como esperaba"}
-{"id": "124t", "text": "Lo que me ha pasado (me está pasando) es muy desagradable"}
-{"id": "125d", "text": "No podría haber ido peor"}
+{"id": "124t", "text": "Lo que me ha pasado es muy desagradable"}
+{"id": "125d", "text": "Esta llegando tarde, seguro que el tren ha tenido un accidente"}
 {"id": "125da", "text": "Ha habido más fallos de los que esperaba pero aun así podemos intentar resolverlo"}
-{"id": "125t", "text": "En fiestas con gente desconocida (a veces) lo paso mal."}
+{"id": "125t", "text": "En fiestas con gente desconocida lo paso muy mal"}
 {"id": "126d", "text": "Lo que me está pasando es horrible, no lo puedo soportar"}
 {"id": "126da", "text": "Lo que me está pasando es duro, no es agradable, pero lo puedo soportar"}
-{"id": "126t", "text": "Hay cosas que no salen bien y que no son agradables"}
+{"id": "126t", "text": "Mañana tengo un examen muy difícil e importante, el resultado afectará a mi expediente"}
 {"id": "127d", "text": "No voy a la fiesta porque me da terror que me rechacen, eso es lo peor, no lo podría aguantar "}
 {"id": "127da", "text": "A veces estoy incómodo en algunas fiestas, pero luego me lo paso bien"}
-{"id": "127t", "text": "Mañana tengo un examen muy difícil e importante, el resultado afectará a mi expediente"}
+{"id": "127t", "text": "Equivocarse en el nombre de un informe en la empresa, será un error grave"}
 {"id": "128d", "text": "Es mejor que no lo intente porque seguro que me saldrá mal y será insoportable"}
 {"id": "128da", "text": " Puede que me salga mal, pero lo he de intentar. De la experiencia se aprende"}
-{"id": "128t", "text": "Después de esto las cosas serán más difíciles"}
+{"id": "128t", "text": "Es insoportable la gente que habla en el cine"}
 {"id": "129d", "text": "Si mañana no me sale bien el examen será horroroso, yo me muero"}
 {"id": "129da", "text": "Si suspendo el examen de mañana me enfadaré después de todo lo que he estudiado, pero me servirá de base para el próximo"}
-{"id": "129t", "text": "Las taquicardias (o la sensación del corazón acelerado) es una situación bastante desagradable."}
+{"id": "129t", "text": "La reparación será bastante cara"}
 {"id": "130d", "text": "Después de esto ya no hay solución, mi vida será un horror"}
 {"id": "130da", "text": "(Después de esto) Me costará recuperarme, pero saldré adelante"}
-{"id": "130t", "text": "Equivocarse en el nombre de un informe en esta empresa, es considerado un error… (leve, moderado, grave, a tener en cuenta, importante)"}
+{"id": "130t", "text": "Si suspendo el examen de la próxima semana me bajará mucho la nota media, que horro!"}
 {"id": "131d", "text": "Me noto el corazón muy acelerado, me dará un ataque de pánico y será horroroso"}
 {"id": "131da", "text": "Me noto el corazón muy acelerado, debo de estar nervioso"}
-{"id": "131t", "text": "Que alguien que es importante para ti no te conteste un mensaje es una situación difícil (desagradable, incómoda)"}
+{"id": "131t", "text": "Será algo duro y difícil"}
 {"id": "132d", "text": "Me he equivocado en el nombre de un informe, mi jefa me va a matar, nunca más confiará en mí, esto ya no puede ser peor"}
 {"id": "132da", "text": "Me he equivocado en el nombre de un informe, seguramente mi jefa me dirá que me he de fijar más en estos detalles"}
-{"id": "132t", "text": "Engordar (coger) 4 kg en las navidades es incómodo (desagradable)"}
+{"id": "132t", "text": "Lo que me ha pasado es duro"}
 {"id": "133d", "text": "Que no me responda al mensaje sería lo peor del mundo, lo peor que me podría pasar"}
 {"id": "133da", "text": "Que no me responda al mensaje sería algo incómodo para mí, pero llevadero"}
-{"id": "133t", "text": "Que te deje tu pareja (marido, mujer, novio/a…) es una de las situaciones más complicadas de la vida"}
+{"id": "133t", "text": "Para mí es insoportable estar tranquilo en sitios cerrados"}
 {"id": "134d", "text": "He engordado 4 kgs, esto es tremendo, inaceptable, no valgo para nada"}
 {"id": "134da", "text": "He cogido algo de peso, tengo que empezar a cuidar mi alimentación un poco más. "}
-{"id": "134t", "text": "Como madre, me preocupo mucho por la seguridad de mi familia. Sufriría mucho si les pasase algo"}
+{"id": "134t", "text": "No será tan terrible"}
 {"id": "135d", "text": "Si me deja mi mujer, será horrible, el fin, me moriré"}
 {"id": "135da", "text": "Si me deja mi mujer, pasaré una temporada muy dura, pero saldré adelante"}
-{"id": "135t", "text": "Sería una noticia muy dura que me diagnostiquen un cáncer"}
+{"id": "135t", "text": "Mi mujer será la directora de su oficina"}
 {"id": "136d", "text": "Mi hijo no me ha llamado para decirme que ha llegado. Seguro que les ha pasado algo malo, algo terrible, seguro que han tenido un accidente"}
 {"id": "136da", "text": "Mi hijo no me ha llamado para decirme que ha llegado, seguro que ha encontrado caravana y/o le está costando aparcar"}
-{"id": "136t", "text": "Que no me quiera (me corresponda) afectará a mi vida"}
+{"id": "136t", "text": "Me han sucedido cosas desagradables"}
 {"id": "137d", "text": "Si me diagnostican un cáncer sería lo peor del mundo, se acabaría toda mi vida"}
 {"id": "137da", "text": "Puede que me diagnostiquen un cáncer, entonces tendré que ver qué puedo hacer, qué pronóstico y tratamientos existen"}
-{"id": "137t", "text": "La reparación será bastante cara"}
+{"id": "137t", "text": "Lo peor de trabajar mucho es que no te guste lo que haces"}
 {"id": "138d", "text": "Si no me quiere será terrible, un horror"}
 {"id": "138da", "text": "Si no me quiere, puedo encontrar otra persona con quien poder ser feliz"}
-{"id": "138t", "text": "Hay planes que salen mal"}
+{"id": "138t", "text": "Esta situación me está costando mucho de aguantar, será largo"}
 {"id": "139d", "text": "Es la ruina, el coche no arranca"}
 {"id": "139da", "text": "Será caro, pero podré hacerle frente"}
-{"id": "139t", "text": "Si suspendo el examen de la próxima semana me bajará mucho la nota media"}
+{"id": "139t", "text": "Las lluvias pueden afectar negativamente a la cosecha y hacer que sea un año duro"}
 {"id": "140d", "text": " He perdido el paraguas, soy un desastre "}
 {"id": "140da", "text": "Perder el paraguas es un hecho puntual que no afecta a como soy yo"}
 {"id": "140t", "text": "Soy un ser humano maravilloso porque siempre escucho a los demás"}
@@ -426,172 +426,172 @@
 {"id": "142t", "text": "Pude haber disfrutado de la excursión y, de hecho, lo hice "}
 {"id": "143d", "text": "La máquina de lavar se ha parado. Siempre sucede lo mismo. No lo soporto más, ya me ha fastidiado el resto del día."}
 {"id": "143da", "text": "Me ha fastidiado en ese momento, pero no quiere decir que me vaya a fastidiar el día entero"}
-{"id": "143t", "text": "No soporto que me griten ni que me peguen "}
+{"id": "143t", "text": "La mayoría votó a favor, por lo que estoy contento. "}
 {"id": "144d", "text": "Mi jefe me ha pedido que llegue cinco minutos antes. No está contento con mi trabajo."}
 {"id": "144da", "text": "Quizás tu jefe te ha citado por otro motivo. ¿Podría ser?"}
 {"id": "144t", "text": "Mi jefe me ha felicitado, eso es que está contento con mi trabajo "}
 {"id": "145d", "text": "Mi madre está jugando con mi hermana pequeña. Creo que mi madre quiere más a mi hermana que a mí."}
 {"id": "145da", "text": "Que tu madre juegue más con tu hermana pequeña no necesariamente quiere decir que le quiera más a ella que a ti"}
-{"id": "145t", "text": "Mi madre está jugando conmigo y con mi hermana. Creo que se lo está pasando bien"}
+{"id": "145t", "text": "Mis padres están discutiendo y esto es algo desagradable"}
 {"id": "146d", "text": "Mis padres están gritando. Creo que se van a divorciar."}
 {"id": "146da", "text": "No tengo pruebas suficientes acerca de lo que va a ocurrir con mis padres en el futuro"}
-{"id": "146t", "text": "Mis padres están discutiendo y esto es algo desagradable"}
+{"id": "146t", "text": "Mis padres han separado el dinero en cuentas diferentes. Creo que es una buena idea"}
 {"id": "147d", "text": "Mis padres se han separado. Seguro que ha sido por mi culpa."}
 {"id": "147da", "text": "No puedo demostrar que se hayan separado por mi culpa"}
-{"id": "147t", "text": "Mis padres han separado el dinero en cuentas diferentes. Creo que es una buena idea"}
+{"id": "147t", "text": "No tengo comida en casa por lo que tendré que pedirla a domicilio"}
 {"id": "148d", "text": "En el trabajo me felicitaron todos excepto mi jefe. Seguro que cometí muchos errores en el proyecto"}
 {"id": "148da", "text": "Quizás no cometí tantos errores, pues la mayoría me felicitó"}
-{"id": "148t", "text": "Me felicitaron todos excepto mi amigo; el pobre no tuvo tiempo en todo el día"}
+{"id": "148t", "text": "Se ha ido la luz, así que voy a tener que encender unas velas"}
 {"id": "149d", "text": "Me prepararon una fiesta sorpresa pero fue empezar a llover y fastidiarse todo"}
 {"id": "149da", "text": "Que lloviera no era lo esperado, pero seguro que hay muchos otros momentos buenos de la fiesta que puedas recordar"}
-{"id": "149t", "text": "Fue empezar a llover y empezar a cantar bajo la lluvia"}
+{"id": "149t", "text": "Dicen que soy muy simatico porque siempre hago reir a la gente"}
 {"id": "150d", "text": "La cena que preparé le gusto a todos. Sin embargo, comentaron que las patatas estaban algo saladas. Eso quiere decir que no disfrutaron de la cena"}
 {"id": "150da", "text": "Si dicen que la cena les gustó a todos, probablemente sí que la disfrutaron"}
-{"id": "150t", "text": "Me comentaron que la comida tenía mucha sal, por lo que debo ser un tío muy salado."}
+{"id": "150t", "text": "Por fin ha llegado el verano, que contenta estoy!"}
 {"id": "151d", "text": "He aprobado todas las asignaturas pero no han sido todo sobresalientes. Soy un desastre "}
 {"id": "151da", "text": "No sacar todo sobresalientes no me convierte en un desastre. "}
-{"id": "151t", "text": "No he suspendido ninguna, por lo que me podré ir de vacaciones"}
+{"id": "151t", "text": "Me comentaron que la comida tenía mucha sal, por lo que debo ser un tío muy salado."}
 {"id": "152d", "text": "Mi hijo dice que me quiere pero a veces se enfada conmigo. Quizás no me quiere tanto"}
 {"id": "152da", "text": "Que en ocasiones tu hijo se enfade contigo no significa que no te quiere"}
-{"id": "152t", "text": "Me dice que me quiere y a veces me abraza. Estoy super contento con ella"}
+{"id": "152t", "text": "No he suspendido ninguna, por lo que me podré ir de vacaciones"}
 {"id": "153d", "text": "Según mis amigos, tengo buen fondo. No obstante, me dicen que debería tener más tacto. Soy un mal amigo"}
 {"id": "153da", "text": "No seré tan mal amigo si mis amigos me dicen que tengo buen fondo "}
-{"id": "153t", "text": "Me dicen que debo 50 euros a un amigo. Debería darme prisa "}
+{"id": "153t", "text": "Me dice que me quiere y a veces me abraza. Estoy super contento con ella"}
 {"id": "154d", "text": "La crítica que hicieron sobre mi exposición me fastidió el día entero "}
 {"id": "154da", "text": "La crítica que me hicieron me fastidió bastante, pero hice otras cosas aquel día y fueron bien"}
-{"id": "154t", "text": "La crítica de la película estubo fabulosa. Volveré a verla"}
+{"id": "154t", "text": "Hemos llegado al restaurante y estaba cerrado, se no ha fastidado la hora de comer"}
 {"id": "155d", "text": "Recibí una llamada del trabajo estando de vacaciones y me puse de mal humor durante todo el día"}
 {"id": "155da", "text": "Estando de vacaciones es probable que hubiesen momentos del día de los que sí disfrutase"}
-{"id": "155t", "text": "Ya lo anunciaron por la televisión: no paró de llover en todo el día"}
+{"id": "155t", "text": "La noche fue horrible porque nos atracaron en el portal"}
 {"id": "156d", "text": "Mi pareja me quiere y apoya en todo. No obstante, la discusión que tuvimos ayer me hizo dudar de sus sentimientos"}
 {"id": "156da", "text": "Si mi pareja me quiere, no tengo porque dudar de sus sentimientos por una discusión."}
-{"id": "156t", "text": "Mi pareja me quiere. No obstante, aunque no me lo diga, sé que es cierto."}
+{"id": "156t", "text": "La erupción del volcan destruyó muchas viviendas, ha sido un desastre para la población"}
 {"id": "157d", "text": "Tuve una cita con un chico y, pese a que lo pasamos bien, me molestó que llegase tarde. Quizás no le intereso tanto"}
 {"id": "157da", "text": "Quizás llegó tarde por otro motivo"}
-{"id": "157t", "text": "Tuve una cita y la persona llegó pronto. Quizás cogió el primer tren de la estación"}
+{"id": "157t", "text": "Mi padre prefiere el rojo, pero a veces se viste de azul. Quizás no tiene claros sus gustos"}
 {"id": "158d", "text": "Fue simpático y agradable conmigo durante la cita. No obstante, lo ví mirar el reloj 2 veces. Seguro que soy una persona aburrida"}
 {"id": "158da", "text": "Quizás miró el reloj por algo ajeno y no por considerarte alguien aburrido "}
-{"id": "158t", "text": "Lo ví mirar el reloj 2 veces. Seguro que se lo ha comprado en una tienda cara "}
+{"id": "158t", "text": "Hoy hubiesemos escalado una gran montaña si no fuera porque ha hecho mal tiempo."}
 {"id": "159d", "text": "Mi entrenador me felicitó por mi rendimiento, pero me sustituyó a la media parte. Sé que en el fondo no cuenta conmigo."}
 {"id": "159da", "text": "Hay muchos motivos por los que me pudo substituir a media parte, no tiene porque estar relacionado con mi rendimiento"}
-{"id": "159t", "text": "Mi entrenador me sustituyó en la segunda parte. Menos mal que se dió cuenta de que pedí el cambio"}
+{"id": "159t", "text": "Me he portado mal en clase por lo que me han castigado"}
 {"id": "160d", "text": "Siento pavor a subirme a un avión. Volar es muy peligroso."}
 {"id": "160da", "text": "Aunque sienta miedo a subirme a un avión, es un medio de transporte seguro"}
-{"id": "160t", "text": "Siento pavor al subirme a un avión, aunque no sea peligroso"}
+{"id": "160t", "text": "Siento pavor al subirme a un avión"}
 {"id": "161d", "text": "¡Estás triste, así que la situación debe ser muy mala!"}
 {"id": "161da", "text": "Estás triste, puede que la situación sea mala"}
-{"id": "161t", "text": "Es una mala situacón estar triste"}
+{"id": "161t", "text": "Puedo ser mala persona si siento que debo serlo"}
 {"id": "162d", "text": "Siento que soy una mala persona, por tanto debo serlo."}
 {"id": "162da", "text": "Ahora me siento mala persona, pero es probable que esta sensación cambie"}
-{"id": "162t", "text": "Puedo ser mala persona si siento que debo serlo"}
+{"id": "162t", "text": "Si me siento soy incompetente, tengo que trabajar de pie!"}
 {"id": "163d", "text": "Me siento incompetente, luego soy incompetente."}
 {"id": "163da", "text": "Me siento incompetente ahora mismo, esto no implica que lo sea"}
-{"id": "163t", "text": "Si me siento soy incompetente, tengo que trabajar de pie!"}
+{"id": "163t", "text": "Si no tengo a mis amigos de verdad, me siento solo"}
 {"id": "164d", "text": "Me siento solo, nunca tendré amigos de verdad"}
 {"id": "164da", "text": "Me siento solo, pero puedo encontrar buenos amigos"}
-{"id": "164t", "text": "Si no tengo a mis amigos de verdad, me siento solo"}
+{"id": "164t", "text": "Siento, que no puedo con esto.  Pesa tanto que no puedo."}
 {"id": "165d", "text": "Siento que no puedo con esto, por tanto, no puedo."}
 {"id": "165da", "text": "Ahora mismo siento que no puedo con esto, pero puede que más adelante lo vea de otro modo"}
-{"id": "165t", "text": "Me siento, que no puedo con esto.  Pesa tanto que no puedo."}
+{"id": "165t", "text": "Te sientas o no deprimido, la vida no tiene un sentido. Se lo damos."}
 {"id": "166d", "text": "Mi abuelo murió hace un mes y mi madre está triste desde entonces. Creo que ella se va a morir también."}
 {"id": "166da", "text": "Como mi abuelo murió hace un mes y mi madre está triste, siento que mi madre también podria morir, pero probablemente sea por como me ha afectado a mi esta situación"}
-{"id": "166t", "text": "Mi abuelo murió hace un mes y mi madre está triste desde entonces, ella también morirá algún dia "}
+{"id": "166t", "text": "Estudiar no me hace feliz, y eso es molesto para mi"}
 {"id": "167d", "text": "Me siento deprimido, la vida no tiene sentido."}
 {"id": "167da", "text": "Es difícil encontrar el sentido en la vida cuando estás mal, pero todo puede mejorar"}
-{"id": "167t", "text": "Te sientas o no deprimido, la vida no tiene un sentido. Se lo damos."}
+{"id": "167t", "text": "Siempre me esfuerzo aunque sienta que no vale la pensa esforzarse"}
 {"id": "168d", "text": "Si te da miedo, es porque debe haber algo peligroso en ello."}
 {"id": "168da", "text": "Puede que algo te de miedo, pero el miedo no siempre concuerda con un peligro real"}
-{"id": "168t", "text": "Si hay algo de peligroso en ello, te da miedo, es normal."}
+{"id": "168t", "text": "Me empujo a sentirme alguien capaz, aunque no siempre debo serlo"}
 {"id": "169d", "text": "Esta persona me da mala espina, seguro que quiere hacerme daño"}
 {"id": "169da", "text": "Esta persona me da mala espina, pero no  tengo motivos para pensar que quiere hacerme daño"}
-{"id": "169t", "text": "Esta persona lleva clavada una espina, seguro que quiere darse un baño"}
+{"id": "169t", "text": "Me siento mal por haberle dicho la verdad a mi amiga"}
 {"id": "170d", "text": "Si estudiar no me hace feliz, es porque no es bueno para mí"}
 {"id": "170da", "text": "Estudiar no me hace feliz, pero me puede dar muchas oportunidades, eso es bueno para mí"}
-{"id": "170t", "text": "Estudiar no me hace feliz, y eso es molesto para mi"}
+{"id": "170t", "text": "No me apetece hacer cambios en mi vida cuando me siento triste"}
 {"id": "171d", "text": "Si siento que no vale la pena esforzarme, es porque realmente no vale la pena"}
 {"id": "171da", "text": "Siento que no vale la pena esforzarme, pero probablemente sea porque estoy frustrado, lo seguiré intentando"}
-{"id": "171t", "text": "Siempre me esfuerzo aunque sienta que no vale la pensa esforzarse"}
+{"id": "171t", "text": "Si me enfado es porque, en mi opinión, me ha hecho algo malo"}
 {"id": "172d", "text": "Siento que todo es demasiado complicado, por tanto, debe serlo"}
 {"id": "172da", "text": "Siento que todo es demasiado complicado, pero puede que pasado un tiempo lo vea todo más claro"}
-{"id": "172t", "text": "La ciencia asegura que curar el Covid es complicado, por tanto, debe serlo"}
+{"id": "172t", "text": "Si me siento un perdedor es porque el examen de hoy me ha ido mal"}
 {"id": "173d", "text": "Siento que no soy capaz, por lo tanto no debo serlo"}
 {"id": "173da", "text": "Siento que no soy capaz en este momento, pero quizás solo sea una sensación, voy a intentarlo"}
-{"id": "173t", "text": "Me empujo a sentirme alguien capaz, aunque no siempre debo serlo"}
+{"id": "173t", "text": "Siento que nadie me comprende. Este bicho es muy raro"}
 {"id": "174d", "text": "Me siento mal por haberle dicho la verdad a mi amiga, seguro que he hecho algo malo"}
 {"id": "174da", "text": "Me siento mal, pero puede que sea porque el resultado ha sido negativo, aunque en realidad no haya hecho nada malo"}
-{"id": "174t", "text": "Me siento mal por haberle dicho la verdad a mi amiga, aunque no creo que ella piense que he hecho algo malo"}
+{"id": "174t", "text": " Hoy me siento un poco decaído"}
 {"id": "175d", "text": "Me siento triste, por lo que debería hacer cambios en mi vida"}
 {"id": "175da", "text": "Me siento triste, es una emoción que estoy sintiendo en este momento, no indica que deba hacer cambios en mi vida"}
-{"id": "175t", "text": "No me apetece hacer cambios en mi vida cuando me siento triste"}
+{"id": "175t", "text": "No me siento comprendida por mi pareja en esta situación"}
 {"id": "176d", "text": "Si me enfado es porque me ha hecho algo malo"}
 {"id": "176da", "text": "Es posible que aunque me sienta enfadado, lo que haya hecho no esté mal, solo me ha sentado mal"}
-{"id": "176t", "text": "Si me enfado es porque, en mi opinión, me ha hecho algo malo"}
+{"id": "176t", "text": "Siento que no soy bueno en mi trabajo, si ellos lo pensaran ya me habrían despedido"}
 {"id": "177d", "text": "Si me da ansiedad al estar entre tantas personas es porque es peligroso"}
 {"id": "177da", "text": "Que sienta ansiedad al estar entre tantas personas es independiente del peligro real que exista, es solo mi emoción"}
-{"id": "177t", "text": "Si me da ansiedad al estar entre tantas personas es porque no consigo relajarme"}
+{"id": "177t", "text": "Siento que mis amigos se estan alejando de mí"}
 {"id": "178d", "text": "Si me siento un perdedor es porque lo soy"}
 {"id": "178da", "text": "Es fácil sentirse un perdedor cuando las cosas van mal, quizás podría fijarme en las pequeñas cosas buenas de mi vida"}
-{"id": "178t", "text": "Si me siento un perdedor es porque el examen de hoy me ha ido mal"}
+{"id": "178t", "text": "Si te sientes feliz te fijarás más en  las cosas buenas que te pasan"}
 {"id": "179d", "text": "¿Como no va a ser injusto, si me siento así de mal?"}
 {"id": "179da", "text": "Si me siento mal puede ser por muchos motivos, que alguien me haya tratado de manera injusta es uno de ellos, podría pensar en las distintas alternativas"}
-{"id": "179t", "text": "¿Como no va a ser injusto, si lo he hecho yo mejor y ha ganado ella?"}
+{"id": "179t", "text": "Hoy me siento triste"}
 {"id": "180d", "text": "María se está riendo; seguro que es de mí."}
 {"id": "180da", "text": "No puedes saber de que se está riendo María si no se lo preguntas"}
-{"id": "180t", "text": "María se está riendo, seguro que no es de mi"}
+{"id": "180t", "text": "Yo no tengo la culpa"}
 {"id": "181d", "text": "Mi jefe me ha dicho que todos los pacientes a cargo de un residente deberían ser examinados por un médico de la plantilla. Seguro que jefe no se fía de mi trabajo."}
 {"id": "181da", "text": "Que tu jefe te esté informando de una nueva norma que está afectando a todos los residentes y no solo a ti, no es ninguna razon por la que pensar que no se fia de tí."}
-{"id": "181t", "text": "Yo no tengo la culpa"}
+{"id": "181t", "text": "He estudiado mucho, no merecía suspender"}
 {"id": "182d", "text": "¡Todo es por mi culpa!"}
 {"id": "182da", "text": "Aunque tengas la culpa de alguna cosa que haya sucedido, nada esta más lejos que pensar que eso se generaliza a todo"}
-{"id": "182t", "text": "Durante la presentación parecían muy aburridos, seguro que no era mi culpa"}
+{"id": "182t", "text": "Se ha cancelado el vuelo, es culpa de la compañía aerea"}
 {"id": "183d", "text": "Durante la presentación que he hecho creo que se han aburrido porque soy un pesado."}
 {"id": "183da", "text": "No tienes pruebas para saber si se han aburrido o no, aunque hubiese sido asi no tiene ninguna asociacion con que seas un pesado"}
-{"id": "183t", "text": "Todo el mundo se pone nervioso"}
+{"id": "183t", "text": "Estaban criticando a alguien esta mañana en el trabajo, seguro que no soy yo"}
 {"id": "184d", "text": "Sé que se están riendo de mí"}
 {"id": "184da", "text": "No tengo pruebas suficientes para demostrar eso"}
-{"id": "184t", "text": "Mis padres estan hablando de mi en otra habitación"}
+{"id": "184t", "text": "Nada de lo que ha sucedido es por mi culpa"}
 {"id": "185d", "text": "Creo que pongo nervioso a todo el mundo."}
 {"id": "185da", "text": "Aunque haya pasado alguna vez, no puede ser que pase con todo el mundo"}
-{"id": "185t", "text": "Mi compañero me ha mirado mal, yo no le he hecho nada"}
+{"id": "185t", "text": "Mi compañero de trabajo me ha mirado esta mañana, seguro que le gusto"}
 {"id": "186d", "text": "Mis padres están teniendo una discusión en otro cuarto. Cuando pronuncian mi nombre, piesno que se están discutiendo por mi culpa."}
 {"id": "186da", "text": "Aunque aparezca en la discusión, mis padres se pelean a su voluntad, yo no tengo porque tener nada que ver"}
-{"id": "186t", "text": "Hay pocas cosas que me hagan reír"}
+{"id": "186t", "text": "El proyecto no ha ido bien, no es mi culpa"}
 {"id": "187d", "text": "Mi compañero de trabajo me ha mirado mal esta mañana, seguro que es porque le caigo mal."}
 {"id": "187da", "text": "Hay muchas causas de porque alguien puede mirar mal en algun momento, no tiene porque ser que le caes mal"}
-{"id": "187t", "text": "Mi compañero me ha mirado con aprobación"}
+{"id": "187t", "text": "Seguro que no es mi culpa que ya no me hable más"}
 {"id": "188d", "text": "Me han llamado del colegio porque mi hijo se ha portado mal, es mi culpa porque no le he educado bien,"}
 {"id": "188da", "text": "Si mi hijo se ha portado mal, no es por mi culpa, él actua con su propia voluntad"}
-{"id": "188t", "text": "Si algo va mal, seguro que no ha sido por mi culpa"}
+{"id": "188t", "text": "El proyecto ha ido genial, me han felicitado"}
 {"id": "189d", "text": "Mis amigos no me han llamado para quedar ultimamente, seguro que es porque ya no quieren seguir viéndome."}
 {"id": "189da", "text": "Hay muchas razones por las que no te hayan llamado tus amigos, no tiene porque ser que ya no te quieren ver"}
-{"id": "189t", "text": "Nadie tiene la culpa de que esto haya salido mal"}
+{"id": "189t", "text": "Me estaban mirando los pantalones, seguro que es porque quiere unos iguales"}
 {"id": "190d", "text": "Mi paciente  ha empeorado desde hace unas semanas, debe ser mi culpa, no le ha funcionado el tratamiento."}
 {"id": "190da", "text": "Si mi paciente ha empeorado, puede ser por muchos factores"}
-{"id": "190t", "text": "A mí no me gusta sentirme observado"}
+{"id": "190t", "text": "Me han ascendido en el trabajo, será que lo he hecho bien"}
 {"id": "191d", "text": "Algo va mal, seguro que he sido yo."}
 {"id": "191da", "text": "Que las cosas vayan mal, no tiene porque ser mi culpa"}
-{"id": "191t", "text": "Mi pareja me ha dicho lo mucho que me quiere"}
+{"id": "191t", "text": "No me han llamado aún mis amigos, seguro que lo haran pronto"}
 {"id": "192d", "text": "Mi pareja ha llegado a casa disgustada, seguro que he hecho algo mal."}
 {"id": "192da", "text": "Que tu pareja este disgustada puede ser por muchos motivos"}
-{"id": "192t", "text": "Todo el mundo se me ha quedado mirando"}
+{"id": "192t", "text": "Me estaba mirando fijamente a los ojos, seguro que piensa que son bonitos"}
 {"id": "193d", "text": "Cuando mis padres se divorciaron estuve seguro que fue por mi culpa"}
 {"id": "193da", "text": "Un divorcio se produce por un monton de causas, tu no has hecho nada mal para atribuirte esa culpa"}
-{"id": "193t", "text": "Antonio tiene mala cara esta tarde"}
+{"id": "193t", "text": "A la gente le gusta hablar bien de mi"}
 {"id": "194d", "text": "Este mes en el trabajo han bajado mucho las ventas, debería haber trabajado más y mejor."}
 {"id": "194da", "text": "Si han bajado las ventas en el trabajo es debido a muchos factores a parte del tuyo"}
-{"id": "194t", "text": "No ha sido mi culpa que hayamos perdido"}
+{"id": "194t", "text": "Mi madre se ha enfermado, es su culpa por no ir con más cuidado"}
 {"id": "195d", "text": "Hemos ido de vacaciones y no ha parado de llover, es mi culpa debería haberlo comprobado antes."}
 {"id": "195da", "text": "La meteorología es una cosa incontrolable que a veces no podemos predecir"}
-{"id": "195t", "text": "Me han dicho para ir a tomar un café"}
+{"id": "195t", "text": "Todo el mundo se me ha quedado mirando"}
 {"id": "196d", "text": "Le ha tocado la lotería a todos los del trabajo, yo no compré el boleto, debería haberlo pensado. "}
 {"id": "196da", "text": "A veces ocurren situaciones que no podemos predecir"}
-{"id": "196t", "text": "A la gente le gusta hablar bien de mi"}
+{"id": "196t", "text": "No ha sido mi culpa que hayamos perdido"}
 {"id": "197d", "text": "Marta tiene mala cara, debe de estar enfadada conmigo"}
 {"id": "197da", "text": "Que Marta tenga mala cara, puede ser por muchas razones"}
-{"id": "197t", "text": "Mi novio me ha invitado a salir"}
+{"id": "197t", "text": "Todo el mundo se pone nervioso"}
 {"id": "198d", "text": "En el trabajo tenía la impresión de que cada vez que el encargado hablaba de que había que mejorar la calidad del trabajo se referían exclusivamente a mi"}
 {"id": "198da", "text": "Cuando hacen referencia a que hay que mejorar el trabajo, no me lo dicen solo a mi"}
-{"id": "198t", "text": "Me estaba mirando fijamente a los ojos, seguro que piensa que son bonitos"}
+{"id": "198t", "text": "Mis padres estan hablando de mi en otra habitación"}
 {"id": "199d", "text": "Cuando escuchaba a mi marido quejarse de lo aburrido del fin de semana, pensaba; seguro que piensa que soy aburrida"}
 {"id": "199da", "text": "Que tu marido se haya aburrido el fin de semana, no indica que haya debido de ser por tu culpa"}
-{"id": "199t", "text": "Se estaban riendo del programa de televisión"}
+{"id": "199t", "text": "Hay pocas cosas que me hagan reír"}
