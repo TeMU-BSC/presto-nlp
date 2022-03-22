@@ -2,6 +2,7 @@ import prodigy
 from prodigy.components.loaders import JSONL
 from typing import List, Optional
 from prodigy.util import split_string
+from random import shuffle
 
 hierarchy = {'distorsión': ['sobregeneralización', 'leer la mente', 'imperativos', 'etiquetado',
                             'pensamiento absolutista', 'adivinación', 'catastrofismo', 'abstracción selectiva',
@@ -19,6 +20,7 @@ def get_stream(examples):
                 options = [{'id': opt, 'text': opt, 'ground-thruth': eg['ground-thruth']}
                            for opt in sub_labels]
                 # create new example with text and sub labels as options
+                shuffle(options)  # shuffle sub_labels for each example
                 new_eg = {'text': eg['text'], 'options': options}
                 yield new_eg
 
