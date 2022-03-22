@@ -3,9 +3,9 @@ from prodigy.components.loaders import JSONL
 from typing import List, Optional
 from prodigy.util import split_string
 
-hierarchy = {'yes': ['sobregeneralización', 'leer la mente', 'imperativos', 'etiquetado',
-                     'pensamiento absolutista', 'adivinación', 'catastrofismo', 'abstracción selectiva',
-                     'razonamiento emocional', 'personalización'], 'no': ['no hay distorsión']}
+hierarchy = {'distorsión': ['sobregeneralización', 'leer la mente', 'imperativos', 'etiquetado',
+                            'pensamiento absolutista', 'adivinación', 'catastrofismo', 'abstracción selectiva',
+                            'razonamiento emocional', 'personalización'], 'no': ['no distorsión']}
 
 # from https://support.prodi.gy/t/does-prodigy-supports-hierarchical-annotation/1249/9
 
@@ -20,18 +20,6 @@ def get_stream(examples):
                 # create new example with text and sub labels as options
                 new_eg = {'text': eg['text'], 'options': options}
                 yield new_eg
-
-# Helper functions for adding user provided labels to annotation tasks.
-# def add_label_options_to_stream(stream, labels):
-#     options = [{"id": label, "text": label} for label in labels]
-#     for task in stream:
-#         task["options"] = options
-#         yield task
-#
-# def add_labels_to_stream(stream, labels):
-#     for task in stream:
-#         task["label"] = labels[0]
-#         yield task
 
 
 @prodigy.recipe(
@@ -59,16 +47,6 @@ def textcat_modified(  # from https://github.com/explosion/prodigy-recipes/blob/
     # Load the stream from a JSONL file and return a generator that yields a
     # dictionary for each example in the data.
     stream = JSONL(source)
-
-    # Add labels to each task in stream
-    # has_options = len(label) > 1
-    # if has_options:
-    #     stream = add_label_options_to_stream(stream, label)
-    # else:
-    #     stream = add_labels_to_stream(stream, label)
-    #
-    # for line in stream:
-    #     print(line)
 
     has_options = True
     new_stream = get_stream(stream)
