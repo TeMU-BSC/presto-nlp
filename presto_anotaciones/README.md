@@ -9,7 +9,7 @@ prodigy drop presto_type
 ### Anotate if it has a distortion
 
 ```
-prodigy textcat.manual presto_distortion datos-jsonl.jsonl --label distorsión,"no distorsión"
+prodigy textcat.manual -E presto_distortion datos.7.jsonl --label distorsión,"no distorsión"
 ```
 
 When done with the day save like: 

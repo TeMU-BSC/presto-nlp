@@ -16,7 +16,7 @@ def get_stream(examples):
         for label in top_labels:
             if label != "no distorsión":
                 sub_labels = hierarchy[label]
-                options = [{'id': opt, 'text': opt, 'ground-thruth': eg['id']}
+                options = [{'id': opt, 'text': opt, 'ground-thruth': eg['ground-thruth']}
                            for opt in sub_labels]
                 # create new example with text and sub labels as options
                 new_eg = {'text': eg['text'], 'options': options}
