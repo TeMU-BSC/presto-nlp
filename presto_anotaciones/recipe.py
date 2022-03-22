@@ -29,14 +29,14 @@ def get_stream(examples):
     "textcat-modified",
     dataset=("The dataset to use", "positional", None, str),
     source=("The source data as a JSONL file", "positional", None, str),
-    #label=("One or more comma-separated labels", "option", "l", split_string),
+    # label=("One or more comma-separated labels", "option", "l", split_string),
     exclusive=("Treat classes as mutually exclusive", "flag", "E", bool),
     exclude=("Names of datasets to exclude", "option", "e", split_string),
 )
 def textcat_modified(  # from https://github.com/explosion/prodigy-recipes/blob/master/textcat/textcat_manual.py
     dataset: str,
     source: str,
-    #label: Optional[List[str]] = None,
+    # label: Optional[List[str]] = None,
     exclusive: bool = False,
     exclude: Optional[List[str]] = None,
 ):
@@ -56,7 +56,7 @@ def textcat_modified(  # from https://github.com/explosion/prodigy-recipes/blob/
 
     return {
         # Annotation interface to use
-        "view_id": "choice" if has_options else "classification",
+        "view_id": "blocks",
         "dataset": dataset,  # Name of dataset to save annotations
         "stream": new_stream,  # Incoming stream of examples
         "exclude": exclude,  # List of dataset names to exclude
@@ -64,5 +64,7 @@ def textcat_modified(  # from https://github.com/explosion/prodigy-recipes/blob/
             "choice_style": "single" if exclusive else "multiple",  # Style of choice interface
             # Hash value used to filter out already seen examples
             "exclude_by": "input" if has_options else "task",
+            "blocks": [{"view_id": "choice"},
+                       {"view_id": "text_input"}],
         },
     }
