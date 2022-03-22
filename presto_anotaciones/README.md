@@ -1,10 +1,15 @@
 
 ## Annotation for the PRESTO project
+Remove previous databases 
 
+```
+prodigy drop presto_distortion
+prodigy drop presto_type
+```
 ### Anotate if it has a distortion
 
 ```
-prodigy textcat.manual presto_distortion datos-jsonl.jsonl --label yes,no
+prodigy textcat.manual presto_distortion datos-jsonl.jsonl --label distorsión,"no distorsión"
 ```
 
 When done with the day save like: 

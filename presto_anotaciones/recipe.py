@@ -5,7 +5,7 @@ from prodigy.util import split_string
 
 hierarchy = {'distorsión': ['sobregeneralización', 'leer la mente', 'imperativos', 'etiquetado',
                             'pensamiento absolutista', 'adivinación', 'catastrofismo', 'abstracción selectiva',
-                            'razonamiento emocional', 'personalización'], 'no': ['no distorsión']}
+                            'razonamiento emocional', 'personalización'], 'no distorsión': []}
 
 # from https://support.prodi.gy/t/does-prodigy-supports-hierarchical-annotation/1249/9
 
@@ -14,7 +14,7 @@ def get_stream(examples):
     for eg in examples:   # the examples with top-level categories
         top_labels = eg['accept']  # ['A'] or ['B', 'C'] if multiple choice
         for label in top_labels:
-            if label != "no":
+            if label != "no distorsión":
                 sub_labels = hierarchy[label]
                 options = [{'id': opt, 'text': opt} for opt in sub_labels]
                 # create new example with text and sub labels as options
