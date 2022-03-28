@@ -3,6 +3,7 @@ from prodigy.components.loaders import JSONL
 from typing import List, Optional
 from prodigy.util import split_string
 from random import shuffle
+from prodigy.components.db import connect
 
 hierarchy = {'distorsión': ['sobregeneralización', 'leer la mente', 'imperativos', 'etiquetado',
                             'pensamiento absolutista', 'adivinación', 'catastrofismo', 'abstracción selectiva',
@@ -17,7 +18,7 @@ def get_stream(examples):
         for label in top_labels:
             if label != "no distorsión":
                 sub_labels = hierarchy[label]
-                options = [{'id': opt, 'text': opt, 'ground-thruth': eg['ground-thruth']}
+                options = [{'id': opt, 'text': opt, 'pre-ann-category': eg['pre-ann-category']}
                            for opt in sub_labels]
                 # create new example with text and sub labels as options
                 shuffle(options)  # shuffle sub_labels for each example
@@ -28,7 +29,8 @@ def get_stream(examples):
 @prodigy.recipe(
     "textcat-modified",
     dataset=("The dataset to use", "positional", None, str),
-    source=("The source data as a JSONL file", "positional", None, str),
+    source=("The name of the source dataset stored as database",
+            "positional", None, str),
     # label=("One or more comma-separated labels", "option", "l", split_string),
     exclusive=("Treat classes as mutually exclusive", "flag", "E", bool),
     exclude=("Names of datasets to exclude", "option", "e", split_string),
@@ -47,9 +49,10 @@ def textcat_modified(  # from https://github.com/explosion/prodigy-recipes/blob/
     only one can be selected during annotation.
     """
 
-    # Load the stream from a JSONL file and return a generator that yields a
+    # Load the stream directly from a database and return a generator that yields a
     # dictionary for each example in the data.
-    stream = JSONL(source)
+    db = connect()
+    stream = db.get_dataset(source)
 
     has_options = True
     new_stream = get_stream(stream)

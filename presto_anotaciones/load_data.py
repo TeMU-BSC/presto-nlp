@@ -23,14 +23,14 @@ def load_data(input_file):
         if n in range(1, 21):
             columns2id = {
                 "Texto con distorsión cognitiva": "d",
-                "Pensamiento alternativo": "da",
+                "Pensamiento alternativo": "a",
                 "Construcciones tricky": "t"
             }
             for column, letter in columns2id.items():
                 text_content = row[column]
 
                 line = {
-                    "ground-thruth": f"{letter}", "text": text_content}
+                    "pre-ann-category": f"{letter}", "text": text_content}
                 data.append(line)
 
     output_file = os.path.join(os.path.dirname(
