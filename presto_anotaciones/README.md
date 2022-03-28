@@ -33,5 +33,7 @@ prodigy db-out presto_type > presto_final.jsonl
 ### Evaluation
 
 ```
-python evaluate.py --metrics single_cohen,multi_cohen,exact_cohen --an1 presto_final.jsonl  --an2 presto_final2.jsonl 
+python evaluate.py --level first --an1 presto_first_level.jsonl  --an2 presto_first_level.jsonl 
+
+python evaluate.py --level second --metrics single_cohen,multi_cohen,exact_cohen --an1 presto_final.jsonl  --an2 presto_final2.jsonl 
 ```

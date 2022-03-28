@@ -75,7 +75,7 @@ def main():
     list_metrics = args.metrics.split(',')
 
     if args.level == 'first':
-        distortion = []
+        evaluate_exact_cohen(data1, data2)
 
     if args.level == 'second':
         labels = ['sobregeneralización', 'leer la mente', 'imperativos', 'etiquetado',
