@@ -1,5 +1,13 @@
 
 ## Annotation for the PRESTO project
+
+First, set env variables
+
+```
+export PRODIGY_CONFIG=prodigy.json
+export PRODIGY_ALLOWED_SESSIONS=annotator1,annotator2
+```
+
 Remove previous databases 
 
 ```
