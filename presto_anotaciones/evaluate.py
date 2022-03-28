@@ -9,7 +9,7 @@ from nltk.metrics.agreement import AnnotationTask
 def parsing_arguments(parser):
     parser.add_argument("--an1", default='presto_final.jsonl')
     parser.add_argument("--an2",  default='presto_final.jsonl')
-    parser.add_argument("--metrics", default='single_cohen', help='Options can be: single_cohen,exact_cohen,multi_cohen, write them comma-separated')
+    parser.add_argument("--metrics", default='single_cohen,exact_cohen,multi_cohen', help='Options can be: single_cohen,exact_cohen,multi_cohen, write them comma-separated')
     parser.add_argument("--level", default='second', help='Options can be: first (distortion?), second (type)')
     return parser
 
@@ -28,7 +28,7 @@ def create_label_vectors(data, labels):
 def evaluate_cohen(vectors_1, vectors_2, labels):
     scores = []
     for i, label in enumerate(labels):
-        if vectors_1[i] != [0] * len(vectors_1[i]):  # this should be removed once we have data from all categories
+        if vectors_1[i] != [0] * len(vectors_1[i]):  # this prevents the model from failing if we don't have data of all the labels
             score = cohen_kappa_score(np.array(vectors_1[i]), np.array(vectors_2[i]))
             print('Cohen Kappa for \'{}\': {}'.format(label, score))
             scores.append(score)
@@ -47,7 +47,7 @@ def evaluate_multi_cohen(vec_a, vec_b):
     for i, entry in enumerate(vec_b):
         annotation = 'coder_b', i, tuple(entry)
         task_data.append(annotation)
-    cosine_task = AnnotationTask(data=task_data, distance=cosine_distance)
+    cosine_task = AnnotationTask(data=task_data, distance=cosine_distance) # https://www.nltk.org/_modules/nltk/metrics/agreement.html
     print(f"Fleiss's Kappa using Cosine distance: {cosine_task.multi_kappa()}")
 
 def evaluate_exact_cohen(data, data2):
@@ -76,6 +76,7 @@ def main():
 
     if args.level == 'first':
         distortion = []
+
     if args.level == 'second':
         labels = ['sobregeneralización', 'leer la mente', 'imperativos', 'etiquetado',
                     'pensamiento absolutista', 'adivinación', 'catastrofismo', 'abstracción selectiva',
@@ -88,14 +89,15 @@ def main():
         if 'single_cohen' in list_metrics:
             evaluate_cohen(vectors_1, vectors_2, labels)
 
-        # TODO: METRIC, FOR EACH ANNOTATION, SEE IF THE LABELS ARE EXACTLY THE SAME
+        # FOR EACH ANNOTATION, SEE IF THE LABELS ARE EXACTLY THE SAME
         if 'exact_cohen' in list_metrics:
             evaluate_exact_cohen(data1, data2)
 
-        # TODO: METRIC, FOR EACH ANNOTATION, SEE HOW SIMILAR THE ANNOTATIONS ARE (VECTOR APPROACH)
+        # FOR EACH ANNOTATION, SEE HOW SIMILAR THE ANNOTATIONS ARE (VECTOR SIMILARITY APPROACH)
         if 'multi_cohen' in list_metrics:
             evaluate_multi_cohen(vectors_1, vectors_2)
             # there is a warning, but it might be because of the zeros
+            # issue when there is few data: 0s are also counted as similarity
 
 
 if __name__ == '__main__':
