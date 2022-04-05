@@ -7,14 +7,14 @@ rules:
 - rule: Say hello anytime the user says hello
   steps:
   - intent: greet
-  - action: utter_greet
+  # - action: utter_greet_presentation
+  - action: utter_greet_ask_emotion
 
 
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye_nicemood
   - action: utter_goodbye_nicemood
-
 
 ### fallback and chitchat rules
 
@@ -30,7 +30,26 @@ rules:
   - intent: chitchat
   - action: utter_chitchat
 
-### unlikely hoping wrap up works
+- rule: priorize gender violence
+  steps:
+    - intent: genderViolence
+    - action: utter_start_genderViolence
+
+- rule: priorize alert intent
+  steps:
+    - intent: alert
+    - action: utter_alert
+
+    # - intent: confirm
+    # - action: utter_call_to_emergency
+# - rule: priorize alert intent_no problem
+#   steps:
+#     - intent: emergency
+#     - action: utter_emergency
+#     - intent: deny
+#     - action: utter_answer_no_genderViolence
+
+### unlikely hoping wrap up worksa
 
 # - rule: every time we receive unlikely intent in wrap-up take those actions below
 #   steps:
@@ -48,6 +67,6 @@ rules:
 # - rule: Activate sentiment_form
 #   steps:
 #   - intent: inform_sentiment
-#   - action: sentiment_form 
+#   - action: sentiment_form
 # se desactiva esta regla hasta que este montado el endpoint para el formulario de emociones,
 # ya que entra en conflicto con las stories

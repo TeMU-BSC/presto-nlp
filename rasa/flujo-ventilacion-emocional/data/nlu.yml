@@ -24,6 +24,10 @@ nlu:
     - bastante jodido
     - estoy muy agobiada
     - muy horrible todo
+    - bien
+    - regular
+    - fatal
+    - mal muy mal
 
 ### Specifics
 - intent: sobregeneralizacion
@@ -184,8 +188,8 @@ nlu:
     - soy completamente idiota
     - soy asqueroso
     - es que soy imbecil no tengo remedio
-    - he tenido problemas con mi antiguo jefe, es una mala persona
-    - he discutido con mi [pareja](valorPareja) es completamente estúpido
+    - mi antiguo jefe es una mala persona
+    - mi [pareja](valorPareja) es completamente estúpido
     - no soy nada inteligente
     - es rematadamente tonto
     - Las personas son hipócritas, confías en ellas y te mienten
@@ -561,7 +565,6 @@ nlu:
     - Sé que en el fondo, le incomoda mi presencia
     - Estoy seguro de que mi familia quiere que me vaya de casa.
     - No lo reconoce pero, el director del colegio me tiene manía.
-    - La gente no se me acerca porque piensa que soy frío
     - Aunque mi hermano no me lo diga, preferiría que yo no existiera
     - El vecino piensa que no doy un palo al agua
     - Mi tutor piensa que jamás lograré aprobar el curso
@@ -977,10 +980,69 @@ nlu:
     - sos
     - quiero acabar con todo
     - dejar de existir
+    - voy a colgarme
+    - cortar venas
+    - pegarme un tiro
+    - matar a alguien
+    - no vale la pena vivir
+    - Mi muerte puede arreglarlo todo
+    - Mi labor en este mundo ha finalizado
+    - Solo quiero morir
+    - No puedo vivir un día más
+    - He pensado en suicidarme
+    - Quiero quitarme del medio
+    - La vida no merece la pena
+    - es mejor estar muerto
+    - Quiero terminar con todo
+    - Seré feliz en el cielo
+    - suicidio
+    - me voy a suicidar
+    - hola quiero cortarme las venas
+
+
+
+- intent: genderViolence
+  examples: |
+    - mi [marido](valorPareja) me ha levantado la mano
+    - mi [pareja](valorPareja) me pega
+    - Mi [pareja](valorPareja) no me deja salir
+    - Mi [pareja](valorPareja) me ha amenazado
+    - Me dice que no sirvo para nada
+    - No me deja hablar con mis amigos
+    - Me ha amenazado
+    - Me mira el teléfono
+    - No me deja tener redes sociales
+    - No me deja vestirme como quiero
+    - Me llama puta
+    - Me llama guarra
+    - Dice que soy una fresca
+    - Me amenaza con sacarme a los hijos
+    - Me obliga a tener relaciones sexuales
+    - Me obliga a hacerle felaciones
+    - Me dio un golpe
+    - Me hizo daño
+    - Mi [novio](valorPareja) Me menosprecia
+    - mi [marido](valorPareja) Me dice que no sirvo para nada
+    - mi [novio](valorPareja)Me culpa cuando se pone agresivo
+    - Controla todo lo que hago
+    - Me insulta
+    - Me vigila
+    - Rompe mis cosas personales
+    - Utiliza armas para intimidarme
+    - Me utiliza como objeto sexual
+    - ha difundido fotos mias con sus amigos
+    - mi [marido] me humilla
+
+
+
+
 
 - intent: emergency
   examples: |
     - /emergency
+- intent: confirm_gv
+  examples: |
+    - /confirm_gv
 
 ### Greetings and commands
 - intent: greet
@@ -1076,6 +1138,8 @@ nlu:
   examples: |
     - cuéntame alguna curiosidad
     - dime algo que no sepa
+    - cuéntame algo nuevo
+    - cuéntame algo que no sepa
 - intent: chitchat/who_are_you
   examples: |
     - quién te ha creado
