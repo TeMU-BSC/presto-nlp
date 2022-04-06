@@ -3,47 +3,62 @@
 language: es
 
 pipeline:
-
+  # - name: SpacyNLP
+  # # language model to load
+  #   model: es_core_news_sm --> Probar con spacy environment completo --> custom lemmatization
 ###basics pre-treatment
 
   - name: WhitespaceTokenizer
+  # - name: SpacyTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
     analyzer: char_wb
     min_ngram: 1
     max_ngram: 4
+    # OOV_token: _oov_
+  - name: LanguageModelFeaturizer
+    # Name of the language model to use
+    model_name: "roberta"
+    # Pre-Trained weights to be loaded
+    model_weights: "PlanTL-GOB-ES/roberta-base-bne"
+
+    # An optional path to a specific directory to download and cache the pre-trained model weights.
+    # The `default` cache_dir is the same as https://huggingface.co/transformers/serialization.html#cache-directory .
+    cache_dir: null
+  #  Whether to use a shared vocab
+  #   use_shared_vocab: False
 ### Custom components and classifiers
   - name: sentiment.SentimentEntityExtractor
   - name: DIETClassifier
-    epochs: 20
-    constrain_similarities: true # revisar 
+    epochs: 2
+    constrain_similarities: true # revisar
   - name: EntitySynonymMapper
 
 
 # Fallback and chitchat components
   - name: FallbackClassifier
-    threshold: 0.52
+    threshold: 0.50
 
-  - name: ResponseSelector  # Este componente sirve para ajustar el chitchat
-    epochs: 20
+  - name: ResponseSelector  # ajustar el chitchat
+    epochs: 50
     retrieval_intent: chitchat
-   
+
 policies:
 ### Transformers dialogue policies:
    - name: TEDPolicy
-     epochs: 20
+     epochs: 2
      constrain_similarities: true
    - name: UnexpecTEDIntentPolicy
      tolerance: 0.50
-     epochs: 20
+     epochs: 2
 
 ### Conversational contextualization
    - name: MemoizationPolicy
-     max_history: 5  #hiperparámetro que aprende el contexto conversacional. En este caso, seis pasos.
+     max_history: 6  #hiperparámetro que aprende el contexto conversacional. En este caso, seis pasos.
 
 ### Rule policies
-   - name: RulePolicy #hiperparámetro para manejar cuando pierde contexto conversacional. Si pierde hilo se lanza automat el intent. 
+   - name: RulePolicy #hiperparámetro para manejar cuando pierde contexto conversacional. Si pierde hilo se lanza automat el intent.
      core_fallback_threshold: 0.3
      core_fallback_action_name: "action_default_fallback"
      enable_fallback_prediction: True
