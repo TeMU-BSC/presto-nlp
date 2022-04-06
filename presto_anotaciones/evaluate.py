@@ -5,6 +5,8 @@ import argparse
 from scipy import spatial
 import os
 from nltk.metrics.agreement import AnnotationTask
+import csv
+from load_data import load_data
 # from sklearn.preprocessing import MultiLabelBinarizer # I don't use it, but it would make sense for the vectors
 
 
@@ -19,6 +21,7 @@ def parsing_arguments(parser):
                         help='Options can be: single_cohen,exact_cohen,multi_cohen, write them comma-separated')
     parser.add_argument("--level", default='second',
                         help='Options can be: first (distortion?), second (type)')
+    parser.add_argument("--pre_annotations", action='store_true')
     return parser
 
 
@@ -76,12 +79,22 @@ def evaluate_exact_cohen(data, data2):
         out2.append(str(line2['accept']))
     print('Exact Cohen Kappa:', cohen_kappa_score(out1, out2))
 
+def load_preanotations(path):
+    with open(path, 'r') as fin:
+        data = list(map(json.loads, fin.readlines()))
+
+    print(data[0])
+    exit()
 
 def main():
     parser = argparse.ArgumentParser()
     parser = parsing_arguments(parser)
     args = parser.parse_args()
     print(args)
+
+    if args.pre_annotations:
+        pre = load_data('datos.csv')
+        print(len(pre))
 
     with open(args.an_file, 'r') as fin:
         data = list(map(json.loads, fin.readlines()))

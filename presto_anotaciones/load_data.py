@@ -32,7 +32,9 @@ def load_data(input_file):
                 line = {
                     "pre-ann-category": f"{letter}", "text": text_content}
                 data.append(line)
+    return data
 
+def write_data(data):
     output_file = os.path.join(os.path.dirname(
         input_file), os.path.splitext(input_file)[0] + '.jsonl')
 
@@ -43,4 +45,5 @@ def load_data(input_file):
 
 if __name__ == '__main__':
     input_file = sys.argv[1]
-    load_data(input_file)
+    data = load_data(input_file)
+    write_data(data)
