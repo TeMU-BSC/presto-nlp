@@ -187,7 +187,7 @@ nlu:
     - mi [amiga](valorSocial) es idiota
     - soy completamente idiota
     - soy asqueroso
-    - es que soy imbecil no tengo remedio
+    - soy imbecil no tengo remedio
     - mi antiguo jefe es una mala persona
     - mi [pareja](valorPareja) es completamente estúpido
     - no soy nada inteligente
@@ -1033,16 +1033,22 @@ nlu:
     - ha difundido fotos mias con sus amigos
     - mi [marido] me humilla
 
-
-
-
-
 - intent: emergency
   examples: |
     - /emergency
-- intent: confirm_gv
+    
+- intent: confirmgv
   examples: |
-    - /confirm_gv
+    - /confirmgv
+- intent: confirmgv2
+  examples: |
+    - /confirmgv2
+- intent: confirmgv3
+  examples: |
+    - /confirmgv3
+# - intent: confirm_gv
+#   examples: |
+#     - /confirm_gv
 
 ### Greetings and commands
 - intent: greet

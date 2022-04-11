@@ -18,22 +18,17 @@ rules:
 
 ### fallback and chitchat rules
 
-- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
-  steps:
-  - intent: nlu_fallback
-  - slot_was_set:
-      - sentiment: NEU
-  - action: utter_please_rephrase
+# - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+#   steps:
+#   - intent: nlu_fallback
+#   - slot_was_set:
+#       - sentiment: NEU
+#   - action: utter_please_rephrase
 
 - rule: respond to chitchat
   steps:
   - intent: chitchat
   - action: utter_chitchat
-
-- rule: priorize gender violence
-  steps:
-    - intent: genderViolence
-    - action: utter_start_genderViolence
 
 - rule: priorize alert intent
   steps:

@@ -31,14 +31,14 @@ pipeline:
 ### Custom components and classifiers
   - name: sentiment.SentimentEntityExtractor
   - name: DIETClassifier
-    epochs: 2
+    epochs: 20
     constrain_similarities: true # revisar
   - name: EntitySynonymMapper
 
 
 # Fallback and chitchat components
   - name: FallbackClassifier
-    threshold: 0.50
+    threshold: 0.5
 
   - name: ResponseSelector  # ajustar el chitchat
     epochs: 50
@@ -47,11 +47,11 @@ pipeline:
 policies:
 ### Transformers dialogue policies:
    - name: TEDPolicy
-     epochs: 2
+     epochs: 20
      constrain_similarities: true
    - name: UnexpecTEDIntentPolicy
-     tolerance: 0.50
-     epochs: 2
+     tolerance: 0.3
+     epochs: 20
 
 ### Conversational contextualization
    - name: MemoizationPolicy
