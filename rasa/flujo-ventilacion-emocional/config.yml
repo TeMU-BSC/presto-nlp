@@ -7,16 +7,8 @@ pipeline:
   # # language model to load
   #   model: es_core_news_sm --> Probar con spacy environment completo --> custom lemmatization
 ###basics pre-treatment
-
   - name: WhitespaceTokenizer
   # - name: SpacyTokenizer
-  - name: RegexFeaturizer
-  - name: LexicalSyntacticFeaturizer
-  - name: CountVectorsFeaturizer
-    analyzer: char_wb
-    min_ngram: 1
-    max_ngram: 4
-    # OOV_token: _oov_
   - name: LanguageModelFeaturizer
     # Name of the language model to use
     model_name: "roberta"
@@ -28,6 +20,14 @@ pipeline:
     cache_dir: null
   #  Whether to use a shared vocab
   #   use_shared_vocab: False
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  # - name: CountVectorsFeaturizer
+    # analyzer: char_wb
+    # min_ngram: 1
+    # max_ngram: 4
+    # # OOV_token: _oov_
+
 ### Custom components and classifiers
   - name: sentiment.SentimentEntityExtractor
   - name: DIETClassifier
