@@ -1079,6 +1079,8 @@ nlu:
     - chao
     - ciao
     - deu
+    - adios, hasta pronto
+    - adios Vicky
 - intent: confirm
   examples: |
     - sí

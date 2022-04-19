@@ -66,21 +66,69 @@ stories:
       # - action: deactivate
       - action: utter_sentiment_NEU
 
-### Inquiries non distortions
+### Inquiries non distortions family
 
   - story: non distorsion - negative emotion 
     steps:
       - checkpoint: user_give_emotion_NEG
       - intent: nlu_fallback
-      - slot_was_set:
-          - sentiment: NEG
+      # - slot_was_set:
+      #     - sentiment: NEG
       - slot_was_set:
           - valorFamilia
           # - sentiment: NEU
       - action: utter_ventilacion_nd_1
+      - action: utter_selector_contar
+      - intent: confirm
+      - action: utter_si_contar
       - intent: nlu_fallback
       - slot_was_set:
           - sentiment: NEG
+      - action: utter_ventilacion_nd_feedback
+      - action: utter_ventilacion_nd_final
+      - action: utter_ventilacion_nd_opcional
+
+### Inquiries non distortions social
+
+  - story: non distorsion - negative emotion 
+    steps:
+      - checkpoint: user_give_emotion_NEG
+      - intent: nlu_fallback
+      # - slot_was_set:
+      #     - sentiment: NEG
+      - slot_was_set:
+          - valorSocial
+          # - sentiment: NEU
+      - action: utter_ventilacion_nd_1
+      - action: utter_selector_contar
+      - intent: confirm
+      - action: utter_si_contar
+      - intent: nlu_fallback
+      - slot_was_set:
+          - sentiment: NEG
+      - action: utter_ventilacion_nd_feedback
+      - action: utter_ventilacion_nd_final
+      - action: utter_ventilacion_nd_opcional
+
+### Inquiries non distortions pareja
+
+  - story: non distorsion - negative emotion 
+    steps:
+      - checkpoint: user_give_emotion_NEG
+      - intent: nlu_fallback
+      # - slot_was_set:
+      #     - sentiment: NEG
+      - slot_was_set:
+          - valorPareja
+          # - sentiment: NEU
+      - action: utter_ventilacion_nd_1
+      - action: utter_selector_contar
+      - intent: confirm
+      - action: utter_si_contar
+      - intent: nlu_fallback
+      - slot_was_set:
+          - sentiment: NEG
+      - action: utter_ventilacion_nd_feedback
       - action: utter_ventilacion_nd_final
       - action: utter_ventilacion_nd_opcional
 

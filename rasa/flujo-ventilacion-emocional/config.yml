@@ -31,7 +31,7 @@ pipeline:
 ### Custom components and classifiers
   - name: sentiment.SentimentEntityExtractor
   - name: DIETClassifier
-    epochs: 20
+    epochs: 30
     constrain_similarities: true # revisar
   - name: EntitySynonymMapper
 

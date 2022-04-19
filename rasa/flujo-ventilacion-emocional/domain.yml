@@ -214,45 +214,67 @@ responses:
 ## Ventilacion emocional - no distorsion
   utter_ventilacion_nd_1:
     - condition:  # A conditional response variation with multiple slot-value constraints.
-        - type: slot
-          name: sentiment
-          value: NEG
+        # - type: slot
+        #   name: sentiment
+        #   value: NEG
         - type: slot
           name: valorFamilia
           value: valorFamilia
-      text: "Would you like familia" 
+      text: "La familia generalmente supone un pilar fundamental en nuestra vida. ¿Querrías contarme algo más sobre esto?"
+    - condition:  # A conditional response variation with multiple slot-value constraints.
+        # - type: slot
+        #   name: sentiment
+        #   value: NEG
+        - type: slot
+          name: valorPareja
+          value: valorPareja
+      text: "La pareja generalmente supone un pilar fundamental en nuestra vida. ¿Querrías contarme algo más sobre esto?" 
+    - condition:  # A conditional response variation with multiple slot-value constraints.
+        # - type: slot
+        #   name: sentiment
+        #   value: NEG
+        - type: slot
+          name: valorSocial
+          value: valorSocial
+      text: "Nuestras relaciones interpersonales suponen un pilar fundamental en nuestra vida. ¿Querrías contarme algo más sobre esto?" 
     - text: "no distorsion respuesta sin valor"
 
 
+  utter_ventilacion_1:
+  - text: "Te entiendo. Y, ¿por qué crees o sientes esto que me acabas de comentar?"
+  utter_ventilacion_2:
+  - text: "Comprendo. Me gustaría saber qué significa para ti esto que me has comentado"
+
+
+  utter_selector_contar:
+  - buttons:
+      - payload: "sí"
+        title: Sí
+      - payload: "no"
+        title: "No"
+    text: ¿Querrías contarme algo más sobre esto?
+
+
+  utter_si_contar:
+  - text: "Adelante, te escucho :)" 
+  - text: Soy todo oídos
+
+  utter_no_contar:
+  - text: "puede ser duro compartir este tipo de cosas con extraños. No te preocupes, podemos abordar este problema cuando quieras."
+  - text: "A veces, nos puede costar compartir nuestros pensamientos con extraños. No te preocupes, podemos retomarlo cuando tú quieras." 
+  
+  utter_ventilacion_nd_feedback:
+  - text: Tras esta pequeña conversación, no he detectado ningún pensamiento alarmante, pero si me permites voy a compartir contigo un consejo que me ha servido de mucho 🤓
   utter_ventilacion_nd_final:
   - text: Etiquetar la emoción es el primer paso para poder regular nuestro comportamiento a las necesidades de la situación. Ahora quédate con esta sensación. No la juzgues, simplemente obsérvala hasta que acabe bajando de intensidad. Recuerda que, cualquier emoción (sea agradable o desagradable) acaba disminuyendo con el tiempo.
-
+  - text: Aunque ahora mismo te sientas mal, quería proponerte que aprovecharas este momento para probar de des-identificarte de la emoción (tú no eres esa emoción, eres mucho más que esta emoción). Ahora reconócela y observa la naturaleza cambiante y transitoria de la misma. Conocer mejor lo que nos sucede a nivel emocional, nos permite desarrollar una relación menos reactiva con la experiencia interior. Nos permite reconocer y soltar más fácilmente las tormentas emocionales. 
   utter_ventilacion_nd_opcional:
   - buttons:
     - payload: /autoestima
       title: Autoestima
     - payload: /estres_laboral
       title: Estrés laboral
-    text: Más allá de este consejo, después de este ratito hablando, no he detectado ningún pensamiento que pueda estar jugándote malas pasadas, pero si quieres, puedes seleccionar alguno de estos temas para que lo trabajemos de manera conjunta :) 
-
-  utter_ventilacion_nd_3:
-  - text: asdada
-
-
-  # utter_non_distortion_action:
-  # - buttons:
-  #   - payload: /autoestima
-  #     title: Autoestima
-  #   - payload: /estres_laboral
-  #     title: Estrés laboral
-  #   text: Tras este ratito charlando, no he detectado ningún pensamiento que pueda estar jugándote malas pasadas. En cualquier caso, si te apetece, podemos hacer algún ejercicio sobre alguno de estos temas.
-
- ## Ventilacion emocional - si distorsion
-
-  utter_ventilacion_1:
-  - text: Te entiendo. Y, ¿por qué crees o sientes esto que me acabas de comentar?
-  utter_ventilacion_2:
-  - text: Comprendo. Me gustaría saber qué significa para ti esto que me has comentado
+    text: "Más allá de este consejo, después de este ratito hablando, no he detectado ningún pensamiento que pueda estar jugándote malas pasadas, pero si quieres, puedes seleccionar alguno de estos temas para que lo trabajemos de manera conjunta :) "
 
   ## psicoeducacion general
   utter_selector_psicoeduc_general:
@@ -269,6 +291,7 @@ responses:
     - payload: /deny
     - title: Mejor no
     text: ¿Seguimos 😊?
+  
   utter_psicoeduc_general:
   - text: ¡Vaya! Parece que hemos detectado una serie de pensamientos que pueden estar jugándote malas pasadas en tu día a día, son aquellos que llamamos sesgos o distorsiones cognitivas y que afectan a nuestro estado de ánimo. '
 
@@ -503,6 +526,7 @@ actions:
 - sentiment_form
 - deny_valor
 - confirm_valor
+
 forms:
   sentiment_form:
     required_slots:
