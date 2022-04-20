@@ -70,45 +70,69 @@ stories:
 
   - story: non distorsion - negative emotion 
     steps:
-      - checkpoint: user_give_emotion_NEG
-      - intent: nlu_fallback
+    - checkpoint: user_give_emotion_NEG
+    - intent: nlu_fallback
+    # - or:
+    - slot_was_set:
+        - valorFamilia: valorFamilia
       # - slot_was_set:
-      #     - sentiment: NEG
-      - slot_was_set:
-          - valorFamilia
-          # - sentiment: NEU
-      - action: utter_ventilacion_nd_1
-      - action: utter_selector_contar
-      - intent: confirm
-      - action: utter_si_contar
-      - intent: nlu_fallback
-      - slot_was_set:
-          - sentiment: NEG
-      - action: utter_ventilacion_nd_feedback
-      - action: utter_ventilacion_nd_final
-      - action: utter_ventilacion_nd_opcional
+      #     - valorSocial: valorSocial
+      # - slot_was_set:
+      #     - valorPareja: valorPareja
+    - action: utter_ventilacion_nd_1
+    - action: utter_selector_contar
+    - intent: confirmcontar
+    - action: utter_si_contar
+    - intent: nlu_fallback
+    - action: utter_ventilacion_nd_feedback
+    - action: utter_ventilacion_nd_final
+    - action: utter_ventilacion_nd_opcional
 
-### Inquiries non distortions social
+
+  - story: non distorsion - negative emotion - no contar
+    steps:
+    - checkpoint: user_give_emotion_NEG
+    - intent: nlu_fallback
+    # - or:
+    - slot_was_set:
+        - valorFamilia: valorFamilia
+      # - slot_was_set:
+      #     - valorSocial: valorSocial
+      # - slot_was_set:
+      #     - valorPareja: valorPareja
+    - action: utter_ventilacion_nd_1
+    - action: utter_selector_contar
+    - intent: deny
+    - action: utter_no_contar
+
+
+## Inquiries non distortions social
 
   - story: non distorsion - negative emotion 
     steps:
       - checkpoint: user_give_emotion_NEG
       - intent: nlu_fallback
-      # - slot_was_set:
-      #     - sentiment: NEG
       - slot_was_set:
           - valorSocial
-          # - sentiment: NEU
       - action: utter_ventilacion_nd_1
       - action: utter_selector_contar
       - intent: confirm
       - action: utter_si_contar
       - intent: nlu_fallback
-      - slot_was_set:
-          - sentiment: NEG
       - action: utter_ventilacion_nd_feedback
       - action: utter_ventilacion_nd_final
       - action: utter_ventilacion_nd_opcional
+
+  - story: non distorsion - negative emotion 
+    steps:
+      - checkpoint: user_give_emotion_NEG
+      - intent: nlu_fallback
+      - slot_was_set:
+          - valorSocial
+      - action: utter_ventilacion_nd_1
+      - action: utter_selector_contar
+      - intent: deny
+      - action: utter_no_contar
 
 ### Inquiries non distortions pareja
 
@@ -116,22 +140,28 @@ stories:
     steps:
       - checkpoint: user_give_emotion_NEG
       - intent: nlu_fallback
-      # - slot_was_set:
-      #     - sentiment: NEG
       - slot_was_set:
           - valorPareja
-          # - sentiment: NEU
       - action: utter_ventilacion_nd_1
       - action: utter_selector_contar
       - intent: confirm
       - action: utter_si_contar
       - intent: nlu_fallback
-      - slot_was_set:
-          - sentiment: NEG
       - action: utter_ventilacion_nd_feedback
       - action: utter_ventilacion_nd_final
       - action: utter_ventilacion_nd_opcional
 
+  - story: non distorsion - negative emotion 
+    steps:
+      - checkpoint: user_give_emotion_NEG
+      - intent: nlu_fallback
+      - slot_was_set:
+          - valorPareja
+      - action: utter_ventilacion_nd_1
+      - action: utter_selector_contar
+      - intent: deny
+      - action: utter_no_contar
+  
 
 
   # - story: non distorsion - positive emotion

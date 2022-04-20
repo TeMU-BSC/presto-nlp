@@ -9,6 +9,13 @@ pipeline:
 ###basics pre-treatment
   - name: WhitespaceTokenizer
   # - name: SpacyTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+    # OOV_token: _oov_
   - name: LanguageModelFeaturizer
     # Name of the language model to use
     model_name: "roberta"
@@ -20,13 +27,7 @@ pipeline:
     cache_dir: null
   #  Whether to use a shared vocab
   #   use_shared_vocab: False
-  - name: RegexFeaturizer
-  - name: LexicalSyntacticFeaturizer
-  # - name: CountVectorsFeaturizer
-    # analyzer: char_wb
-    # min_ngram: 1
-    # max_ngram: 4
-    # # OOV_token: _oov_
+
 
 ### Custom components and classifiers
   - name: sentiment.SentimentEntityExtractor
@@ -50,16 +51,16 @@ policies:
      epochs: 20
      constrain_similarities: true
    - name: UnexpecTEDIntentPolicy
-     tolerance: 0.3
+     tolerance: 0.2
      epochs: 20
 
 ### Conversational contextualization
    - name: MemoizationPolicy
-     max_history: 6  #hiperparámetro que aprende el contexto conversacional. En este caso, seis pasos.
+     max_history: 8  #hiperparámetro que aprende el contexto conversacional. En este caso, seis pasos.
 
 ### Rule policies
    - name: RulePolicy #hiperparámetro para manejar cuando pierde contexto conversacional. Si pierde hilo se lanza automat el intent.
-     core_fallback_threshold: 0.3
+     core_fallback_threshold: 0.2
      core_fallback_action_name: "action_default_fallback"
      enable_fallback_prediction: True
 

@@ -80,6 +80,8 @@ intents:
     use_entienes: true
 - confirmgv2:
     use_entities: true
+- confirmcontar:
+    use_entitnes: true
 entities:
 - sentiment
 - valorPareja
@@ -237,18 +239,18 @@ responses:
           name: valorSocial
           value: valorSocial
       text: "Nuestras relaciones interpersonales suponen un pilar fundamental en nuestra vida. ¿Querrías contarme algo más sobre esto?" 
-    - text: "no distorsion respuesta sin valor"
+    - text: "Vaya, te animo a que me cuentes un poquito más sobre este tema. ¿Te apetece?"
 
 
   utter_ventilacion_1:
   - text: "Te entiendo. Y, ¿por qué crees o sientes esto que me acabas de comentar?"
   utter_ventilacion_2:
-  - text: "Comprendo. Me gustaría saber qué significa para ti esto que me has comentado"
+  - text: "De acuerdo, está claro que a veces lidiar con determinadas emociones puede parecernos un tanto complicado. Por eso, me gustaría saber qué significa para ti esto que me has comentado. Te escucho 😊"
 
 
   utter_selector_contar:
   - buttons:
-      - payload: "sí"
+      - payload: /confirmcontar
         title: Sí
       - payload: "no"
         title: "No"
@@ -256,8 +258,8 @@ responses:
 
 
   utter_si_contar:
-  - text: "Adelante, te escucho :)" 
-  - text: Soy todo oídos
+  - text: "Adelante, te escucho 😊" 
+  - text: Soy todo oídos 👂🏽
 
   utter_no_contar:
   - text: "puede ser duro compartir este tipo de cosas con extraños. No te preocupes, podemos abordar este problema cuando quieras."

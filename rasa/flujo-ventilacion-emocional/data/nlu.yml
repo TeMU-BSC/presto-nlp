@@ -1046,6 +1046,10 @@ nlu:
 - intent: confirmgv3
   examples: |
     - /confirmgv3
+
+- intent: confirmcontar
+  examples: |
+    - /confirmcontar
 # - intent: confirm_gv
 #   examples: |
 #     - /confirm_gv
@@ -1066,6 +1070,17 @@ nlu:
     - Mi nombre es [Gerard](name), qué tal
     - bon dia Vicky
     - bona tarda, vicky soy [Francisco](name)
+    - hola buenos días.
+    - Qué tal vicky, hola
+
+- intent: nlu_fallback
+  examples: |
+    - tengo a mi madre en el hospital
+    - tengo que ir al medico 
+    - mi hermana está ingresada
+    - he tenido una discusión con mi pareja
+    - me he enterado hoy que ha fallecido un compañero de trabajo
+  
 
 - intent: goodbye_nicemood
   examples: |
