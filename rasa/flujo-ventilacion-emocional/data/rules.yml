@@ -30,7 +30,7 @@ rules:
   - intent: chitchat
   - action: utter_chitchat
 
-- rule: priorize alert intent
+- rule: prioritize alert intent
   steps:
     - intent: alert
     - action: utter_alert

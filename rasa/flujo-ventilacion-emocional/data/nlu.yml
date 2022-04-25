@@ -29,8 +29,10 @@ nlu:
     - fatal
     - mal muy mal
 
-### Specifics
+### Specific
 - intent: sobregeneralizacion
+  metadata:
+    sentiment: NEG
   examples: |
     - Todo me sale mal
     - Nunca cumple con su palabra es que siempre hace igual
@@ -968,7 +970,6 @@ nlu:
 ### Sensitives
 - intent: alert
   examples: |
-    - me quiero morir
     - quiero matarme
     - matar
     - suicidio
@@ -999,7 +1000,62 @@ nlu:
     - me voy a suicidar
     - hola quiero cortarme las venas
 
-
+  # - text: |
+  #     me quiero morir
+  #   metadata:
+  #     sentiment: NEG
+  # - text: |
+  #     quiero matarme
+  #   metadata:
+  #     sentiment: NEG
+  # - text: |
+  #     matar
+  #   metadata:
+  #     sentiment: NEG
+  # - text: |
+  #     suicidio
+  #   metadata:
+  #     sentiment: NEG
+  # - text: |
+  #     ideas de muerte
+  #   metadata:
+  #     sentiment: NEG
+  # - text: |
+  #     desaparecer para siempre
+  #   metadata:
+  #     sentiment: NEG
+  # - text: |
+  #     voy a hacerme daño
+  #   metadata:
+  #     sentiment: NEG
+  # - text: |
+  #     ayuda urgente
+  #   metadata:
+  #     sentiment: NEG
+  # - text: |
+  #     quiero dejar de existir
+  #   metadata:
+  #     sentiment: NEG
+  # - text: |
+  #     es mejor estar muerto
+  #   metadata:
+  #     sentiment: NEG
+  # - text: |
+  #     he pensado en suicidarme
+  #   metadata:
+  #     sentiment: NEG
+  # - text: |
+  #     me voy a suicidar
+  #   metadata:
+  #     sentiment: NEG
+  # - text: |
+  #     quiero pegarme un tiro
+  #   metadata:
+  #     sentiment: NEG
+  # - text: |
+  #     quiero cortarme las venas
+  #   metadata:
+  #     sentiment: NEG
 
 - intent: genderViolence
   examples: |

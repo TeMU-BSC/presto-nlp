@@ -412,7 +412,7 @@ responses:
       title: Que es su culpa
     text: Qué le dirías a X
   utter_intervencion_sobregen:
-  - text: haz ejercicio sobre
+  - text: Comienza intervencion sobregeneralizacion
   ### Intervencion adivinacion
   utter_selector_intervencion_adivinacion:
   - buttons:
@@ -422,7 +422,7 @@ responses:
       title: Que es su culpa
     text: Qué le dirías a X
   utter_intervencion_adivinacion:
-  - text: asd
+  - text: Comienza intervencion adivinacion
   ### Intervencion catastrofismo
   utter_selector_intervencion_catastrofismo:
   - buttons:
@@ -432,10 +432,10 @@ responses:
       title: Que es su culpa
     text: Qué le dirías a X
   utter_intervencion_catastrofismo:
-  - text: asdada
+  - text: Comienza intervencion catastrofismo
   ### Intervencion deberias
   utter_intervencion_deberias:
-  - text: adsada
+  - text: Comienza intervención deberías
   utter_selector_intervencion_deberias:
   - buttons:
     - payload: /confirm
@@ -445,7 +445,7 @@ responses:
     text: Qué le dirías a X
   ### Intevencion etiquetado
   utter_intervencion_etiquetado:
-  - text: adsada
+  - text: Comienza intervencion etiquetado
   utter_selector_intervencion_etiquetado:
   - buttons:
     - payload: /confirm
@@ -465,7 +465,7 @@ responses:
     text: Qué le dirías a X
   ### Intervencion pensamientoabsolutista
   utter_intervencion_pensamientoabsolutista:
-  - text: adsada
+  - text: Comienza intervencion Pensamiento absolutista
   utter_selector_intervencion_pensamientoabsolutista:
   - buttons:
     - payload: /confirm
