@@ -5,7 +5,7 @@ First, set env variables
 
 ```
 export PRODIGY_CONFIG=prodigy.json
-export PRODIGY_ALLOWED_SESSIONS=annotator1,annotator2
+export PRODIGY_ALLOWED_SESSIONS=gerard,casimiro
 export PRODIGY_PORT=8080
 ```
 
@@ -18,12 +18,12 @@ prodigy drop presto_type
 ### Anotate if it has a distortion
 Launch the annotation server on the URLs of the type: "http://localhost:PRODIGY_PORT/?session=annotator1"
 ```
-prodigy textcat.choice_with_comment -E presto_distortion all_data.jsonl --label distorsión,"no distorsión" -F textcat.py
+prodigy textcat.choice_with_comment -E presto_distortion all_data.jsonl --label distorsión,"no distorsión" -F textcat_distortion.py
 ```
 ### Anotate the type of distortion
 
 ```
-prodigy textcat.multiple_nested presto_type presto_distortion -F textcat.py
+prodigy textcat.multiple_nested presto_type presto_distortion -F textcat_distortion.py
 ```
 
 ### Evaluation
