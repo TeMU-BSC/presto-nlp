@@ -79,12 +79,14 @@ def evaluate_exact_cohen(data, data2):
         out2.append(str(line2['accept']))
     print('Exact Cohen Kappa:', cohen_kappa_score(out1, out2))
 
+
 def load_preanotations(path):
     with open(path, 'r') as fin:
         data = list(map(json.loads, fin.readlines()))
 
     print(data[0])
     exit()
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -93,8 +95,7 @@ def main():
     print(args)
 
     if args.pre_annotations:
-        pre = load_data('datos.csv')
-        print(len(pre))
+        pass
 
     with open(args.an_file, 'r') as fin:
         data = list(map(json.loads, fin.readlines()))
