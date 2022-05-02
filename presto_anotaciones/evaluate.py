@@ -5,8 +5,7 @@ import argparse
 from scipy import spatial
 import os
 from nltk.metrics.agreement import AnnotationTask
-import csv
-from load_data import load_data
+import copy
 # from sklearn.preprocessing import MultiLabelBinarizer # I don't use it, but it would make sense for the vectors
 
 
@@ -19,8 +18,8 @@ def parsing_arguments(parser):
                         help='file containing annotations')
     parser.add_argument("--metrics", default='single_cohen,exact_cohen,multi_cohen',
                         help='Options can be: single_cohen,exact_cohen,multi_cohen, write them comma-separated')
-    parser.add_argument("--level", default='second',
-                        help='Options can be: first (distortion?), second (type)')
+    parser.add_argument("--level", default='types', choices=['distortion', 'types'],
+                        help='Select the annotation level')
     parser.add_argument("--pre_annotations", action='store_true')
     return parser
 
@@ -29,7 +28,7 @@ def create_label_vectors(data, labels):
     type_a = []
     for label in labels:
         output_type_a = []
-        for i, line in enumerate(data):
+        for line in data:
             if label in line['accept']:
                 output_type_a.append(1)
             else:
@@ -80,36 +79,38 @@ def evaluate_exact_cohen(data, data2):
     print('Exact Cohen Kappa:', cohen_kappa_score(out1, out2))
 
 
-def load_preanotations(path):
-    with open(path, 'r') as fin:
-        data = list(map(json.loads, fin.readlines()))
-
-    print(data[0])
-    exit()
-
-
 def main():
     parser = argparse.ArgumentParser()
     parser = parsing_arguments(parser)
     args = parser.parse_args()
     print(args)
 
-    if args.pre_annotations:
-        pass
-
     with open(args.an_file, 'r') as fin:
         data = list(map(json.loads, fin.readlines()))
+
+        an_file_suffix = os.path.splitext(os.path.basename(args.an_file))[0]
         data1 = [d for d in data
-                 if d["_annotator_id"] == f"{os.path.basename(args.an_file)}-{args.an1_id}"]
+                 if d["_annotator_id"] == f"{an_file_suffix}-{args.an1_id}"]
         data2 = [d for d in data
-                 if d["_annotator_id"] == f"{os.path.basename(args.an_file)}-{args.an2_id}"]
+                 if d["_annotator_id"] == f"{an_file_suffix}-{args.an2_id}"]
+
+        # get pre-annotation (from one of the annotators since they share the same pre-annotations),
+        # replace the "accept" field with the value of pre-annotation and change annotator and session fields
+        if args.pre_annotations:
+            data_preann = copy.deepcopy(data1)
+            for data in data_preann:
+                data['accept'] = data['pre-ann-category'][args.level]
+                data.pop('pre-ann-category')
+                data['_annotator_id'] = 'pre-annotator'
+                data['_session_id'] = 'pre-annotator'
 
     list_metrics = args.metrics.split(',')
 
-    if args.level == 'first':
+    # TODO: implement the evaluation for more than 2 annotations
+    if args.level == 'distortion':
         evaluate_exact_cohen(data1, data2)
 
-    if args.level == 'second':
+    if args.level == 'types':
         labels = ['sobregeneralización', 'leer la mente', 'imperativos', 'etiquetado',
                   'pensamiento absolutista', 'adivinación', 'catastrofismo', 'abstracción selectiva',
                   'razonamiento emocional', 'personalización']
