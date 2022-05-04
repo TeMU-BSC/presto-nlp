@@ -72,7 +72,6 @@ def evaluate_cohen(vectors, labels, annotators):
 
 
 def cosine_distance(vec1, vec2):
-    # TODO: allow multiple annotators
     distance = spatial.distance.cosine(vec1, vec2)
     return distance
 
@@ -99,7 +98,7 @@ def evaluate_exact_cohen(data, annotators):
         instance = [d for d in data if d['id']==id]
         if len(instance) == len(annotators):
             for an in range(len(annotators)):
-                annotations[list_annotators[an]].append(str(instance[an]['accept'][0]))
+                annotations[list_annotators[an]].append(str(instance[an]['accept']))
         else:
             print('One annotator is missing annotation', id)
     if len(annotators) == 2:
