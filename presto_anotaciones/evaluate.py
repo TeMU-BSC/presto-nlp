@@ -120,27 +120,24 @@ def main():
 
     with open(args.an_file, 'r') as fin:
         data = list(map(json.loads, fin.readlines()))
-        #an_file_suffix = os.path.splitext(os.path.basename(args.an_file))[0]
-        #data1 = [d for d in data
-        #         if d["_annotator_id"] == f"{an_file_suffix}-{args.an1_id}"]
-        #data2 = [d for d in data
-        #         if d["_annotator_id"] == f"{an_file_suffix}-{args.an2_id}"]
-
-        # TODO: allow for the preannotations to be evaluated
-        # get pre-annotation (from one of the annotators since they share the same pre-annotations),
-        # replace the "accept" field with the value of pre-annotation and change annotator and session fields
-        #if args.pre_annotations:
-        #    data_preann = copy.deepcopy(data1)
-        #    for data in data_preann:
-        #        data['accept'] = data['pre-ann-category'][args.level]
-        #        data.pop('pre-ann-category')
-        #        data['_annotator_id'] = 'pre-annotator'
-        #        data['_session_id'] = 'pre-annotator'
 
     list_metrics = args.metrics.split(',')
     list_annotators = args.an_ids.split(',')
+    # TODO: allow for the preannotations to be evaluated
+    # get pre-annotation (from one of the annotators since they share the same pre-annotations),
+    # replace the "accept" field with the value of pre-annotation and change annotator and session fields
+    if args.pre_annotations:
+        data_preann = copy.deepcopy(data)
+        one_example_of_each = data_preann[0]['_annotator_id'] # the preannotations should be just considered once
+        for d in data_preann:
+            if d['_annotator_id'] == one_example_of_each:
+                d['accept'] = d['pre-ann-category'][args.level]
+                d.pop('pre-ann-category')
+                d['_annotator_id'] = 'pre-annotator'
+                d['_session_id'] = 'pre-annotator'
+                data.append(d)
+        list_annotators.append('pre-annotator')
 
-    # DONE: implement the evaluation for more than 2 annotations
     if args.level == 'distortion':
         evaluate_exact_cohen(data, list_annotators)
 

@@ -5,7 +5,7 @@ First, set env variables
 
 ```
 export PRODIGY_CONFIG=prodigy.json
-export PRODIGY_ALLOWED_SESSIONS=gerard,casimiro
+export PRODIGY_ALLOWED_SESSIONS=blanca,casimiro
 export PRODIGY_PORT=8080
 ```
 
@@ -35,7 +35,7 @@ prodigy db-out presto_types > presto_types.jsonl
 ```
 
 ```
-python evaluate.py --level distortion --an-ids blanca,casi,pau --an-file presto_distortion.jsonl
+python evaluate.py --level distortion --an-ids blanca,casimiro --an-file presto_distortion.jsonl --pre_annotations
 
-python evaluate.py --level types --metrics single_cohen,multi_cohen,exact_cohen --an-ids blanca,casi --an-file presto_types.jsonl
+python evaluate.py --level types --metrics single_cohen,multi_cohen,exact_cohen --an-ids blanca,casimiro --an-file presto_types.jsonl --pre_annotations
 ```
