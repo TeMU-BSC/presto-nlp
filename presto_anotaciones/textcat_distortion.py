@@ -27,7 +27,7 @@ def get_stream_nested(examples):
                            for opt in sub_labels]
                 # create new example with text and sub labels as options
                 shuffle(options)  # shuffle sub_labels for each example
-                new_eg = {'text': eg['text'], 'options': options,
+                new_eg = {'id': eg['id'],'text': eg['text'], 'options': options,
                           'pre-ann-category': eg['pre-ann-category']}
                 yield new_eg
 
