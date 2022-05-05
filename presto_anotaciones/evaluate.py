@@ -6,15 +6,11 @@ from scipy import spatial
 import os
 from nltk.metrics.agreement import AnnotationTask
 import copy
-# from sklearn.preprocessing import MultiLabelBinarizer # I don't use it, but it would make sense for the vectors
 
 
 def parsing_arguments(parser):
-    #parser.add_argument("--n_annotators", type=int, default=2)
     parser.add_argument("--an-ids", type=str,
                         help='ids of all the annotators commas separated')
-    #parser.add_argument("--an2-id", type=str,
-    #                    help='annotator 2 id')
     parser.add_argument("--an-file", type=str,
                         help='file containing annotations')
     parser.add_argument("--metrics", default='single_cohen,exact_cohen,multi_cohen',
@@ -39,7 +35,6 @@ def create_label_vectors(data, labels, annotators):
 
     for label in labels: # por cada label, vamos por todas las instancias y miramos si están
         label_vector, _ = dict_for_each_ann(annotators)
-        # done: go through each id, store different for each annotator
         for id in list_ids:
             instance = [d for d in data if d['id'] == id]
             if len(instance) == len(annotators):
@@ -48,27 +43,27 @@ def create_label_vectors(data, labels, annotators):
                         label_vector[names_dicts[an]].append(1)
                     else:
                         label_vector[names_dicts[an]].append(0)
-        #for line in data:
-        #    if label in line['accept']:
-        #        output_type_a.append(1)
-        #    else:
-        #        output_type_a.append(0)
         for an in range(len(annotators)):
             vectors[names_dicts[an]].append(label_vector[names_dicts[an]])
     return vectors, names_dicts
 
 
 def evaluate_cohen(vectors, labels, annotators):
-    # TODO: allow multiple annotators
-    scores = []
-    for i, label in enumerate(labels):
-        # this prevents the model from failing if we don't have data of all the labels
-        if vectors[annotators[0]][i] != [0] * len(vectors[annotators[0]][i]):
-            score = cohen_kappa_score(
-                np.array(vectors[annotators[0]][i]), np.array(vectors[annotators[1]][i]))
-            print('Cohen Kappa for \'{}\': {}'.format(label, score))
-            scores.append(score)
-    print('Average Cohen Kappa per label:', np.mean(scores))
+    scores, names_dicts = dict_for_each_ann(annotators)
+    for num_an, an in enumerate(names_dicts):
+        compare = ['a' , 'b']
+        for i, label in enumerate(labels):
+            # this prevents the model from failing if we don't have data of all the labels
+            if num_an != len(names_dicts)-1:
+                compare = [annotators[num_an], annotators[num_an + 1]]
+            else:
+                compare = [annotators[0], annotators[len(annotators)-1]]
+            if vectors[compare[0]][i] != [0] * len(vectors[compare[0]][i]):
+                score = cohen_kappa_score(
+                    np.array(vectors[compare[0]][i]), np.array(vectors[compare[1]][i]))
+                print('Cohen Kappa for \'{}\' between {} and {}: {}'.format(label, compare[0], compare[1], score))
+                scores[an].append(score)
+        print('Average Cohen Kappa between {} and {}: {}'.format(compare[0], compare[1], np.mean(scores[an])))
 
 
 def cosine_distance(vec1, vec2):
@@ -77,18 +72,23 @@ def cosine_distance(vec1, vec2):
 
 
 def evaluate_multi_cohen(vectors, annotators):
-    # TODO: allow multiple annotators
     # https://stats.stackexchange.com/questions/511927/interrater-reliability-with-multi-rater-multi-label-dataset
-    task_data = []
-    for i, entry in enumerate(vectors[annotators[0]]):
-        annotation = 'coder_a', i, tuple(entry)
-        task_data.append(annotation)
-    for i, entry in enumerate(vectors[annotators[1]]):
-        annotation = 'coder_b', i, tuple(entry)
-        task_data.append(annotation)
-    # https://www.nltk.org/_modules/nltk/metrics/agreement.html
-    cosine_task = AnnotationTask(data=task_data, distance=cosine_distance)
-    print(f"Fleiss's Kappa using Cosine distance: {cosine_task.multi_kappa()}")
+    task_data, names_dicts = dict_for_each_ann(annotators)
+    for num_an, an in enumerate(names_dicts):
+    #task_data = []
+        if num_an != len(names_dicts) - 1:
+            compare = [annotators[num_an], annotators[num_an + 1]]
+        else:
+            compare = [annotators[0], annotators[len(annotators) - 1]]
+        for i, entry in enumerate(vectors[compare[0]]):
+            annotation = 'coder_a', i, tuple(entry)
+            task_data[an].append(annotation)
+        for i, entry in enumerate(vectors[compare[1]]):
+            annotation = 'coder_b', i, tuple(entry)
+            task_data[an].append(annotation)
+        # https://www.nltk.org/_modules/nltk/metrics/agreement.html
+        cosine_task = AnnotationTask(data=task_data[an], distance=cosine_distance)
+        print("Fleiss's Kappa using Cosine distance between {} and {}: {}".format(compare[0], compare[1], cosine_task.multi_kappa()))
 
 
 def evaluate_exact_cohen(data, annotators):
@@ -123,7 +123,7 @@ def main():
 
     list_metrics = args.metrics.split(',')
     list_annotators = args.an_ids.split(',')
-    # TODO: allow for the preannotations to be evaluated
+
     # get pre-annotation (from one of the annotators since they share the same pre-annotations),
     # replace the "accept" field with the value of pre-annotation and change annotator and session fields
     if args.pre_annotations:
