@@ -5,18 +5,20 @@ First, set env variables
 
 ```
 export PRODIGY_CONFIG=prodigy.json
-export PRODIGY_ALLOWED_SESSIONS=blanca,casimiro
+export PRODIGY_ALLOWED_SESSIONS=gerard,ariadna
 export PRODIGY_PORT=8080
 ```
 
 Remove previous databases 
 
 ```
-prodigy drop presto_distortion
-prodigy drop presto_types
+prodigy drop presto_distortion-gerard
+prodigy drop presto_distortion-ariadna
+prodigy drop presto_types-gerard
+prodigy drop presto_types-ariadna
 ```
 ### Anotate if it has a distortion
-Launch the annotation server on the URLs of the type: "http://localhost:PRODIGY_PORT/?session=<annotator_name>"
+Launch the annotation server on the URLs of the type: "http://localhost:PRODIGY_PORT/?session=<username>"
 ```
 prodigy textcat.choice_with_comment -E presto_distortion all_data.jsonl --label distorsión,"no distorsión" -F textcat_distortion.py
 ```
