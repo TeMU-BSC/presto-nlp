@@ -5,24 +5,27 @@ First, set env variables
 
 ```
 export PRODIGY_CONFIG=prodigy.json
-export PRODIGY_ALLOWED_SESSIONS=annotator1,annotator2
+export PRODIGY_ALLOWED_SESSIONS=gerard,ariadna
+export PRODIGY_PORT=8080
 ```
 
 Remove previous databases 
 
 ```
-prodigy drop presto_distortion
-prodigy drop presto_type
+prodigy drop presto_distortion-gerard
+prodigy drop presto_distortion-ariadna
+prodigy drop presto_types-gerard
+prodigy drop presto_types-ariadna
 ```
 ### Anotate if it has a distortion
-
+Launch the annotation server on the URLs of the type: "http://localhost:PRODIGY_PORT/?session=<username>"
 ```
-prodigy textcat.manual -E presto_distortion all_data.jsonl --label distorsión,"no distorsión"
+prodigy textcat.choice_with_comment -E presto_distortion all_data.jsonl --label distorsión,"no distorsión" -F textcat_distortion.py
 ```
 ### Anotate the type of distortion
 
 ```
-prodigy textcat-modified presto_type presto_distortion -F recipe.py
+prodigy textcat.multiple_nested presto_types presto_distortion -F textcat_distortion.py
 ```
 
 ### Evaluation
@@ -30,11 +33,11 @@ Extract the annotation from the databases
 
 ```
 prodigy db-out presto_distortion > presto_distortion.jsonl
-prodigy db-out presto_type > presto_type.jsonl
+prodigy db-out presto_types > presto_types.jsonl
 ```
 
 ```
-python evaluate.py --level first --an1-id ANN1 --an2-id ANN2 --an-file presto_distortion.jsonl
+python evaluate.py --level distortion --an-ids blanca,casimiro --an-file presto_distortion.jsonl --pre_annotations
 
-python evaluate.py --level second --metrics single_cohen,multi_cohen,exact_cohen --an1-id ANN1 --an2-id ANN2 --an-file presto_type.jsonl
+python evaluate.py --level types --metrics single_cohen,multi_cohen,exact_cohen --an-ids blanca,casimiro --an-file presto_types.jsonl --pre_annotations
 ```

@@ -1,49 +1,26 @@
-
-import pandas
-from tqdm import tqdm
 import csv
-import sys
-import os
-import jsonlines
+import json
 
 
-def load_data(input_file):
-    assert os.path.splitext(input_file)[1] == '.csv', ValueError(
-        "Please use a .csv file!")
-    df = pandas.read_csv(input_file, header=0)
-    data = []
+def main():
+    with open('RC_data.csv') as file:
+        content = csv.reader(file, quotechar='"')
+        data = list(content)[1:]
 
-    # Parse pandas info (from csv)
-    for index in tqdm(df.index):
-        row = df.loc[index]
-        try:
-            n = int(row["Nº"])
-        except:
-            continue
-        if n in range(1, 21):
-            columns2id = {
-                "Texto con distorsión cognitiva": "d",
-                "Pensamiento alternativo": "a",
-                "Construcciones tricky": "t"
-            }
-            for column, letter in columns2id.items():
-                text_content = row[column]
+    with open('all_data.jsonl', 'w') as out:
+        category_to_out = {'distorsión': 'distorsión',
+                           'tricky': 'no distorsión', 'alternativo': 'no distorsión'}
+        for instance in data:
+            list_distortions = []
+            for t in instance[3:7]:
+                if t:
+                    list_distortions.append(t)
 
-                line = {
-                    "pre-ann-category": f"{letter}", "text": text_content}
-                data.append(line)
-    return data
+            info = {'id': instance[0], 'text': instance[1],
+                    'pre-ann-category': {'distortion': category_to_out[instance[2]], 'types': list_distortions}}
 
-def write_data(data):
-    output_file = os.path.join(os.path.dirname(
-        input_file), os.path.splitext(input_file)[0] + '.jsonl')
-
-    with jsonlines.open(output_file, "a") as writer:
-        for line in data:
-            writer.write(line)
+            out.write(json.dumps(info) + "\n")
 
 
 if __name__ == '__main__':
-    input_file = sys.argv[1]
-    data = load_data(input_file)
-    write_data(data)
+    main()
