@@ -3,46 +3,40 @@
 language: es
 
 pipeline:
-  # - name: SpacyNLP
-  # # language model to load
-  #   model: es_core_news_sm --> Probar con spacy environment completo --> custom lemmatization
-###basics pre-treatment
   - name: WhitespaceTokenizer
-  # - name: SpacyTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
     analyzer: char_wb
     min_ngram: 1
-    max_ngram: 4
+    max_ngram: 3
     # OOV_token: _oov_
-  - name: LanguageModelFeaturizer
-    # Name of the language model to use
-    model_name: "roberta"
-    # Pre-Trained weights to be loaded
-    model_weights: "PlanTL-GOB-ES/roberta-base-bne"
+  # - name: LanguageModelFeaturizer
+  #   # Name of the language model to use
+  #   model_name: "roberta"
+  #   # Pre-Trained weights to be loaded
+  #   model_weights: "PlanTL-GOB-ES/roberta-base-bne"
 
-    # An optional path to a specific directory to download and cache the pre-trained model weights.
-    # The `default` cache_dir is the same as https://huggingface.co/transformers/serialization.html#cache-directory .
-    cache_dir: null
-  #  Whether to use a shared vocab
-  #   use_shared_vocab: False
+  #   # An optional path to a specific directory to download and cache the pre-trained model weights.
+  #   # The `default` cache_dir is the same as https://huggingface.co/transformers/serialization.html#cache-directory .
+  #   cache_dir: null
+  # #  Whether to use a shared vocab
+  # #   use_shared_vocab: False
 
 
 ### Custom components and classifiers
   - name: sentiment.SentimentEntityExtractor
   - name: DIETClassifier
-    epochs: 30
-    constrain_similarities: true # revisar
+    epochs: 15
+    constrain_similarities: true 
   - name: EntitySynonymMapper
-
 
 # Fallback and chitchat components
   - name: FallbackClassifier
     threshold: 0.5
 
-  - name: ResponseSelector  # ajustar el chitchat
-    epochs: 50
+  - name: ResponseSelector  
+    epochs: 15
     retrieval_intent: chitchat
 
 policies:
@@ -51,16 +45,16 @@ policies:
      epochs: 20
      constrain_similarities: true
    - name: UnexpecTEDIntentPolicy
-     tolerance: 0.2
+     tolerance: 0.3
      epochs: 20
 
-### Conversational contextualization
-   - name: MemoizationPolicy
-     max_history: 8  #hiperparámetro que aprende el contexto conversacional. En este caso, seis pasos.
+### Conversational contextualization --> se ha alterado esta politica para ver si generamos mayor consistencia en el desarrollo de las conversaciones contextuales
+   - name: AugmentedMemoizationPolicy
+     max_history: 3
 
 ### Rule policies
-   - name: RulePolicy #hiperparámetro para manejar cuando pierde contexto conversacional. Si pierde hilo se lanza automat el intent.
-     core_fallback_threshold: 0.2
+   - name: RulePolicy 
+     core_fallback_threshold: 0.3
      core_fallback_action_name: "action_default_fallback"
      enable_fallback_prediction: True
 

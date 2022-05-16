@@ -77,11 +77,11 @@ intents:
 - confirmgv:
     use_entities: true
 - confirmgv3:
-    use_entienes: true
+    use_entities: true
 - confirmgv2:
     use_entities: true
 - confirmcontar:
-    use_entitnes: true
+    use_entities: true
 entities:
 - sentiment
 - valorPareja
@@ -150,17 +150,6 @@ responses:
 
 
  ### TEST
-  utter_greet:
-    - condition:
-        - type: slot
-          name: valorFamilia
-          value: true
-      text: "prueba familia negativa"
-
-    - text: "Welcome. How is your day going?"
-
-
-
 
 
 # Recuerda que tienes a tu disposición herramientas para trabajar siempre que quieras
@@ -201,8 +190,9 @@ responses:
   utter_please_rephrase:
   - text: Lo siento, no te he entendido. ¿Puedes decírmelo de otra forma?
   - text: Creo que no te estoy entendiendo, ¿puedes decírmelo con otras palabras?
-  # utter_default:
-  # - text: repite porfi
+  utter_default:
+  - text: Lo siento, no te he entendido. ¿Puedes decírmelo de otra forma?
+  - text: Creo que no te estoy entendiendo, ¿puedes decírmelo con otras palabras?
   utter_thanks:
   - text: Gracias a ti por charlar este ratito conmigo y dejar que te ayude en algo tan importante como lo es la salud mental.
   - text: 😊 Un placer, recuerda que estoy aquí siempre que lo necesites.
@@ -239,7 +229,7 @@ responses:
           name: valorSocial
           value: valorSocial
       text: "Nuestras relaciones interpersonales suponen un pilar fundamental en nuestra vida. ¿Querrías contarme algo más sobre esto?" 
-    - text: "Vaya, te animo a que me cuentes un poquito más sobre este tema. ¿Te apetece?"
+    - text: "Vaya, te animo a que me cuentes un poquito más sobre este tema."
 
 
   utter_ventilacion_1:
@@ -254,7 +244,7 @@ responses:
         title: Sí
       - payload: "no"
         title: "No"
-    text: ¿Querrías contarme algo más sobre esto?
+    text: ¿Te apetece?
 
 
   utter_si_contar:
@@ -262,7 +252,7 @@ responses:
   - text: Soy todo oídos 👂🏽
 
   utter_no_contar:
-  - text: "puede ser duro compartir este tipo de cosas con extraños. No te preocupes, podemos abordar este problema cuando quieras."
+  - text: "Puede ser duro compartir este tipo de cosas con extraños. No te preocupes, podemos abordar este problema cuando quieras."
   - text: "A veces, nos puede costar compartir nuestros pensamientos con extraños. No te preocupes, podemos retomarlo cuando tú quieras." 
   
   utter_ventilacion_nd_feedback:
@@ -282,16 +272,16 @@ responses:
   utter_selector_psicoeduc_general:
   - buttons:
     - payload: /confirm
-      title: Sí
+      title: "Sí"
     - payload: /deny
-    - title: Mejor no
+      title: "Mejor no"
     text: ¿Quieres que continuemos?
   utter_selector_psicoeduc_1:
   - buttons:
     - payload: /confirm
-      title: Sí
+      title: "Sí"
     - payload: /deny
-    - title: Mejor no
+      title: "Mejor no"
     text: ¿Seguimos 😊?
   
   utter_psicoeduc_general:
@@ -488,7 +478,7 @@ responses:
   - buttons:
     - payload: /confirmgv
       title: Sí
-    - payload: /deny
+    - payload: /inform_sentiment
       title: No, de ningún modo
     text: ¿Sientes que estás en peligro?
 
@@ -496,7 +486,7 @@ responses:
   - buttons:
     - payload: /confirmgv2
       title: Sí
-    - payload: /deny
+    - payload: /inform_sentiment
       title: No, en absoluto
     text: ¿Estás en peligro en este momento?
 
@@ -504,14 +494,14 @@ responses:
   - buttons:
     - payload: /confirmgv3
       title: No, no me siento segura
-    - payload: /deny
+    - payload: /inform_sentiment
       title: Sí
     text: ¿Te sientes segura en tu relación?
 
   utter_call_to_emergency:
-  - text: Se ha enviado una notificación automática sobre la situación ✉️ a los encargados de la plataforma.Es conveniente que lo comentes 🗣️ con alguien cercano, un terapeuta, o bien o acudas a un servicio de urgencias 🏥.
+  - text: Se ha enviado una notificación automática sobre la situación ✉️ a los encargados de la plataforma.Es conveniente que lo comentes 🗣️ con alguien cercano, un terapeuta, o bien acudas a un servicio de urgencias 🏥.
   utter_call_to_emergency_gv: 
-  - text: Se ha enviado una notificación automática sobre la situación ✉️ a los encargados de la plataforma.Es conveniente que lo comentes 🗣️ con alguien cercano, un terapeuta, o bien o acudas a un servicio de urgencias 🏥.
+  - text: Se ha enviado una notificación automática sobre la situación ✉️ a los encargados de la plataforma.Es conveniente que lo comentes 🗣️ con alguien cercano, un terapeuta, o bien acudas a un servicio de urgencias 🏥.
   utter_answer_no_genderViolence:
   - text: De acuerdo, disculpa, no te entendí adecuadamente 🙂. Por dónde íbamos...¿Qué tal te ha ido el día?
 

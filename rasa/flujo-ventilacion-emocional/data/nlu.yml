@@ -34,7 +34,7 @@ nlu:
   metadata:
     sentiment: NEG
   examples: |
-    - Todo me sale mal
+    - Todo me sale fatal
     - Nunca cumple con su palabra es que siempre hace igual
     - Todo lo hago igual
     - Todo el mundo tiene la misma actitud.
@@ -238,10 +238,10 @@ nlu:
     - soy una ignorante
     - [mi mujer](valorFamilia) es una embustera
     - soy aburrida
-    - mi [amiga](valorFamilia) es pesada
+    - mi [amiga](valorSocial) es pesada
     - ella es alegre
     - no soy divertido
-    - mis [amigos](valorFamilia) sí que son listos
+    - mis [amigos](valorSocial) sí que son listos
     - soy un egoísta
     - es una ambiciosa
     - mi [marido](valorPareja) es un avaricioso
@@ -1128,15 +1128,19 @@ nlu:
     - bona tarda, vicky soy [Francisco](name)
     - hola buenos días.
     - Qué tal vicky, hola
+    - bon dia
+    - bona tarde
+    
 
 - intent: nlu_fallback
   examples: |
-    - tengo a mi madre en el hospital
+    - tengo a mi [madre](valorFamilia) en el hospital
     - tengo que ir al medico 
-    - mi hermana está ingresada
-    - he tenido una discusión con mi pareja
+    - mi [hermana](valorFamilia) está ingresada
+    - he tenido una discusión con mi [pareja](valorPareja)
     - me he enterado hoy que ha fallecido un compañero de trabajo
-  
+    - llevaba todo mi dinero en la cartera y ahora no tengo para pagar la academia
+
 
 - intent: goodbye_nicemood
   examples: |
