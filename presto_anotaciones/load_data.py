@@ -2,8 +2,8 @@ import csv
 import json
 
 
-def main():
-    with open('RC_data.csv') as file:
+def main(filename):
+    with open(filename) as file:
         content = csv.reader(file, quotechar='"')
         data = list(content)[1:]
 
@@ -23,4 +23,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    filenane = '/home/casimiro/projects/presto-nlp/presto_anotaciones/RC_data_10%_random.csv'
+    main(filenane)

@@ -1,4 +1,3 @@
-
 ## Annotation for the PRESTO project
 
 First, set env variables
@@ -9,14 +8,16 @@ export PRODIGY_ALLOWED_SESSIONS=blanca,casimiro
 export PRODIGY_PORT=8080
 ```
 
-Remove previous databases 
+Remove previous datasets and sessions
 
 ```
-prodigy drop presto_distortion
-prodigy drop presto_types
+prodigy drop presto_distortion-blanca
+prodigy drop presto_distortion-casimiro
+prodigy drop presto_types-blanca
+prodigy drop presto_types-casimiro
 ```
 ### Anotate if it has a distortion
-Launch the annotation server on the URLs of the type: "http://localhost:PRODIGY_PORT/?session=<annotator_name>"
+Launch the annotation server on the URLs of the type: "http://localhost:PRODIGY_PORT/?session=<username>"
 ```
 prodigy textcat.choice_with_comment -E presto_distortion all_data.jsonl --label distorsión,"no distorsión" -F textcat_distortion.py
 ```
