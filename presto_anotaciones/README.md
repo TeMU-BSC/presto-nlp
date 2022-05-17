@@ -4,13 +4,14 @@ First, set env variables
 
 ```
 export PRODIGY_CONFIG=prodigy.json
-export PRODIGY_ALLOWED_SESSIONS=blanca,casimiro
+export PRODIGY_ALLOWED_SESSIONS=gerard,ariadna
 export PRODIGY_PORT=8080
 ```
 
 Remove previous datasets and sessions
 
 ```
+<<<<<<< HEAD
 prodigy drop presto_distortion-blanca
 prodigy drop presto_distortion-casimiro
 prodigy drop presto_types-blanca
