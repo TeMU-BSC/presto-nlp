@@ -1,0 +1,61 @@
+version: "2.0"
+
+stories:
+
+  - story: EmotionClassification - selector Confirm
+    steps:
+      - action: utter_selector_POS_finish
+      - intent: confirm
+      - action: utter_advice_POS_finish
+      
+  - story: EmotionClassification - selector Deny
+    steps:
+      - action: utter_selector_POS_finish
+      - intent: deny
+      - action: utter_negative_feedback_POS
+
+  # - story: Emotion POS non advice ## en progreso
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet_ask_emotion
+  #     - intent: inform_sentiment
+  #     # - action: sentiment_form
+  #     - slot_was_set:
+  #         - sentiment: POS
+  #     - action: utter_selector_general_POS
+  #     - intent: confirm
+  #     - action: utter_si_contar
+  #     # - action: sentiment_form
+  #     - slot_was_set:
+  #         - sentiment: POS
+  #     # - action: utter_selector_POS
+  #     # - intent: deny
+  #     # - action: utter_advice_POS
+  #     # - action: utter_goodbye_nicemood
+  
+  # - story: Emotion POS non advice non so much chitchat
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet_ask_emotion
+  #     - intent: inform_sentiment
+  #     # - action: sentiment_form
+  #     - slot_was_set:
+  #         - sentiment: POS
+  #     - action: utter_selector_general_POS
+  #     - intent: deny
+  #     - action: utter_selector_POS
+  #     - intent: deny
+  #     - action: utter_advice_POS
+  #     - action: utter_goodbye_nicemood
+
+
+  # - story: emotionclassification - positive distorsion # ok revisado
+  #   steps:
+  #     - slot_was_set:
+  #         - sentiment: POS
+  #     - or:
+  #       - intent: nlu_fallback
+  #       - intent: etiquetado
+  #       - intent: sobregeneralizacion
+  #     - action: utter_sentiment_POS
+  #     - action: utter_selector_POS

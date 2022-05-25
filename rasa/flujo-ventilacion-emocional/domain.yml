@@ -133,20 +133,44 @@ responses:
   utter_sentiment_POS:
   # - text: ¡Me alegra leer esto! Aprovecha este momento para fijar en tu memoria la sensación corporal que tienes en estos momentos. Te puede ser útil recordarla en momentos que no te sientas tan bien.
   # - text: ¡Cómo me alegra leer este tipo de cosas! Las emociones que nos hacen sentir bien, así como aquellas que nos hacen sentir mal, forman parte de nuestra vida. Te proponemos detenerte un momento para escuchar como está tu cuerpo en estos instantes en que te estás sintiendo bien.
-  - text: ¡Fántastico! Aprovechando que te encuentras bien, déjame compartir algo contigo que he aprendido últimamente sobre las emociones positivas.
+  - text: ¡Fántastico!
+  - text: ¡Cómo me alegra leer esto! 
   utter_selector_POS:
   - buttons:
     - payload: /confirm
-      title: Claro, cuéntame
+      title: Claro
     - payload: /deny
       title: En otro momento
-    text: ¿Te apetece?
+    text: ¿Te apetece contarme algo más sobre esto 🙂?
+  utter_selector_POS_last:
+  - buttons:
+    - payload: /confirm
+      title: Me gustaría seguir hablando
+    - payload: /deny
+      title: ¡Vamos con el feedback!
+    text: ¿Quieres compartir conmigo algo más sobre esto o prefieres que te dé un feedback sobre nuestra conversación 🙂?
+  utter_selector_general_POS:
+  - buttons:
+    - payload: /confirm
+      title: Claro
+    - payload: /deny
+      title: En otro momento
+    text: ¡Cuánto me alegro! ¿Te apetece contarme algo más sobre esto?
+  utter_selector_POS_finish:
+  - buttons:
+    - payload: /confirm
+      title: Lo he encontrado útil
+    - payload: /deny
+      title: No demasiado
+    text: ¿Crees que te ha servido este consejo?
   utter_advice_POS:
   - text: "Aunque las emociones que nos hacen sentir bien nos gustan más, hay que tener en cuenta que todas las emociones se comportan de la misma manera: no duran para siempre. Por eso es importante estar en el presente, para poder detenerte y sentir la emoción presente sin juzgarla, sabiendo que acabará reduciéndose ya sea agradable o desagradable."
   - text: Aprovecha el momento actual que te están ofreciendo tus emociones y obsérvalas. Pero cuidado, todo el tiempo intentamos retener los momentos placenteros y desechar los desagradables hace muy difícil podernos relajar plenamente o sentirnos satisfechos, pues el dolor es inevitable y los momentos agradables también pasarán o quizás no llegarán como nosotros planeamos.
   - text: Las emociones que nos hacen sentir bien, así como aquellas que nos hacen sentir mal, forman parte de nuestra vida. Te proponemos detenerte un momento para escuchar como está tu cuerpo en estos instantes en que te estás sintiendo bien.
   utter_advice_POS_finish:
-  - text: "Espero que, como a mí en su día, esta reflexión te haya sido de utilidad. \nEstaré aquí siempre que me necesites. ¡Hasta pronto! 🙂"
+  - text: "Me alegra ver que, como a mí en su día, esta reflexión te haya sido de utilidad. \nEstaré aquí siempre que me necesites. ¡Hasta pronto! 🙂"
+  utter_negative_feedback_POS:  
+  - text: "Vaya, lamento que mi feedback no te haya sido de utilidad. En ese caso, te animo a seguir contándome qué te ocurre o que visites 'xxx' de nuestra APP"
 
 
  ### TEST
@@ -250,6 +274,11 @@ responses:
   utter_si_contar:
   - text: "Adelante, te escucho 😊" 
   - text: Soy todo oídos 👂🏽
+
+  utter_emotion_si_contar:
+  - text: "Adelante, te escucho 😊" 
+  - text: Soy todo oídos 👂🏽
+
 
   utter_no_contar:
   - text: "Puede ser duro compartir este tipo de cosas con extraños. No te preocupes, podemos abordar este problema cuando quieras."

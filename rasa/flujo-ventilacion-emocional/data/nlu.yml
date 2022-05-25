@@ -33,7 +33,7 @@ nlu:
 - intent: sobregeneralizacion
   metadata:
     sentiment: NEG
-  examples: |
+  examples: | 
     - Todo me sale fatal
     - Nunca cumple con su palabra es que siempre hace igual
     - Todo lo hago igual
@@ -999,6 +999,26 @@ nlu:
     - suicidio
     - me voy a suicidar
     - hola quiero cortarme las venas
+    - mi familia estaría mejor sin mi
+    - soy un estorbo para mis seres queridos
+    - me quito del medio
+    - quiero desaàrecer
+    - Pienso que quizás es mejor desaparecer
+    - quiero morir
+    - He pensado en dejar de existir y todos estarían mejor sin mí
+    - Pienso en morir
+    - a veces pienso que la vida no tiene sentido
+    - creo que me pegaré un tiro
+    - no puedo más
+    - estoy harto de vivir
+    - quiero irme ya
+    - No debería estar aquí
+    - No puedo soportar más este dolor
+    - Esta vida no tiene sentido 
+    - Estoy cansado de luchar
+
+
+
 
   # - text: |
   #     me quiero morir
@@ -1087,7 +1107,14 @@ nlu:
     - Utiliza armas para intimidarme
     - Me utiliza como objeto sexual
     - ha difundido fotos mias con sus amigos
-    - mi [marido] me humilla
+    - mi [marido](valorPareja) me humilla
+    - mi [pareja](valorPareja) esta nervioso y agresivo conmigo
+    - me ha pegado
+    - Me siento maltratada
+    - Mi [marido](valorPareja) me maltrata
+    - no me siento segura
+    - siento que estoy en peligro
+    - me siento insegura en mi casa con mi [pareja](valorPareja)
 
 - intent: emergency
   examples: |
