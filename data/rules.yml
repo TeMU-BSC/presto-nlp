@@ -7,7 +7,8 @@ rules:
 - rule: Say hello anytime the user says hello
   steps:
   - intent: greet
-  - action: utter_greet
+  # - action: utter_greet_presentation
+  - action: utter_greet_ask_emotion
 
 
 - rule: Say goodbye anytime the user says goodbye
@@ -15,27 +16,52 @@ rules:
   - intent: goodbye_nicemood
   - action: utter_goodbye_nicemood
 
-
 ### fallback and chitchat rules
 
-- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
-  steps:
-  - intent: nlu_fallback
-  - action: utter_please_rephrase
+# - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+#   steps:
+#   - intent: nlu_fallback
+#   - slot_was_set:
+#       - sentiment: NEU
+#   - action: utter_please_rephrase
 
 - rule: respond to chitchat
   steps:
   - intent: chitchat
   - action: utter_chitchat
 
-## gratitude
-- rule: everytime the user says thanks.
+- rule: prioritize alert intent
   steps:
-  - intent: thanks
-  - action: utter_thanks
+    - intent: alert
+    - action: utter_alert
+
+    # - intent: confirm
+    # - action: utter_call_to_emergency
+# - rule: priorize alert intent_no problem
+#   steps:
+#     - intent: emergency
+#     - action: utter_emergency
+#     - intent: deny
+#     - action: utter_answer_no_genderViolence
+
+### unlikely hoping wrap up worksa
+
+# - rule: every time we receive unlikely intent in wrap-up take those actions below
+#   steps:
+#     - action: action_unlikely_intent
+#     - action: utter_out_of_scope-wrap_up
+
+
+# ## gratitude
+# - rule: everytime the user says thanks.
+#   steps:
+#   - intent: thanks
+#   - action: utter_thanks
 
 
 # - rule: Activate sentiment_form
 #   steps:
 #   - intent: inform_sentiment
 #   - action: sentiment_form
+# se desactiva esta regla hasta que este montado el endpoint para el formulario de emociones,
+# ya que entra en conflicto con las stories

@@ -1,0 +1,600 @@
+{"id": "a_133", "text": "Me he equivocado en el nombre de un informe, seguramente mi jefa me dir\u00e1 que me he de fijar m\u00e1s en estos detalles", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_198", "text": "Todo el mundo se pone nervioso", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_159", "text": "Fue simp\u00e1tico y agradable conmigo durante la cita. No obstante, lo v\u00ed mirar el reloj 2 veces. Seguro que soy una persona aburrida", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva", "Etiquetado"]}}
+{"id": "d_135", "text": "He engordado 4 kgs, esto es tremendo, inaceptable, no valgo para nada", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "a_80", "text": "Esta vez mi amiga no ha tenido en cuenta lo que yo necesitaba", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_7", "text": "Me gusta comer de todo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_117", "text": "me sentir\u00e9 mejor en alg\u00fan momento", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_191", "text": "Me han ascendido en el trabajo, ser\u00e1 que lo he hecho bien", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_194", "text": "Cuando mis padres se divorciaron estuve seguro que fue por mi culpa", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n"]}}
+{"id": "t_59", "text": "Tengo que hacer la comida", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_115", "text": "si estudio es menos probable que me quede en blanco en el examen.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_65", "text": "no soy inteligente", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "t_116", "text": "voy a suspender como no entregue los trabajos", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_26", "text": "Se que mi hermana es muy amable y que tiene muchos amigos ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_149", "text": "Quiz\u00e1s no comet\u00ed tantos errores, pues la mayor\u00eda me felicit\u00f3", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_62", "text": "no soy guapo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "t_160", "text": "Me he portado mal en clase por lo que me han castigado", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_48", "text": "Me gustaria que la gente fuese m\u00e1s amable conmigo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_54", "text": "tengo que esforzarme m\u00e1s", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "d_199", "text": "En el trabajo ten\u00eda la impresi\u00f3n de que cada vez que el encargado hablaba de que hab\u00eda que mejorar la calidad del trabajo se refer\u00edan exclusivamente a mi", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n"]}}
+{"id": "t_55", "text": "Tengo que estudiar para el examen", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_165", "text": "Me siento solo, pero puedo encontrar buenos amigos", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_38", "text": "estoy convencido de que no me quieren tanto como yo a ellos", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "d_100", "text": "si no estoy delgado no soy feliz", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "d_51", "text": "deber\u00eda volver a considerar otras opciones", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "d_168", "text": "Me siento deprimido, la vida no tiene sentido.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional"]}}
+{"id": "d_106", "text": "aunque ahora mismo estoy bien, estoy convencida de que va a pasar algo malo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "d_166", "text": "Siento que no puedo con esto, por tanto, no puedo.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional"]}}
+{"id": "t_125", "text": "Lo que me ha pasado es muy desagradable", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_57", "text": "Debo ir a comprar, no queda comida en casa", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_153", "text": "No he suspendido ninguna, por lo que me podr\u00e9 ir de vacaciones", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_159", "text": "Hoy hubiesemos escalado una gran monta\u00f1a si no fuera porque ha hecho mal tiempo.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_24", "text": "no hay nada seguro en esta vida", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_74", "text": "es que soy imbecil no tengo remedio", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "t_144", "text": "La mayor\u00eda vot\u00f3 a favor, por lo que estoy contento. ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_163", "text": "Ahora me siento mala persona, pero es probable que esta sensaci\u00f3n cambie", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_52", "text": "Mi padre tiene que jubilarse, ya tiene 65 a\u00f1os", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_159", "text": "Quiz\u00e1s mir\u00f3 el reloj por algo ajeno y no por considerarte alguien aburrido ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_84", "text": "Si no est\u00e1s conmigo, est\u00e1s contra m\u00ed", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "d_92", "text": "o apruebo el examen o no tendr\u00e9 futuro", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "a_81", "text": "No siempre me podr\u00e1 ayudar, algunas veces tendr\u00e1 cosas que hacer que tambi\u00e9n ser\u00e1n importantes ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_149", "text": "En el trabajo me felicitaron todos excepto mi jefe. Seguro que comet\u00ed muchos errores en el proyecto", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva"]}}
+{"id": "a_101", "text": "Otras veces has ido y te has sentido bien, esta vez puede ser igual", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_156", "text": "La noche fue horrible porque nos atracaron en el portal", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_128", "text": "A veces estoy inc\u00f3modo en algunas fiestas, pero luego me lo paso bien", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_135", "text": "No ser\u00e1 tan terrible", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_164", "text": "Si no tengo a mis amigos de verdad, me siento solo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_98", "text": "Es normal que a veces no nos sintamos bien, forma parte de la evoluci\u00f3n de la vida", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_54", "text": "Puedo esforzarme m\u00e1s si quiero conseguir mejores resultados", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_197", "text": "Le ha tocado la loter\u00eda a todos los del trabajo, yo no compr\u00e9 el boleto, deber\u00eda haberlo pensado. ", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n", "Imperativos"]}}
+{"id": "t_102", "text": "cuando salte al escenario, me sentir\u00e9 diferente", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_7", "text": "Muchos d\u00edas me encuentro mal, aunque algunos me encuentro bien", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_100", "text": "Me sentiria mejor conmigo mismo si estubiera m\u00e1s delgado", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_95", "text": "Hay otras formas que nos ayudan a no engordar si no siempre podemos hacer ejercicio", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_197", "text": "A veces ocurren situaciones que no podemos predecir", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_198", "text": "Marta tiene mala cara, debe de estar enfadada conmigo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n"]}}
+{"id": "a_85", "text": "Las cosas estan bien aunque no sean perfectas", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_138", "text": "Puede que me diagnostiquen un c\u00e1ncer, entonces tendr\u00e9 que ver qu\u00e9 puedo hacer, qu\u00e9 pron\u00f3stico y tratamientos existen", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_150", "text": "Me prepararon una fiesta sorpresa pero fue empezar a llover y fastidiarse todo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva"]}}
+{"id": "t_20", "text": "Las cosas nunca salen iguales", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_84", "text": "Puede que no siempre estemos de acuerdo con el resto de gente, cada uno tenemos nuestras ideeas y creencia, pero esto no nos situa en posiciones opuestas, podemos entendernos ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_158", "text": "Mi padre prefiere el rojo, pero a veces se viste de azul. Quiz\u00e1s no tiene claros sus gustos", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_162", "text": "Puedo ser mala persona si siento que debo serlo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_192", "text": "Algo va mal, seguro que he sido yo.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n"]}}
+{"id": "d_141", "text": " He perdido el paraguas, soy un desastre ", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva"]}}
+{"id": "a_43", "text": "La casa esta sucia podria dedicar una tarde a limpiarla", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_76", "text": "Puede que hoy me haya equivocado, pero otras veces suelo tener una respuesta inteligente", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_48", "text": "Tengo muchos animales en casa", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_60", "text": "Debo hablar mejor a la gente o me voy a quedar solo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos", "Adivinaci\u00f3n"]}}
+{"id": "d_37", "text": "s\u00e9 que me odian", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "a_140", "text": "Ser\u00e1 caro, pero podr\u00e9 hacerle frente", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_12", "text": "A menudo tengo probelmas, todos tenemos problemas a veces", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_146", "text": "Mis padres est\u00e1n discutiendo y esto es algo desagradable", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_70", "text": "Mi amiga me ha dicho ciertas cosas que no comparto y esto me ha hecho enfadar, a veces no nos ponemos de auerdo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_103", "text": "Te has preparado bien, no hay motivos para pensar que saldr\u00e1 mal", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_92", "text": "Este examen es importante, aunque el futuro es mucho m\u00e1s", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_115", "text": "s\u00e9 que no mejorar\u00e9 si no pongo de mi parte", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_122", "text": "Aunque falles, la mayoria de cosas se pueden reparar y buscar una buena alternativa", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_88", "text": "o consigo acabar esto ahora o no podr\u00e9 entregarlo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_120", "text": "me gustar\u00eda quedar con \u00e9l, pero estoy convencido de que no querr\u00e1", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "a_169", "text": "Puede que algo te de miedo, pero el miedo no siempre concuerda con un peligro real", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_151", "text": "La cena que prepar\u00e9 le gusto a todos. Sin embargo, comentaron que las patatas estaban algo saladas. Eso quiere decir que no disfrutaron de la cena", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva", "Leer la mente"]}}
+{"id": "t_65", "text": "\u00a1qu\u00e9 guapa que eres!", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_72", "text": "este vestido es horrible, nunca me lo compraria", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_55", "text": "Puedo pedirle a mi pareja que sea m\u00e1s cari\u00f1osa conmigo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_93", "text": "si no soy el mejor en mi trabajo entonces me despedir\u00e1n", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "d_178", "text": "Si me da ansiedad al estar entre tantas personas es porque es peligroso", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional"]}}
+{"id": "a_181", "text": "No puedes saber de que se est\u00e1 riendo Mar\u00eda si no se lo preguntas", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_142", "text": "Los problemas de mi hijo con la escuela son consecuencia de mi fracaso como madre.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva"]}}
+{"id": "a_10", "text": "A veces hay personas que no me quieren tanto como yo querria", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_11", "text": "Me cuesta sentirme querida, esto no siginifca que nadie me quiera", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_66", "text": "Muchas veces nos fijamos solo en los errores, seguro que puedes buscar momentos en los que te hayas sentido inteligente", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_195", "text": "Si han bajado las ventas en el trabajo es debido a muchos factores a parte del tuyo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_193", "text": "Mi pareja ha llegado a casa disgustada, seguro que he hecho algo mal.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n"]}}
+{"id": "a_162", "text": "Est\u00e1s triste, puede que la situaci\u00f3n sea mala", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_27", "text": "Tengo la sensaci\u00f3n que yo quiero m\u00e1s a la gente de lo que me quieren", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_126", "text": "Esta llegando tarde, seguro que el tren ha tenido un accidente", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "t_177", "text": "Siento que no soy bueno en mi trabajo, si ellos lo pensaran ya me habr\u00edan despedido", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_9", "text": "Todo lo que me dijo ten\u00eda sentido", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_29", "text": "Estoy convencido de la decisi\u00f3n que acabo de tomar.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_109", "text": "El examen de ma\u00f1ana seguro que me va a ir mal", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "a_102", "text": "No podemos saber si les va a gustar antes de ense\u00f1arlo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_8", "text": "todo lo que hago est\u00e1 mal", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "t_23", "text": "\u00e1ndate con cuidado con los papeles del seguro del coche.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_110", "text": "voy a pasar momentos complicados en mi vida", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_48", "text": "Deber\u00edan ser m\u00e1s amables conmigo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "a_142", "text": "Es normal que mi hijo tenga algunos problemas a lo largo de su vida, esto no me define a mi como madre, lo importante es que est\u00e1 a su lado para apoyarlo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_123", "text": "Es mejor que no lo intente, porque fracasar\u00e9 y ser\u00e1 horrible.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "t_11", "text": "Me gustan todos los tipos de m\u00fasica", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_73", "text": "la m\u00fasica del bar es inaguantable mejor buscamos un sitio m\u00e1s tranquilo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_174", "text": "Siento que nadie me comprende. Este bicho es muy raro", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_193", "text": "Me estaba mirando fijamente a los ojos, seguro que piensa que son bonitos", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_98", "text": "si no estoy siempre bien me agobio mucho", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "d_200", "text": "Cuando escuchaba a mi marido quejarse de lo aburrido del fin de semana, pensaba; seguro que piensa que soy aburrida", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n"]}}
+{"id": "a_87", "text": "Lo importante es hacer bien mi trabajo y cumplir con los objetivos, si es as\u00ed no habr\u00e1 ningun problema", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_97", "text": "O encuentro una pareja de baile o las clases que he hecho no servir\u00e1n para bailar sola", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_158", "text": "Tuve una cita con un chico y, pese a que lo pasamos bien, me molest\u00f3 que llegase tarde. Quiz\u00e1s no le intereso tanto", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva"]}}
+{"id": "a_25", "text": "Creo que no me quiere ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_180", "text": "Hoy me siento triste", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_121", "text": "No podr\u00eda haber ido peor", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "a_71", "text": "A veces me equivoco, pero muchas otras hago las cosas bien", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_194", "text": "Un divorcio se produce por un monton de causas, tu no has hecho nada mal para atribuirte esa culpa", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_62", "text": "los c\u00e1lculos que nos han proporcionado son catastr\u00f3ficos", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_58", "text": "Puedo decir a mi familia que me gustaria que fuesen m\u00e1s amables conmigo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_60", "text": "Me iria bien trabajar mi asertividad para mejorar mis relaciones con las personas", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_128", "text": "No voy a la fiesta porque me da terror que me rechacen, eso es lo peor, no lo podr\u00eda aguantar ", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "d_27", "text": "estoy convencido de que no me quieren tanto como yo a ellos", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "a_14", "text": "Algunas veces me equivoco, esto no quier decir que lo haga todo mal", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_24", "text": "Yo no le gusto a ella.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "t_5", "text": "Siempre me han gustado las matem\u00e1ticas ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_79", "text": "He intentado arreglar mi ordenador y en lugar de esto lo he estropeado m\u00e1s, mejor lo llevar\u00e9 a reparar.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_114", "text": "me sentir\u00e9 mal si act\u00fao en contra de mis valores", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_59", "text": "Deber\u00eda hacer las cosas con m\u00e1s antelaci\u00f3n, luego me pongo nervioso", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "d_25", "text": "Siempre est\u00e1 sonriendo, pero s\u00e9 que no me quiere.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "d_30", "text": "Seguro que piensan que no me implico lo suficiente ", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "t_81", "text": "o vienes o te vas", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_111", "text": "s\u00e9 que no ser\u00e1 todo perfecto siempre", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_4", "text": "Hay personas con una actitud que me desagrada", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_4", "text": "todo lo relacionado con la pol\u00edtica me disgusta", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_186", "text": "Aunque haya pasado alguna vez, no puede ser que pase con todo el mundo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_63", "text": "He fallado en el encargo que tenia del trabajo y ahora me siento mal, la proxima vez intentar\u00e9 hacerlo mejor", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_175", "text": " Hoy me siento un poco deca\u00eddo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_151", "text": "Por fin ha llegado el verano, que contenta estoy!", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_137", "text": "Mi hijo no me ha llamado para decirme que ha llegado, seguro que ha encontrado caravana y/o le est\u00e1 costando aparcar", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_95", "text": "O descanso o luego no rindo en el gimnasio ni puedo hacer los movimientos perfectos", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_61", "text": "Actualmente cuando me miro al espejo no me veo bien", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_130", "text": "Si suspendo el examen de ma\u00f1ana me enfadar\u00e9 despu\u00e9s de todo lo que he estudiado, pero me servir\u00e1 de base para el pr\u00f3ximo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_152", "text": "Me comentaron que la comida ten\u00eda mucha sal, por lo que debo ser un t\u00edo muy salado.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_184", "text": "No tienes pruebas para saber si se han aburrido o no, aunque hubiese sido asi no tiene ninguna asociacion con que seas un pesado", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_176", "text": "Me siento triste, por lo que deber\u00eda hacer cambios en mi vida", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional", "Imperativos"]}}
+{"id": "t_83", "text": "a veces tengo el dilema de,  o me quedo en casa o salgo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_36", "text": "Mi hermana no piensa; act\u00faa impulsivamente.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_190", "text": "Mis amigos no me han llamado para quedar ultimamente, seguro que es porque ya no quieren seguir vi\u00e9ndome.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n"]}}
+{"id": "a_198", "text": "Que Marta tenga mala cara, puede ser por muchas razones", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_135", "text": "He cogido algo de peso, tengo que empezar a cuidar mi alimentaci\u00f3n un poco m\u00e1s. ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_90", "text": "Si no hago ejercicio engordar\u00e9", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "t_181", "text": "Yo no tengo la culpa", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_18", "text": "A veces me equivoco pero esto no significa que siempre me salgan las cosas mal", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_185", "text": "S\u00e9 que se est\u00e1n riendo de m\u00ed", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n", "Leer la mente"]}}
+{"id": "d_183", "text": "\u00a1Todo es por mi culpa!", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n", "Sobregeneralizaci\u00f3n"]}}
+{"id": "d_164", "text": "Me siento incompetente, luego soy incompetente.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional", "Etiquetado"]}}
+{"id": "d_107", "text": "estoy segura de que me voy a equivocar por mucho que me prepare", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "a_150", "text": "Que lloviera no era lo esperado, pero seguro que hay muchos otros momentos buenos de la fiesta que puedas recordar", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_168", "text": "Es dif\u00edcil encontrar el sentido en la vida cuando est\u00e1s mal, pero todo puede mejorar", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_160", "text": "Mi entrenador me felicit\u00f3 por mi rendimiento, pero me sustituy\u00f3 a la media parte. S\u00e9 que en el fondo no cuenta conmigo.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva", "Leer la mente"]}}
+{"id": "t_127", "text": "Ma\u00f1ana tengo un examen muy dif\u00edcil e importante, el resultado afectar\u00e1 a mi expediente", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_61", "text": "\u00a1perfecto, vamos a ello!", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_107", "text": "Antes de ense\u00f1arlo es dificil saber que va a pensar otra gente, es mejor ense\u00f1arlo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_102", "text": "estoy segura de que no les va a gustar.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "d_96", "text": "siento que si no lo hago perfecto no es suficiente", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "d_154", "text": "Seg\u00fan mis amigos, tengo buen fondo. No obstante, me dicen que deber\u00eda tener m\u00e1s tacto. Soy un mal amigo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva", "Etiquetado"]}}
+{"id": "t_149", "text": "Se ha ido la luz, as\u00ed que voy a tener que encender unas velas", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_131", "text": "Si suspendo el examen de la pr\u00f3xima semana me bajar\u00e1 mucho la nota media, que horro!", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_128", "text": "Equivocarse en el nombre de un informe en la empresa, ser\u00e1 un error grave", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_61", "text": "soy imbecil", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "a_153", "text": "Que en ocasiones tu hijo se enfade contigo no significa que no te quiere", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_46", "text": "Tengo que comprar algo para comer", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_124", "text": "No podemos saber como ir\u00e1, a vecesa algunas cosas salen mal pero podemos hacer algo para que mejoren", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_138", "text": "Lo peor de trabajar mucho es que no te guste lo que haces", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_140", "text": "Es la ruina, el coche no arranca", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "d_97", "text": "o est\u00e1 perfecto o no lo quiero", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "t_122", "text": "Me sabe fatal que no llegaras a tiempo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_12", "text": "Nunca tomo el sol sin protecci\u00f3n ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_77", "text": "Se ha vuelto a equivocar, le puedo dar otra oportunidad", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_49", "text": "Si estudio ahora ir\u00e9 m\u00e1s preparado al examen", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_26", "text": "Pienso que la gente me odia, pero realmente no s\u00e9 si es verdad", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_2", "text": "Nunca cumple con su palabra\u2026 es que siempre hace igual", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "a_35", "text": "Si me dice que si, lo m\u00e1s probable es que le caiga bien", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_4", "text": "Todo el mundo tiene la misma actitud.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "t_139", "text": "Esta situaci\u00f3n me est\u00e1 costando mucho de aguantar, ser\u00e1 largo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_14", "text": "Cada d\u00eda como pan", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_152", "text": "He aprobado todas las asignaturas pero no han sido todo sobresalientes. Soy un desastre ", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva", "Etiquetado"]}}
+{"id": "d_127", "text": "Lo que me est\u00e1 pasando es horrible, no lo puedo soportar", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "t_196", "text": "Todo el mundo se me ha quedado mirando", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_10", "text": "Siempre estoy de buen humor", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_190", "text": "Hay muchas razones por las que no te hayan llamado tus amigos, no tiene porque ser que ya no te quieren ver", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_191", "text": "Mi paciente  ha empeorado desde hace unas semanas, debe ser mi culpa, no le ha funcionado el tratamiento.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n"]}}
+{"id": "d_99", "text": "sino quedo el primero en la carrera habr\u00e9 perdido", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "a_62", "text": "Me molesta como se comportan algunas personas a veces, pero no todos podemos estar siempre de acuerdo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_21", "text": "Simplemente lo s\u00e9, estoy convencida. Piensa que soy lo peor.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "d_144", "text": "La m\u00e1quina de lavar se ha parado. Siempre sucede lo mismo. No lo soporto m\u00e1s, ya me ha fastidiado el resto del d\u00eda.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva", "Sobregeneralizaci\u00f3n"]}}
+{"id": "a_164", "text": "Me siento incompetente ahora mismo, esto no implica que lo sea", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_118", "text": "no voy a gustarle a todo el mundo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_125", "text": "La reunion no ha salido como esperaba", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_56", "text": "Si me implico en trabajo no tengo porque tener ningun problema", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_112", "text": "me sentir\u00e9 extra\u00f1o al actuar distinto y eso puede ser bueno", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_133", "text": "Lo que me ha pasado es duro", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_95", "text": "siempre estamos igual o encontramos la forma de entendernos o yo me voy de casa", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista", "Sobregeneralizaci\u00f3n"]}}
+{"id": "d_53", "text": "he engordado ultimamente y tengo que adelgazar", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "d_177", "text": "Si me enfado es porque me ha hecho algo malo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional"]}}
+{"id": "t_141", "text": "Soy un ser humano maravilloso porque siempre escucho a los dem\u00e1s", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_126", "text": "En fiestas con gente desconocida lo paso muy mal", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_38", "text": "S\u00e9 que si no ceno, por la noche tendr\u00e9 hambre.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_189", "text": "El proyecto ha ido genial, me han felicitado", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_3", "text": "todos los a\u00f1os pasa algo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_131", "text": "(Despu\u00e9s de esto) Me costar\u00e1 recuperarme, pero saldr\u00e9 adelante", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_187", "text": "Aunque aparezca en la discusi\u00f3n, mis padres se pelean a su voluntad, yo no tengo porque tener nada que ver", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_105", "text": "Si vas bien preparado no hay motivo para suspender", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_68", "text": "Aunque me haya equivocado, esto no significa que sea un desastre. Todos nos equivocamos a veces.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_192", "text": "No me han llamado a\u00fan mis amigos, seguro que lo haran pronto", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_116", "text": "hasta que no le muestre como soy, no puedo saber si le gusto", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_200", "text": "Hay pocas cosas que me hagan re\u00edr", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_117", "text": "si cuido de mi relaci\u00f3n es m\u00e1s f\u00e1cil superar las dificultades que aparezcan en pareja", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_58", "text": "mi familia tiene que ser m\u00e1s amable conmigo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "d_122", "text": "Las consecuencias ser\u00edan insoportables\u2026 fracasar\u00eda y ser\u00eda horrible.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "t_40", "text": "Estoy convencido de que ma\u00f1ana ganaremos el partido", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_161", "text": "Aunque sienta miedo a subirme a un avi\u00f3n, es un medio de transporte seguro", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_72", "text": "soy completamente idiota", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "a_82", "text": "Es importante que las cosas esten limpias, aunque no siempre estaran impolutas y esto tambi\u00e9n esta bien", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_153", "text": "Mi hijo dice que me quiere pero a veces se enfada conmigo. Quiz\u00e1s no me quiere tanto", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva"]}}
+{"id": "d_32", "text": "siempre est\u00e1 sonriendo, pero s\u00e9 que me odia", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "t_79", "text": "El ruido que hacen las obras es insoportable", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_178", "text": "Siento que mis amigos se estan alejando de m\u00ed", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_124", "text": "Todo ir\u00e1 mal", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "a_45", "text": "Si acabo los temas abiertos de trabajo antes de vacaciones, estar\u00e9 m\u00e1s tranquilo ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_185", "text": "No tengo pruebas suficientes para demostrar eso", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_123", "text": "ja ja ja, qu\u00e9 gracioso, \u00a1eres terrible!", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_119", "text": "si voy a la fiesta voy a ser el hazmerreir ", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "a_126", "text": "Ha habido m\u00e1s fallos de los que esperaba pero aun as\u00ed podemos intentar resolverlo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_134", "text": "Para m\u00ed es insoportable estar tranquilo en sitios cerrados", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_13", "text": "Me cuesta sacar fuerzas para conseguir lo que quiero, pero tengo claro que necesito hacerlo. ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_188", "text": "Hay muchas causas de porque alguien puede mirar mal en algun momento, no tiene porque ser que le caes mal", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_129", "text": "Es mejor que no lo intente porque seguro que me saldr\u00e1 mal y ser\u00e1 insoportable", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "d_118", "text": "prefiero no hacerlo, seguro que me sale mal", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "d_44", "text": "deber\u00eda planificar las vacaciones y buscar con qui\u00e9n dejar a los ni\u00f1os mientras yo no estoy", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "t_47", "text": "Deberia avisar de que me voy", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_177", "text": "Es posible que aunque me sienta enfadado, lo que haya hecho no est\u00e9 mal, solo me ha sentado mal", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_6", "text": "nunca me salen bien las cosas", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "t_173", "text": "Si me siento un perdedor es porque el examen de hoy me ha ido mal", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_47", "text": "Es importante para mi sacar este curso, me voy a centrar en ello", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_28", "text": "Si mi pareja me dice que me quiere lo m\u00e1s probable es que sea verdad", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_18", "text": "Siempre pasan cosas", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_147", "text": "Mis padres est\u00e1n gritando. Creo que se van a divorciar.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva", "Adivinaci\u00f3n"]}}
+{"id": "t_80", "text": "Me siento inutil leyendo cosas que no entiendo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_101", "text": "puede que las cosas vayan mal. Tambi\u00e9n pueden ir bien.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_104", "text": "Al salir con amigos puedo sentirme mal, pero es una buena forma de intentar estar mejor", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_81", "text": "O me ayuda o no quiero saber nada de esa persona.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "d_175", "text": "Me siento mal por haberle dicho la verdad a mi amiga, seguro que he hecho algo malo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional"]}}
+{"id": "d_139", "text": "Si no me quiere ser\u00e1 terrible, un horror", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "t_82", "text": "si no vienes, te lo vas a perder", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_157", "text": "Mi pareja me quiere y apoya en todo. No obstante, la discusi\u00f3n que tuvimos ayer me hizo dudar de sus sentimientos", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva"]}}
+{"id": "t_78", "text": "Este sitio es muy oscuro, me gustaria m\u00e1s si pusieran un poco de luz", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_17", "text": "Me cuesta sentirme querida, esto no siginifca que nadie me quiera", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_31", "text": "Estoy seguro que mis amigos creen que deberia estar m\u00e1s atenta a sus necesidades y que ultimamente paso de ellos", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente", "Imperativos"]}}
+{"id": "t_71", "text": "mi tio se pone insoportable cuando habla de pol\u00edtica", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_44", "text": "a veces tengo que ir correindo para llegar a tiempo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_173", "text": "Siento que todo es demasiado complicado, pero puede que pasado un tiempo lo vea todo m\u00e1s claro", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_132", "text": "Me noto el coraz\u00f3n muy acelerado, debo de estar nervioso", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_73", "text": "soy asqueroso", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "t_27", "text": "Estoy convencido de que todo saldr\u00e1 bien ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_87", "text": "si no soy el mejor en mi trabajo entonces me despedir\u00e1n", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "t_197", "text": "No ha sido mi culpa que hayamos perdido", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_124", "text": "las consecuencias del incendio han sido terribles ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_176", "text": "No me siento comprendida por mi pareja en esta situaci\u00f3n", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_114", "text": "el tiempo es cambiante, y aunque haga mal tiempo a\u00fan podemos disfrutar los d\u00edas", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_154", "text": "No ser\u00e9 tan mal amigo si mis amigos me dicen que tengo buen fondo ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_33", "text": "Si me dice que me quiere lo m\u00e1s seguro es que sea verdad, no tiene porque mentirme", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_16", "text": "casi nunca estoy bien", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "a_148", "text": "No puedo demostrar que se hayan separado por mi culpa", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_194", "text": "A la gente le gusta hablar bien de mi", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_88", "text": "me encuentro muy cansada si no termino la investigaci\u00f3n se acab\u00f3", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "a_24", "text": "No puedo saber si le gusto o no si no le pregunto", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_7", "text": "siempre me encuentro igual de mal", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "t_99", "text": "O me esfuerzo mucho en conseguir lo que quiero o me resutar\u00e1 bastante dif\u00edcil ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_25", "text": "estoy segura que ma\u00f1ana llover\u00e1", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_169", "text": "Me empujo a sentirme alguien capaz, aunque no siempre debo serlo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_89", "text": "Para mi es importante aprovar las oposiciones, pero si no salen podria valorar otras alternativas ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_21", "text": "No puedo saber lo que piensa si no le pregunto. Ser\u00e0 mejor que hablemos directamente", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_55", "text": "mi pareja tendr\u00eda que ser m\u00e1s cari\u00f1oso conmigo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "a_94", "text": "Puedo controlar lo que como para as\u00ed no subir m\u00e1s de peso", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_70", "text": "soy lo peor", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "t_16", "text": "nunca me he sentido solo cuando he necesitado ayuda", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_42", "text": "deber\u00edan de ser m\u00e1s amables conmigo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "t_58", "text": "Tengo que ir al m\u00e9dico, me encuentro mal", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_16", "text": "A veces no estoy bien", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_20", "text": "Mi pareja a veces hace cosas que no me gustan", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_121", "text": "la clase de catal\u00e1n dur\u00f3 3 horas. Fue horrible.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_179", "text": "Si me siento un perdedor es porque lo soy", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional", "Etiquetado"]}}
+{"id": "a_118", "text": "sin hacerlo no puedo saber cu\u00e1l ser\u00e1 el resultado", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_50", "text": "tengo que hacer muchas cosas pero nunca tengo tiempo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "d_173", "text": "Siento que todo es demasiado complicado, por tanto, debe serlo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional"]}}
+{"id": "d_138", "text": "Si me diagnostican un c\u00e1ncer ser\u00eda lo peor del mundo, se acabar\u00eda toda mi vida", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "t_108", "text": "estoy seguro de lo que pienso, aunque podr\u00eda cambiar si me demuestran lo contrario", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_64", "text": "quedarse sin cenar es lo peor", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_63", "text": "ese t\u00edo es asquerosamente rico", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_186", "text": "Creo que pongo nervioso a todo el mundo.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n"]}}
+{"id": "d_172", "text": "Si siento que no vale la pena esforzarme, es porque realmente no vale la pena", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional"]}}
+{"id": "a_8", "text": "Puedo equivocarme pero esto no siginfica que lo haga todo mal", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_188", "text": "Mi compa\u00f1ero de trabajo me ha mirado mal esta ma\u00f1ana, seguro que es porque le caigo mal.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n", "Leer la mente"]}}
+{"id": "t_147", "text": "Mis padres han separado el dinero en cuentas diferentes. Creo que es una buena idea", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_9", "text": "siento constantemente que a nadie le importo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "d_125", "text": "La reuni\u00f3n fue un desastre", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "t_70", "text": "mis compa\u00f1eros son malos en f\u00fatbol, no le salen bien ningun pase", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_22", "text": "estoy convencido de que el examen te va a ir bien, ya que has estudiado para ello.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_103", "text": "Me va a ir mal en este examen.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "d_33", "text": "aunque me dice que me quiere, estoy convencida de que miente", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "a_176", "text": "Me siento triste, es una emoci\u00f3n que estoy sintiendo en este momento, no indica que deba hacer cambios en mi vida", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_172", "text": "Si me enfado es porque, en mi opini\u00f3n, me ha hecho algo malo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_155", "text": "La cr\u00edtica que me hicieron me fastidi\u00f3 bastante, pero hice otras cosas aquel d\u00eda y fueron bien", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_15", "text": "nunca podr\u00e9 hacer mi tarea", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n", "Adivinaci\u00f3n"]}}
+{"id": "t_74", "text": "Esta decisi\u00f3n no es del todo inteligente", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_93", "text": "Es importante que nos impliquemos en el trabajo y seamos resonsables, si cumplo con lo acordado todo estar\u00e1 bien", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_180", "text": "\u00bfComo no va a ser injusto, si me siento as\u00ed de mal?", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional"]}}
+{"id": "d_162", "text": "\u00a1Est\u00e1s triste, as\u00ed que la situaci\u00f3n debe ser muy mala!", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional"]}}
+{"id": "t_183", "text": "Se ha cancelado el vuelo, es culpa de la compa\u00f1\u00eda aerea", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_23", "text": "El ascensorista piensa que soy un don nadie.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "d_69", "text": "soy un desastre, siempre me equivoco", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado", "Sobregeneralizaci\u00f3n"]}}
+{"id": "t_96", "text": "Si me siento feliz cuando quiero ir a la monta\u00f1a tratar\u00e9 de ir m\u00e1s a menudo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_45", "text": "tengo que mirar como llegar a casa desde aqu\u00ed", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_174", "text": "Siento que no soy capaz en este momento, pero quiz\u00e1s solo sea una sensaci\u00f3n, voy a intentarlo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_54", "text": "Hoy no puedo venir a tomar algo, tengo que terminar un trabajo para ma\u00f1ana", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_195", "text": "Mi madre se ha enfermado, es su culpa por no ir con m\u00e1s cuidado", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_64", "text": "soy completamente imb\u00e9cil", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "d_116", "text": "Seguro que no le gusto", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "t_90", "text": "o me lo apunto en la agenda o me olvidar\u00e9", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_200", "text": "Que tu marido se haya aburrido el fin de semana, no indica que haya debido de ser por tu culpa", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_123", "text": "Esta bien intentar lo que nos importa, no podemos saber como ir\u00e1", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_189", "text": "Me han llamado del colegio porque mi hijo se ha portado mal, es mi culpa porque no le he educado bien,", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n"]}}
+{"id": "t_68", "text": "mi amiga a veces se pone pesada", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_171", "text": "Estudiar no me hace feliz, pero me puede dar muchas oportunidades, eso es bueno para m\u00ed", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_119", "text": "es posible que me vaya mal la primera vez que haga algo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_189", "text": "Si mi hijo se ha portado mal, no es por mi culpa, \u00e9l actua con su propia voluntad", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_161", "text": "Siento pavor a subirme a un avi\u00f3n. Volar es muy peligroso.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional", "Catastrofismo"]}}
+{"id": "t_150", "text": "Dicen que soy muy simatico porque siempre hago reir a la gente", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_34", "text": "aunque me ayuda, s\u00e9 que no me quiere", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "d_46", "text": "Tengo que ser m\u00e1s responsable y planifica mejor las semanas", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "d_45", "text": "deber\u00eda zanjar todos los temas de trabajo urgentemente", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "a_46", "text": "Me iria bien hacer una planificaci\u00f3n de las proximas semanas", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_140", "text": "Las lluvias pueden afectar negativamente a la cosecha y hacer que sea un a\u00f1o duro", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_157", "text": "La erupci\u00f3n del volcan destruy\u00f3 muchas viviendas, ha sido un desastre para la poblaci\u00f3n", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_120", "text": "voy a intentar quedar con \u00e9l, no puedo saber que querr\u00e1 si no le pregunto", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_82", "text": "O est\u00e1 impecable, o est\u00e1 sucio", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "t_2", "text": "no comparto nada de lo que dices", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_166", "text": "Te sientas o no deprimido, la vida no tiene un sentido. Se lo damos.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_19", "text": "Mi hermano a veces me ignora", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_195", "text": "Este mes en el trabajo han bajado mucho las ventas, deber\u00eda haber trabajado m\u00e1s y mejor.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n", "Imperativos"]}}
+{"id": "d_110", "text": "Ma\u00f1ana es el primer d\u00eda de trabajo, seguro que me equivoco", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "d_89", "text": "Estoy muy agobiado estos d\u00edas. O apruebo las oposiciones o no s\u00e9 qu\u00e9 har\u00e9", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "a_112", "text": "Es mejor que me prepare bien para los examenes, para ir m\u00e1s seguro, y esperar al final de la evaluaci\u00f3n para hacer valoraciones", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_87", "text": "o voy hoy a ver a mis padres o voy ma\u00f1ana", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_144", "text": "Me ha fastidiado en ese momento, pero no quiere decir que me vaya a fastidiar el d\u00eda entero", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_84", "text": "o comemos arroz o pasta", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_96", "text": "Es importante implicarnos en lo que hacemos aunque a veces no sale perfeto y tambi\u00e9n est\u00e1 bien ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_196", "text": "La meteorolog\u00eda es una cosa incontrolable que a veces no podemos predecir", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_151", "text": "Si dicen que la cena les gust\u00f3 a todos, probablemente s\u00ed que la disfrutaron", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_35", "text": "Se piensa mejor cuando se duerme bien ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_49", "text": "Tengo que estudiar m\u00ednimo 2 horas al d\u00eda como sea ", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "d_77", "text": "no soy nada inteligente", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "d_5", "text": "Nadie me quiere.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "d_131", "text": "Despu\u00e9s de esto ya no hay soluci\u00f3n, mi vida ser\u00e1 un horror", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "a_38", "text": "Quiero mucho a mis amigos y a veces pienso que ellos a mi no tanto", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_184", "text": "Durante la presentaci\u00f3n que he hecho creo que se han aburrido porque soy un pesado.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n", "Leer la mente", "Etiquetado"]}}
+{"id": "a_170", "text": "Esta persona me da mala espina, pero no  tengo motivos para pensar que quiere hacerme da\u00f1o", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_181", "text": "Mar\u00eda se est\u00e1 riendo; seguro que es de m\u00ed.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n"]}}
+{"id": "d_115", "text": "Me quedar\u00e9 en blanco en el examen", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "t_103", "text": "si no pongo suficiente sal, la comida me saldr\u00e1 insulsa", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_179", "text": "Si te sientes feliz te fijar\u00e1s m\u00e1s en  las cosas buenas que te pasan", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_157", "text": "Si mi pareja me quiere, no tengo porque dudar de sus sentimientos por una discusi\u00f3n.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_145", "text": "Quiz\u00e1s tu jefe te ha citado por otro motivo. \u00bfPodr\u00eda ser?", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_2", "text": "Mi hermano algunas veces no cumple con su palabra", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_130", "text": "La reparaci\u00f3n ser\u00e1 bastante cara", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_52", "text": "Estaria bien intentar controlar m\u00e1s la cantidad que como", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_127", "text": "Lo que me est\u00e1 pasando es duro, no es agradable, pero lo puedo soportar", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_180", "text": "Si me siento mal puede ser por muchos motivos, que alguien me haya tratado de manera injusta es uno de ellos, podr\u00eda pensar en las distintas alternativas", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_43", "text": "deber\u00eda limpiar m\u00e1s mi casa porque siempre est\u00e1 muy sucia", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "a_99", "text": "Todos a veces ganamos y otras perdemos, pero lo importante es intentar las cosas que queremos hacer", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_109", "text": "Si te has preparado bien para el examen no tiene porque ir mal, no podemos saber que passar\u00e1 antes de hacerlo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_79", "text": "Las personas son hip\u00f3critas, conf\u00edas en ellas y te mienten", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "d_52", "text": "tengo que comer menos", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "d_71", "text": "mi amiga es idiota", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "t_67", "text": "en el deporte soy un poco torpe", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_121", "text": "Ha ido mal, pero podemos solucinarlo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_94", "text": "Si no  le permito a mi hijo que se enfade no aprender\u00e1 que es una emoci\u00f3n como cualquier otra", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_97", "text": "Las cosas que hacemos con empe\u00f1o y dedicaci\u00f3n estan bien aunque no las veamos perfectas", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_34", "text": "Piensa mal y acertar\u00e1s ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_184", "text": "Estaban criticando a alguien esta ma\u00f1ana en el trabajo, seguro que no soy yo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_20", "text": "mi pareja siempre hace lo mismo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "d_169", "text": "Si te da miedo, es porque debe haber algo peligroso en ello.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional"]}}
+{"id": "d_56", "text": "tengo que ser el mejor si no me despedir\u00e1n", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "a_178", "text": "Que sienta ansiedad al estar entre tantas personas es independiente del peligro real que exista, es solo mi emoci\u00f3n", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_19", "text": "siempre me ignora", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "d_133", "text": "Me he equivocado en el nombre de un informe, mi jefa me va a matar, nunca m\u00e1s confiar\u00e1 en m\u00ed, esto ya no puede ser peor", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "d_86", "text": "No aguanto m\u00e1s la situaci\u00f3n con mi pareja. O elige a su familia o me elige a m\u00ed", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "d_80", "text": "Soy muy gafe, estropeo todo lo que toco.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "d_167", "text": "Mi abuelo muri\u00f3 hace un mes y mi madre est\u00e1 triste desde entonces. Creo que ella se va a morir tambi\u00e9n.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional"]}}
+{"id": "d_145", "text": "Mi jefe me ha pedido que llegue cinco minutos antes. No est\u00e1 contento con mi trabajo.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva"]}}
+{"id": "a_23", "text": "No puedo saber lo que piensa el ascensorista de mi si no le pregunto", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_85", "text": "o est\u00e1 perfecto o no lo quiero", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "a_41", "text": "Me iria bien ponerme a estudiar ahora", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_19", "text": "Todos podemos sentirnos mal", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_190", "text": "Me estaban mirando los pantalones, seguro que es porque quiere unos iguales", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_40", "text": "No tengo nada que justifique mi pensameinto de que me odia si nunca me ha dicho nada malo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_83", "text": "O soy perfecto, o soy un desastre", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "t_148", "text": "No tengo comida en casa por lo que tendr\u00e9 que pedirla a domicilio", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_104", "text": "Estoy segura de que, aunque salga con amigos, me sentir\u00e9 mal.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "d_165", "text": "Me siento solo, nunca tendr\u00e9 amigos de verdad", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional", "Adivinaci\u00f3n"]}}
+{"id": "d_101", "text": "estoy convencida de que me sentir\u00e9 mal.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "d_155", "text": "La cr\u00edtica que hicieron sobre mi exposici\u00f3n me fastidi\u00f3 el d\u00eda entero ", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva"]}}
+{"id": "a_160", "text": "Hay muchos motivos por los que me pudo substituir a media parte, no tiene porque estar relacionado con mi rendimiento", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_155", "text": "Hemos llegado al restaurante y estaba cerrado, se no ha fastidado la hora de comer", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_108", "text": "No puedes saber que pasar\u00e1 en la fiesta antes de ir, puedes provar a ir y ver como va", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_112", "text": "Seguro que no apruebo la evaluaci\u00f3n", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "a_59", "text": "Si me organizo el teimpo no me pondr\u00e9 tant nervioso y todo saldr\u00e1 bien", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_21", "text": "estoy seguro de mis capacidades", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_185", "text": "Nada de lo que ha sucedido es por mi culpa", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_34", "text": "Como me ayuda supongo que soy una persona importante para ella", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_172", "text": "Siento que no vale la pena esforzarme, pero probablemente sea porque estoy frustrado, lo seguir\u00e9 intentando", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_143", "text": "Pude haber disfrutado de la excursi\u00f3n y, de hecho, lo hice ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_136", "text": "Mi mujer ser\u00e1 la directora de su oficina", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_137", "text": "Mi hijo no me ha llamado para decirme que ha llegado. Seguro que les ha pasado algo malo, algo terrible, seguro que han tenido un accidente", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "t_75", "text": "Soy la peque\u00f1a de mi familia, tengo dos hermanos mayores", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_148", "text": "Mis padres se han separado. Seguro que ha sido por mi culpa.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva"]}}
+{"id": "d_41", "text": "Tengo que estudiar como sea", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "d_134", "text": "Que no me responda al mensaje ser\u00eda lo peor del mundo, lo peor que me podr\u00eda pasar", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "t_137", "text": "Me han sucedido cosas desagradables", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_107", "text": "si digo como me siento, me sentir\u00e9 vulnerable ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_31", "text": "Me parece que a mis amigos les gustaria que les dedicara m\u00e1s tiempo, hablar\u00e9 con ellos y les explicar\u00e9 lo que me pasa.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_40", "text": "nunca me ha dicho nada malo, pero s\u00e9 que me odia", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "d_18", "text": "todo lo hago mal", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "a_182", "text": "Que tu jefe te est\u00e9 informando de una nueva norma que est\u00e1 afectando a todos los residentes y no solo a ti, no es ninguna razon por la que pensar que no se fia de t\u00ed.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_73", "text": "Me he vuelto a equivocar, igual podria intentar estar m\u00e1s atento", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_57", "text": "En el trabajo esta bien que haga lo que est\u00e9 en mi mano para que las cosas se terminen a tiempo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_110", "text": "No podemos saber si ser\u00e1 as\u00ed, de todas formas es normal no hacerlo todo bien el primer dia de trabajo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_3", "text": "Todo lo hago igual", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "d_1", "text": "Todo me sale mal\u2026 ", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "d_132", "text": "Me noto el coraz\u00f3n muy acelerado, me dar\u00e1 un ataque de p\u00e1nico y ser\u00e1 horroroso", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "t_30", "text": "Estoy seguro en este lugar al que he ido a vivir. ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_161", "text": "Siento pavor al subirme a un avi\u00f3n", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_50", "text": "debo ir al supermercado porque tengo la nevera vac\u00eda", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_91", "text": "si no dejo de comer seguir\u00e9 estando gordo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "d_10", "text": "nadie me echa cuenta", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "a_74", "text": "Mi jefe y yo tenemos formas diferentes de ver las cosas y no nos entendemos", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_9", "text": "Algunas personas no estan tant pendientes de mi como me gustaria", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_193", "text": "Que tu pareja este disgustada puede ser por muchos motivos", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_146", "text": "Que tu madre juegue m\u00e1s con tu hermana peque\u00f1a no necesariamente quiere decir que le quiera m\u00e1s a ella que a ti", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_108", "text": "No ir\u00e9 a la fiesta porque seguro que hago el rid\u00edculo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "a_88", "text": "Necesito un descanso para poder seguir rindiendo y que las cosas salgan como espero", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_13", "text": "Siempre me ha gustado bailar", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_166", "text": "Ahora mismo siento que no puedo con esto, pero puede que m\u00e1s adelante lo vea de otro modo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_170", "text": "Me siento mal por haberle dicho la verdad a mi amiga", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_53", "text": "Podria fijarme m\u00e1s en lo que como e intentar adelgazar", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_66", "text": "Es completamente est\u00fapido pensar que puedes ir a la luna andando", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_42", "text": "me gustaria que la gente fuese m\u00e1s amable conmigo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_92", "text": "Si no le hago la comida a mi pareja no conseguir\u00e1 su meta de estar m\u00e1s delgada porque no se sabe cocinar", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_152", "text": "No sacar todo sobresalientes no me convierte en un desastre. ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_186", "text": "Mi compa\u00f1ero de trabajo me ha mirado esta ma\u00f1ana, seguro que le gusto", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_174", "text": "Siento que no soy capaz, por lo tanto no debo serlo", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional"]}}
+{"id": "a_141", "text": "Perder el paraguas es un hecho puntual que no afecta a como soy yo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_187", "text": "El proyecto no ha ido bien, no es mi culpa", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_179", "text": "Es f\u00e1cil sentirse un perdedor cuando las cosas van mal, quiz\u00e1s podr\u00eda fijarme en las peque\u00f1as cosas buenas de mi vida", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_113", "text": "ya super\u00e9 otras entrevistas antes, puedo superar esta tambi\u00e9n ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_15", "text": "Me cuesta hacer mi tarea, tendr\u00e9 que centrarme en ella", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_91", "text": "Si no hubiera ido a ver esa peli no me lo hubiera pasado tan bien", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_12", "text": "siempre tengo problemas", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "d_113", "text": "no superar\u00e9 la entrevista", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "t_6", "text": "Nunca he ido a italia", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_17", "text": "nadie me tiene en cuenta", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "d_114", "text": "Seguro que har\u00e1 mal tiempo en vacaciones", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "a_22", "text": "Creo que mi padre piensa que soy inutil, pero realmente no tengo hechos que me lo indiquen", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_29", "text": "Me trata bien aunque a veces me hace pensar que me odia", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_156", "text": "Estando de vacaciones es probable que hubiesen momentos del d\u00eda de los que s\u00ed disfrutase", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_167", "text": "Como mi abuelo muri\u00f3 hace un mes y mi madre est\u00e1 triste, siento que mi madre tambi\u00e9n podria morir, pero probablemente sea por como me ha afectado a mi esta situaci\u00f3n", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_111", "text": "A veces algunas cosas salen mal, pero esto no significa que sieempre todo vaya mal", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_49", "text": "debo coger el tren para ir a ver a mi tia", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_72", "text": "Le he hablado mal a mi madre, he dicho cosas que no queria y ahora me siento mal conmigo mismo ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_69", "text": "soy p\u00e9simo en el ajedrez", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_15", "text": "No me gusta nada la col", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_11", "text": "nadie me valora", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "t_154", "text": "Me dice que me quiere y a veces me abraza. Estoy super contento con ella", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_39", "text": "Estoy seguro de mis habilidades art\u00edsticas", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_65", "text": "Mi tio no me cae demasiado bien", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_143", "text": "Quiz\u00e1s hubieron otros aspectos que s\u00ed te hicieron disfrutar de la excursi\u00f3n.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_69", "text": "Puedo hacer cosas mal pero eso no me define como persona", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_67", "text": "cuando las cosas no salen como espero es dificil pensar bien de mi, pero en realidad muchas veces acierto", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_39", "text": "siempre me dice que me quiere, pero s\u00e9 que no es verdad", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "d_13", "text": "jam\u00e1s tendr\u00e9 fuerzas para conseguir lo que quiero", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n", "Adivinaci\u00f3n", "Catastrofismo"]}}
+{"id": "t_60", "text": "Debo darle de comer a mis perros", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_75", "text": "No me gusta como responde mi pareja cuando discutimos", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_106", "text": "Estar bien no predice que vaya a pasar algo malo, es mejor disfrutar de estar bien", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_158", "text": "Quiz\u00e1s lleg\u00f3 tarde por otro motivo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_5", "text": "Algunas personas no me queiren", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_17", "text": "Nada con mucho estilo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_78", "text": "Les expliqu\u00e9 mi problema y esperaba otra cosa de ellos, me han fallado esta vez.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_145", "text": "Mi jefe me ha felicitado, eso es que est\u00e1 contento con mi trabajo ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_76", "text": "he discutido con mi pareja es completamente est\u00fapido", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "t_93", "text": "O llego a mi trabajo a las 8 que es la hora perfecta o m\u00e1s tarde no consigo aparcar el coche", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_98", "text": "Si alguien del grupo no sabe jugar  o le ense\u00f1amos o es facil que pierda ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_113", "text": "me ir\u00e1 mal algunas veces", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_78", "text": "es rematadamente tonto", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "t_42", "text": "tengo que ir un momento al ba\u00f1o", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_67", "text": "no soy inteligente", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "d_36", "text": "nunca me ha dicho nada, pero s\u00e9 que piensa mal de m\u00ed", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "d_111", "text": "Estoy convencida de que todo ir\u00e1 mal", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n", "Sobregeneralizaci\u00f3n"]}}
+{"id": "a_147", "text": "No tengo pruebas suficientes acerca de lo que va a ocurrir con mis padres en el futuro", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_66", "text": "mi tio es insoportable", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "a_44", "text": "Se acercan las vacaciones es mejor que me ponga ya a organizarlas por si salen imprevistos", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_171", "text": "Si estudiar no me hace feliz, es porque no es bueno para m\u00ed", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional"]}}
+{"id": "d_28", "text": "siempre me dice que me quiere, pero s\u00e9 que no es verdad", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente", "Sobregeneralizaci\u00f3n"]}}
+{"id": "d_29", "text": "nunca me ha dicho nada malo, pero s\u00e9 que me odia", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente", "Sobregeneralizaci\u00f3n"]}}
+{"id": "a_134", "text": "Que no me responda al mensaje ser\u00eda algo inc\u00f3modo para m\u00ed, pero llevadero", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_94", "text": "O est\u00e1 todo bien organizado o no voy a ir al viaje", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Pensamiento absolutista"]}}
+{"id": "a_136", "text": "Si me deja mi mujer, pasar\u00e9 una temporada muy dura, pero saldr\u00e9 adelante", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_139", "text": "Si no me quiere, puedo encontrar otra persona con quien poder ser feliz", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_26", "text": "la gente del trabajo me odia", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "t_89", "text": "si no me dicen nada les escribir\u00e9 yo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_168", "text": "Siempre me esfuerzo aunque sienta que no vale la pensa esforzarse", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_1", "text": "A veces las cosas no salen como yo esperaba y esto me cuesta de asumir", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_30", "text": "Tengo la sensaci\u00f3n que me estoy implicando menos que antes, pero no puedo saber lo que piensan de mi si no les pregunto", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_182", "text": "Mi jefe me ha dicho que todos los pacientes a cargo de un residente deber\u00edan ser examinados por un m\u00e9dico de la plantilla. Seguro que jefe no se f\u00eda de mi trabajo.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n"]}}
+{"id": "d_22", "text": "S\u00e9 que mi padre, en el fondo, piensa que soy un in\u00fatil.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "d_163", "text": "Siento que soy una mala persona, por tanto debo serlo.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional"]}}
+{"id": "t_37", "text": "Estoy plenamente convencido de la inversi\u00f3n que voy a hacer.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_56", "text": "Debo irme ya para llegar a tiempo a recoger a mi hijo a la escuela", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_41", "text": "deber\u00eda comprar el pan para la cena", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_31", "text": "Solo s\u00e9 que no s\u00e9 nada.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_36", "text": "No puedo sacar conclusiones con la informaci\u00f3n que tengo ya que nunca me lo han dicho", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_68", "text": "la verdad es que no paro de pensar en que soy idiota", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "a_39", "text": "No puedo saber lo que piensa, pero puedo fijarme en los hechos para saber si me quiere", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_165", "text": "Siento, que no puedo con esto.  Pesa tanto que no puedo.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_14", "text": "constantemente estoy haciendo las cosas mal", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Sobregeneralizaci\u00f3n"]}}
+{"id": "t_129", "text": "Es insoportable la gente que habla en el cine", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_192", "text": "Que las cosas vayan mal, no tiene porque ser mi culpa", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_64", "text": "En ocasiones me equivoco y las cosas me salen mal", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_171", "text": "No me apetece hacer cambios en mi vida cuando me siento triste", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_6", "text": "Tengo la sensacion de que pocas veces me salen las cosas como espero", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_117", "text": "me va a ir mal con mi pareja", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "t_109", "text": "estoy convencido de que ser\u00e1 dif\u00edcil, pero si me esfuerzo quiz\u00e1s lo consiga", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_199", "text": "Cuando hacen referencia a que hay que mejorar el trabajo, no me lo dicen solo a mi", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_196", "text": "Hemos ido de vacaciones y no ha parado de llover, es mi culpa deber\u00eda haberlo comprobado antes.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n", "Imperativos"]}}
+{"id": "t_167", "text": "Estudiar no me hace feliz, y eso es molesto para mi", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_32", "text": "Creo que me odia", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_76", "text": "Mi amigo es de Brasil, aunque hace dos a\u00f1os que vive en Barcelona y dice que le gusta mucho", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_170", "text": "Esta persona me da mala espina, seguro que quiere hacerme da\u00f1o", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Razonamiento emocional", "Leer la mente"]}}
+{"id": "t_163", "text": "Si me siento soy incompetente, tengo que trabajar de pie!", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_156", "text": "Recib\u00ed una llamada del trabajo estando de vacaciones y me puse de mal humor durante todo el d\u00eda", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva"]}}
+{"id": "t_85", "text": "si no tenemos arroz, cocinaremos pasta", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_136", "text": "Si me deja mi mujer, ser\u00e1 horrible, el fin, me morir\u00e9", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "t_104", "text": "me sentir\u00e9 tranquilo cuando termine el proyecto", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_57", "text": "tengo que trabajar m\u00e1s", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "t_105", "text": "si no estudio, me sentir\u00e9 inseguro", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_105", "text": "s\u00e9 que no voy a aprobar el examen, aunque haya estudiado mucho", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Adivinaci\u00f3n"]}}
+{"id": "a_83", "text": "A veces me equivoco, como todos, pero esto no me define como persona", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_33", "text": "Estoy seguro de mi mismo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_191", "text": "Si mi paciente ha empeorado, puede ser por muchos factores", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_132", "text": "Ser\u00e1 algo duro y dif\u00edcil", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_142", "text": "Los problemas de la vida son consecuencia de much\u00edsimos factores", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_43", "text": "debo irme ya", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_100", "text": "Si soy feliz por c\u00f3mo estoy aprendiendo a bailar me volver\u00e9 una volver\u00e9 bailarina profesional", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_129", "text": " Puede que me salga mal, pero lo he de intentar. De la experiencia se aprende", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_35", "text": "estoy seguro de que no le caigo bien aunque me diga que s\u00ed", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Leer la mente"]}}
+{"id": "a_90", "text": "Puedo controlar otros factores para no subir de peso", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_50", "text": "Me iria bien organizarme el tiempo para poder hacer lo que necesito", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_146", "text": "Mi madre est\u00e1 jugando con mi hermana peque\u00f1a. Creo que mi madre quiere m\u00e1s a mi hermana que a m\u00ed.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva"]}}
+{"id": "t_32", "text": "S\u00e9 hacer muy bien mi trabajo. ", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_75", "text": "he tenido problemas con mi antiguo jefe, es una mala persona", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "a_86", "text": "El problema con la familia de mi pareja me agobia, seria mejor que lo hablasemos y as\u00ed podriamos encontrar un equilibrio entre nosotros y la familia", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_51", "text": "Puedo considerar otras opciones", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_106", "text": "en la entrevista, s\u00e9 que me evaluar\u00e1n", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_91", "text": "Todos necesitamos comer, puedo estar m\u00e1s atento al tipo de comida que como", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_3", "text": "Algunas veces hago las cosas de la misma forma", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_187", "text": "Mis padres est\u00e1n teniendo una discusi\u00f3n en otro cuarto. Cuando pronuncian mi nombre, piesno que se est\u00e1n discutiendo por mi culpa.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Personalizaci\u00f3n"]}}
+{"id": "t_1", "text": "siempre me he sentido respaldado por mis amigos", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_199", "text": "Mis padres estan hablando de mi en otra habitaci\u00f3n", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_182", "text": "He estudiado mucho, no merec\u00eda suspender", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_86", "text": "si no encuntro un regalo le har\u00e9 un vale.", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_119", "text": "me lo pas\u00e9 genial en otras fiestas, quiz\u00e1s en esta disfrute del momento tambi\u00e9n", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_63", "text": "Mi t\u00edo es est\u00fapido", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Etiquetado"]}}
+{"id": "d_47", "text": "Debo sacar como sea adelante el curso.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Imperativos"]}}
+{"id": "a_183", "text": "Aunque tengas la culpa de alguna cosa que haya sucedido, nada esta m\u00e1s lejos que pensar que eso se generaliza a todo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_120", "text": "ir\u00e1 mal en ocasiones", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_77", "text": "Cuando me comparo con la gente de mi classe veo que soy bastante alto", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "a_37", "text": "a veces pienso que me odian", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_188", "text": "Seguro que no es mi culpa que ya no me hable m\u00e1s", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_51", "text": "tengo poca ropa", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "d_130", "text": "Si ma\u00f1ana no me sale bien el examen ser\u00e1 horroroso, yo me muero", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Catastrofismo"]}}
+{"id": "d_143", "text": "Pude haber disfrutado de la excursi\u00f3n a no ser por el pollo, que estaba quemado.", "pre-ann-category": {"distortion": "distorsi\u00f3n", "types": ["Abstracci\u00f3n selectiva"]}}
+{"id": "a_175", "text": "Me siento mal, pero puede que sea porque el resultado ha sido negativo, aunque en realidad no haya hecho nada malo", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_53", "text": "Tengo que ir a ver a mi madre hoy, es su cumplea\u00f1os", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_28", "text": "Se que la leche me sienta mal", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}
+{"id": "t_8", "text": "Siempre me levanto temprano", "pre-ann-category": {"distortion": "no distorsi\u00f3n", "types": []}}

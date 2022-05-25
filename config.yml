@@ -3,59 +3,58 @@
 language: es
 
 pipeline:
-# # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
-# # If you'd like to customize it, uncomment and adjust the pipeline.
-# # See https://rasa.com/docs/rasa/tuning-your-model for more information.
-
-
   - name: WhitespaceTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
-  - name: CountVectorsFeaturizer
     analyzer: char_wb
     min_ngram: 1
-    max_ngram: 4
+    max_ngram: 3
+    # OOV_token: _oov_
+  # - name: LanguageModelFeaturizer
+  #   # Name of the language model to use
+  #   model_name: "roberta"
+  #   # Pre-Trained weights to be loaded
+  #   model_weights: "PlanTL-GOB-ES/roberta-base-bne"
 
-  # - name: "SpacyNLP"
-  #   model: "es_dep_news_trf"
-  #   case_sensitive: False
-  # - name: SpacyEntityExtractor
+  #   # An optional path to a specific directory to download and cache the pre-trained model weights.
+  #   # The `default` cache_dir is the same as https://huggingface.co/transformers/serialization.html#cache-directory .
+  #   cache_dir: null
+  # #  Whether to use a shared vocab
+  # #   use_shared_vocab: False
 
+
+### Custom components and classifiers
   - name: sentiment.SentimentEntityExtractor
   - name: DIETClassifier
-    epochs: 100
-    constrain_similarities: true
+    epochs: 15
+    constrain_similarities: true 
   - name: EntitySynonymMapper
 
-
-  # - name: RegexEntityExtractor
-
-
-  #   # use lookup tables to extract entities
-  #   use_lookup_tables: True
-  #   # use regexes to extract entities
-  #   use_regexes: True
-
-# other components
+# Fallback and chitchat components
   - name: FallbackClassifier
-    threshold: 0.4
+    threshold: 0.5
 
-  - name: ResponseSelector  # Este componente sirve para ajustar el chitchat
-    epochs: 100
+  - name: ResponseSelector  
+    epochs: 15
     retrieval_intent: chitchat
-   
-# Configuration for Rasa Core. # # See https://rasa.com/docs/rasa/policies for more information.
 
 policies:
-
+### Transformers dialogue policies:
    - name: TEDPolicy
-     epochs: 100
+     epochs: 20
      constrain_similarities: true
-   - name: MemoizationPolicy
-    #  max_history: 3 #Se ha añadido un ciclo de vida de 3 a los inputs. 
-   - name: RulePolicy
    - name: UnexpecTEDIntentPolicy
-     max_history: 5
-     epochs: 100
-     tolerance: 0.5
+     tolerance: 0.3
+     epochs: 20
+
+### Conversational contextualization --> se ha alterado esta politica para ver si generamos mayor consistencia en el desarrollo de las conversaciones contextuales
+   - name: AugmentedMemoizationPolicy
+     max_history: 3
+
+### Rule policies
+   - name: RulePolicy 
+     core_fallback_threshold: 0.3
+     core_fallback_action_name: "action_default_fallback"
+     enable_fallback_prediction: True
+
