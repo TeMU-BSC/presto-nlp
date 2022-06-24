@@ -36,7 +36,7 @@ pipeline:
     threshold: 0.5
 
   - name: ResponseSelector  
-    epochs: 15
+    epochs: 100
     retrieval_intent: chitchat
 
 policies:
@@ -50,7 +50,7 @@ policies:
 
 ### Conversational contextualization --> se ha alterado esta politica para ver si generamos mayor consistencia en el desarrollo de las conversaciones contextuales
    - name: AugmentedMemoizationPolicy
-     max_history: 3
+     max_history: 8
 
 ### Rule policies
    - name: RulePolicy 

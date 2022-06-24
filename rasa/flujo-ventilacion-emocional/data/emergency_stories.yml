@@ -7,6 +7,8 @@ stories:
     - intent: alert
     - action: utter_alert # selector con deny y emergency
     - intent: emergency
+    - action: utter_confirm_emergency
+    - intent: emergency
     - action: utter_emergency
     - intent: emergency
     - action: utter_call_to_emergency
@@ -17,6 +19,8 @@ stories:
     - action: utter_alert
     - intent: inform_sentiment
     - action: utter_sentiment_NEG #cambiar nombre y poner noemergency. Se queda hasta que decidan flujo final para ambos
+
+
 
   - story: gender_violence_ direct #ok revisado
     steps:

@@ -1116,6 +1116,13 @@ nlu:
     - siento que estoy en peligro
     - me siento insegura en mi casa con mi [pareja](valorPareja)
 
+
+### Selectores
+
+- intent: feedbackemotion
+  examples: |
+    - /feedbackemotion
+
 - intent: emergency
   examples: |
     - /emergency
@@ -1142,6 +1149,7 @@ nlu:
   examples: |
     - hey
     - hola
+    - hola!!
     - Buenos días
     - Buenas tardes
     - Qué tal Vicky
@@ -1233,6 +1241,7 @@ nlu:
     - ¿Podría saber tu nombre?
     - Cómo te suele llamar la gente
     - cuál es tu nombre?
+    - quién eres
 - intent: chitchat/help_me
   examples: |
     - ¿Puedes ayudarme?
@@ -1250,13 +1259,178 @@ nlu:
     - dime algo que no sepa
     - cuéntame algo nuevo
     - cuéntame algo que no sepa
-- intent: chitchat/who_are_you
+- intent: chitchat/who_made_you
   examples: |
     - quién te ha creado
     - quién está detrás
     - para quien trabajas
     - quienes te han desarrollado
     - que equipo es el que te ha hecho
+- intent: chitchat/whichteam
+  examples: |
+    - De qué equipo eres
+    - Quién es tu equipo favorito
+    - Eres del Madrid o del Barça
+    - Te gusta el fútbol
+    - Quién es el mejor equipo del mundo
+    - Visca Barça
+    - Ala Madrid
+    - Vicky de qué equipo eres
+
+- intent: chitchat/insult
+  examples: |
+    - eres [idiota](insult)
+    - que [inutil](insult) eres por dios
+    - puta [gilipollas](insult)
+    - vicky eres [imbécil](insult)
+    - [gilipollas](insult)
+    - [Me cago en tu puta madre](insult)
+    - [subnormal](insult)
+
+- intent: chitchat/whichbook
+  examples: |
+    - cuál es tu [libro](lectura) preferido
+    - qué [lectura](novela) me recomiendas
+    - qué tipo de [libro](lectura) te gusta
+    - qué [libro](novela) te gusta
+    - Cuál es tu [novela](lectura) preferida
+    - recomiéndame una [novela](lectura)
+    - qué [libro](lectura) podría leer
+    - ¿me podrías dar alguna idea para leer?
+    - dime un [libro](lectura)
+    - recomiéndame una [novela](lectura)
+    - ¿me podrías dar alguna idea para leerme un [comic](lectura)?
+    - [comic](lectura)
+    - te gusta leer?
+
+
+- intent: chitchat/whichpolitics
+  examples: |
+    - de qué partido politico eres
+    - cual es tu ideologia
+    - que opinas de la politica
+    - de que partido eres
+    - eres de izquierdas o de derechas
+
+
+- intent: chitchat/whichmovie
+  examples: |
+    - cuál es tu [película](cine) preferida
+    - qué [peli](cine) me recomiendas
+    - qué tipo de [cine](cine) te gusta
+    - qué [película](cine) te gusta
+    - Cuál es tu [película](cine) preferida
+    - recomiéndame una [peli](cine)
+    - qué [película](cine) podría ver este finde
+    - ¿me podrías dar alguna idea para ver en el cine?
+    - ¿te gusta el [cine](cine)?
+    - recomiéndame una [peli](cine)
+
+- intent: chitchat/whichboardgame
+  examples: |
+    - cuál es tu juego preferido
+    - qué juego me recomiendas
+    - qué tipo de juegos te gustan
+    - qué juego te gusta
+    - te gustan los juegos de mesa
+    - qué juego de mesa podría jugar este finde
+    - ¿me podrías dar alguna idea para jugar?
+    - recomiéndame un juego de mesa
+
+# - intent: chitchat/whichcomic
+#   examples: |
+#     - cuál es tu [comic](comic) preferido
+#     - qué tipo de [comic](comic) te gusta
+#     - qué [comic](comic) podría ver leer finde
+#     - ¿me podrías dar alguna idea para leerme un [comic](comic)?
+#     - recomiéndame un [comic](comic)
+#     - [comic](comic)
+#     - te gusta leer [comics](comic)
+
+- intent: chitchat/whichfood
+  examples: |
+    - cuál es tu comida preferida
+    - qué te gusta comer
+    - te gusta comer ensalada
+    - comes verduras?
+    - cual es tu comida favorita
+    - comida
+    - para comer que te gusta
+
+- intent: chitchat/whichplace
+  examples: |
+    - que [ciudad](place) me recomiendas
+    - donde te gustaria ir
+    - cuál es tu [lugar](place) favorito
+    - vicky cual es tu [lugar](place) favorito del mundo
+    - cuál es tu [ciudad](place) preferida
+    - recomiéndame una [ciudad](place) para conocer
+    - dónde te gustaría viajar
+
+- intent: chitchat/freetime
+  examples: |
+    - cuáles son tus hobbies
+    - qué te gusta hacer en tu tiempo libre
+    - qué te gusta hacer, vicky
+    - cómo pasas el tiempo
+    - Qué te hace feliz
+    - me dices que haces en tu tiempo libre
+    - qué phaces cuando no estas aqui vicky
+    - tus hobbies cuales son
+    - dime algo que te guste hacer
+    - que hobbies tienes
+    - tus hobbies
+- intent: chitchat/haveyoupets
+  examples: |
+    - cuál es tu [animal](animal) favorito
+    - te gustan los [gatos](animal)
+    - tienes [mascota](animal)
+    - como se llama tu [mascota](animal)
+    - te gustan los [animales](animal)
+    - quieres tener algun [animal](animal)
+    - que opinion tienes de los [animales](animal)
+    - [gatos](animal)
+
+- intent: chitchat/joke
+  examples: |
+    - chiste
+    - cuentame un chiste
+    - dime algo gracioso
+    - quiero que me cuentes algo que me haga reir
+    - cuentame algun chiste
+    - vicky quiero que me cuentes ahora mismo un chiste
+
+- intent: chitchat/birthday
+  examples: |
+    - cuándo es tu cumpleaños
+    - que dia es tu cumpleaños
+    - cuando es tu cumple
+    - celebras tu cumple?
+
+- intent: chitchat/mybirthday
+  examples: |
+    - hoy es mi cumpleaños
+    - mañana es mi cumpleaños
+    - felicitame que es mi cumple
+    - vicky, sabes que hoy es mi cumple?
+
+- intent: chitchat/whichmusic
+  examples: |
+    - ponme algo de [musica](musica)
+    - qué [música](musica) te gusta
+    - escuchas [musica](musica)
+    - [musica](musica)
+    - recomiendame una [cancion](musica)
+    - cual es tu [cancion](musica) favorita
+
+- intent: chitchat/whichflower
+  examples: |
+    - puedes oler las flores
+    - qué flores te gustan
+    - te gusta la jardinería
+    - muéstrame flores
+    - cuáles son tus flores favoritas
+
 
 ### Entities
 - synonym: valorFamilia
@@ -1281,3 +1455,33 @@ nlu:
     - colega
     - conocido
     - vecina
+- synonym: musica
+  examples: |
+    - musica
+    - cancion
+
+- synonym: animal
+  examples: |
+    - animal
+    - gato
+    - perro
+    - mascota
+- synonym: place
+  examples: |
+    - lugar
+    - ciudad
+    - pueblo
+    - localidad
+    - sitio
+- synonym: lectura
+  examples: |
+    - lectura
+    - libro
+    - comic
+    - novela
+- synonym: insult
+  examples: |
+    - idiota
+    - imbecil
+    - gilipollas
+    - capullo

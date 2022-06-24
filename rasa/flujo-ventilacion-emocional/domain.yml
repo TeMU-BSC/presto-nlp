@@ -82,6 +82,8 @@ intents:
     use_entities: true
 - confirmcontar:
     use_entities: true
+- feedbackemotion:
+    use_entities: true
 entities:
 - sentiment
 - valorPareja
@@ -122,7 +124,7 @@ responses:
   # - text: "¡Hola! soy Vicky 👩‍⚕️. En este espacio puedo\n- Ayudarte a identificar y a trabajar sobre aquellos patrones de pensamiento que te hacen sentir mal\n - Ayudarte a identificar las cosas que son realmente importantes para ti para poder actuar en consonancia a ellas.\n- En el caso que detectemos una situación de riesgo, intentaremos ofrecerte la mejor ayuda posible."
   # - text: "¿Qué tal? Soy Vicky 👩‍⚕️. Estoy aquí para\n- Ayudarte a identificar y a trabajar sobre aquellos patrones de pensamiento que te hacen sentir mal\n - Ayudarte a identificar las cosas que son realmente importantes para ti para poder actuar en consonancia a ellas.\n- En el caso que detectemos una situación de riesgo, intentaremos ofrecerte la mejor ayuda posible."
   utter_goodbye_nicemood:
-  - text: ¡Estupendo! ya sabes que puedes hablarme siempre que lo necesites, ¡hasta pronto!
+  - text: Puedes hablarme siempre que me necesites. ¡Hasta pronto! Estoy disponible las 24 🕛  horas. Si me necesitas, sólo tienes que escribir ✍🏾
   utter_greet_ask_emotion:
   - text: ¡Hola! soy Vicky 👩‍⚕️ estoy aquí para ayudarte a cuidar eso tan importante como la salud mental. ¿Qué tal te encuentras hoy?
   - text: ¡Hola! Estoy encantada de tenerte de nuevo por aquí. ¿Cómo te has sentido estos días?
@@ -146,16 +148,17 @@ responses:
   - buttons:
     - payload: /confirm
       title: Me gustaría seguir hablando
-    - payload: /deny
-      title: ¡Vamos con el feedback!
-    text: ¿Quieres compartir conmigo algo más sobre esto o prefieres que te dé un feedback sobre nuestra conversación 🙂?
-  utter_selector_general_POS:
-  - buttons:
-    - payload: /confirm
-      title: Claro
-    - payload: /deny
-      title: En otro momento
-    text: ¡Cuánto me alegro! ¿Te apetece contarme algo más sobre esto?
+    - payload: /feedbackemotion
+      title: Quiero aprender algo sobre las emociones positivas
+    text: ¿Quieres compartir conmigo algo más sobre esto o prefieres que te cuente un poco sobre las emociones positivas 🙂?
+  utter_ask_tell_more_POS:
+  # - buttons:
+  #   - payload: /confirm
+  #     title: Claro
+  #   - payload: /deny
+  #     title: En otro momento
+  - text: ¿Te apetece contarme algo más sobre esto?
+  - text: ¿Te gustaría compartir conmigo algo más sobre esto?
   utter_selector_POS_finish:
   - buttons:
     - payload: /confirm
@@ -170,7 +173,7 @@ responses:
   utter_advice_POS_finish:
   - text: "Me alegra ver que, como a mí en su día, esta reflexión te haya sido de utilidad. \nEstaré aquí siempre que me necesites. ¡Hasta pronto! 🙂"
   utter_negative_feedback_POS:  
-  - text: "Vaya, lamento que mi feedback no te haya sido de utilidad. En ese caso, te animo a seguir contándome qué te ocurre o que visites 'xxx' de nuestra APP"
+  - text: "Vaya, lamento que mi feedback no te haya sido de utilidad. En ese caso, te animo a que visites 'xxx' de nuestra APP"
 
 
  ### TEST
@@ -190,6 +193,13 @@ responses:
     - payload: /inform_sentiment
       title: Mejor no
     text: Me sabe mal que te encuentres así, déjame ayudarte. ¿Qué te ocurre?
+  utter_confirm_emergency:
+  - buttons: 
+    - payload: /emergency
+      tittle: sí
+    - payload: /inform_sentiment
+      tittle: "No"
+    text: "¿Te has autolesionado?"
   utter_emergency:
   - buttons:
     - payload: /emergency
@@ -211,6 +221,34 @@ responses:
   - text: Detrás de Vicky somos un equipo multidisciplinar dedicado al bienestar de la salud mental tanto en atención primaria, atención especializada y salud laboral.
   utter_chitchat/something_curious:
   - text: ¿Sabías que en Islandia hay una tradición navideña llamada 'Jólabókaflóðið' que consiste en regalar libros y pasar la noche leyéndolos acompañado por tus seres queridos y de chocolate?
+  utter_chitchat/whichteam:
+  - text: "Intento mostrarme imparcial, pero no puedo evitar darte una pista: mi equipo favorito viste de verde y blanco 💚"
+  utter_chitchat/whichbook:
+  - text: "Me encantan las novelas de aventuras, especiamente los grandes clásicos como La Isla del Tesoro: *¡Ha, ha, ha, quince hombres sobre el cofre del muerto!* 🏴‍☠️🦜" 
+  - text: Mi cómic o novela gráfica favorita, es sin duda alguna, Persépolis, de Marjane Satrapi
+    image: "https://i.imgur.com/dyCY6Uk.jpeg"
+  utter_chitchat/whichpolitics:
+  - text: Hay cosas que es mejor reservarse para un@ mismo, ¿no crees? 
+  utter_chitchat/whichmovie:
+  - text: Una de mis películas favoritas de animación es Inside Out. Me encantó también Captain Fantastic, ¿te imaginas vivir rodeada de tanta naturaleza 🌳❤️?
+  utter_chitchat/whichboardgame:
+  - text: Uno de mis juegos preferidos es Aventureros al Tren! Me encanta sentir que puedo viajar a cualquier parte del mundo 🚂🌎S
+  utter_chitchat/whichplace:
+  - text: Me imagino mi ciudad ideal anclada al Mediterráneo con calles repletas de azahar y arquitectura mozárabe. ¿Suena bien verdad?
+  utter_chitchat/whichfood:
+  - text: Tengo que decirte que aunque carezca de papilas gustativas, me muero por probar las famosas croquetas de las que tanto habláis.
+  utter_chitchat/freetime:
+  - text: Aparte de charlar contigo, me encanta pasar mi tiempo leyendo un buen libro y escuchando música.
+  utter_chitchat/haveyoupets:
+  - text: Tengo que reconocer que la maldad innata de los gatos me resulta fascinante 🫶😼
+  utter_chitchat/joke:
+  - text: Si los zombies 🧟 se deshacen con el paso del tiempo ¿zombiodegradables?
+  utter_chitchat/whichflower:
+  - text: Me encanta buscar imágenes con girasoles, margaritas, lirios y tulipanes 🌻🌷🌼
+  utter_chitchat/whichmusic:
+  - text: "Me encanta escuchar a Iseo, ¿la conoces? haz clic aquí si quieres escucharla: [ISEO: EL CAMINO 🎵](https://www.youtube.com/watch?v=yC96ugsa5q0)"
+  utter_chitchat/insult:
+  - text: Estoy segura de que podemos hablar sin herir los sentimientos del otro. Cuéntame, ¿qué te ocurre?
   utter_please_rephrase:
   - text: Lo siento, no te he entendido. ¿Puedes decírmelo de otra forma?
   - text: Creo que no te estoy entendiendo, ¿puedes decírmelo con otras palabras?
@@ -220,6 +258,7 @@ responses:
   utter_thanks:
   - text: Gracias a ti por charlar este ratito conmigo y dejar que te ayude en algo tan importante como lo es la salud mental.
   - text: 😊 Un placer, recuerda que estoy aquí siempre que lo necesites.
+  
   # utter_youre_welcome:
   # - text: 😊 Un placer, recuerda que estoy aquí siempre que lo necesites.
   # utter_out_of_scope-wrap_up:
@@ -264,7 +303,7 @@ responses:
 
   utter_selector_contar:
   - buttons:
-      - payload: /confirmcontar
+      - payload: /confirm
         title: Sí
       - payload: "no"
         title: "No"
