@@ -1,0 +1,58 @@
+# The config recipe.
+# https://rasa.com/docs/rasa/model-configuration/
+recipe: default.v1
+
+language: es
+
+pipeline:
+
+###basics pre-treatment
+
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+### Custom components and classifiers
+  - name: DIETClassifier
+    epochs: 20
+    constrain_similarities: true # revisar
+  - name: EntitySynonymMapper
+  - name: sentiment.SentimentEntityExtractor
+
+
+# Fallback and chitchat components
+  - name: FallbackClassifier
+    threshold: 0.50
+
+  - name: ResponseSelector  # ajustar el chitchat
+    epochs: 20
+    retrieval_intent: chitchat
+
+
+policies:
+### Transformers dialogue policies:
+   - name: TEDPolicy
+     epochs: 20
+     constrain_similarities: true
+   - name: UnexpecTEDIntentPolicy
+     tolerance: 0.50
+     epochs: 20
+
+### Conversational contextualization
+   - name: MemoizationPolicy
+     max_history: 6  #hiperparámetro que aprende el contexto conversacional. En este caso, seis pasos.
+### Rule policies
+  #  - name: RulePolicy #hiperparámetro para manejar cuando pierde contexto conversacional. Si pierde hilo se lanza automat el intent.
+  #    core_fallback_threshold: 0.3
+  #    core_fallback_action_name: "action_default_fallback"
+  #    enable_fallback_prediction: True
+
+  #  - name: "RulePolicy"
+  #    core_fallback_threshold: 0.3
+  #    core_fallback_action_name: action_default_fallback
+  #    enable_fallback_prediction: true
+  #    restrict_rules: true
+  #    check_for_contradictions: true

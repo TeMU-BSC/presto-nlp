@@ -1,0 +1,321 @@
+version: "2.0"
+nlu:
+- intent: chitchat/something_curious
+  examples: |
+    - dime algo que no sepa
+- intent: chitchat/how_are_u
+  examples: |
+    - ¿tienes sentimientos?
+- intent: chitchat/ask_name
+  examples: |
+    - Cómo te suele llamar la gente
+- intent: chitchat/help_me
+  examples: |
+    - qué puedes hacer por mí
+- intent: chitchat/who_are_you
+  examples: |
+    - quienes te han desarrollado
+- intent: emergency
+  examples: |
+    - /emergency
+- intent: youre_welcome
+  examples: |
+    - de nada
+- intent: ready
+  examples: |
+    - ya
+- intent: deny
+  examples: |
+    - No
+- intent: thanks
+  examples: |
+    - muy agradecido por todo lo que haces Vicky
+- intent: confirm
+  examples: |
+    - claro
+- intent: goodbye_nicemood
+  examples: |
+    - deu
+- intent: alert
+  examples: |
+    - emergencias
+    - desaparecer para siempre
+    - quiero matarme
+- intent: greet
+  examples: |
+    - soy [Ángela](name), hola
+    - hey
+- intent: inform_sentiment
+  examples: |
+    - ha sido una semana de mierda
+    - mal
+    - me encuentro fatal
+    - he tenido un buen día
+    - amargado en el trabajo
+- intent: adivinacion
+  examples: |
+    - voy a estar sola, aunque me rodee de gente
+    - Estoy convencida de que todo irá mal
+    - Estoy segura de que, aunque salga con [amigos](valorSocial), me sentiré mal.
+    - El examen de mañana seguro que me va a ir mal
+    - aunque ahora estoy en una buena época, pasará algo que me irá mal
+    - aunque el negocio esté funcionando, el año que viene me va a ir mal
+    - si vamos a comer voy a pasarlo mal
+    - he decidido no hacerlo porque sé que fallaré
+    - sé que no pasaré las pruebas de acceso
+    - Seguro que no apruebo la evaluación
+    - sé que si voy a la excursión no dejaré de pensar en cómo estoy
+    - no quiero ir porque me sentiré fuera de lugar
+    - aún haciéndolo lo mejor posible, sé que no será suficiente
+    - Mañana es el primer día de trabajo, seguro que me equivoco
+    - si voy de compras me sentiré culpable
+    - no voy a pasar la entrevista de trabajo
+    - el examen me irá mal
+    - la prueba me va a ir mal
+    - aunque todo va bien, seguro que pasa algo malo
+    - si cuento cómo me siento sé que no me entenderán
+    - aunque salga puntual voy a perder el bus
+    - voy a fastidiar las vacaciones
+- intent: catastrofismo
+  examples: |
+    - Que no me responda al mensaje sería lo peor del mundo, lo peor que me podría pasar
+    - auténticamente terrible
+    - me ha hecho tanto tanto daño, estoy fatal, tan mal...
+    - aquello me dejó totalmente hundido, lo peor de mi carrera
+    - me quedaré solo seguro, no lo podré aguantar
+    - Lo pasaré fatal
+    - La reunión fue un desastre
+    - No puedo aguantar más esta situación
+    - Eso no lo probaré, seguro que me sale fatal y me quedo hundido
+    - Me espera lo peor, un auténtico infierno
+    - si no cogen el teléfono es porque les ha pasado algo terrible, gravísimo
+    - Las lluvias seguro que serán dantescas, destrozarán toda la cosecha, será mi ruina
+    - la presentación fue fatal, un auténtico fracaso, la peor del mundo
+    - Pasará seguro y será insoportable
+    - me pasó en el peor momento, lo más terrible que me podía haber pasado
+    - He pillado a mi [hijo](valorFamilia) fumando un porro. Es horroroso, acabará siendo un despojo humano.
+    - ni lo quiero escuchar, será tremendo, desolador
+    - Si me diagnostican un cáncer sería lo peor del mundo, se acabaría toda mi vida
+    - Siempre me pasa a mí lo más terrible
+    - me encontraré lo peor inimaginable en ese sitio
+    - Es la ruina, el coche no arranca
+    - eso sería lo peor del muno
+- intent: pensamientoabsolutista
+  examples: |
+    - Si no tengo muchos "me gusta" en mis redes sociales no le gusto a nadie
+    - Si controlo a mi [pareja](valorPareja) no me será infiel
+    - Si me enfado no me aceptarán porque pensarán que soy mala persona
+    - si no estoy delgado no soy feliz
+    - O comparte mi punto de vista o es que está en mi contra y no es mi [amigo](valorSocial)
+    - Si no soy popular es que los demás me rechazan
+    - Si me relajo perderé el control sobre las cosas y no saldrán bien
+    - O hago todo perfecto o me echarán del trabajo
+    - Si salgo con mis amigas mi [novio](valorPareja) pensará que no lo quiero
+    - Si me tomo tiempo libre me convertiré en una vaga
+    - O me lo sé todo o pensarán que soy un tonto
+    - O está siempre pendiente de mí o es que no me quiere
+    - O me tranquilizo o perderé el control
+    - O tengo éxito en el trabajo o seré una fracasado
+    - O voy siempre arreglada o pensarán mal de mi
+    - estoy frustrado porque si no me compro una casa no estaré bien
+    - O tengo un buen trabajo o no valgo para nada
+    - O estoy siempre cuidando de los demás o no soy una buena mujer
+    - O hago todo bien o no sirvo para nada
+    - Si no soy la más guapa es que soy horrorosa
+    - Si no estoy siempre a disposición de los demás no me van a querer
+    - O hago lo que dicen los demás o me rechazarán
+    - Si no estoy de acuerdo con mi jefe me echará del trabajo
+    - si no estoy delgada no conseguiré [pareja](valorPareja)
+    - O me llaman cada día o es que no les importo mucho
+- intent: lectordementes
+  examples: |
+    - El vecino piensa que no doy un palo al agua
+    - Mi [madre](valorFamilia) se rio, seguro que de mi
+    - estoy muy seguro de que no me quieren
+    - Me miran porque piensan que hago el ridiculo
+    - Mis [amigos](valorSocial) piensan que soy torpe, lo sé bien
+    - El cartero debe pensar que soy un cara dura, estoy convencido.
+    - Mi [pareja](valorPareja) no me lo ha dicho pero, sé que no me ve tan atractivo como antes.
+    - Mi [padre](valorPareja) piensa que jamás seré una persona de provecho
+    - No me lo dicen, pero está claro que no quieren pasar tiempo conmigo
+    - Por como me habla mi primo, sé que no le caigo bien.
+    - Nunca me lo ha dicho pero, sé que no le gusta mi actitud
+    - Aunque no me lo diga, sé que me desea lo peor
+    - Seguro que no me llama porque se ha cansado de mí
+    - Siempre está sonriendo, pero sé que no me quiere.
+    - Estoy seguro de que la gente piensa que no valgo para nada
+    - nunca me ha dicho nada malo, pero sé que me odia
+    - Aunque no lo digan, sé que mis compañeros de clase no quieren saber nada de mí
+    - Estoy convencido de que no me quiere volver a ver.
+    - Aunque no lo diga, mi entrenador piensa que no valgo para el deporte.
+    - Estoy seguro de que la gente me ve como un bicho raro
+    - Estoy seguro de que mi [pareja](valorPareja) no confía en mí
+    - aunque me ayuda, sé que no me quiere
+    - En el fondo, mi abuelo piensa que me aprovecho de él.
+    - Cuando he levantado la mano, toda la gente se ha reído; seguro que piensan que soy ridículo.
+    - Sé que en el fondo, mis [padres](valorPareja) desearían que no hubiese nacido
+    - Sé que la gente de mi alrededor piensa que soy ridículo
+    - Sé con certeza que quieren que me vaya del grupo
+    - Sé que en el fondo, le incomoda mi presencia
+- intent: sobregeneralizacion
+  examples: |
+    - mis [padres](valorFamilia) siempre me han ignorado
+    - Siempre voy a ser un desastre
+    - Siempre hay que desconfiar de los demás
+    - nunca podré hacer mi tarea
+    - en mi trabajo nunca me tienen en cuenta
+    - no me sale nada bien nunca
+    - sé que no le caigo bien a nadie, nadie me quiere
+    - todos hacen lo mismo me dejan a un lado
+    - Todo me sale mal
+    - Si he engordado un kilo, entonces engordaré cien
+    - Todos los perros atacan
+    - Todos los jefes son malos
+    - Nunca cumple con su palabra es que siempre hace igual
+    - Siempre soy incapaz de llevar a cabo lo que me propongo
+    - Tienes que ser fuerte siempre
+    - Todo el mundo me ignora
+    - Me tienen que querer siempre
+    - Mi [familia](valorFamilia) siempre me trata mal
+    - Nadie me comprende
+    - No lo he conseguido, siempre fallaré
+    - Nadie puede cambiar nunca
+    - Siempre hago el ridículo
+    - No podré confiar en nadie nunca
+    - La vida siempre es un caos
+    - Todo el mundo tiene la misma actitud.
+    - no me encuentro bien nunca
+    - Nunca conseguiré lo que me propongo
+    - Nunca disfruto de nada
+- intent: etiquetado
+  examples: |
+    - mis [amigos](valorFamilia) sí que son felices
+    - mi [marido](valorPareja) es un despreocupado
+    - mi [marido](valorPareja) es un avaricioso
+    - mi [hermano](valorFamilia) es un ganador
+    - soy una decepción para los demás
+    - soy inaguantable
+    - soy pésimo en todo lo que hago
+    - no soy nada inteligente
+    - soy perezoso
+    - no soy atrevido
+    - soy una persona gris
+    - Siempre he sido muy patosa, todos los deportes se me dan mal
+    - soy un cobarde
+    - no soy perfecto
+    - mis [amigos](valorSocial) son unos mentirosos
+    - Mis [padres](valorFamilia) son lo peor
+    - mi [hermana](valorFamilia) es perfecta
+    - en mi [familia](valorFamilia) somos unos amargados
+    - soy un irresponsable
+    - ella es fantástica
+    - alguien es un pretencioso
+    - soy completamente idiota
+    - Soy la que pero juega de mi equipo
+    - mis [amigos](valorSocial) sí que son animados
+    - mi jefe es un despota
+    - [mi mujer](valorPareja) es insuperable
+    - Soy horrible, le hago daño a todo el mundo
+    - en todo lo que hago soy un fracasado
+    - para mi jefe soy invisible
+- intent: deberias
+  examples: |
+    - Debo caer bien a todos
+    - Mi [pareja](valorPareja) debería pasar más tiempo conmigo, en lugar de con sus amigos
+    - Mis [hijos](valorPareja) no tienen que verme triste
+    - Tengo que ser popular
+    - Deberia ser más eficaz y acabar de una vez las cosas, siempre tengo cosas pendientes por hacer
+    - deberían hacerme caso
+    - tengo que trabajar más
+    - Tendría que pasar más tiempo con mis [padres](valorPareja)
+    - debería limpiar la casa porque está muy sucia
+    - Debo ser perfecto en todo lo que hago
+    - tengo que pensar en positivo
+    - Deberían ser más amables conmigo
+    - Deberia estar estudiando en vez de estar con mis [amigos](valorSocial)
+    - Debo dejar de hablar tanto de mí, se van a cansar
+    - No debería salir de casa
+    - Debo decir menos lo que pienso
+    - Los demás tienen que aceptarme como soy
+    - Mis [amigos](valorSocial) no deben quedar sin mí
+    - Debo terminar todas las tareas que empiezo
+    - tengo que dejar de pensar en cosas malas
+    - Debo ser una buena [esposa](valorFamilia)
+    - Debo valerme por mi mismo, sin necesitar a los demás
+    - Tengo que consumir alcohol para estar bien
+    - Tengo que ser fuerte y no derrumbarme aunque las cosas vayan mal
+    - Debería tener más ganas de hacer cosas con mis [amigos](valorFamilia)
+    - Debo tomar mis propias decisiones sin pensar en los demás
+    - Tengo que aprender a ser mejor persona
+    - Debería tener [pareja](valorPareja) a mi edad
+    - Debo tenerlo todo bajo control
+    - Debo pensar en mi y en mis intereses
+- intent: tricky
+  examples: |
+    - Después de esto las cosas serán más difíciles
+    - Debo irme ya para llegar a tiempo a recoger a mi hijo a la escuela
+    - Estoy convencido de que todo saldrá bien
+    - Tengo que hacer la comida
+    - sé que no podré controlarlo todo
+    - ándate con cuidado con los papeles del seguro del coche.
+    - Si no hago un ascenso de categoría en este juego
+    - Será algo duro y difícil
+    - me sentiré tranquilo cuando termine el proyecto
+    - Deberia acostarme ya si queiro dormi 8h.
+    - Mañana tengo un examen muy difícil e importante, el resultado afectará a mi expediente
+    - O llego a mi trabajo a las 8 que es la hora perfecta o más tarde no consigo dónde aparcar el coche
+    - Lo que me ha pasado (me está pasando) es muy desagradable
+    - Mi hijo es muy alto segun los percentiles del pediatra
+    - Hoy no puedo venir a tomar algo, tengo que terminar un trabajo para mañana
+    - Mi hermana piensa que no tiene tiempo, me lo ha dichola clase de catalán duró 3 horas. Fue horrible. (no relacionado con uno mismo o una vivencia emocional relevante)
+    - es posible que me vaya mal la primera vez que haga algo
+    - O encuentro una pareja de baile o las clases que he hecho no servirán para bailar sola
+    - Sé las consecuencias que tendría no estudiar para el examen
+    - si no me dicen nada les escribiré yo
+    - Soy bajito y calvo
+    - Si no cuido de mi mascota no será buena su salud
+    - Debería ordenar un poco mi habitación
+    - Soy una persona competitiva
+    - Puede que tenga malos momentes
+    - El jefe me ha mirado con cara de estar (muy) enfadado
+    - Cuando me comparto con la gente de mi classe veo que soy bastante alto
+    - tengo que ir un momento al baño
+    - Hay gente que me lo está haciendo pasar mal
+    - o comemos arroz o pasta
+    - Puede que pase un mal trago (momento)
+    - Deben ser las 3h en mí país
+    - este vestido es horrible, nunca me lo compraria
+    - Tengo muchos animales en casa
+    - O hago que la impresora funcione bien o el trabajo no servirá para presentarlo en papel
+    - O sigo cada uno de los pasos propuestos en la receta o probablemente el pastel sea un fracaso
+    - mi tio se pone insoportable cuando habla de política
+    - El ruido que hacen las obras es insoportable, espero que acaben pronto
+    - Si conmigo ver una peli es triste no es porque sea dramática sino porque siempre hago chistes malos
+    - Sé hacer muy bien mi trabajo.
+    - Tengo que estudiar para el examen
+    - Soy muy mala perdedora, siempre me cuesta aceptarlo.
+    - En el cumpleaños puede que pase momentos malos
+    - Debería ser más vistoso ese cartel ¿no crees? Apenas puede leerse
+    - o voy hoy a ver a mis padres o voy mañana
+- synonym: valorFamilia
+  examples: |
+    - familia
+    - padre
+    - madre
+    - hermano
+    - hermana
+    - abuelo
+    - abuela
+- synonym: valorPareja
+  examples: |
+    - novio
+    - marido
+    - pareja
+    - esposa
+    - mi mujer
+- synonym: valorSocial
+  examples: |
+    - amigo
+    - colega
+    - conocido
+    - vecina

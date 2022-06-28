@@ -1,0 +1,58 @@
+version: "3.0"
+
+rules:
+
+### greetings rules
+
+- rule: Say hello anytime the user says hello
+  steps:
+  - intent: greet
+  - action: utter_greet_ask_emotion
+
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye_nicemood
+  - action: utter_goodbye_nicemood
+
+
+### fallback and chitchat rules
+
+# - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+#   steps:
+#   - intent: nlu_fallback
+#   - slot_was_set:
+#       - sentiment: NEU
+#   - action: utter_please_rephrase
+
+- rule: respond to chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+
+# - rule: prioritize alert intent
+#   steps:
+#   - intent: alert
+#   - action: utter_alert
+
+### unlikely hoping wrap up worksa
+
+# - rule: every time we receive unlikely intent in wrap-up take those actions below
+#   steps:
+#     - action: action_unlikely_intent
+#     - action: utter_out_of_scope-wrap_up
+
+
+# ## gratitude
+# - rule: everytime the user says thanks.
+#   steps:
+#   - intent: thanks
+#   - action: utter_thanks
+
+
+# - rule: Activate sentiment_form
+#   steps:
+#   - intent: inform_sentiment
+#   - action: sentiment_form
+# se desactiva esta regla hasta que este montado el endpoint para el formulario de emociones,
+# ya que entra en conflicto con las stories

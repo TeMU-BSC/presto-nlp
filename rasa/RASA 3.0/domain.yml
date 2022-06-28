@@ -1,0 +1,449 @@
+version: '"3.0"'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- inform_sentiment:
+    use_entities:
+    - sentiment
+- goodbye_nicemood:
+    use_entities: true
+- chitchat:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
+- confirm:
+    ignore_entities:
+    - sentiment
+- ready:
+    ignore_entities:
+    - sentiment
+- sobregeneralizacion:
+    use_entities:
+    - sentiment
+- lectordementes:
+    use_entities:
+    - sentiment
+- pensamientoabsolutista:
+    use_entities:
+    - sentiment
+- etiquetado:
+    use_entities:
+    - sentiment
+- catastrofismo:
+    use_entities:
+    - sentiment
+- adivinacion:
+    use_entities:
+    - sentiment
+- deberias:
+    use_entities:
+    - sentiment
+- deny:
+    ignore_entities:
+    - sentiment
+- soloValores:
+    ignore_entities:
+    - sentiment
+- deny_valor:
+    use_entities: true
+- alternat:
+    use_entities: true
+- out_of_scope-wrap_up:
+    use_entities: true
+- thanks:
+    ignore_entities:
+    - sentiment
+- youre_welcome:
+    use_entities: true
+- emergency:
+    use_entities: true
+    ignore_entities:
+    - sentiment
+- alert:
+    use_entities: false
+    ignore_entities:
+    - sentiment
+- genderViolence:
+    use_entities: true
+    ignore_entities:
+    - sentiment
+- confirmgv:
+    use_entities: true
+- confirmgv3:
+    use_entities: true
+- confirmgv2:
+    use_entities: true
+- confirmcontar:
+    use_entities: true
+entities:
+- sentiment
+- valorPareja
+- valorFamilia
+- valorSocial
+- name
+slots:
+  sentiment:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    influence_conversation: true
+    values:
+    - neu
+    - pos
+    - neg
+    mappings:
+    - entity: sentiment
+      type: from_entity
+      conditions:
+      - active_loop: sentiment_form
+    - type: from_entity
+      entity: sentiment
+  valorFamilia:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: valorFamilia
+  valorPareja:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: valorPareja
+  valorSocial:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: valorSocial
+responses:
+  utter_goodbye_nicemood:
+  - text: ¡Estupendo! ya sabes que puedes hablarme siempre que lo necesites, ¡hasta pronto!
+  utter_greet_ask_emotion:
+  - text: ¡Hola! soy Vicky 👩‍⚕️ estoy aquí para ayudarte a cuidar eso tan importante como la salud mental. ¿Qué tal te encuentras hoy?
+  - text: ¡Hola! Estoy encantada de tenerte de nuevo por aquí. ¿Cómo te has sentido estos días?
+  utter_sentiment_NEG:
+  - text: Lo lamento. Parece que no estás pasando por un buen momento. Me gustaría conocer más a fondo qué te ocurre.
+  - text: Siento que estés pasando por un mal momento, déjame ayudarte. Quisiera conocer detenidamente qué te ocurre.
+  utter_sentiment_POS:
+  - text: ¡Fántastico! Aprovechando que te encuentras bien, déjame compartir algo contigo que he aprendido últimamente sobre las emociones positivas.
+  utter_selector_POS:
+  - buttons:
+    - payload: /confirm
+      title: Claro, cuéntame
+    - payload: /deny
+      title: En otro momento
+    text: ¿Te apetece?
+  utter_selector_general_POS:
+  - buttons:
+    - payload: /confirm
+      title: Claro
+    - payload: /deny
+      title: En otro momento
+    text: ¡Cuánto me alegro! ¿Te apetece contarme algo más sobre esto?
+  utter_advice_POS:
+  - text: 'Aunque las emociones que nos hacen sentir bien nos gustan más, hay que tener en cuenta que todas las emociones se comportan de la misma manera: no duran para siempre. Por eso es importante estar en el presente, para poder detenerte y sentir la emoción presente sin juzgarla, sabiendo que acabará reduciéndose ya sea agradable o desagradable.'
+  - text: Aprovecha el momento actual que te están ofreciendo tus emociones y obsérvalas. Pero cuidado, todo el tiempo intentamos retener los momentos placenteros y desechar los desagradables hace muy difícil podernos relajar plenamente o sentirnos satisfechos, pues el dolor es inevitable y los momentos agradables también pasarán o quizás no llegarán como nosotros planeamos.
+  - text: Las emociones que nos hacen sentir bien, así como aquellas que nos hacen sentir mal, forman parte de nuestra vida. Te proponemos detenerte un momento para escuchar como está tu cuerpo en estos instantes en que te estás sintiendo bien.
+  utter_advice_POS_finish:
+  - text: "Espero que, como a mí en su día, esta reflexión te haya sido de utilidad. \nEstaré aquí siempre que me necesites. ¡Hasta pronto! \U0001F642"
+  utter_sentiment_NEU:
+  - text: Entiendo, me gustaría que me contaras de manera más específica cómo te sientes en estos momentos
+  - text: Comprendo. ¿Podrías, entonces, contarme de manera más específica qué te ronda ahora mismo la cabeza?
+  utter_deny_valor:
+  - text: Comprendo. Me gustaría, entonces, que me contaras de manera más específica qué te ocurre.
+  utter_alert:
+  - buttons:
+    - payload: /emergency
+      title: Tengo miedo de hacerme daño
+    - payload: /inform_sentiment
+      title: Mejor no
+    text: Me sabe mal que te encuentres así, déjame ayudarte. ¿Qué te ocurre?
+  utter_emergency:
+  - buttons:
+    - payload: /emergency
+      title: Sí
+    - payload: /deny
+      title: No
+    text: ¿Has pensado recientemente o en estos momentos en el suicidio?
+  utter_chitchat/ask_name:
+  - text: "Mi nombre es Vicky, ¡encantada de conocerte! En este espacio puedo\n- Ayudarte a identificar y a trabajar sobre aquellos patrones de pensamiento que te hacen sentir mal\n - Ayudarte a identificar las cosas que son realmente importantes para ti para poder actuar en consonancia a ellas.\n- En el caso que detectemos una situación de riesgo, intentaremos ofrecerte la mejor ayuda posible."
+  - text: "Me conocen como Vicky. En este espacio puedo\n- Ayudarte a identificar y a trabajar sobre aquellos patrones de pensamiento que te hacen sentir mal\n - Ayudarte a identificar las cosas que son realmente importantes para ti para poder actuar en consonancia a ellas.\n- En el caso que detectemos una situación de riesgo, intentaremos ofrecerte la mejor ayuda posible."
+  utter_chitchat/help_me:
+  - text: Claro, estoy aquí precisamente para ayudar a cuidar de eso tan importante como la salud mental. ¿Por dónde quieres empezar?
+  - text: 'Mi misión es ayudarte a cuidar algo tan importante como la salud mental. Si te parece podemos empezar con una de las opciones que te muestro a continuación:'
+  utter_chitchat/how_are_u:
+  - text: Como todo el mundo, tengo días mejores y días peores. Algo que me anima siempre es poder ayudarte 😊
+  - text: Estoy genial, muchas gracias, por preocuparte por mí 🥰
+  utter_chitchat/who_are_u:
+  - text: Detrás de Vicky somos un equipo multidisciplinar dedicado al bienestar de la salud mental tanto en atención primaria, atención especializada y salud laboral.
+  utter_chitchat/something_curious:
+  - text: ¿Sabías que en Islandia hay una tradición navideña llamada 'Jólabókaflóðið' que consiste en regalar libros y pasar la noche leyéndolos acompañado por tus seres queridos y de chocolate?
+  utter_please_rephrase:
+  - text: Lo siento, no te he entendido. ¿Puedes decírmelo de otra forma?
+  - text: Creo que no te estoy entendiendo, ¿puedes decírmelo con otras palabras?
+  utter_default:
+  - text: Lo siento, no te he entendido. ¿Puedes decírmelo de otra forma?
+  - text: Creo que no te estoy entendiendo, ¿puedes decírmelo con otras palabras?
+  utter_thanks:
+  - text: Gracias a ti por charlar este ratito conmigo y dejar que te ayude en algo tan importante como lo es la salud mental.
+  - text: 😊 Un placer, recuerda que estoy aquí siempre que lo necesites.
+  utter_ventilacion_nd_1:
+  - condition:
+    - type: slot
+      name: valorFamilia
+      value: valorFamilia
+    text: La familia generalmente supone un pilar fundamental en nuestra vida. ¿Querrías contarme algo más sobre esto?
+  - condition:
+    - type: slot
+      name: valorPareja
+      value: valorPareja
+    text: La pareja generalmente supone un pilar fundamental en nuestra vida. ¿Querrías contarme algo más sobre esto?
+  - condition:
+    - type: slot
+      name: valorSocial
+      value: valorSocial
+    text: Nuestras relaciones interpersonales suponen un pilar fundamental en nuestra vida. ¿Querrías contarme algo más sobre esto?
+  - text: Vaya, te animo a que me cuentes un poquito más sobre este tema.
+  utter_ventilacion_1:
+  - text: Te entiendo. Y, ¿por qué crees o sientes esto que me acabas de comentar?
+  utter_ventilacion_2:
+  - text: De acuerdo, está claro que a veces lidiar con determinadas emociones puede parecernos un tanto complicado. Por eso, me gustaría saber qué significa para ti esto que me has comentado. Te escucho 😊
+  utter_selector_contar:
+  - buttons:
+    - payload: /confirmcontar
+      title: Sí
+    - payload: no
+      title: No
+    text: ¿Te apetece?
+  utter_si_contar:
+  - text: Adelante, te escucho 😊
+  - text: Soy todo oídos 👂🏽
+  utter_no_contar:
+  - text: Puede ser duro compartir este tipo de cosas con extraños. No te preocupes, podemos abordar este problema cuando quieras.
+  - text: A veces, nos puede costar compartir nuestros pensamientos con extraños. No te preocupes, podemos retomarlo cuando tú quieras.
+  utter_ventilacion_nd_feedback:
+  - text: Tras esta pequeña conversación, no he detectado ningún pensamiento alarmante, pero si me permites voy a compartir contigo un consejo que me ha servido de mucho 🤓
+  utter_ventilacion_nd_final:
+  - text: Etiquetar la emoción es el primer paso para poder regular nuestro comportamiento a las necesidades de la situación. Ahora quédate con esta sensación. No la juzgues, simplemente obsérvala hasta que acabe bajando de intensidad. Recuerda que, cualquier emoción (sea agradable o desagradable) acaba disminuyendo con el tiempo.
+  - text: Aunque ahora mismo te sientas mal, quería proponerte que aprovecharas este momento para probar de des-identificarte de la emoción (tú no eres esa emoción, eres mucho más que esta emoción). Ahora reconócela y observa la naturaleza cambiante y transitoria de la misma. Conocer mejor lo que nos sucede a nivel emocional, nos permite desarrollar una relación menos reactiva con la experiencia interior. Nos permite reconocer y soltar más fácilmente las tormentas emocionales.
+  utter_ventilacion_nd_opcional:
+  - buttons:
+    - payload: /autoestima
+      title: Autoestima
+    - payload: /estres_laboral
+      title: Estrés laboral
+    text: 'Más allá de este consejo, después de este ratito hablando, no he detectado ningún pensamiento que pueda estar jugándote malas pasadas, pero si quieres, puedes seleccionar alguno de estos temas para que lo trabajemos de manera conjunta :) '
+  utter_selector_psicoeduc_general:
+  - buttons:
+    - payload: /confirm
+      title: Sí
+    - payload: /deny
+      title: Mejor no
+    text: ¿Quieres que continuemos?
+  utter_selector_psicoeduc_1:
+  - buttons:
+    - payload: /confirm
+      title: Sí
+    - payload: /deny
+      title: Mejor no
+    text: ¿Seguimos 😊?
+  utter_psicoeduc_general:
+  - text: ¡Vaya! Parece que hemos detectado una serie de pensamientos que pueden estar jugándote malas pasadas en tu día a día, son aquellos que llamamos sesgos o distorsiones cognitivas y que afectan a nuestro estado de ánimo. '
+  utter_selector_psicoeduc_sobre_2:
+  - buttons:
+    - payload: /confirm
+      title: La verdad es que sí
+    - payload: /deny
+      title: No demasiado
+    text: ¿Te identificas con la situación de Anna?
+  utter_psicoeduc_sobre:
+  - text: A veces tenemos tendencia a aplicar las conclusiones de una situación concreta a todos los escenarios que se le parecen, como estableciendo una regla general, sacamos conclusiones a partir de uno o varios hechos aislados y las aplicamos tanto a situaciones relacionadas con el hecho en cuestión como no relacionadas.  A esto le llamamos sobregeneralización.
+  utter_psicoeduc_sobre_2:
+  - text: 'Por ejemplo: Anna ha tenido un día difícil hoy en el trabajo y esperaba poder quedar con sus amigas para pasar un buen rato. Al salir de trabajar ha llamado a dos de sus amigas que le han dicho que finalmente no podrían quedar hoy, Anna muy triste ha pensado: A todo el mundo le doy igual, nadie quiere estar conmigo! Realmente hay muchos días en los que Anna queda con sus amigos o familiares lo pasa bien y se siente querida por ellos, pero hoy solo le viene este pensamiento a la cabeza.'
+  utter_selector_psicoeduc_adivinacion_2:
+  - buttons:
+    - payload: /confirm
+      title: La verdad es que sí
+    - payload: /deny
+      title: No demasiado
+    text: ¿Te identificas con la situación de María?
+  utter_psicoeduc_adivinacion:
+  - text: A veces tenemos la propensión de pronosticar o predecir el resultado de conductas, emociones o acontecimientos futuros de forma negativa, y creemos que las predicciones que hacemos son absolutamente verdaderas. Esto nos lleva a pensar que todo lo que va a ocurrir es malo. A esto le llamamos adivinación.
+  utter_psicoeduc_adivinacion_2:
+  - text: 'Por ejemplo: María tiene una presentación importante mañana, está en su casa ensayando para la exposición y está nerviosa anticipando que puede pasar, piensa estoy segura de que me voy a equivocar por mucho que me prepare. María ahora no es capaz de ver que lleva tiempo preparándola y que nadie mejor que ella, que ha hecho el trabajo, conoce el contenido de la presentación.'
+  utter_selector_psicoeduc_catastrofismo_2:
+  - buttons:
+    - payload: /confirm
+      title: La verdad es que sí
+    - payload: /deny
+      title: No demasiado
+    text: ¿Te identificas con la situación de Hugo?
+  utter_psicoeduc_catastrofismo:
+  - text: En ocasiones evaluamos las situaciones esperando el peor resultado posible ante cualquier situación que ocurrió o va a ocurrir, sin tener ningún motivo o evidencia para ello, a esto le llamamos catastrofismo.
+  utter_psicoeduc_catastrofismo_2:
+  - text: 'Por ejemplo: Hugo vive en Girona y hoy ha quedado son su hermano que viene desde Barcelona a verle y pasar el día juntos. Mientras esta en la estación de tren esperándole se da cuenta de que el tren de su hermano tendría que haber llegado hace más de 15 minutos y piensa: está llegando tarde, seguro que el tren ha tenido un accidente! Entonces empieza a preocuparse y a ponerse muy nervioso. Hugo está haciendo una evaluación negativa de la situación que le genera mucha ansiedad, porque el tren puede que esté llegando tarde por diferentes motivos.'
+  utter_selector_psicoeduc_deberias_2:
+  - buttons:
+    - payload: /confirm
+      title: La verdad es que sí
+    - payload: /deny
+      title: No demasiado
+    text: ¿Te identificas con la situación de Laura?
+  utter_psicoeduc_deberias:
+  - text: A menudo tenemos la tendencia a  aplicar reglas de un modo rígido sobre nuestras obligaciones o las de los demás. Creando autoimposiciones en forma de “debería” sobre las capacidades o conductas sin analizar si son razonables en el contexto en el que se dan, esto acostumbra a generar fuertes sentimientos de culpa cuando dichas exigencias no se consiguen. A esto le llamamos imperativos.
+  utter_psicoeduc_deberias_2:
+  - text: 'Por ejemplo: Últimamente Laura está más cansada de lo habitual, tiene mucho trabajo, cargas familiares, cosas pendientes por hacer en casa… A pesar de ir sobrellevando su día a día con todo ello Laura cada mañana cuando se levanta piensa; debería tener más ganas de hacer cosas con mis amigos.  En este momento Laura no se está dando cuenta de que ya hace muchas cosas a lo largo del día y que es normal si actualmente no le apetece quedar con sus amigos, que no pasa nada y más adelante cuando esté más tranquila ya volverán estas ganas.'
+  utter_selector_psicoeduc_etiquetado_2:
+  - buttons:
+    - payload: /confirm
+      title: La verdad es que sí
+    - payload: /deny
+      title: No demasiado
+    text: ¿Te identificas con la situación de Pablo?
+  utter_psicoeduc_etiquetado:
+  - text: A veces tenemos propensión a poner adjetivos negativos tanto a nosotros mismos como a los demás, definiéndonos de una forma peyorativa, haciendo lo que llamamos etiquetado.
+  utter_psicoeduc_etiquetado_2:
+  - text: 'Por ejemplo: Pablo ha tenido una fuerte discusión con su pareja esta mañana, ha pedido los nervios y ha dicho cosas graves y fuera de lugar. Después de la discusión Pablo se ha quedado pensando, soy horrible, le hago daño a todo el mundo. En estos momentos Pablo no puede pensar en que quizás hoy si se ha equivocado pero que en el resto de ocasiones es una persona que no tiene problemas con nadie, que está atento para prestar ayuda y es respetuoso con todo el mundo.'
+  utter_selector_psicoeduc_lectordementes_2:
+  - buttons:
+    - payload: /confirm
+      title: La verdad es que sí
+    - payload: /deny
+      title: No demasiado
+    text: ¿Te identificas con la situación de Pedro?
+  utter_psicoeduc_lectordementes:
+  - text: En ocasiones nos vemos con la capacidad de saber lo que otros están pensando de nosotros mismos o de situaciones sin tan siquiera comprobarlo o preguntarles y entonces sacamos una conclusión arbitraria de que alguien está pensando mal de nosotros sin ninguna evidencia, a esto se le llama leer la mente.
+  utter_psicoeduc_lectordementes_2:
+  - text: 'Por ejemplo: hace una semana que cerró la empresa donde Pedro trabajaba y desde entonces él no puede quitarse de la cabeza este pensamiento: mi familia piensa que soy un fracaso. Pero Pedro no ha hablado con su familia de esto, ni ellos le han dicho nada concreto que le pueda hacer pensar esto, en este momento él está sacando una conclusión sobre lo que piensa su familia sin preguntarles.'
+  utter_selector_psicoeduc_pensamientoabsolutista_2:
+  - buttons:
+    - payload: /confirm
+      title: La verdad es que sí
+    - payload: /deny
+      title: No demasiado
+    text: ¿Te identificas con la situación de Natalia?
+  utter_psicoeduc_pensamientoabsolutista:
+  - text: En ocasiones tenemos tendencia a valorar todas las experiencias en dos únicas posibilidades opuestas o categorías extremas; o blanco o negro, o bueno o malo, o todo o nada, sin valorar la opción de puntos intermedios y seleccionando siempre la categoría del extremo negativo. A esto le llamamos pensamiento absolutista.
+  utter_psicoeduc_pensamientoabsolutista_2:
+  - text: 'Por ejemplo: Natalia está teniendo últimamente más disputas con su pareja. Tiene la sensación de que muchas de estas discusiones no se deben a un desacuerdo entre ellos dos sino que la opinión de la familia de su pareja acaba interfiriendo entre ellos. Entonces Natalia piensa, no aguanto más la situación con mi pareja. ¡O elige a su familia o me elige a mí! Pero en este momento de enfado no puede ver que en realidad existen otras opciones intermedias que no sitúen a su pareja en una situación de elección entre una relación u otra.?'
+  utter_selector_intervencion_general:
+  - buttons:
+    - payload: /confirm
+      title: Que no ha hecho nada malo
+    - payload: /deny
+      title: Que es su culpa
+    text: Qué le dirías a X
+  utter_selector_intervencion_sobregen:
+  - buttons:
+    - payload: /confirm
+      title: Que no ha hecho nada malo
+    - payload: /deny
+      title: Que es su culpa
+    text: Qué le dirías a X
+  utter_intervencion_sobregen:
+  - text: Comienza intervencion sobregeneralizacion
+  utter_selector_intervencion_adivinacion:
+  - buttons:
+    - payload: /confirm
+      title: Que no ha hecho nada malo
+    - payload: /deny
+      title: Que es su culpa
+    text: Qué le dirías a X
+  utter_intervencion_adivinacion:
+  - text: Comienza intervencion adivinacion
+  utter_selector_intervencion_catastrofismo:
+  - buttons:
+    - payload: /confirm
+      title: Que no ha hecho nada malo
+    - payload: /deny
+      title: Que es su culpa
+    text: Qué le dirías a X
+  utter_intervencion_catastrofismo:
+  - text: Comienza intervencion catastrofismo
+  utter_intervencion_deberias:
+  - text: Comienza intervención deberías
+  utter_selector_intervencion_deberias:
+  - buttons:
+    - payload: /confirm
+      title: Que no ha hecho nada malo
+    - payload: /deny
+      title: Que es su culpa
+    text: Qué le dirías a X
+  utter_intervencion_etiquetado:
+  - text: Comienza intervencion etiquetado
+  utter_selector_intervencion_etiquetado:
+  - buttons:
+    - payload: /confirm
+      title: Que no ha hecho nada malo
+    - payload: /deny
+      title: Que es su culpa
+    text: Qué le dirías a X
+  utter_intervencion_lectordementes:
+  - text: adsada
+  utter_selector_intervencion_lectordementes:
+  - buttons:
+    - payload: /confirm
+      title: Que no ha hecho nada malo
+    - payload: /deny
+      title: Que es su culpa
+    text: Qué le dirías a X
+  utter_intervencion_pensamientoabsolutista:
+  - text: Comienza intervencion Pensamiento absolutista
+  utter_selector_intervencion_pensamientoabsolutista:
+  - buttons:
+    - payload: /confirm
+      title: Que no ha hecho nada malo
+    - payload: /deny
+      title: Que es su culpa
+    text: Qué le dirías a X
+  utter_intervencion_feedback:
+  - buttons:
+    - payload: /confirm
+      title: Sí
+    - payload: /deny
+      title: No mucho.
+    text: ¿Crees que este ejercicio te ha ayudado?
+  utter_start_genderViolence:
+  - buttons:
+    - payload: /confirmgv
+      title: Sí
+    - payload: /inform_sentiment
+      title: No, de ningún modo
+    text: ¿Sientes que estás en peligro?
+  utter_ask_genderViolence:
+  - buttons:
+    - payload: /confirmgv2
+      title: Sí
+    - payload: /inform_sentiment
+      title: No, en absoluto
+    text: ¿Estás en peligro en este momento?
+  utter_ask_2_genderViolence:
+  - buttons:
+    - payload: /confirmgv3
+      title: No, no me siento segura
+    - payload: /inform_sentiment
+      title: Sí
+    text: ¿Te sientes segura en tu relación?
+  utter_call_to_emergency:
+  - text: Se ha enviado una notificación automática sobre la situación ✉️ a los encargados de la plataforma.Es conveniente que lo comentes 🗣️ con alguien cercano, un terapeuta, o bien acudas a un servicio de urgencias 🏥.
+  utter_call_to_emergency_gv:
+  - text: Se ha enviado una notificación automática sobre la situación ✉️ a los encargados de la plataforma.Es conveniente que lo comentes 🗣️ con alguien cercano, un terapeuta, o bien acudas a un servicio de urgencias 🏥.
+  utter_answer_no_genderViolence:
+  - text: De acuerdo, disculpa, no te entendí adecuadamente 🙂. Por dónde íbamos...¿Qué tal te ha ido el día?
+actions:
+- deny_valor
+- confirm_valor
+# forms:
+#   sentiment_form:
+#     ignored_intents: []
+#     required_slots:
+#     - sentiment
+e2e_actions: []
