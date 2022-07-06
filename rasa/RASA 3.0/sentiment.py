@@ -1,56 +1,76 @@
-import os
-from rasa.engine.graph import GraphComponent  # new in rasa 3.0
+import logging
+from typing import Any, Text, Dict, List, Type
+from rasa.engine.recipes.default_recipe import DefaultV1Recipe
+from rasa.engine.graph import ExecutionContext, GraphComponent
+from rasa.engine.storage.resource import Resource
+from rasa.engine.storage.storage import ModelStorage
+from rasa.nlu.tokenizers.tokenizer import Token, Tokenizer
+from rasa.shared.nlu.training_data.training_data import TrainingData
 from rasa.nlu.extractors.extractor import EntityExtractorMixin
-# from rasa.nlu.components import Component
-from rasa.nlu import utils
-from rasa.engine.storage.resource import Resource  # new in rasa 3.0
-from rasa.engine.storage.storage import ModelStorage  # new in rasa 3.0
-from rasa.engine.recipes.default_recipe import DefaultV1Recipe  # new in rasa 3.0
-# from rasa.nlu.model import Metadata  #not support in rasa 3.0
-# from pysentimiento import SentimentAnalyzer  # doesn't seem to work. we try with the component above
-from pysentimiento import create_analyzer
+from rasa.shared.nlu.training_data.message import Message
+from rasa.shared.nlu.constants import (
+    TEXT_TOKENS,
+    ENTITIES,
+    ENTITY_ATTRIBUTE_CONFIDENCE,
+    ENTITY_ATTRIBUTE_VALUE,
+    TEXT
+)
+from pysentimiento import SentimentAnalyzer
+from sklearn.metrics import SCORERS
+
+logger = logging.getLogger(__name__)
 
 
 @DefaultV1Recipe.register(
-    [DefaultV1Recipe.ComponentType.ENTITY_EXTRACTOR], is_trainable=False
-    )
-class SentimentEntityExtractor(GraphComponent, EntityExtractorMixin):
-    """A pre-trained sentiment component"""
+    DefaultV1Recipe.ComponentType.ENTITY_EXTRACTOR, is_trainable=False
+)
+class SentimentEntityExtractor(EntityExtractorMixin, GraphComponent):
 
-    name = "sentiment"
-    provides = ["entities"]
-    requires = []
-    defaults = {}
-    language_list = ["es"]
-    analyzer = create_analyzer(task="sentiment", lang="es")
+    @staticmethod
+    def required_packages() -> List[Text]:
+        """Any extra python dependencies required for this component to run."""
+        return ["pysentimiento"]
 
-    def __init__(self, GraphComponent_config=None):
-        super(SentimentEntityExtractor, self).__init__(GraphComponent_config)
+    @staticmethod
+    def get_default_config() -> Dict[Text, Any]:
+        """Returns the component's default config."""
+        return {"lang": "es"}
 
-    def convert_to_rasa(self, label, score):
-        """Convert model output into the Rasa NLU compatible output format."""
+    def __init__(
+        self,
+        config: Dict[Text, Any],
+        name: Text,
+        model_storage: ModelStorage,
+        resource: Resource,
+    ) -> None:
+        self.analyzer = SentimentAnalyzer(config.get("lang"))
 
-        entity = {"value": label,
-                  "confidence": score,
-                  "entity": "sentiment",
-                  "extractor": "sentiment_extractor"}
+        # We need to use these later when saving the trained component.
+        self._model_storage = model_storage
+        self._resource = resource
 
-        return entity
+    @classmethod
+    def create(
+        cls,
+        config: Dict[Text, Any],
+        model_storage: ModelStorage,
+        resource: Resource,
+        execution_context: ExecutionContext,
+    ) -> GraphComponent:
+        return cls(config, execution_context.node_name, model_storage, resource)
 
-    def process(self, message, **kwargs) -> None:
-        """Retrieve the text message, pass it to the classifier
-            and append the prediction results to the message class."""
-        
-        # Skip the training to fix error when executing `rasa train` command
-        # TODO: find an alternative to check for the 'text' key and skip training
-        try: 
-            result = self.analyzer.predict(message.data['text'])  
+    def process(self, messages: List[Message]) -> List[Message]:
+        for message in messages:
+            self._set_entities(message)
+        return messages
 
-            label = result.output
-            score = round(result.probas[label], 2)
+    def _set_entities(self, message: Message, **kwargs: Any) -> None:
+        result = self.analyzer.predict(message.data[TEXT])
+        entity = result.output
+        score = round(result.probas[entity], 2)
+        extracted_entities = [
+            {ENTITY_ATTRIBUTE_CONFIDENCE: score, ENTITY_ATTRIBUTE_VALUE: entity}]
 
-            entity = self.convert_to_rasa(label, score)
-
-            message.set("entities", [entity], add_to_output=True)
-        except KeyError:
-            entity = None
+        message.set(
+            ENTITIES, message.get(ENTITIES, []) + extracted_entities, add_to_output=True
+        )
