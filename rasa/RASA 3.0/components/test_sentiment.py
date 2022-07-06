@@ -13,7 +13,7 @@ from sentiment import SentimentEntityExtractor
 def entity_extractor(tmpdir):
     """Generate a sentiment extractor with a tmpdir as the model storage."""
     node_storage = LocalModelStorage(pathlib.Path(tmpdir))
-    node_resource = Resource("sparse_feat")
+    node_resource = Resource("sentiment_entity_extractor")
     context = ExecutionContext(node_storage, node_resource)
     return SentimentEntityExtractor(
         config=SentimentEntityExtractor.get_default_config(),

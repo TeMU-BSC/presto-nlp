@@ -9,7 +9,6 @@ from rasa.shared.nlu.training_data.training_data import TrainingData
 from rasa.nlu.extractors.extractor import EntityExtractorMixin
 from rasa.shared.nlu.training_data.message import Message
 from rasa.shared.nlu.constants import (
-    TEXT_TOKENS,
     ENTITIES,
     ENTITY_ATTRIBUTE_CONFIDENCE,
     ENTITY_ATTRIBUTE_VALUE,

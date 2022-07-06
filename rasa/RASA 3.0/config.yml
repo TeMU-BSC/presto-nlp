@@ -20,7 +20,7 @@ pipeline:
     epochs: 20
     constrain_similarities: true # revisar
   - name: EntitySynonymMapper
-  - name: sentiment.SentimentEntityExtractor
+  - name: components.sentiment.SentimentEntityExtractor
 
 
 # Fallback and chitchat components

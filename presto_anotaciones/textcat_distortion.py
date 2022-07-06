@@ -17,19 +17,20 @@ hierarchy = {'distorsión': ['sobregeneralización', 'leer la mente', 'imperativ
 # Custom streamer
 
 
-def get_stream_nested(examples):
+def get_stream_nested(examples, annotator_id):
     for eg in examples:   # the examples with top-level categories
-        top_labels = eg['accept']  # ['A'] or ['B', 'C'] if multiple choice
-        for label in top_labels:
-            if label != "no distorsión":
-                sub_labels = hierarchy[label]
-                options = [{'id': opt, 'text': opt, 'pre-ann-category': eg['pre-ann-category']}
-                           for opt in sub_labels]
-                # create new example with text and sub labels as options
-                shuffle(options)  # shuffle sub_labels for each example
-                new_eg = {'id': eg['id'], 'text': eg['text'], 'options': options,
-                          'pre-ann-category': eg['pre-ann-category']}
-                yield new_eg
+        if eg['_annotator_id'] == annotator_id:
+            top_labels = eg['accept']  # ['A'] or ['B', 'C'] if multiple choice
+            for label in top_labels:
+                if label and label != "no distorsión":
+                    sub_labels = hierarchy[label]
+                    options = [{'id': opt, 'text': opt, 'pre-ann-category': eg['pre-ann-category']}
+                               for opt in sub_labels]
+                    # create new example with text and sub labels as options
+                    shuffle(options)  # shuffle sub_labels for each example
+                    new_eg = {'id': eg['id'], 'text': eg['text'], 'options': options,
+                              'pre-ann-category': eg['pre-ann-category']}
+                    yield new_eg
 
 
 @prodigy.recipe(
@@ -44,6 +45,7 @@ def get_stream_nested(examples):
 def textcat_multiple_nested(  # from https://github.com/explosion/prodigy-recipes/blob/master/textcat/textcat_manual.py
     dataset: str,
     source: str,
+    annotator: str,
     # label: Optional[List[str]] = None,
     exclusive: bool = False,
     exclude: Optional[List[str]] = None,
@@ -61,7 +63,8 @@ def textcat_multiple_nested(  # from https://github.com/explosion/prodigy-recipe
     stream = db.get_dataset(source)
 
     has_options = True
-    new_stream = get_stream_nested(stream)
+    annotator_id = f"{source}-{annotator}"
+    new_stream = list(get_stream_nested(stream, annotator_id))
 
     return {
         # Annotation interface to use
