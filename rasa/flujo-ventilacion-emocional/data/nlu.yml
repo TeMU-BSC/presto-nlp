@@ -1,6 +1,6 @@
 version: "2.0"
 nlu:
-- intent: inform_sentiment
+- intent: inform_sentiment # no etiquetar emociones - gestionado por componente externo
   examples: |
     - mal
     - me siento demasiado bien
@@ -10,7 +10,6 @@ nlu:
     - Estos días estoy de muy buen humor
     - me he sentido genial gracias por preguntar
     - estoy genial
-    - me quiero matar ahora mismo, no soporto ni un minuto más mi vida de mierda
     - pues no estoy bien porque mi familia no para de hacerme la vida imposible, estoy desesperado y quiero que me dejen en paz
     - no soy feliz
     - mi vida es una mierda
@@ -29,10 +28,8 @@ nlu:
     - fatal
     - mal muy mal
 
-### Specific
+### distorsiones - ejemplos extraidos directamente de su dataset. De momento con estos ejemplos el diet se comporta, pero es plausible su externalización en un componente custom
 - intent: sobregeneralizacion
-  metadata:
-    sentiment: NEG
   examples: | 
     - Todo me sale fatal
     - Nunca cumple con su palabra es que siempre hace igual
@@ -1002,11 +999,11 @@ nlu:
     - mi familia estaría mejor sin mi
     - soy un estorbo para mis seres queridos
     - me quito del medio
-    - quiero desaàrecer
+    - quiero desaparecer
     - Pienso que quizás es mejor desaparecer
     - quiero morir
     - He pensado en dejar de existir y todos estarían mejor sin mí
-    - Pienso en morir
+    - Pienso en morir tengo [miedo](miedo)
     - a veces pienso que la vida no tiene sentido
     - creo que me pegaré un tiro
     - no puedo más
@@ -1016,66 +1013,10 @@ nlu:
     - No puedo soportar más este dolor
     - Esta vida no tiene sentido 
     - Estoy cansado de luchar
-
-
-
-
-  # - text: |
-  #     me quiero morir
-  #   metadata:
-  #     sentiment: NEG
-  # - text: |
-  #     quiero matarme
-  #   metadata:
-  #     sentiment: NEG
-  # - text: |
-  #     matar
-  #   metadata:
-  #     sentiment: NEG
-  # - text: |
-  #     suicidio
-  #   metadata:
-  #     sentiment: NEG
-  # - text: |
-  #     ideas de muerte
-  #   metadata:
-  #     sentiment: NEG
-  # - text: |
-  #     desaparecer para siempre
-  #   metadata:
-  #     sentiment: NEG
-  # - text: |
-  #     voy a hacerme daño
-  #   metadata:
-  #     sentiment: NEG
-  # - text: |
-  #     ayuda urgente
-  #   metadata:
-  #     sentiment: NEG
-  # - text: |
-  #     quiero dejar de existir
-  #   metadata:
-  #     sentiment: NEG
-  # - text: |
-  #     es mejor estar muerto
-  #   metadata:
-  #     sentiment: NEG
-  # - text: |
-  #     he pensado en suicidarme
-  #   metadata:
-  #     sentiment: NEG
-  # - text: |
-  #     me voy a suicidar
-  #   metadata:
-  #     sentiment: NEG
-  # - text: |
-  #     quiero pegarme un tiro
-  #   metadata:
-  #     sentiment: NEG
-  # - text: |
-  #     quiero cortarme las venas
-  #   metadata:
-  #     sentiment: NEG
+    - tengo [miedo](miedo) de hacerme daño
+    - siento [panico](miedo) porque pienso en hacerme daño
+    - me gustaria estar muerto
+    - ojala estuviera muerta
 
 - intent: genderViolence
   examples: |
@@ -1089,8 +1030,8 @@ nlu:
     - Me mira el teléfono
     - No me deja tener redes sociales
     - No me deja vestirme como quiero
-    - Me llama puta
-    - Me llama guarra
+    - Me llama [puta](insult)
+    - Me llama guarra(insult)
     - Dice que soy una fresca
     - Me amenaza con sacarme a los hijos
     - Me obliga a tener relaciones sexuales
@@ -1127,6 +1068,10 @@ nlu:
   examples: |
     - /emergency
     
+- intent: alert_detected
+  examples: |
+    - /alert_detected
+
 - intent: confirmgv
   examples: |
     - /confirmgv
@@ -1140,9 +1085,11 @@ nlu:
 - intent: confirmcontar
   examples: |
     - /confirmcontar
-# - intent: confirm_gv
-#   examples: |
-#     - /confirm_gv
+
+- intent: denypsicoeduc
+  examples: |
+    - /denypsicoeduc
+
 
 ### Greetings and commands
 - intent: greet
@@ -1167,7 +1114,7 @@ nlu:
     - bona tarde
     
 
-- intent: nlu_fallback
+- intent: nlu_fallback #refuerzo inputs ambiguos
   examples: |
     - tengo a mi [madre](valorFamilia) en el hospital
     - tengo que ir al medico 
@@ -1175,6 +1122,7 @@ nlu:
     - he tenido una discusión con mi [pareja](valorPareja)
     - me he enterado hoy que ha fallecido un compañero de trabajo
     - llevaba todo mi dinero en la cartera y ahora no tengo para pagar la academia
+    - se ha muerto mi perro
 
 
 - intent: goodbye_nicemood
@@ -1194,13 +1142,20 @@ nlu:
 - intent: confirm
   examples: |
     - sí
-    - claro
+    - claro si
     - vamos allá
     - por supuesto
     - genial
     - de acuerdo
     - /confirm
     - yes
+    - pues si
+    - si si 
+    - que si 
+    - pues si claro si
+    - si
+    - hombre claro
+    - claro
 - intent: ready
   examples: |
     - ya
@@ -1212,6 +1167,8 @@ nlu:
 - intent: deny
   examples: |
     - No
+    - pues No
+    - no no
     - mejor no
     - no me apetece
     - la verdad es que no quiero
@@ -1242,6 +1199,7 @@ nlu:
     - Cómo te suele llamar la gente
     - cuál es tu nombre?
     - quién eres
+    - 
 - intent: chitchat/help_me
   examples: |
     - ¿Puedes ayudarme?
@@ -1286,6 +1244,10 @@ nlu:
     - [gilipollas](insult)
     - [Me cago en tu puta madre](insult)
     - [subnormal](insult)
+    - [hija de puta](insult)
+    - [puta](insult)
+    - [me cago en tus muertos](insult)
+    - eres un [puto coñazo](insult)
 
 - intent: chitchat/whichbook
   examples: |
@@ -1337,16 +1299,6 @@ nlu:
     - ¿me podrías dar alguna idea para jugar?
     - recomiéndame un juego de mesa
 
-# - intent: chitchat/whichcomic
-#   examples: |
-#     - cuál es tu [comic](comic) preferido
-#     - qué tipo de [comic](comic) te gusta
-#     - qué [comic](comic) podría ver leer finde
-#     - ¿me podrías dar alguna idea para leerme un [comic](comic)?
-#     - recomiéndame un [comic](comic)
-#     - [comic](comic)
-#     - te gusta leer [comics](comic)
-
 - intent: chitchat/whichfood
   examples: |
     - cuál es tu comida preferida
@@ -1366,6 +1318,8 @@ nlu:
     - cuál es tu [ciudad](place) preferida
     - recomiéndame una [ciudad](place) para conocer
     - dónde te gustaría viajar
+    - En qué [ciudad](place) vives
+    - donde vives
 
 - intent: chitchat/freetime
   examples: |
@@ -1423,16 +1377,61 @@ nlu:
     - recomiendame una [cancion](musica)
     - cual es tu [cancion](musica) favorita
 
-- intent: chitchat/whichflower
-  examples: |
-    - puedes oler las flores
-    - qué flores te gustan
-    - te gusta la jardinería
-    - muéstrame flores
-    - cuáles son tus flores favoritas
 
+- intent: faq/tufuncion
+  examples: |
+    - para qué sirves
+    - cuál es tu función
+    - qué puedes hacer por mí
+    - qué puedes hacer
+    - vicky qué haces exactamente
+    - Tu función cual es
+    - Qué servicios me puedes ofrecer
+    - por mí que puedes hacer
+
+- intent: faq/privacidad
+  examples: |
+    - privacidad
+    - mis datos son privados
+    - qué haceis con las conversaciones
+    - cómo gestiona esta app los datos
+    - datos privados cómo se gestionan
+    - nuestras conversaciones son publicas
+    - quien ve lo que hablamos
+    - quien sabe de nuestras conversaciones
+
+- intent: faq/contacto
+  examples: |
+    - Como puedo contactar con vosotros
+    - dame un telefono de contacto
+
+- intent: faq/plantratamiento
+  examples: |
+    - plan de tratamiento
+    - para que sirve el plan de tratamiento
+    - plan de tratamiento para qué sirve
+    - plan tratamiento dame informacion
+    - qué me puedes decir del plan de tratamiento
+    - quiero empezar el tratamiento
+
+- intent: faq/modulos
+  examples: |
+    - módulo de intervención
+    - cómo funcionan los modulos de intervencion
+    - para que sirven los modulos
+    - modulos de intervencion para que sirve
+    - me puedes dar más información sobre los modulos intervencion
+
+- intent: faq/objetivo
+  examples: |
+    - objetivo semanal
+    - cómo funciona el objetivo semanal
+    - para que sirve el objetivo semanal
+    - quiero informacion sobre el objetivo semanal
+    - que es el objetivo semanal
 
 ### Entities
+#Valores - las entidades de valores ahora mismo no aplican en las respuestas (solo al clasificador). Se pueden implementar sin problemas. 
 - synonym: valorFamilia
   examples: |
     - familia
@@ -1455,6 +1454,9 @@ nlu:
     - colega
     - conocido
     - vecina
+
+ # Entidades de refuerzo clasificador chitchat:
+
 - synonym: musica
   examples: |
     - musica
@@ -1485,3 +1487,14 @@ nlu:
     - imbecil
     - gilipollas
     - capullo
+    - zorra
+    - puta
+    - perra
+    - petarda
+    - mongola
+
+# Entidad de refuerzo para desambiguar distorsion conflictiva con suicidio
+- synonym: miedo
+  examples: |
+    - miedo
+    - pánico

@@ -32,17 +32,19 @@ rules:
 
 - rule: prioritize alert intent
   steps:
-    - intent: alert
-    - action: utter_alert
+  - intent: alert
+  - action: utter_alert
 
-    # - intent: confirm
-    # - action: utter_call_to_emergency
-# - rule: priorize alert intent_no problem
+# - rule: bring_back ##experimentacion
 #   steps:
-#     - intent: emergency
-#     - action: utter_emergency
-#     - intent: deny
-#     - action: utter_answer_no_genderViolence
+#   - intent: bring_back
+#   # - action: utter_restart
+#   - action: utter_si_contar
+
+- rule: respond to FAQs
+  steps:
+  - intent: faq
+  - action: utter_faq
 
 ### unlikely hoping wrap up worksa
 

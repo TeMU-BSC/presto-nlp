@@ -70,6 +70,10 @@ intents:
     use_entities: false
     ignore_entities:
     - sentiment
+- alert_detected:
+    use_entities: false
+    ignore_entities:
+    - sentiment
 - genderViolence:
     use_entities: true
     ignore_entities:
@@ -82,14 +86,25 @@ intents:
     use_entities: true
 - confirmcontar:
     use_entities: true
+- denypsicoeduc:
+    use_entities: true
 - feedbackemotion:
     use_entities: true
-entities:
+- faq: 
+    use_entities: true
+
+entities: 
 - sentiment
 - valorPareja
 - valorFamilia
 - valorSocial
 - name
+- miedo
+- musica
+- animal
+- insult
+- lectura
+- place
 slots:
   sentiment:
     type: rasa.shared.core.slots.CategoricalSlot
@@ -137,6 +152,10 @@ responses:
   # - text: ¡Cómo me alegra leer este tipo de cosas! Las emociones que nos hacen sentir bien, así como aquellas que nos hacen sentir mal, forman parte de nuestra vida. Te proponemos detenerte un momento para escuchar como está tu cuerpo en estos instantes en que te estás sintiendo bien.
   - text: ¡Fántastico!
   - text: ¡Cómo me alegra leer esto! 
+
+  utter_sentiment_NEG_sm:
+  - text: Lamento leer esto
+  - text: Siento esto que me cuentas.
   utter_selector_POS:
   - buttons:
     - payload: /confirm
@@ -152,13 +171,12 @@ responses:
       title: Quiero aprender algo sobre las emociones positivas
     text: ¿Quieres compartir conmigo algo más sobre esto o prefieres que te cuente un poco sobre las emociones positivas 🙂?
   utter_ask_tell_more_POS:
-  # - buttons:
-  #   - payload: /confirm
-  #     title: Claro
-  #   - payload: /deny
-  #     title: En otro momento
-  - text: ¿Te apetece contarme algo más sobre esto?
-  - text: ¿Te gustaría compartir conmigo algo más sobre esto?
+  - buttons:
+    - payload: /confirm
+      title: Claro
+    - payload: /deny
+      title: En otro momento
+    text: ¿Te apetece contarme algo más sobre esto?
   utter_selector_POS_finish:
   - buttons:
     - payload: /confirm
@@ -177,7 +195,9 @@ responses:
 
 
  ### TEST
-
+  utter_ventilacion_nd_final:
+  - text: Etiquetar la emoción es el primer paso para poder regular nuestro comportamiento a las necesidades de la situación. Ahora quédate con esta sensación. No la juzgues, simplemente obsérvala hasta que acabe bajando de intensidad. Recuerda que, cualquier emoción (sea agradable o desagradable) acaba disminuyendo con el tiempo.
+  - text: Aunque ahora mismo te sientas mal, quería proponerte que aprovecharas este momento para probar de des-identificarte de la emoción (tú no eres esa emoción, eres mucho más que esta emoción). Ahora reconócela y observa la naturaleza cambiante y transitoria de la misma. Conocer mejor lo que nos sucede a nivel emocional, nos permite desarrollar una relación menos reactiva con la experiencia interior. Nos permite reconocer y soltar más fácilmente las tormentas emocionales.   
 
 # Recuerda que tienes a tu disposición herramientas para trabajar siempre que quieras
   utter_sentiment_NEU:
@@ -189,24 +209,30 @@ responses:
   utter_alert:
   - buttons:
     - payload: /emergency
-      title: Tengo miedo de hacerme daño
+      title: Sí
     - payload: /inform_sentiment
-      title: Mejor no
-    text: Me sabe mal que te encuentres así, déjame ayudarte. ¿Qué te ocurre?
+      title: "No"
+    text: Me sabe mal que te encuentres así, déjame ayudarte. ¿Has pensado en hacerte daño últimamente?
   utter_confirm_emergency:
   - buttons: 
     - payload: /emergency
-      tittle: sí
-    - payload: /inform_sentiment
-      tittle: "No"
-    text: "¿Te has autolesionado?"
-  utter_emergency:
-  - buttons:
-    - payload: /emergency
-      title: Sí
-    - payload: /deny
+      title: sí
+    - payload: /alert_detected
       title: "No"
-    text: ¿Has pensado recientemente o en estos momentos en el suicidio?
+    text: "¿Tienes miedo de hacerte daño en este momento?"
+  utter_alert_detected:
+  - text: Se ha enviado una notificación automática sobre la situación  ✉️ a los encargados de la plataforma. Es conveniente que lo comentes 🗣️ con alguien cercano, un terapeuta, o bien o acudas a un servicio de urgencias 🏥.
+  utter_alert_detected_selector:
+  - buttons:
+    - payload: /url
+      title: Más preguntas
+    - payload: /inform_sentiment
+      title: "Continuar conversación"
+    text: "Me gustaría hacerte alguna pregunta más, pero si prefieres podemos continuar nuestra conversación."
+  utter_emergency:
+  - text:  ¡Vaya! Lamento escuchar esto 😟, por favor, haz clic en este enlace "URL" para que pueda seguir ayudándote.
+  utter_denypsicoeduc:
+  - text: "De acuerdo, recuerda que siempre puedo ayudarte también desde nuestra app(enlace)"
 ## chitchat
   utter_chitchat/ask_name:
   - text: "Mi nombre es Vicky, ¡encantada de conocerte! En este espacio puedo\n- Ayudarte a identificar y a trabajar sobre aquellos patrones de pensamiento que te hacen sentir mal\n - Ayudarte a identificar las cosas que son realmente importantes para ti para poder actuar en consonancia a ellas.\n- En el caso que detectemos una situación de riesgo, intentaremos ofrecerte la mejor ayuda posible."
@@ -216,7 +242,7 @@ responses:
   - text: 'Mi misión es ayudarte a cuidar algo tan importante como la salud mental. Si te parece podemos empezar con una de las opciones que te muestro a continuación:'
   utter_chitchat/how_are_u:
   - text: Como todo el mundo, tengo días mejores y días peores. Algo que me anima siempre es poder ayudarte 😊
-  - text: Estoy genial, muchas gracias, por preocuparte por mí 🥰
+  - text: Estoy genial. Muchas gracias por preocuparte por mí 🥰
   utter_chitchat/who_are_u:
   - text: Detrás de Vicky somos un equipo multidisciplinar dedicado al bienestar de la salud mental tanto en atención primaria, atención especializada y salud laboral.
   utter_chitchat/something_curious:
@@ -232,7 +258,7 @@ responses:
   utter_chitchat/whichmovie:
   - text: Una de mis películas favoritas de animación es Inside Out. Me encantó también Captain Fantastic, ¿te imaginas vivir rodeada de tanta naturaleza 🌳❤️?
   utter_chitchat/whichboardgame:
-  - text: Uno de mis juegos preferidos es Aventureros al Tren! Me encanta sentir que puedo viajar a cualquier parte del mundo 🚂🌎S
+  - text: Uno de mis juegos preferidos es Aventureros al Tren! Me encanta sentir que puedo viajar a cualquier parte del mundo 🚂🌎
   utter_chitchat/whichplace:
   - text: Me imagino mi ciudad ideal anclada al Mediterráneo con calles repletas de azahar y arquitectura mozárabe. ¿Suena bien verdad?
   utter_chitchat/whichfood:
@@ -243,8 +269,6 @@ responses:
   - text: Tengo que reconocer que la maldad innata de los gatos me resulta fascinante 🫶😼
   utter_chitchat/joke:
   - text: Si los zombies 🧟 se deshacen con el paso del tiempo ¿zombiodegradables?
-  utter_chitchat/whichflower:
-  - text: Me encanta buscar imágenes con girasoles, margaritas, lirios y tulipanes 🌻🌷🌼
   utter_chitchat/whichmusic:
   - text: "Me encanta escuchar a Iseo, ¿la conoces? haz clic aquí si quieres escucharla: [ISEO: EL CAMINO 🎵](https://www.youtube.com/watch?v=yC96ugsa5q0)"
   utter_chitchat/insult:
@@ -259,6 +283,19 @@ responses:
   - text: Gracias a ti por charlar este ratito conmigo y dejar que te ayude en algo tan importante como lo es la salud mental.
   - text: 😊 Un placer, recuerda que estoy aquí siempre que lo necesites.
   
+## FAQs
+  utter_faq/plantratamiento:
+  - text: El plan de tratamiento es un plan terapéutico personalizado según las respuestas que nos das al contestar las escalas de evaluación. Así podemos proponerte el plan más adecuado según tus necesidades. Consiste en una serie de módulos de intervención que esperamos te ayuden a sentirse mejor. Puedes acceder a tu plan de tratamiento haciendo click aquí URL.
+  utter_faq/contacto: 
+  - text: Para cualquier consulta o pregunta que tenga sobre la plataforma o el estudio puedes dirigirte a los investigadores principales del mismo, escribiendo a ✉️ info@prestoclinic.cat.
+  utter_faq/privacidad:
+  - text: Algunos datos anonimizados 🤐 (esto quiere decir en su conjunto y sin identificar a nadie en específico) de uso del chatbot serán usados para mejorar el chatbot en sí y para validar su utilidad clínica en estudios de investigación y así poder ofrecerlo en el futuro a más personas. Estos datos serán siempre y solamente almacenados, procesados y analizados por personal investigador🔬 autorizado del Hospital Clínic de Barcelona🏥. Puedes saber más sobre la privacidad del chatbot y de PRESTOapp haciendo click aquí URL.
+  utter_faq/tufuncion: 
+  - text: "🙋 Mi función es acompañarte, guiarte y ofrecerte herramientas, para poder mejorar tu bienestar emocional, acercarte a tus objetivos vitales y, quizás así, poder sentirte mejor 🙂. Aquí vas a ser tú la persona que elija, tanto el momento en el que trabajar, como la forma, el orden de intervención o incluso el método. /nLo que pretendemos es que, a través de una conversación 💬 en la que te sientas acompañado, vayamos descubriendo cuáles son tus necesidades emocionales en las que podemos ayudar para que te sientas mejor. Buscamos ser tu aliada en esta decisión tan valiente 💪 y valiosa de dedicarte tiempo a ti y a tu salud mental 🧠✔️."
+  utter_faq/modulos:
+  - text: "Una vez creado tu plan de tratamiento personalizado (URL), tendrás acceso a una serie de módulos de intervención para poder trabajar sobre problemas específicos con la finalidad de sentirte mejor. /nPuedes trabajar sobre un máximo de 3 módulos a la vez, aunque te recomendamos focalizarte en uno a la semana./nTe recomendamos que pruebes las diferentes funciones dentro de los módulos. Recuerda que aunque ya hayas completado uno, siempre puedes volver a acceder a lo que te haya sido útil 😊"
+  utter_faq/objetivo:
+  - text: El objetivo semanal tiene un papel muy importante en los módulos de intervención. Consiste en marcar unas metas a realizar diariamente durante una semana para mejorar tu malestar en un aspecto particular.
   # utter_youre_welcome:
   # - text: 😊 Un placer, recuerda que estoy aquí siempre que lo necesites.
   # utter_out_of_scope-wrap_up:
@@ -275,7 +312,7 @@ responses:
         - type: slot
           name: valorFamilia
           value: valorFamilia
-      text: "La familia generalmente supone un pilar fundamental en nuestra vida. ¿Querrías contarme algo más sobre esto?"
+      text: "La familia generalmente supone un pilar fundamental en nuestra vida. ¿Quieres contarme algo más sobre esto?"
     - condition:  # A conditional response variation with multiple slot-value constraints.
         # - type: slot
         #   name: sentiment
@@ -325,23 +362,26 @@ responses:
   
   utter_ventilacion_nd_feedback:
   - text: Tras esta pequeña conversación, no he detectado ningún pensamiento alarmante, pero si me permites voy a compartir contigo un consejo que me ha servido de mucho 🤓
-  utter_ventilacion_nd_final:
-  - text: Etiquetar la emoción es el primer paso para poder regular nuestro comportamiento a las necesidades de la situación. Ahora quédate con esta sensación. No la juzgues, simplemente obsérvala hasta que acabe bajando de intensidad. Recuerda que, cualquier emoción (sea agradable o desagradable) acaba disminuyendo con el tiempo.
-  - text: Aunque ahora mismo te sientas mal, quería proponerte que aprovecharas este momento para probar de des-identificarte de la emoción (tú no eres esa emoción, eres mucho más que esta emoción). Ahora reconócela y observa la naturaleza cambiante y transitoria de la misma. Conocer mejor lo que nos sucede a nivel emocional, nos permite desarrollar una relación menos reactiva con la experiencia interior. Nos permite reconocer y soltar más fácilmente las tormentas emocionales. 
   utter_ventilacion_nd_opcional:
+  - text: meter aqui la posibilidad de educacion emocional
+  utter_advice_NEG:
+  - text: Etiquetar la emoción es el primer paso para poder reholgular nuestro comportamiento a las necesidades de la situación. Ahora quédate con esta sensación. No la juzgues, simplemente obsérvala hasta que acabe bajando de intensidad. Recuerda que, cualquier emoción (sea agradable o desagradable) acaba disminuyendo con el tiempo.
+  - text: Aunque ahora mismo te sientas mal, quería proponerte que aprovecharas este momento para probar de des-identificarte de la emoción (tú no eres esa emoción, eres mucho más que esta emoción). Ahora reconócela y observa la naturaleza cambiante y transitoria de la misma. Conocer mejor lo que nos sucede a nivel emocional, nos permite desarrollar una relación menos reactiva con la experiencia interior. Nos permite reconocer y soltar más fácilmente las tormentas emocionales. 
+  utter_selector_NEG_last:
   - buttons:
-    - payload: /autoestima
-      title: Autoestima
-    - payload: /estres_laboral
-      title: Estrés laboral
-    text: "Más allá de este consejo, después de este ratito hablando, no he detectado ningún pensamiento que pueda estar jugándote malas pasadas, pero si quieres, puedes seleccionar alguno de estos temas para que lo trabajemos de manera conjunta :) "
+    - payload: /confirm
+      title: Me gustaría seguir hablando
+    - payload: /feedbackemotion
+      title: Quiero aprender algo sobre las emociones negativas
+    text: ¿Quieres compartir conmigo algo más sobre esto o prefieres que te cuente un poco sobre las emociones negativas 🙂?
+
 
   ## psicoeducacion general
   utter_selector_psicoeduc_general:
   - buttons:
     - payload: /confirm
       title: "Sí"
-    - payload: /deny
+    - payload: /denypsicoeduc
       title: "Mejor no"
     text: ¿Quieres que continuemos?
   utter_selector_psicoeduc_1:
@@ -470,7 +510,7 @@ responses:
       title: Que es su culpa
     text: Qué le dirías a X
   utter_intervencion_sobregen:
-  - text: Comienza intervencion sobregeneralizacion
+  - text: Te animo entonces, a que sigas este enlace para comenzar a trabajar esto
   ### Intervencion adivinacion
   utter_selector_intervencion_adivinacion:
   - buttons:
@@ -480,7 +520,7 @@ responses:
       title: Que es su culpa
     text: Qué le dirías a X
   utter_intervencion_adivinacion:
-  - text: Comienza intervencion adivinacion
+  - text: Trabajar sobre estas distorsiones puede ayudarte a estar mejor. Si te apetece, sigue este enlace para probarlo 👉 "URL"
   ### Intervencion catastrofismo
   utter_selector_intervencion_catastrofismo:
   - buttons:
@@ -490,10 +530,10 @@ responses:
       title: Que es su culpa
     text: Qué le dirías a X
   utter_intervencion_catastrofismo:
-  - text: Comienza intervencion catastrofismo
+  - text: Trabajar sobre estas distorsiones puede ayudarte a estar mejor. Si te apetece, sigue este enlace para probarlo 👉 "URL"
   ### Intervencion deberias
   utter_intervencion_deberias:
-  - text: Comienza intervención deberías
+  - text: Trabajar sobre estas distorsiones puede ayudarte a estar mejor. Si te apetece, sigue este enlace para probarlo 👉 "URL"
   utter_selector_intervencion_deberias:
   - buttons:
     - payload: /confirm
@@ -503,7 +543,7 @@ responses:
     text: Qué le dirías a X
   ### Intevencion etiquetado
   utter_intervencion_etiquetado:
-  - text: Comienza intervencion etiquetado
+  - text: Trabajar sobre estas distorsiones puede ayudarte a estar mejor. Si te apetece, sigue este enlace para probarlo 👉 "URL"
   utter_selector_intervencion_etiquetado:
   - buttons:
     - payload: /confirm
@@ -513,7 +553,7 @@ responses:
     text: Qué le dirías a X
   ### Intervencion lectordementes
   utter_intervencion_lectordementes:
-  - text: adsada
+  - text: Trabajar sobre estas distorsiones puede ayudarte a estar mejor. Si te apetece, sigue este enlace para probarlo 👉 "URL"
   utter_selector_intervencion_lectordementes:
   - buttons:
     - payload: /confirm
@@ -523,7 +563,7 @@ responses:
     text: Qué le dirías a X
   ### Intervencion pensamientoabsolutista
   utter_intervencion_pensamientoabsolutista:
-  - text: Comienza intervencion Pensamiento absolutista
+  - text: Trabajar sobre estas distorsiones puede ayudarte a estar mejor. Si te apetece, sigue este enlace para probarlo 👉 "URL"
   utter_selector_intervencion_pensamientoabsolutista:
   - buttons:
     - payload: /confirm
@@ -548,15 +588,15 @@ responses:
       title: Sí
     - payload: /inform_sentiment
       title: No, de ningún modo
-    text: ¿Sientes que estás en peligro?
+    text: ¿Te has sentido en peligro últimamente?
 
   utter_ask_genderViolence:
   - buttons:
-    - payload: /confirmgv2
+    - payload: /confirmgv3
       title: Sí
     - payload: /inform_sentiment
       title: No, en absoluto
-    text: ¿Estás en peligro en este momento?
+    text: ¿Te encuentras en peligro en este momento?
 
   utter_ask_2_genderViolence:
   - buttons:
@@ -566,12 +606,12 @@ responses:
       title: Sí
     text: ¿Te sientes segura en tu relación?
 
-  utter_call_to_emergency:
-  - text: Se ha enviado una notificación automática sobre la situación ✉️ a los encargados de la plataforma.Es conveniente que lo comentes 🗣️ con alguien cercano, un terapeuta, o bien acudas a un servicio de urgencias 🏥.
+  # utter_call_to_emergency:
+  # - text: Se ha enviado una notificación automática sobre la situación ✉️ a los encargados de la plataforma.Es conveniente que lo comentes 🗣️ con alguien cercano, un terapeuta, o bien acudas a un servicio de urgencias 🏥.
   utter_call_to_emergency_gv: 
-  - text: Se ha enviado una notificación automática sobre la situación ✉️ a los encargados de la plataforma.Es conveniente que lo comentes 🗣️ con alguien cercano, un terapeuta, o bien acudas a un servicio de urgencias 🏥.
+  - text: Se ha enviado una notificación automática sobre la situación ✉️ a los encargados de la plataforma. Es conveniente que lo comentes 🗣️ con alguien cercano, un terapeuta, o bien o acudas a un servicio de urgencias 🏥.
   utter_answer_no_genderViolence:
-  - text: De acuerdo, disculpa, no te entendí adecuadamente 🙂. Por dónde íbamos...¿Qué tal te ha ido el día?
+  - text: De acuerdo, disculpa si me he excedido con la pregunta, no te entendí adecuadamente 🙂.
 
  ## legacy
    # utter_valor_social:

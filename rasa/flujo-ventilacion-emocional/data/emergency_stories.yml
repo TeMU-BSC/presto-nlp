@@ -10,8 +10,29 @@ stories:
     - action: utter_confirm_emergency
     - intent: emergency
     - action: utter_emergency
+  
+  - story: emergency with alert /alert_detected
+    steps: 
+    - intent: alert
+    - action: utter_alert
     - intent: emergency
-    - action: utter_call_to_emergency
+    - action: utter_confirm_emergency
+    - intent: alert_detected
+    - action: utter_alert_detected
+    - action: utter_alert_detected_selector
+
+
+
+  # - story: emergency # ok revisado
+  #   steps:
+  #   - intent: alert
+  #   - action: utter_alert # selector con deny y emergency
+  #   - intent: confirm
+  #   - action: utter_confirm_emergency
+  #   - intent: emergency
+  #   - action: utter_emergency
+  #   - intent: emergency
+  #   - action: utter_call_to_emergency
 
   - story: emergency_false_alarm # ok revisado
     steps:
@@ -28,8 +49,8 @@ stories:
     - action: utter_start_genderViolence #selector con deny y emergency
     - intent: confirmgv
     - action: utter_ask_genderViolence
-    - intent: confirmgv2
-    - action: utter_ask_2_genderViolence
+    - intent: confirmgv2 #revisar
+    - action: utter_ask_2_genderViolence #revisar   ## Añadir mas
     - intent: confirmgv3
     - action: utter_call_to_emergency_gv
 

@@ -1,37 +1,35 @@
-version: "2.0"
-###falta completarlo
-stories:
+# version: "2.0"
 
-  - story: Emotion POS ## en progreso
-    steps:
-      - intent: greet
-      - action: utter_greet_ask_emotion
-      - or: 
-        - intent: inform_sentiment
-        - intent: nlu_fallback
-        - intent: sobregeneralizacion
-        - intent: etiquetado # rasa 3 con la condicion slot = pos y ya sino lista de intents + pos
-      # - action: sentiment_form
-      - slot_was_set:
-          - sentiment: POS
-      - action: utter_sentiment_POS # fantastico!
-      - action: utter_ask_tell_more_POS #quieres contarme algo mas? 
-      ##----------------hasta aquí base
-      - intent: confirm # sí o directamente 
-      - action: utter_si_contar #soy todo oidos
-      - or: 
-        - intent: inform_sentiment
-        - intent: nlu_fallback
-        - intent: sobregeneralizacion
-        - intent: etiquetado
-      - slot_was_set:
-          - sentiment: POS
-      - action: utter_sentiment_POS #fantastico!
-      - action: utter_selector_POS_last #quieres contarme algo mas o feedback?
- 
+# stories:
 
-#  - story: Emotion POS deny ## en progreso
-#    steps:
+#   - story: Emotion POS 
+#     steps:
+#       - intent: greet
+#       - action: utter_greet_ask_emotion
+#       - or: 
+#         - intent: inform_sentiment
+#         - intent: nlu_fallback
+#         - intent: sobregeneralizacion
+#         - intent: etiquetado # rasa 3 con la condicion slot = pos y ya sino lista de intents + pos
+#       - slot_was_set:
+#           - sentiment: POS
+#       - action: utter_sentiment_POS # fantastico!
+#       - action: utter_ask_tell_more_POS #quieres contarme algo mas? -- meterle el selector
+#       ##----------------hasta aquí base
+#       - intent: confirm # sí o directamente 
+#       - action: utter_si_contar #soy todo oidos
+#       - or: 
+#         - intent: inform_sentiment
+#         - intent: nlu_fallback
+#         - intent: sobregeneralizacion
+#         - intent: etiquetado
+#       - slot_was_set:
+#           - sentiment: POS
+#       - action: utter_sentiment_POS #fantastico!
+#       - action: utter_selector_POS_last #quieres contarme algo mas o feedback?
+
+#   - story: Emotion POS deny ## en progreso
+#     steps:
 #      - intent: greet
 #      - action: utter_greet_ask_emotion
 #      - or: 
@@ -39,64 +37,35 @@ stories:
 #        - intent: nlu_fallback
 #        - intent: sobregeneralizacion
 #        - intent: etiquetado # rasa 3 con la condicion slot = pos y ya sino lista de intents + pos
-      # - action: sentiment_form
-      - slot_was_set:
-          - sentiment: POS
-      - action: utter_sentiment_POS # fantastico!
-      - action: utter_ask_tell_more_POS #quieres contarme algo mas? 
-      ##----------------hasta aquí base
-      - intent: deny
-      - action: utter_selector_POS_last
+#      - slot_was_set:
+#         - sentiment: POS
+#      - action: utter_sentiment_POS # fantastico!
+#      - action: utter_ask_tell_more_POS #quieres contarme algo mas? 
+#       ##----------------hasta aquí base
+#      - intent: deny
+#      - action: utter_selector_POS_last
 
 
-  - story: EmotionClassification - selector Confirm
-    steps:
-      - action: utter_selector_POS_last
-      - intent: feedbackemotion
-      - action: utter_advice_POS
-      - action: utter_selector_POS_finish
-      - intent: confirm
-      - action: utter_advice_POS_finish
+#   - story: EmotionClassification - selector Confirm
+#     steps:
+#       - action: utter_selector_POS_last
+#       - intent: feedbackemotion
+#       - action: utter_advice_POS
+#       - action: utter_selector_POS_finish
+#       - intent: confirm
+#       - action: utter_advice_POS_finish
       
-  - story: EmotionClassification - selector Denyutility
-    steps:
-      - action: utter_selector_POS_last
-      - intent: feedbackemotion
-      - action: utter_advice_POS
-      - action: utter_selector_POS_finish
-      - intent: deny
-      - action: utter_negative_feedback_POS
+#   - story: EmotionClassification - selector Denyutility
+#     steps:
+#       - action: utter_selector_POS_last
+#       - intent: feedbackemotion
+#       - action: utter_advice_POS
+#       - action: utter_selector_POS_finish
+#       - intent: deny
+#       - action: utter_negative_feedback_POS
 
-  - story: EmotionClassification - selector Denyhelp
-    steps:
-      - action: utter_selector_POS_last
-      - intent: deny
-      - action: utter_goodbye_nicemood
-
-  
-  # - story: Emotion POS non advice non so much chitchat
-  #   steps:
-  #     - intent: greet
-  #     - action: utter_greet_ask_emotion
-  #     - intent: inform_sentiment
-  #     # - action: sentiment_form
-  #     - slot_was_set:
-  #         - sentiment: POS
-  #     - action: utter_selector_general_POS
-  #     - intent: deny
-  #     - action: utter_selector_POS
-  #     - intent: deny
-  #     - action: utter_advice_POS
-  #     - action: utter_goodbye_nicemood
-
-
-  # - story: emotionclassification - positive distorsion # ok revisado
-  #   steps:
-  #     - slot_was_set:
-  #         - sentiment: POS
-  #     - or:
-  #       - intent: nlu_fallback
-  #       - intent: etiquetado
-  #       - intent: sobregeneralizacion
-  #     - action: utter_sentiment_POS
-  #     - action: utter_selector_POS
+#   - story: EmotionClassification - selector Denyhelp
+#     steps:
+#       - action: utter_selector_POS_last
+#       - intent: deny
+#       - action: utter_goodbye_nicemood

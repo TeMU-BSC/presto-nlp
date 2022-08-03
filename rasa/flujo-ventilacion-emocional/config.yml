@@ -27,17 +27,21 @@ pipeline:
 ### Custom components and classifiers
   - name: sentiment.SentimentEntityExtractor
   - name: DIETClassifier
-    epochs: 15
+    epochs: 20
     constrain_similarities: true 
   - name: EntitySynonymMapper
 
 # Fallback and chitchat components
   - name: FallbackClassifier
-    threshold: 0.5
+    threshold: 0.48
 
   - name: ResponseSelector  
     epochs: 100
     retrieval_intent: chitchat
+
+  - name: ResponseSelector  
+    epochs: 100
+    retrieval_intent: faq
 
 policies:
 ### Transformers dialogue policies:
@@ -45,16 +49,16 @@ policies:
      epochs: 20
      constrain_similarities: true
    - name: UnexpecTEDIntentPolicy
-     tolerance: 0.3
+     tolerance: 0.2
      epochs: 20
 
 ### Conversational contextualization --> se ha alterado esta politica para ver si generamos mayor consistencia en el desarrollo de las conversaciones contextuales
    - name: AugmentedMemoizationPolicy
-     max_history: 8
+     max_history: 4
 
 ### Rule policies
    - name: RulePolicy 
-     core_fallback_threshold: 0.3
+     core_fallback_threshold: 0.2
      core_fallback_action_name: "action_default_fallback"
      enable_fallback_prediction: True
 
