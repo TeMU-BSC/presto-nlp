@@ -140,9 +140,23 @@ responses:
   # - text: "¿Qué tal? Soy Vicky 👩‍⚕️. Estoy aquí para\n- Ayudarte a identificar y a trabajar sobre aquellos patrones de pensamiento que te hacen sentir mal\n - Ayudarte a identificar las cosas que son realmente importantes para ti para poder actuar en consonancia a ellas.\n- En el caso que detectemos una situación de riesgo, intentaremos ofrecerte la mejor ayuda posible."
   utter_goodbye_nicemood:
   - text: Puedes hablarme siempre que me necesites. ¡Hasta pronto! Estoy disponible las 24 🕛  horas. Si me necesitas, sólo tienes que escribir ✍🏾
-  utter_greet_ask_emotion:
+  
+  utter_greet_first_time: # para la primera vez que alguien se connecta
   - text: ¡Hola! soy Vicky 👩‍⚕️ estoy aquí para ayudarte a cuidar eso tan importante como la salud mental. ¿Qué tal te encuentras hoy?
+  
+  utter_greet_ask_emotion: # para las veces successivas. Habría que añadir el nombre. Poner emoticonos.
   - text: ¡Hola! Estoy encantada de tenerte de nuevo por aquí. ¿Cómo te has sentido estos días?
+  - text: Hola, soy Vicky. ¿Cómo has estado desde la última vez que hablamos?
+  - text: ¡Hola! Qué bien que estés por aquí otra vez. ¿Quieres contarme algo nuevo? 
+  - text: Hola de nuevo, ¿qué me cuentas? 
+  - text: Hola, ¿cómo va todo? 
+  - text: ¡Hola! Estoy encantada de tenerte de nuevo por aquí. ¿Qué me explicas de nuevo? 
+  - text: ¡Hola! Estoy encantada de tenerte de nuevo por aquí. ¿Qué me cuentas?
+  - text: ¡Hola! Soy Vicky. ¿Qué te trae por aquí?
+  - text: ¡Hola! Qué bien que estés por aquí otra vez ¿Cómo te va la vida? 
+  - text: Hola de nuevo, ¿qué tal va todo? 
+  - text: Hola, ¿cómo te va?
+
 ## first emotion feedback
   utter_sentiment_NEG:
   - text: Lo lamento. Parece que no estás pasando por un buen momento. Me gustaría conocer más a fondo qué te ocurre.
@@ -350,6 +364,11 @@ responses:
   utter_si_contar:
   - text: "Adelante, te escucho 😊" 
   - text: Soy todo oídos 👂🏽
+  - text: Te escucho…👂🏽 
+  - text: Cuéntame…😊
+  - text: Dime... 😊
+
+  
 
   utter_emotion_si_contar:
   - text: "Adelante, te escucho 😊" 
@@ -359,6 +378,9 @@ responses:
   utter_no_contar:
   - text: "Puede ser duro compartir este tipo de cosas con extraños. No te preocupes, podemos abordar este problema cuando quieras."
   - text: "A veces, nos puede costar compartir nuestros pensamientos con extraños. No te preocupes, podemos retomarlo cuando tú quieras." 
+  - text: "No te preocupes, podemos hablar de esto cuando tú quieras. Yo seguiré aquí para escucharte en otro momento."
+  - text: "A veces no nos apetece compartir nuestros pensamientos. Yo no me iré, contáctame más adelante si quieres."
+  - text: "No pasa nada, podemos retomarlo cuando quieras.Yo seguiré aquí para escucharte en otro momento."
   
   utter_ventilacion_nd_feedback:
   - text: Tras esta pequeña conversación, no he detectado ningún pensamiento alarmante, pero si me permites voy a compartir contigo un consejo que me ha servido de mucho 🤓
@@ -393,7 +415,7 @@ responses:
     text: ¿Seguimos 😊?
   
   utter_psicoeduc_general:
-  - text: ¡Vaya! Parece que hemos detectado una serie de pensamientos que pueden estar jugándote malas pasadas en tu día a día, son aquellos que llamamos sesgos o distorsiones cognitivas y que afectan a nuestro estado de ánimo. '
+  - text: ¡Vaya! Parece que hemos detectado una serie de pensamientos que pueden estar jugándote malas pasadas en tu día a día, son aquellos que llamamos sesgos o distorsiones cognitivas y que afectan a nuestro estado de ánimo.
 
   ### psicoeducacion sobregen
   utter_selector_psicoeduc_sobre_2:
