@@ -1248,6 +1248,12 @@ nlu:
     - [puta](insult)
     - [me cago en tus muertos](insult)
     - eres un [puto coñazo](insult)
+    - joder, no sirves para nada
+    - eres un bot de mierda
+    - maldito bot
+    - vete a [la mierda](insult)
+    - desenchúfate
+    - resetéate
 
 - intent: chitchat/whichbook
   examples: |
