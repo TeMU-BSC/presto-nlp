@@ -25,40 +25,42 @@ pipeline:
 
 
 ### Custom components and classifiers
-  - name: sentiment.SentimentEntityExtractor
-  - name: DIETClassifier
+  - name: sentiment.SentimentEntityExtractor # componente que genera: NEG, NEU, POS
+  - name: DIETClassifier # clasificador dual de RASA. 
     epochs: 20
     constrain_similarities: true 
-  - name: EntitySynonymMapper
+  - name: EntitySynonymMapper # trabaja sobre las entidades y sinónimos
 
 # Fallback and chitchat components
-  - name: FallbackClassifier
-    threshold: 0.48
+  - name: FallbackClassifier 
+    threshold: 0.48 
 
-  - name: ResponseSelector  
+  - name: ResponseSelector  # necesario para que funcione chitchat
     epochs: 100
     retrieval_intent: chitchat
 
-  - name: ResponseSelector  
+  - name: ResponseSelector  # necesario para que funcione faq
     epochs: 100
     retrieval_intent: faq
 
-policies:
+policies: # dialogo
 ### Transformers dialogue policies:
-   - name: TEDPolicy
-     epochs: 20
+   - name: TEDPolicy # transformers embedding dialogue
+     epochs: 10
      constrain_similarities: true
-   - name: UnexpecTEDIntentPolicy
+   - name: UnexpecTEDIntentPolicy # el fallback del flujo conversacional
      tolerance: 0.2
      epochs: 20
 
 ### Conversational contextualization --> se ha alterado esta politica para ver si generamos mayor consistencia en el desarrollo de las conversaciones contextuales
-   - name: AugmentedMemoizationPolicy
-     max_history: 4
+   - name: AugmentedMemoizationPolicy # el tamaño que se tiene en cuenta para el training. se cuentan turnos completos.
+     max_history: 8
 
-### Rule policies
-   - name: RulePolicy 
+### Rule policies 
+   - name: RulePolicy  # el que regula las rules.yml
      core_fallback_threshold: 0.2
      core_fallback_action_name: "action_default_fallback"
      enable_fallback_prediction: True
+     restrict_rules: True
+     check_for_contradictions: true
 

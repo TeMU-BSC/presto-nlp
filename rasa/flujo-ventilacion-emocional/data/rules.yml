@@ -11,6 +11,7 @@ rules:
   - action: utter_greet_ask_emotion
 
 
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye_nicemood
@@ -30,10 +31,25 @@ rules:
   - intent: chitchat
   - action: utter_chitchat
 
+
 - rule: prioritize alert intent
   steps:
   - intent: alert
   - action: utter_alert
+
+- rule: prioritize gender violence intent
+  steps:  
+  - intent: genderViolence
+  - action: utter_start_genderViolence
+
+- rule: keep in gv flow
+  steps: 
+  - intent: confirmvg
+  - action: utter_ask_genderViolence
+
+# - intent: utter_start_genderViolence:
+# - action: deny
+# - action: restart   PROBAR ESTO
 
 # - rule: bring_back ##experimentacion
 #   steps:

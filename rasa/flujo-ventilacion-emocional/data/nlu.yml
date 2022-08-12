@@ -1040,7 +1040,7 @@ nlu:
     - Me hizo daño
     - Mi [novio](valorPareja) Me menosprecia
     - mi [marido](valorPareja) Me dice que no sirvo para nada
-    - mi [novio](valorPareja)Me culpa cuando se pone agresivo
+    - mi [novio](valorPareja) Me culpa cuando se pone agresivo
     - Controla todo lo que hago
     - Me insulta
     - Me vigila
@@ -1085,6 +1085,11 @@ nlu:
 - intent: confirmcontar
   examples: |
     - /confirmcontar
+
+- intent: confirmEmotionClassification
+  examples: |
+    - /confirmEmotionClassification
+
 
 - intent: denypsicoeduc
   examples: |
@@ -1435,6 +1440,9 @@ nlu:
     - para que sirve el objetivo semanal
     - quiero informacion sobre el objetivo semanal
     - que es el objetivo semanal
+
+
+
 
 ### Entities
 #Valores - las entidades de valores ahora mismo no aplican en las respuestas (solo al clasificador). Se pueden implementar sin problemas. 
