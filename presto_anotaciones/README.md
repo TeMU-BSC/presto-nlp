@@ -20,6 +20,10 @@ Launch the annotation server on the URLs of the type: "http://localhost:PRODIGY_
 ```
 PRODIGY_PORT=8081 prodigy textcat.choice_with_comment -E presto_distortion all_data.jsonl --label distorsión,"no distorsión" -F textcat_distortion.py
 ```
+### Before the second round of annotation the majority vote should be calculated
+
+TODO
+
 ### Anotate the type of distortion
 
 ```
