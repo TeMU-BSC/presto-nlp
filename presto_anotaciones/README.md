@@ -27,8 +27,8 @@ TODO
 ### Anotate the type of distortion
 
 ```
-PRODIGY_PORT=8081 prodigy textcat.multiple_nested presto_types presto_distortion casimiro -F textcat_distortion.py
-PRODIGY_PORT=8082 prodigy textcat.multiple_nested presto_types presto_distortion blanca -F textcat_distortion.py
+PRODIGY_PORT=8081 prodigy textcat.multiple_nested presto_types truth_distortion.jsonl casimiro -F textcat_distortion.py
+PRODIGY_PORT=8082 prodigy textcat.multiple_nested presto_types truth_distortion.jsonl blanca -F textcat_distortion.py
 ```
 
 ### Evaluation

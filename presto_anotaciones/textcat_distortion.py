@@ -47,6 +47,7 @@ def textcat_multiple_nested(  # from https://github.com/explosion/prodigy-recipe
     source: str,
     annotator: str,
     # label: Optional[List[str]] = None,
+    loader: Optional[str] = None,
     exclusive: bool = False,
     exclude: Optional[List[str]] = None,
 ):
@@ -59,12 +60,15 @@ def textcat_multiple_nested(  # from https://github.com/explosion/prodigy-recipe
 
     # Load the stream directly from a database and return a generator that yields a
     # dictionary for each example in the data.
-    db = connect()
-    stream = db.get_dataset(source)
+    #db = connect()
+    #stream = db.get_dataset(source)
 
     has_options = True
     annotator_id = f"{source}-{annotator}"
-    new_stream = list(get_stream_nested(stream, annotator_id))
+    #new_stream = list(get_stream_nested(stream, annotator_id))
+    new_stream = get_stream(
+        source, loader=loader, rehash=True, dedup=True, input_key="text"
+    )
 
     return {
         # Annotation interface to use
