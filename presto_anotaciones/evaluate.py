@@ -151,14 +151,16 @@ def main():
             if ann['_annotator_id'] == f"presto_{args.level}-{annotator_name}" and ann['id'] in ann_ids_intersection:
                 data_annotators.append(ann)
 
+
     perc_examples = round(len(ann_ids_intersection) /
                           len(set(ann['id'] for ann in data))*100, 2)
+
+
     print(f"Computing scores on {perc_examples}% of the total examples")
 
     # get pre-annotation (from one of the annotators since they share the same pre-annotations),
     # replace the "accept" field with the value of pre-annotation and change annotator and session fields
     if args.pre_annotations:
-
         data_preann = copy.deepcopy(data_annotators)
         # the preannotations should be just considered once
         one_example_of_each = data_preann[0]['_annotator_id']

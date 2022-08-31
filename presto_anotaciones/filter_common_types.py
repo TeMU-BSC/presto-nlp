@@ -47,9 +47,9 @@ def main():
     print(len(list(set(num_final_ids))))
 
     # save those in a json of the exact same format
-    with open('types_de_los_coincidentes.jsonl', 'w') as out:
-        for line in good_lines:
-            out.write(json.dumps(line) + "\n")
+    #with open('types_de_los_coincidentes.jsonl', 'w') as out:
+    #    for line in good_lines:
+    #        out.write(json.dumps(line) + "\n")
 
 
 main()
