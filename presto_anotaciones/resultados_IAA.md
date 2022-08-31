@@ -1,6 +1,7 @@
 
 ## DATOS INICIALES:
-Instancias a anotar: 592
+Instancias a anotar: 59
+
 
 ## IAA ANOTACIÓN DE LA DISTORSIÓN:
 
@@ -16,54 +17,101 @@ Los tres anotadores y el preanotador marcaron (todos) como distorsión 131 insta
 
 # XAVI VS MIREIA
 
-Average Cohen Kappa between annotator_mireia and annotator_xavi: 0.640467136115376
-Exact Cohen Kappa: 0.4786393880977551
-Fleiss's Kappa using Cosine distance between annotator_mireia and annotator_xavi: 0.7012776194909434
+Average Cohen Kappa: 0.64046713611537
 
-Cohen Kappa for 'sobregeneralización' between annotator_mireia and annotator_xavi: 0.4679122664500406
-Cohen Kappa for 'leer la mente' between annotator_mireia and annotator_xavi: 0.623779437105112
-Cohen Kappa for 'imperativos' between annotator_mireia and annotator_xavi: 1.0
-Cohen Kappa for 'etiquetado' between annotator_mireia and annotator_xavi: 0.761384335154827
-Cohen Kappa for 'pensamiento absolutista' between annotator_mireia and annotator_xavi: 0.835633626097867
-Cohen Kappa for 'adivinación' between annotator_mireia and annotator_xavi: 0.44744390079298124
-Cohen Kappa for 'catastrofismo' between annotator_mireia and annotator_xavi: 0.600366076876144
-Cohen Kappa for 'abstracción selectiva' between annotator_mireia and annotator_xavi: 0.5667034178610805
-Cohen Kappa for 'razonamiento emocional' between annotator_mireia and annotator_xavi: 0.7295782954880566
-Cohen Kappa for 'personalización' between annotator_mireia and annotator_xavi: 0.3718700053276506
+Exact Cohen Kappa: 0.478639388097755
+
+Fleiss's Kappa using Cosine distance: 0.701277619490943
+
+
+COHEN KAPPA BY TYPE
+
+'sobregeneralización': 0.467912266450040
+
+'leer la mente': 0.62377943710511
+
+'imperativos': 1.
+
+'etiquetado': 0.76138433515482
+
+'pensamiento absolutista': 0.83563362609786
+
+'adivinación': 0.4474439007929812
+
+'catastrofismo': 0.60036607687614
+
+'abstracción selectiva': 0.566703417861080
+
+'razonamiento emocional': 0.729578295488056
+
+'personalización': 0.371870005327650
+
 
 # XAVI VS MIRIAM
 
-Average Cohen Kappa between annotator_xavi and annotator_miriam: 0.4716779015138292
-Exact Cohen Kappa: 0.310398216386945
-Fleiss's Kappa using Cosine distance between annotator_xavi and annotator_miriam: 0.5527444746748535
-Fleiss's Kappa using Cosine distance between annotator_xavi and annotator_miriam: 0.5527444746748535
+Average Cohen Kappa: 0.471677901513829
 
-Cohen Kappa for 'sobregeneralización' between annotator_xavi and annotator_miriam: 0.10937038131835641
-Cohen Kappa for 'leer la mente' between annotator_xavi and annotator_miriam: 0.6186821910558349
-Cohen Kappa for 'imperativos' between annotator_xavi and annotator_miriam: 0.4631147540983608
-Cohen Kappa for 'etiquetado' between annotator_xavi and annotator_miriam: 0.8015151515151515
-Cohen Kappa for 'pensamiento absolutista' between annotator_xavi and annotator_miriam: 0.21084337349397597
-Cohen Kappa for 'adivinación' between annotator_xavi and annotator_miriam: 0.6383520917392227
-Cohen Kappa for 'catastrofismo' between annotator_xavi and annotator_miriam: 0.5521956350249803
-Cohen Kappa for 'abstracción selectiva' between annotator_xavi and annotator_miriam: 0.008713597798670092
-Cohen Kappa for 'razonamiento emocional' between annotator_xavi and annotator_miriam: 0.711362920994649
-Cohen Kappa for 'personalización' between annotator_xavi and annotator_miriam: 0.60262891809909
+Exact Cohen Kappa: 0.31039821638694
+
+Fleiss's Kappa using Cosine distance: 0.552744474674853
+
+Fleiss's Kappa using Cosine distance: 0.552744474674853
+
+
+COHEN KAPPA BY TYPE
+
+'sobregeneralización': 0.1093703813183564
+
+'leer la mente': 0.618682191055834
+
+'imperativos': 0.463114754098360
+
+'etiquetado': 0.801515151515151
+
+'pensamiento absolutista': 0.2108433734939759
+
+'adivinación': 0.638352091739222
+
+'catastrofismo': 0.552195635024980
+
+'abstracción selectiva': 0.00871359779867009
+
+'razonamiento emocional': 0.71136292099464
+
+'personalización': 0.6026289180990
+
 
 # MIREIA VS MIRIAM
 
-Average Cohen Kappa between annotator_mireia and annotator_miriam: 0.41544891069672263
-Exact Cohen Kappa: 0.2551357300073368
-Fleiss's Kappa using Cosine distance between annotator_mireia and annotator_miriam: 0.5203265040513112
-Fleiss's Kappa using Cosine distance between annotator_mireia and annotator_miriam: 0.5203265040513112
+Average Cohen Kappa: 0.4154489106967226
 
-Cohen Kappa for 'sobregeneralización' between annotator_mireia and annotator_miriam: 0.12782956058588535
-Cohen Kappa for 'leer la mente' between annotator_mireia and annotator_miriam: 0.598047419804742
-Cohen Kappa for 'imperativos' between annotator_mireia and annotator_miriam: 0.4631147540983608
-Cohen Kappa for 'etiquetado' between annotator_mireia and annotator_miriam: 0.761384335154827
-Cohen Kappa for 'pensamiento absolutista' between annotator_mireia and annotator_miriam: 0.1377621307209551
-Cohen Kappa for 'adivinación' between annotator_mireia and annotator_miriam: 0.33003750426184797
-Cohen Kappa for 'catastrofismo' between annotator_mireia and annotator_miriam: 0.506900878293601
-Cohen Kappa for 'abstracción selectiva' between annotator_mireia and annotator_miriam: 0.35626535626535627
-Cohen Kappa for 'razonamiento emocional' between annotator_mireia and annotator_miriam: 0.5730581205866376
-Cohen Kappa for 'personalización' between annotator_mireia and annotator_miriam: 0.3000890471950134
+Exact Cohen Kappa: 0.255135730007336
+
+Fleiss's Kappa using Cosine distance: 0.520326504051311
+
+Fleiss's Kappa using Cosine distance: 0.520326504051311
+
+
+COHEN KAPPA BY TYPE
+
+'sobregeneralización': 0.1278295605858853
+
+'leer la mente': 0.59804741980474
+
+'imperativos': 0.463114754098360
+
+'etiquetado': 0.76138433515482
+
+'pensamiento absolutista': 0.137762130720955
+
+'adivinación': 0.3300375042618479
+
+'catastrofismo': 0.50690087829360
+
+'abstracción selectiva': 0.3562653562653562
+
+'razonamiento emocional': 0.573058120586637
+
+'personalización': 0.300089047195013
+
 
