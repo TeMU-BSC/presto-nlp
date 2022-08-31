@@ -1,6 +1,6 @@
 
 ## DATOS INICIALES:
-Instancias a anotar: 59
+Instancias a anotar: 592
 
 
 ## IAA ANOTACIÓN DE LA DISTORSIÓN:
