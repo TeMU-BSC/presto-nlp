@@ -15,7 +15,7 @@ Los tres anotadores y el preanotador marcaron (todos) como distorsión 131 insta
 
 ## IAA ANOTACIÓN DE LOS TIPOS CON ESASA 131:
 
-# XAVI VS MIREIA
+### XAVI VS MIREIA
 
 Average Cohen Kappa: 0.64046713611537
 
@@ -47,7 +47,7 @@ COHEN KAPPA BY TYPE
 'personalización': 0.371870005327650
 
 
-# XAVI VS MIRIAM
+### XAVI VS MIRIAM
 
 Average Cohen Kappa: 0.471677901513829
 
@@ -81,7 +81,7 @@ COHEN KAPPA BY TYPE
 'personalización': 0.6026289180990
 
 
-# MIREIA VS MIRIAM
+### MIREIA VS MIRIAM
 
 Average Cohen Kappa: 0.4154489106967226
 
