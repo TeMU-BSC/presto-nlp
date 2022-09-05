@@ -3,9 +3,10 @@ from sklearn.metrics import cohen_kappa_score
 import numpy as np
 import argparse
 from scipy import spatial
-import os
+#import os
 from nltk.metrics.agreement import AnnotationTask
 import copy
+import sys
 
 
 def parsing_arguments(parser):
@@ -98,30 +99,29 @@ def evaluate_multi_cohen(vectors, annotators):
 
 
 def evaluate_exact_cohen(data, annotators):
-
     annotations, list_annotators = dict_for_each_ann(annotators)
-    list_ids = list(set([d['id'] for d in data]))
+    list_ids = sorted(list(set([d['id'] for d in data])))
+
     for id in list_ids:
-        instance = [d for d in data if d['id'] == id]
+        instance = [d for d in data if d['id']==id]
         if len(instance) == len(annotators):
             for an in range(len(annotators)):
-                annotations[list_annotators[an]].append(
-                    str(instance[an]['accept']))
+                annotations[list_annotators[an]].append(str(instance[an]['accept']))
         else:
             print('One annotator is missing annotation', id)
+
     if len(annotators) == 2:
-        import pdb
-        pdb.set_trace()
-        print('Exact Cohen Kappa:', cohen_kappa_score(
-            annotations[list_annotators[0]], annotations[list_annotators[1]]))
+        print(list_annotators[0], 'versus', list_annotators[1])
+        print('Exact Cohen Kappa:', cohen_kappa_score(annotations[list_annotators[0]], annotations[list_annotators[1]]))
     else:
-        for i in range(len(annotators)-1):
-            print(list_annotators[i], 'versus', list_annotators[i+1])
-            print('Exact Cohen Kappa:',
-                  cohen_kappa_score(annotations[list_annotators[i]], annotations[list_annotators[i+1]]))
-        print(list_annotators[0], 'versus', list_annotators[len(annotators)-1])
-        print('Exact Cohen Kappa:', cohen_kappa_score(
-            annotations[list_annotators[0]], annotations[list_annotators[len(annotators)-1]]))
+        # TODO: el three-way comparison no va bé perquè barreja els annotadors, no fer servir
+        sys.exit('This functionality is not working well. Calculate the values by pairs.')
+        # for i in range(len(annotators)-1):
+        #     print(list_annotators[i], 'versus', list_annotators[i+1])
+        #     print('Exact Cohen Kappa:',
+        #           cohen_kappa_score(annotations[list_annotators[i]], annotations[list_annotators[i+1]]))
+        # print(list_annotators[0], 'versus', list_annotators[len(annotators)-1])
+        # print('Exact Cohen Kappa:', cohen_kappa_score(annotations[list_annotators[0]], annotations[list_annotators[len(annotators)-1]]))
 
 
 def main():
@@ -151,14 +151,16 @@ def main():
             if ann['_annotator_id'] == f"presto_{args.level}-{annotator_name}" and ann['id'] in ann_ids_intersection:
                 data_annotators.append(ann)
 
+
     perc_examples = round(len(ann_ids_intersection) /
                           len(set(ann['id'] for ann in data))*100, 2)
-    print(f"Computing scores on {perc_examples}% of the total examples)")
+
+
+    print(f"Computing scores on {perc_examples}% of the total examples")
 
     # get pre-annotation (from one of the annotators since they share the same pre-annotations),
     # replace the "accept" field with the value of pre-annotation and change annotator and session fields
     if args.pre_annotations:
-
         data_preann = copy.deepcopy(data_annotators)
         # the preannotations should be just considered once
         one_example_of_each = data_preann[0]['_annotator_id']
