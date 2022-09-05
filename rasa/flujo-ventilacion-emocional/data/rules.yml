@@ -47,6 +47,18 @@ rules:
   - intent: confirmvg
   - action: utter_ask_genderViolence
 
+- rule: keep in gv flow 2
+  steps:
+  - intent: confirmvg2
+  - action: utter_ask_2_genderViolence
+
+- rule: denygv
+  steps:
+  - intent: denygv
+  - action: utter_answer_no_genderViolence
+  - action: utter_call_to_emergency_gv_denylastcuestion
+  
+
 # - intent: utter_start_genderViolence:
 # - action: deny
 # - action: restart   PROBAR ESTO

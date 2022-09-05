@@ -1082,6 +1082,14 @@ nlu:
   examples: |
     - /confirmgv3
 
+- intent: denygv
+  examples: |
+    - /denygv
+
+- intent: retrieval_alert_intent
+  examples: |
+    - /retrieval_alert_intent
+
 - intent: confirmcontar
   examples: |
     - /confirmcontar

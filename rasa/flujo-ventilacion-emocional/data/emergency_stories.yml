@@ -1,89 +1,157 @@
-# version: "2.0"
+version: "2.0"
 
-# stories:
+stories:
 
-#   # - story: emergency # ok revisado
-#   #   steps:
-#   #   - intent: alert
-#   #   - action: utter_alert # selector con deny y emergency
-#   #   - intent: emergency
-#   #   - action: utter_confirm_emergency
-#   #   - intent: emergency
-#   #   - action: utter_emergency
+  - story: emergency with alert
+    steps: 
+    - intent: alert
+    - action: utter_alert
+    - intent: emergency
+    - action: utter_confirm_emergency
+    - intent: alert_detected
+    - action: utter_alert_detected
+    - action: utter_alert_detected_selector
+
+  - story: emergency_false_alarm # ok revisado
+    steps:
+    - intent: alert
+    - action: utter_alert
+    - intent: inform_sentiment
+    - action: utter_sentiment_NEG #cambiar nombre y poner noemergency. Se queda hasta que decidan flujo final para ambos
+
+  - story: gender_violence_ denyfirstquestion #ok revisado
+    steps:
+    - intent: genderViolence
+    - action: utter_start_genderViolence #selector con deny y emergency
+    - intent: inform_sentiment
+    - action: utter_sentiment_NEG
+
+
+  - story: gender_violence_ direct #ok revisado
+    steps:
+    - intent: genderViolence
+    - action: utter_start_genderViolence #selector con deny y emergency
+    - intent: confirmgv
+    - action: utter_ask_genderViolence
+    - intent: confirmgv2 #revisar
+    - action: utter_ask_2_genderViolence #revisar   ## Añadir mas
+    - intent: confirmgv3
+    - action: utter_call_to_emergency_gv
+
+
+  - story: gender_violence_ direct ultima no #ok revisado
+    steps:
+    - intent: genderViolence
+    - action: utter_start_genderViolence #selector con deny y emergency
+    - intent: confirmgv
+    - action: utter_ask_genderViolence
+    - intent: confirmgv2 #revisar
+    - action: utter_ask_2_genderViolence #revisar   ## Añadir mas
+    - intent: confirmgv3
+    - action: utter_call_to_emergency_gv
+
+
+
+  - story: gender_violence_ direct ultima no #ok revisado
+    steps:
+    - intent: genderViolence
+    - action: utter_start_genderViolence #selector con deny y emergency
+    - intent: confirmgv
+    - action: utter_ask_genderViolence
+    - intent: confirmgv2 #revisar
+    - action: utter_ask_2_genderViolence #revisar   ## Añadir mas
+    - intent: denygv
+    - action: utter_answer_no_genderViolence
+    - action: utter_call_to_emergency_gv_denylastcuestion
+
+
+  - story: retrieval_intent
+    steps:
+      - intent: retrieval_alert_intent
+      - action: utter_retrieval
+
+  # # - story: emergency # ok revisado
+  # #   steps:
+  # #   - intent: alert
+  # #   - action: utter_alert # selector con deny y emergency
+  # #   - intent: emergency
+  # #   - action: utter_confirm_emergency
+  # #   - intent: emergency
+  # #   - action: utter_emergency
   
-#   - story: emergency with alert /alert_detected
-#     steps: 
-#     - intent: alert
-#     - action: utter_alert
-#     - intent: emergency
-#     - action: utter_confirm_emergency
-#     - intent: alert_detected
-#     - action: utter_alert_detected
-#     - action: utter_alert_detected_selector
+  # - story: emergency with alert /alert_detected
+  #   steps: 
+  #   - intent: alert
+  #   - action: utter_alert
+  #   - intent: emergency
+  #   - action: utter_confirm_emergency
+  #   - intent: alert_detected
+  #   - action: utter_alert_detected
+  #   - action: utter_alert_detected_selector
 
 
 
-#   # - story: emergency # ok revisado
-#   #   steps:
-#   #   - intent: alert
-#   #   - action: utter_alert # selector con deny y emergency
-#   #   - intent: confirm
-#   #   - action: utter_confirm_emergency
-#   #   - intent: emergency
-#   #   - action: utter_emergency
-#   #   - intent: emergency
-#   #   - action: utter_call_to_emergency
+  # # - story: emergency # ok revisado
+  # #   steps:
+  # #   - intent: alert
+  # #   - action: utter_alert # selector con deny y emergency
+  # #   - intent: confirm
+  # #   - action: utter_confirm_emergency
+  # #   - intent: emergency
+  # #   - action: utter_emergency
+  # #   - intent: emergency
+  # #   - action: utter_call_to_emergency
 
-#   - story: emergency_false_alarm # ok revisado
-#     steps:
-#     - intent: alert
-#     - action: utter_alert
-#     - intent: inform_sentiment
-#     - action: utter_sentiment_NEG #cambiar nombre y poner noemergency. Se queda hasta que decidan flujo final para ambos
-
-
-
-#   - story: gender_violence_ denyfirstquestion #ok revisado
-#     steps:
-#     - intent: genderViolence
-#     - action: utter_start_genderViolence #selector con deny y emergency
-#     - intent: inform_sentiment
-#     - action: utter_sentiment_NEG
-
-
-#   - story: gender_violence_ direct #ok revisado
-#     steps:
-#     - intent: genderViolence
-#     - action: utter_start_genderViolence #selector con deny y emergency
-#     - intent: confirmgv
-#     - action: utter_ask_genderViolence
-#     - intent: confirmgv2 #revisar
-#     - action: utter_ask_2_genderViolence #revisar   ## Añadir mas
-#     - intent: confirmgv3
-#     - action: utter_call_to_emergency_gv
-
-
-#   - story: gender_violence_ direct ultima no #ok revisado
-#     steps:
-#     - intent: genderViolence
-#     - action: utter_start_genderViolence #selector con deny y emergency
-#     - intent: confirmgv
-#     - action: utter_ask_genderViolence
-#     - intent: confirmgv2 #revisar
-#     - action: utter_ask_2_genderViolence #revisar   ## Añadir mas
-#     - intent: confirmgv3
-#     - action: utter_call_to_emergency_gv
+  # - story: emergency_false_alarm # ok revisado
+  #   steps:
+  #   - intent: alert
+  #   - action: utter_alert
+  #   - intent: inform_sentiment
+  #   - action: utter_sentiment_NEG #cambiar nombre y poner noemergency. Se queda hasta que decidan flujo final para ambos
 
 
 
-#   - story: gender_violence_ direct ultima no #ok revisado
-#     steps:
-#     - intent: genderViolence
-#     - action: utter_start_genderViolence #selector con deny y emergency
-#     - intent: confirmgv
-#     - action: utter_ask_genderViolence
-#     - intent: confirmgv2 #revisar
-#     - action: utter_ask_2_genderViolence #revisar   ## Añadir mas
-#     - intent: deny
-#     - action: utter_answer_no_genderViolence
-#     - action: utter_call_to_emergency_gv_denylastcuestion
+  # - story: gender_violence_ denyfirstquestion #ok revisado
+  #   steps:
+  #   - intent: genderViolence
+  #   - action: utter_start_genderViolence #selector con deny y emergency
+  #   - intent: inform_sentiment
+  #   - action: utter_sentiment_NEG
+
+
+  # - story: gender_violence_ direct #ok revisado
+  #   steps:
+  #   - intent: genderViolence
+  #   - action: utter_start_genderViolence #selector con deny y emergency
+  #   - intent: confirmgv
+  #   - action: utter_ask_genderViolence
+  #   - intent: confirmgv2 #revisar
+  #   - action: utter_ask_2_genderViolence #revisar   ## Añadir mas
+  #   - intent: confirmgv3
+  #   - action: utter_call_to_emergency_gv
+
+
+  # - story: gender_violence_ direct ultima no #ok revisado
+  #   steps:
+  #   - intent: genderViolence
+  #   - action: utter_start_genderViolence #selector con deny y emergency
+  #   - intent: confirmgv
+  #   - action: utter_ask_genderViolence
+  #   - intent: confirmgv2 #revisar
+  #   - action: utter_ask_2_genderViolence #revisar   ## Añadir mas
+  #   - intent: confirmgv3
+  #   - action: utter_call_to_emergency_gv
+
+
+
+  # - story: gender_violence_ direct ultima no #ok revisado
+  #   steps:
+  #   - intent: genderViolence
+  #   - action: utter_start_genderViolence #selector con deny y emergency
+  #   - intent: confirmgv
+  #   - action: utter_ask_genderViolence
+  #   - intent: confirmgv2 #revisar
+  #   - action: utter_ask_2_genderViolence #revisar   ## Añadir mas
+  #   - intent: deny
+  #   - action: utter_answer_no_genderViolence
+  #   - action: utter_call_to_emergency_gv_denylastcuestion

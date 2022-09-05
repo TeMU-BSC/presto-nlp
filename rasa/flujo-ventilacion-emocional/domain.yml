@@ -21,6 +21,7 @@ intents:
 - confirm:
     ignore_entities:
     - sentiment
+- denygv
 - ready:
     ignore_entities:
     - sentiment
@@ -88,6 +89,7 @@ intents:
     use_entities: true
 - confirmEmotionClassification:
     use_entities: true
+- retrieval_alert_intent
 - denypsicoeduc:
     use_entities: true
 - feedbackemotion:
@@ -155,12 +157,13 @@ responses:
   - text: ¡Hola! Qué bien que estés por aquí otra vez. ¿Quieres contarme algo nuevo? 
   - text: Hola de nuevo, ¿qué me cuentas? 
   - text: Hola, ¿cómo va todo? 
-  - text: ¡Hola! Estoy encantada de tenerte de nuevo por aquí. ¿Qué me explicas de nuevo? 
   - text: ¡Hola! Estoy encantada de tenerte de nuevo por aquí. ¿Qué me cuentas?
   - text: ¡Hola! Soy Vicky. ¿Qué te trae por aquí?
-  - text: ¡Hola! Qué bien que estés por aquí otra vez ¿Cómo te va la vida? 
   - text: Hola de nuevo, ¿qué tal va todo? 
   - text: Hola, ¿cómo te va?
+
+  utter_retrieval:
+  - text: Aquí estoy para lo que quieras contarme 🙂. Si no te apetece seguir hablando de tus emociones, a veces suelo responder sobre aficiones, libros y música. :)
 
 ## first emotion feedback
   utter_sentiment_NEG:
@@ -247,10 +250,10 @@ responses:
     text: Me sabe mal que te encuentres así, déjame ayudarte. ¿Has pensado en hacerte daño últimamente?
   utter_confirm_emergency:
   - buttons: 
-    - payload: /emergency
-      title: "alert_detected"
     - payload: /alert_detected
       title: "Sí"
+    - payload: /alert_detected
+      title: "No"
     text: "¿Tienes miedo de hacerte daño en este momento?"
   utter_alert_detected:
   - text: Se ha enviado una notificación automática sobre la situación  ✉️ a los encargados de la plataforma. Es conveniente que lo comentes 🗣️ con alguien cercano, un terapeuta, o bien o acudas a un servicio de urgencias 🏥.
@@ -258,7 +261,7 @@ responses:
   - buttons:
     - payload: /url
       title: Más preguntas
-    - payload: /inform_sentiment
+    - payload: /retrieval_alert_intent
       title: "Continuar conversación"
     text: "Me gustaría hacerte alguna pregunta más, pero si prefieres podemos continuar nuestra conversación."
   utter_emergency:
@@ -387,13 +390,13 @@ responses:
   utter_advice_NEG:
   - text: Etiquetar la emoción es el primer paso para poder reholgular nuestro comportamiento a las necesidades de la situación. Ahora quédate con esta sensación. No la juzgues, simplemente obsérvala hasta que acabe bajando de intensidad. Recuerda que, cualquier emoción (sea agradable o desagradable) acaba disminuyendo con el tiempo.
   - text: Aunque ahora mismo te sientas mal, quería proponerte que aprovecharas este momento para probar de des-identificarte de la emoción (tú no eres esa emoción, eres mucho más que esta emoción). Ahora reconócela y observa la naturaleza cambiante y transitoria de la misma. Conocer mejor lo que nos sucede a nivel emocional, nos permite desarrollar una relación menos reactiva con la experiencia interior. Nos permite reconocer y soltar más fácilmente las tormentas emocionales. 
-  utter_pruebacheckpointdist:
-  - buttons:
-    - payload: /confirmflechadescendiente
-      title: Me gustaría seguir hablando
-    - payload: /goodbye_nicemood
-      title: En otro momento
-    text: Distorsion detectada quieres hablar de ella?
+  # utter_pruebacheckpointdist:
+  # - buttons:
+  #   - payload: /confirmflechadescendiente
+  #     title: Me gustaría seguir hablando
+  #   - payload: /goodbye_nicemood
+  #     title: En otro momento
+  #   text: Distorsion detectada quieres hablar de ella?
 
   ## psicoeducacion general
   utter_selector_psicoeduc_general:
@@ -529,7 +532,7 @@ responses:
       title: Que es su culpa
     text: Qué le dirías a X
   utter_intervencion_sobregen:
-  - text: Te animo entonces, a que sigas este enlace para comenzar a trabajar esto
+  - text: Te animo entonces a que sigas este enlace para comenzar a trabajar esto
   ### Intervencion adivinacion
   utter_selector_intervencion_adivinacion:
   - buttons:
@@ -621,7 +624,7 @@ responses:
   - buttons:
     - payload: /confirmgv3
       title: Sí
-    - payload: /deny
+    - payload: /denygv
       title: "No"
     text: ¿Sientes miedo en tu relación?
 

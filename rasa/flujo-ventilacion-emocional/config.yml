@@ -45,9 +45,11 @@ pipeline:
 
 policies: # dialogo
 ### Transformers dialogue policies:
-   - name: TEDPolicy # transformers embedding dialogue
-     epochs: 10
+   - name: TEDPolicy # transformer embedding dialogue
+     epochs: 20
      constrain_similarities: true
+    #  augmentation_factor: 10 
+     
    - name: UnexpecTEDIntentPolicy # el fallback del flujo conversacional
      tolerance: 0.2
      epochs: 20
