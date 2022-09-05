@@ -14,18 +14,20 @@ stories:
 
   - story: emergency_false_alarm # ok revisado
     steps:
-    - intent: alert
-    - action: utter_alert
-    - intent: inform_sentiment
-    - action: utter_sentiment_NEG #cambiar nombre y poner noemergency. Se queda hasta que decidan flujo final para ambos
+    # - intent: alert
+    # - action: utter_alert
+    - action: utter_noemergency
+    - action: action_restart
+    - action: action_listen #cambiar nombre y poner noemergency. Se queda hasta que decidan flujo final para ambos
 
   - story: gender_violence_ denyfirstquestion #ok revisado
     steps:
     - intent: genderViolence
     - action: utter_start_genderViolence #selector con deny y emergency
-    - intent: inform_sentiment
-    - action: utter_sentiment_NEG
-
+    - intent: noemergency
+    - action: utter_noemergency
+    - action: action_restart
+    - action: action_listen
 
   - story: gender_violence_ direct #ok revisado
     steps:

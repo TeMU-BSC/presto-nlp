@@ -67,6 +67,7 @@ intents:
     use_entities: true
     ignore_entities:
     - sentiment
+- noemergency
 - alert:
     use_entities: false
     ignore_entities:
@@ -245,7 +246,7 @@ responses:
   - buttons:
     - payload: /emergency
       title: Sí
-    - payload: /inform_sentiment
+    - payload: /noemergency
       title: "No"
     text: Me sabe mal que te encuentres así, déjame ayudarte. ¿Has pensado en hacerte daño últimamente?
   utter_confirm_emergency:
@@ -266,6 +267,8 @@ responses:
     text: "Me gustaría hacerte alguna pregunta más, pero si prefieres podemos continuar nuestra conversación."
   utter_emergency:
   - text:  ¡Vaya! Lamento escuchar esto 😟, por favor, haz clic en este enlace "URL" para que pueda seguir ayudándote.
+  utter_noemergency:
+  - text: Perdona si me he excedido con la pregunta. Es muy importante para mí poder ofrecerte un espacio seguro. Si quieres compartir algo más conmigo, te escucho 😊
   utter_denypsicoeduc:
   - text: "De acuerdo, recuerda que siempre puedo ayudarte también desde nuestra app(enlace)"
 ## chitchat
@@ -608,7 +611,7 @@ responses:
   - buttons:
     - payload: /confirmgv
       title: Sí
-    - payload: /inform_sentiment
+    - payload: /noemergency
       title: No, de ningún modo
     text: ¿Te has sentido en peligro últimamente?
 

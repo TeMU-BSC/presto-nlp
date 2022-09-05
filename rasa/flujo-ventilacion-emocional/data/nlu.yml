@@ -1086,6 +1086,10 @@ nlu:
   examples: |
     - /denygv
 
+- intent: noemergency
+  examples: |
+    - /noemergency
+    
 - intent: retrieval_alert_intent
   examples: |
     - /retrieval_alert_intent

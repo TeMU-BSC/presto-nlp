@@ -59,6 +59,12 @@ rules:
   - action: utter_call_to_emergency_gv_denylastcuestion
   
 
+- rule: restart
+  steps: 
+  - intent: noemergency
+  - action: utter_noemergency
+  - action: action_restart
+  - action: action_listen
 # - intent: utter_start_genderViolence:
 # - action: deny
 # - action: restart   PROBAR ESTO
