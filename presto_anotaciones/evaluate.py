@@ -64,10 +64,10 @@ def evaluate_cohen(vectors, labels, annotators):
             if vectors[compare[0]][i] != [0] * len(vectors[compare[0]][i]):
                 score = cohen_kappa_score(
                     np.array(vectors[compare[0]][i]), np.array(vectors[compare[1]][i]))
-                print('Cohen Kappa for \'{}\' between {} and {}: {}'.format(
+                print('cohen\' kappa for \'{}\' between {} and {}: {}'.format(
                     label, compare[0], compare[1], score))
                 scores[an].append(score)
-        print('Average Cohen Kappa between {} and {}: {}'.format(
+        print('Average cohen\' kappa between {} and {}: {}'.format(
             compare[0], compare[1], np.mean(scores[an])))
 
 
@@ -94,8 +94,8 @@ def evaluate_multi_cohen(vectors, annotators):
         # https://www.nltk.org/_modules/nltk/metrics/agreement.html
         cosine_task = AnnotationTask(
             data=task_data[an], distance=cosine_distance)
-        print("Fleiss's Kappa using Cosine distance between {} and {}: {}".format(
-            compare[0], compare[1], cosine_task.multi_kappa()))
+        print("Cohen's Kappa using Cosine distance between {} and {}: {}".format(
+            compare[0], compare[1], cosine_task.kappa()))
 
 
 def evaluate_exact_cohen(data, annotators):
@@ -112,17 +112,10 @@ def evaluate_exact_cohen(data, annotators):
 
     if len(annotators) == 2:
         print(list_annotators[0], 'versus', list_annotators[1])
-        print('Exact Cohen Kappa:', cohen_kappa_score(annotations[list_annotators[0]], annotations[list_annotators[1]]))
+        print('Exact Cohen\'s Kappa:', cohen_kappa_score(annotations[list_annotators[0]], annotations[list_annotators[1]]))
     else:
         # TODO: el three-way comparison no va bé perquè barreja els annotadors, no fer servir
         sys.exit('This functionality is not working well. Calculate the values by pairs.')
-        # for i in range(len(annotators)-1):
-        #     print(list_annotators[i], 'versus', list_annotators[i+1])
-        #     print('Exact Cohen Kappa:',
-        #           cohen_kappa_score(annotations[list_annotators[i]], annotations[list_annotators[i+1]]))
-        # print(list_annotators[0], 'versus', list_annotators[len(annotators)-1])
-        # print('Exact Cohen Kappa:', cohen_kappa_score(annotations[list_annotators[0]], annotations[list_annotators[len(annotators)-1]]))
-
 
 def main():
     # TODO: poner errores cuando un anotador no tenga ninguna anotación

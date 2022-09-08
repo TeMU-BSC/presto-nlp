@@ -5,7 +5,7 @@ import json
 
 def main():
     # import the types annotated file
-    with open('presto_types.jsonl', 'r') as fin:
+    with open('presto_types.dedup.jsonl', 'r') as fin:
         data = list(map(json.loads, fin.readlines()))
 
     ids_counter = {}
@@ -47,9 +47,9 @@ def main():
     print(len(list(set(num_final_ids))))
 
     # save those in a json of the exact same format
-    #with open('types_de_los_coincidentes.jsonl', 'w') as out:
-    #    for line in good_lines:
-    #        out.write(json.dumps(line) + "\n")
+    with open('types_de_los_coincidentes.jsonl', 'w') as out:
+       for line in good_lines:
+           out.write(json.dumps(line) + "\n")
 
 
 main()
