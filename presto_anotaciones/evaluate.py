@@ -50,7 +50,6 @@ def create_label_vectors(data, labels, annotators):
             vectors[names_dicts[an]].append(label_vector[names_dicts[an]])
     return vectors, names_dicts
 
-
 def evaluate_cohen(vectors, labels, annotators):
     scores, names_dicts = dict_for_each_ann(annotators)
     for num_an, an in enumerate(names_dicts):
@@ -64,8 +63,7 @@ def evaluate_cohen(vectors, labels, annotators):
             if vectors[compare[0]][i] != [0] * len(vectors[compare[0]][i]):
                 score = cohen_kappa_score(
                     np.array(vectors[compare[0]][i]), np.array(vectors[compare[1]][i]))
-                print('cohen\' kappa for \'{}\' between {} and {}: {}'.format(
-                    label, compare[0], compare[1], score))
+                print('cohen\' kappa for \'{}\' between {} and {}: {}'.format(label, compare[0], compare[1], score))
                 scores[an].append(score)
         print('Average cohen\' kappa between {} and {}: {}'.format(
             compare[0], compare[1], np.mean(scores[an])))
@@ -92,8 +90,7 @@ def evaluate_multi_cohen(vectors, annotators):
             annotation = 'coder_b', i, tuple(entry)
             task_data[an].append(annotation)
         # https://www.nltk.org/_modules/nltk/metrics/agreement.html
-        cosine_task = AnnotationTask(
-            data=task_data[an], distance=cosine_distance)
+        cosine_task = AnnotationTask(data=task_data[an], distance=cosine_distance)
         print("Cohen's Kappa using Cosine distance between {} and {}: {}".format(
             compare[0], compare[1], cosine_task.kappa()))
 
@@ -132,7 +129,6 @@ def main():
 
     # Select data for given list of annotators.
     # In the case of multiple annotators, get the intersection of annotations
-
     ann_ids_intersection = set(ann['id'] for ann in data)
     for annotator_name in list_annotators:
         ann_ids_intersection = ann_ids_intersection.intersection([ann['id'] for ann in data
@@ -145,11 +141,11 @@ def main():
                 data_annotators.append(ann)
 
 
-    perc_examples = round(len(ann_ids_intersection) /
-                          len(set(ann['id'] for ann in data))*100, 2)
+    # perc_examples = round(len(ann_ids_intersection) /
+    #                       len(set(ann['id'] for ann in data))*100, 2)
 
 
-    print(f"Computing scores on {perc_examples}% of the total examples")
+    print(f"Computing scores on {len(ann_ids_intersection)} total examples")
 
     # get pre-annotation (from one of the annotators since they share the same pre-annotations),
     # replace the "accept" field with the value of pre-annotation and change annotator and session fields
@@ -165,6 +161,9 @@ def main():
                     d['accept'] = [d['pre-ann-category'][args.level]]
                 else:
                     d['accept'] = d['pre-ann-category'][args.level]
+                
+                # lowercase the annotations
+                d['accept'] = [d.lower() for d in d['accept']]
                 d.pop('pre-ann-category')
                 d['_annotator_id'] = 'pre-annotator'
                 d['_session_id'] = 'pre-annotator'
@@ -179,8 +178,7 @@ def main():
         labels = ['sobregeneralización', 'leer la mente', 'imperativos', 'etiquetado',
                   'pensamiento absolutista', 'adivinación', 'catastrofismo', 'abstracción selectiva',
                   'razonamiento emocional', 'personalización']
-        vectors, names_dicts = create_label_vectors(
-            data_annotators, labels, list_annotators)
+        vectors, names_dicts = create_label_vectors(data_annotators, labels, list_annotators)
 
         # FOR EACH LABEL, CALCULATE COHEN KAPPA
         if 'single_cohen' in list_metrics:
