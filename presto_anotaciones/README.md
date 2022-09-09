@@ -40,7 +40,7 @@ prodigy db-out presto_types > presto_types.jsonl
 ```
 
 ```
-python evaluate.py --level distortion --an-ids xavi,mireia --an-file presto_distortion.jsonl --pre_annotations
+python evaluate.py --level distortion --an-ids xavi mireia --an-file presto_distortion.jsonl
 
-python evaluate.py --level types --metrics single_cohen,multi_cohen,exact_cohen --an-ids xavi,mireia --an-file types_de_los_coincidentes.jsonl --pre_annotations
+python evaluate.py --level types --metrics single_cohen multi_cohen exact_cohen --an-ids xavi mireia --an-file types_de_los_coincidentes.jsonl --pre_annotations
 ```

@@ -111,12 +111,8 @@ def evaluate_exact_cohen(data, annotators):
         else:
             print('One annotator is missing annotation', id)
 
-<<<<<<< HEAD
     print(f'Exact Cohen\'s Kappa between {list_annotators[0]} and  {list_annotators[1]}:', cohen_kappa_score(annotations[list_annotators[0]], annotations[list_annotators[1]]))
-=======
-    print(list_annotators[0], 'versus', list_annotators[1])
-    print('Exact Cohen\'s Kappa:', cohen_kappa_score(annotations[list_annotators[0]], annotations[list_annotators[1]]))
->>>>>>> 1e2b368aedbf7d3b71a2e5885fc89813c7ced45b
+
 
 def main():
     # TODO: poner errores cuando un anotador no tenga ninguna anotación
@@ -143,11 +139,6 @@ def main():
         for annotator_name in list_annotators:
             if ann['_annotator_id'] == f"presto_{args.level}-{annotator_name}" and ann['id'] in ann_ids_intersection:
                 data_annotators.append(ann)
-
-
-    # perc_examples = round(len(ann_ids_intersection) /
-    #                       len(set(ann['id'] for ann in data))*100, 2)
-
 
     print(f"Computing scores on {len(ann_ids_intersection)} total examples")
 
