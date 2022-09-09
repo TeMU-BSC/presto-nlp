@@ -10,15 +10,19 @@ import sys
 
 
 def parsing_arguments(parser):
-    parser.add_argument("--an-ids", type=str,
+    parser.add_argument("--an-ids", nargs='+',
                         help='ids of all the annotators commas separated')
     parser.add_argument("--an-file", type=str,
                         help='file containing annotations')
-    parser.add_argument("--metrics", default='single_cohen,exact_cohen,multi_cohen',
+    parser.add_argument("--metrics", nargs='+', 
+                        default='single_cohen,exact_cohen,multi_cohen',
                         help='Options can be: single_cohen,exact_cohen,multi_cohen, write them comma-separated')
-    parser.add_argument("--level", default='types', choices=['distortion', 'types'],
+    parser.add_argument("--level", 
+                        default='types', choices=['distortion', 'types'],
                         help='Select the annotation level')
-    parser.add_argument("--pre_annotations", action='store_true')
+    parser.add_argument("--pre_annotations", 
+                        action='store_true',
+                        help='Compute metrics including pre-annotations.')
     return parser
 
 
@@ -107,12 +111,8 @@ def evaluate_exact_cohen(data, annotators):
         else:
             print('One annotator is missing annotation', id)
 
-    if len(annotators) == 2:
-        print(list_annotators[0], 'versus', list_annotators[1])
-        print('Exact Cohen\'s Kappa:', cohen_kappa_score(annotations[list_annotators[0]], annotations[list_annotators[1]]))
-    else:
-        # TODO: el three-way comparison no va bé perquè barreja els annotadors, no fer servir
-        sys.exit('This functionality is not working well. Calculate the values by pairs.')
+    print(list_annotators[0], 'versus', list_annotators[1])
+    print('Exact Cohen\'s Kappa:', cohen_kappa_score(annotations[list_annotators[0]], annotations[list_annotators[1]]))
 
 def main():
     # TODO: poner errores cuando un anotador no tenga ninguna anotación
@@ -124,8 +124,8 @@ def main():
     with open(args.an_file, 'r') as fin:
         data = list(map(json.loads, fin.readlines()))
 
-    list_metrics = args.metrics.split(',')
-    list_annotators = args.an_ids.split(',')
+    list_metrics = args.metrics
+    list_annotators = args.an_ids
 
     # Select data for given list of annotators.
     # In the case of multiple annotators, get the intersection of annotations
@@ -171,6 +171,7 @@ def main():
 
         list_annotators.append('pre-annotator')
 
+    assert len(list_annotators) == 2, ValueError(f'The script supports only metrics for 2 annotators but {len(list_annotators)} were passed.')
     if args.level == 'distortion':
         evaluate_exact_cohen(data_annotators, list_annotators)
 
