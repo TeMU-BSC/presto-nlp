@@ -13,18 +13,20 @@ import jsonlines
 
 def parsing_arguments(parser):
     parser.add_argument("--an-ids", nargs='+',
-                        help='ids of all the annotators commas separated')
+                        help='List of annotator\' names.')
     parser.add_argument("--an-file", type=str,
                         help='file containing annotations')
     parser.add_argument("--metrics", nargs='+',
-                        default='single_cohen,exact_cohen,multi_cohen',
                         help='Options can be: single_cohen,exact_cohen,multi_cohen, write them comma-separated')
     parser.add_argument("--level",
-                        default='types', choices=['distortion', 'types'],
+                        choices=['distortion', 'types'],
                         help='Select the annotation level')
     parser.add_argument("--pre_annotations",
                         action='store_true',
                         help='Compute metrics including pre-annotations.')
+    parser.add_argument("--intersection",
+                        action='store_true',
+                        help='Get common annotations by intersecting across all the annotators')
     return parser
 
 
@@ -145,10 +147,14 @@ def main(args):
     data_annotators = []
     for ann in data:
         for annotator_name in list_annotators:
-            if ann['_annotator_id'] == f"presto_{args.level}-{annotator_name}" and ann['id'] in ann_ids_intersection:
-                data_annotators.append(ann)
+            if ann['_annotator_id'] == f"presto_{args.level}-{annotator_name}":
+                    if args.intersection:
+                        if ann['id'] in ann_ids_intersection:
+                            data_annotators.append(ann)
+                    else:
+                        data_annotators.append(ann)
 
-    # print(f"Computing scores on {len(ann_ids_intersection)} total examples")
+    print(f"Computing scores on {len(ann_ids_intersection)/len(args.an_ids)} total examples")
 
     # get pre-annotation (from one of the annotators since they share the same pre-annotations),
     # replace the "accept" field with the value of pre-annotation and change annotator and session fields
@@ -178,8 +184,14 @@ def main(args):
         f'The script supports only metrics for 2 annotators but {len(list_annotators)} were passed.')
 
     scores = defaultdict(dict)
+    annotators_pair = "-".join(args.an_ids)
+
     if args.level == 'distortion':
-        evaluate_exact_cohen(data_annotators, list_annotators)
+        score = evaluate_exact_cohen(data_annotators, list_annotators)
+        # rename the dict key for clarity
+        score['exact'] = score.pop('multi-label-exact')
+        scores[annotators_pair].update(score)
+
 
     if args.level == 'types':
         labels = ['sobregeneralización', 'leer la mente', 'imperativos', 'etiquetado',
@@ -190,7 +202,6 @@ def main(args):
 
         # FOR EACH LABEL, CALCULATE COHEN KAPPA
         if 'single_cohen' in list_metrics:
-            annotators_pair = f"{names_dicts[0]}-{names_dicts[1]}"
             score = evaluate_cohen(vectors, labels, names_dicts)
             scores[annotators_pair].update(score)
 
@@ -208,7 +219,7 @@ def main(args):
 
     scores = dict(scores)
     # write to file
-    eval_file = os.path.join(os.path.dirname(args.an_file), 'cohens_scores.jsonl')
+    eval_file = os.path.join(os.path.dirname(args.an_file), f'cohens_scores_{args.level}.jsonl')
     with jsonlines.open(eval_file, 'a') as f:
         f.write(scores)
 
