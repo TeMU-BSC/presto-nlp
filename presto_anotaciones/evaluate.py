@@ -1,12 +1,14 @@
+from email.policy import default
 import json
 from sklearn.metrics import cohen_kappa_score
 import numpy as np
 import argparse
 from scipy import spatial
-#import os
 from nltk.metrics.agreement import AnnotationTask
+from collections import defaultdict
 import copy
-import sys
+import os
+import jsonlines
 
 
 def parsing_arguments(parser):
@@ -14,13 +16,13 @@ def parsing_arguments(parser):
                         help='ids of all the annotators commas separated')
     parser.add_argument("--an-file", type=str,
                         help='file containing annotations')
-    parser.add_argument("--metrics", nargs='+', 
+    parser.add_argument("--metrics", nargs='+',
                         default='single_cohen,exact_cohen,multi_cohen',
                         help='Options can be: single_cohen,exact_cohen,multi_cohen, write them comma-separated')
-    parser.add_argument("--level", 
+    parser.add_argument("--level",
                         default='types', choices=['distortion', 'types'],
                         help='Select the annotation level')
-    parser.add_argument("--pre_annotations", 
+    parser.add_argument("--pre_annotations",
                         action='store_true',
                         help='Compute metrics including pre-annotations.')
     return parser
@@ -54,6 +56,7 @@ def create_label_vectors(data, labels, annotators):
             vectors[names_dicts[an]].append(label_vector[names_dicts[an]])
     return vectors, names_dicts
 
+
 def evaluate_cohen(vectors, labels, annotators, multi=False):
     """Compute Cohen's Kappa score (for 2 annotators) in the case of single-label and multi-label annotations.
     By default, when multi==False  it returns the coefficient per labels and the average coefficient across all the labels.
@@ -66,17 +69,18 @@ def evaluate_cohen(vectors, labels, annotators, multi=False):
         annotators (List): List of annotator names
         multi (Bool): Set the cosine distance for multi-label computation
     """
-    if multi:
+    score_labels = {}
+    if not multi:
 
-        scores = []
         for i, label in enumerate(labels):
             compare = [annotators[0], annotators[1]]
             if vectors[compare[0]][i] != [0] * len(vectors[compare[0]][i]):
-                score = cohen_kappa_score(
+                score_labels[label] = cohen_kappa_score(
                     np.array(vectors[annotators[0]][i]), np.array(vectors[annotators[1]][i]))
-                print(F'Cohen\' kappa for \'{label}\' between {compare[0]} and {compare[1]}: {score}')
-                scores.append(score)
-        print(f'Average cohen\' kappa between {compare[0]} and {compare[1]}: {np.mean(scores)}')
+                print(F'Cohen\' kappa for \'{label}\': {score_labels[label]}')
+        score_labels_avg = np.mean(list(score_labels.values()))
+        score_labels.update({'single-label-average': score_labels_avg})
+        print(f'Average cohen\' kappa: {score_labels_avg}')
 
     else:
         # Add task data for the annotators pair
@@ -90,7 +94,11 @@ def evaluate_cohen(vectors, labels, annotators, multi=False):
 
         # https://www.nltk.org/_modules/nltk/metrics/agreement.html
         cosine_task = AnnotationTask(data=task_data, distance=cosine_distance)
-        print(f"Cohen's Kappa using Cosine distance between {annotators[0]} and {annotators[1]}: {cosine_task.kappa()}")
+        score = cosine_task.kappa()
+        score_labels['multi-label-cosine'] = score
+        print(f"Cohen's Kappa using Cosine distance: {score}")
+
+    return score_labels
 
 
 def cosine_distance(vec1, vec2):
@@ -100,27 +108,27 @@ def cosine_distance(vec1, vec2):
 
 # TODO: add docstring and refactor code
 def evaluate_exact_cohen(data, annotators):
+    score_labels = {}
     annotations, list_annotators = dict_for_each_ann(annotators)
     list_ids = sorted(list(set([d['id'] for d in data])))
 
     for id in list_ids:
-        instance = [d for d in data if d['id']==id]
+        instance = [d for d in data if d['id'] == id]
         if len(instance) == len(annotators):
             for an in range(len(annotators)):
-                annotations[list_annotators[an]].append(str(instance[an]['accept']))
+                annotations[list_annotators[an]].append(
+                    str(instance[an]['accept']))
         else:
             print('One annotator is missing annotation', id)
+    score = cohen_kappa_score(
+        annotations[list_annotators[0]], annotations[list_annotators[1]])
+    score_labels['multi-label-exact'] = score
+    print('Exact Cohen\'s Kappa', cohen_kappa_score(
+        annotations[list_annotators[0]], annotations[list_annotators[1]]))
+    return score_labels
 
-    print(f'Exact Cohen\'s Kappa between {list_annotators[0]} and  {list_annotators[1]}:', cohen_kappa_score(annotations[list_annotators[0]], annotations[list_annotators[1]]))
 
-
-def main():
-    # TODO: poner errores cuando un anotador no tenga ninguna anotación
-    parser = argparse.ArgumentParser()
-    parser = parsing_arguments(parser)
-    args = parser.parse_args()
-    print(args)
-
+def main(args):
     with open(args.an_file, 'r') as fin:
         data = list(map(json.loads, fin.readlines()))
 
@@ -140,7 +148,7 @@ def main():
             if ann['_annotator_id'] == f"presto_{args.level}-{annotator_name}" and ann['id'] in ann_ids_intersection:
                 data_annotators.append(ann)
 
-    print(f"Computing scores on {len(ann_ids_intersection)} total examples")
+    # print(f"Computing scores on {len(ann_ids_intersection)} total examples")
 
     # get pre-annotation (from one of the annotators since they share the same pre-annotations),
     # replace the "accept" field with the value of pre-annotation and change annotator and session fields
@@ -156,7 +164,7 @@ def main():
                     d['accept'] = [d['pre-ann-category'][args.level]]
                 else:
                     d['accept'] = d['pre-ann-category'][args.level]
-                
+
                 # lowercase the annotations
                 d['accept'] = [d.lower() for d in d['accept']]
                 d.pop('pre-ann-category')
@@ -166,7 +174,10 @@ def main():
 
         list_annotators.append('pre-annotator')
 
-    assert len(list_annotators) == 2, ValueError(f'The script supports only metrics for 2 annotators but {len(list_annotators)} were passed.')
+    assert len(list_annotators) == 2, ValueError(
+        f'The script supports only metrics for 2 annotators but {len(list_annotators)} were passed.')
+
+    scores = defaultdict(dict)
     if args.level == 'distortion':
         evaluate_exact_cohen(data_annotators, list_annotators)
 
@@ -174,22 +185,38 @@ def main():
         labels = ['sobregeneralización', 'leer la mente', 'imperativos', 'etiquetado',
                   'pensamiento absolutista', 'adivinación', 'catastrofismo', 'abstracción selectiva',
                   'razonamiento emocional', 'personalización']
-        vectors, names_dicts = create_label_vectors(data_annotators, labels, list_annotators)
+        vectors, names_dicts = create_label_vectors(
+            data_annotators, labels, list_annotators)
 
         # FOR EACH LABEL, CALCULATE COHEN KAPPA
         if 'single_cohen' in list_metrics:
-            evaluate_cohen(vectors, labels, names_dicts)
-
-        # FOR EACH ANNOTATION, SEE IF THE LABELS ARE EXACTLY THE SAME
-        if 'exact_cohen' in list_metrics:
-            evaluate_exact_cohen(data_annotators, list_annotators)
+            annotators_pair = f"{names_dicts[0]}-{names_dicts[1]}"
+            score = evaluate_cohen(vectors, labels, names_dicts)
+            scores[annotators_pair].update(score)
 
         # FOR EACH ANNOTATION, SEE HOW SIMILAR THE ANNOTATIONS ARE (VECTOR SIMILARITY APPROACH)
         if 'multi_cohen' in list_metrics:
-            evaluate_cohen(vectors, labels, names_dicts, multi=True)
+            score = evaluate_cohen(vectors, labels, names_dicts, multi=True)
+            scores[annotators_pair].update(score)
             # there is a warning, but it might be because of the zeros
             # issue when there is few data: 0s are also counted as similarity
 
+        # FOR EACH ANNOTATION, SEE IF THE LABELS ARE EXACTLY THE SAME
+        if 'exact_cohen' in list_metrics:
+            score = evaluate_exact_cohen(data_annotators, list_annotators)
+            scores[annotators_pair].update(score)
+
+    scores = dict(scores)
+    # write to file
+    eval_file = os.path.join(os.path.dirname(args.an_file), 'cohens_scores.jsonl')
+    with jsonlines.open(eval_file, 'a') as f:
+        f.write(scores)
 
 if __name__ == '__main__':
-    main()
+    # TODO: poner errores cuando un anotador no tenga ninguna anotación
+    parser = argparse.ArgumentParser()
+    parser = parsing_arguments(parser)
+    args = parser.parse_args()
+
+    main(args)
+
