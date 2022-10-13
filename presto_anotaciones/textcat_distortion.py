@@ -2,6 +2,7 @@ import prodigy
 from prodigy.components.loaders import get_stream
 from typing import List, Optional, Union, Iterable
 from typing import List, Optional
+from functools import reduce
 from prodigy.util import split_string
 from random import shuffle
 from prodigy.util import log, msg, get_labels, split_string, INPUT_HASH_ATTR
@@ -12,13 +13,14 @@ hierarchy = {'distorsión': ['sobregeneralización', 'leer la mente', 'imperativ
                             'pensamiento absolutista', 'adivinación', 'catastrofismo', 'abstracción selectiva',
                             'razonamiento emocional', 'personalización'], 'no distorsión': []}
 
+
 # from https://support.prodi.gy/t/does-prodigy-supports-hierarchical-annotation/1249/9
 
 # Custom streamer
 
 
 def get_stream_nested(examples, annotator_id):
-    for eg in examples:   # the examples with top-level categories
+    for eg in examples:  # the examples with top-level categories
         if eg['_annotator_id'] == annotator_id:
             top_labels = eg['accept']  # ['A'] or ['B', 'C'] if multiple choice
             for label in top_labels:
@@ -43,12 +45,12 @@ def get_stream_nested(examples, annotator_id):
     exclude=("Names of datasets to exclude", "option", "e", split_string),
 )
 def textcat_multiple_nested(  # from https://github.com/explosion/prodigy-recipes/blob/master/textcat/textcat_manual.py
-    dataset: str,
-    source: str,
-    annotator: str,
-    # label: Optional[List[str]] = None,
-    exclusive: bool = False,
-    exclude: Optional[List[str]] = None,
+        dataset: str,
+        source: str,
+        annotator: str,
+        # label: Optional[List[str]] = None,
+        exclusive: bool = False,
+        exclude: Optional[List[str]] = None,
 ):
     """
     Manually annotate categories that apply to a text. If more than one label
@@ -91,17 +93,20 @@ def textcat_multiple_nested(  # from https://github.com/explosion/prodigy-recipe
     source=("Data to annotate (file path or '-' to read from standard input)", "positional", None, str),
     loader=("Loader (guessed from file extension if not set)", "option", "lo", str),
     label=("Comma-separated label(s) to annotate or text file with one label per line", "option", "l", get_labels),
-    exclusive=("Treat classes as mutually exclusive (if not set, an example can have multiple correct classes)", "flag", "E", bool),
+    exclusive=(
+            "Treat classes as mutually exclusive (if not set, an example can have multiple correct classes)", "flag",
+            "E",
+            bool),
     exclude=("Comma-separated list of dataset IDs whose annotations to exclude", "option", "e", split_string),
     # fmt: on
 )
 def textcat_choice_with_comment(
-    dataset: str,
-    source: Union[str, Iterable[dict]],
-    loader: Optional[str] = None,
-    label: Optional[List[str]] = None,
-    exclusive: bool = False,
-    exclude: Optional[List[str]] = None,
+        dataset: str,
+        source: Union[str, Iterable[dict]],
+        loader: Optional[str] = None,
+        label: Optional[List[str]] = None,
+        exclusive: bool = False,
+        exclude: Optional[List[str]] = None,
 ):
     """
     Manually annotate categories that apply to a text. If more than one label
@@ -129,6 +134,11 @@ def textcat_choice_with_comment(
                 stream = filter_accepted_inputs(
                     db.get_dataset(dataset), stream)
 
+    distortion_options = hierarchy.get('distorsión')
+    distortion_options_html = reduce(lambda accumulator,
+                                            current: accumulator + f'<label for="{current}" class="prodigy-option c0198" data-prodigy-option="{current}"><input class="c01100 distortion-option" name="{current}" type="checkbox" id="{current}"><a class="c01101"><div class="prodigy-content c0190 c0189">{current}</div></a></label>',
+                                     distortion_options, '')
+    html_template = f'<div tabindex="-1"><div class="prodigy-options c0178" id="distortion-type-options">{distortion_options_html}</div></div> '
     return {
         "view_id": "blocks",
         "dataset": dataset,
@@ -136,12 +146,13 @@ def textcat_choice_with_comment(
         "exclude": exclude,
         "config": {
             "labels": labels,
-            "choice_style": "single" if exclusive else "multiple",
-            "choice_auto_accept": exclusive,
+            "choice_style": "single",
+            # "choice_auto_accept": exclusive,
             "exclude_by": "input" if has_options else "task",
             "auto_count_stream": True,
             "blocks": [{"view_id": "choice"},
-                       {"view_id": "text_input"}]
+                       {"view_id": "text_input"},
+                       {"view_id": "html", "html_template": html_template}]
         },
     }
 
