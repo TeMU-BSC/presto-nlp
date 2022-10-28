@@ -11,6 +11,7 @@ rules:
   - action: utter_greet_ask_emotion
 
 
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye_nicemood
@@ -30,19 +31,54 @@ rules:
   - intent: chitchat
   - action: utter_chitchat
 
+
 - rule: prioritize alert intent
   steps:
-    - intent: alert
-    - action: utter_alert
+  - intent: alert
+  - action: utter_alert
 
-    # - intent: confirm
-    # - action: utter_call_to_emergency
-# - rule: priorize alert intent_no problem
+- rule: prioritize gender violence intent
+  steps:  
+  - intent: genderViolence
+  - action: utter_start_genderViolence
+
+- rule: keep in gv flow
+  steps: 
+  - intent: confirmvg
+  - action: utter_ask_genderViolence
+
+- rule: keep in gv flow 2
+  steps:
+  - intent: confirmvg2
+  - action: utter_ask_2_genderViolence
+
+- rule: denygv
+  steps:
+  - intent: denygv
+  - action: utter_answer_no_genderViolence
+  - action: utter_call_to_emergency_gv_denylastcuestion
+  
+
+- rule: restart
+  steps: 
+  - intent: noemergency
+  - action: utter_noemergency
+  - action: action_restart
+  - action: action_listen
+# - intent: utter_start_genderViolence:
+# - action: deny
+# - action: restart   PROBAR ESTO
+
+# - rule: bring_back ##experimentacion
 #   steps:
-#     - intent: emergency
-#     - action: utter_emergency
-#     - intent: deny
-#     - action: utter_answer_no_genderViolence
+#   - intent: bring_back
+#   # - action: utter_restart
+#   - action: utter_si_contar
+
+- rule: respond to FAQs
+  steps:
+  - intent: faq
+  - action: utter_faq
 
 ### unlikely hoping wrap up worksa
 
