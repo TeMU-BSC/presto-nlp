@@ -44,12 +44,12 @@ rules:
 
 - rule: keep in gv flow
   steps: 
-  - intent: confirmvg
+  - intent: confirmgv
   - action: utter_ask_genderViolence
 
 - rule: keep in gv flow 2
   steps:
-  - intent: confirmvg2
+  - intent: confirmgv2
   - action: utter_ask_2_genderViolence
 
 - rule: denygv

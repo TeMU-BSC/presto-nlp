@@ -1,0 +1,34 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: 1 - Emotion POS - contar 1 - feedbackemotionpos - desp contento
+  steps:
+  - user:   |
+        Hola
+    intent: greet                       # hola
+  - action: utter_greet_ask_emotion     # cómo estás hoy?
+  - user:   |
+        Estoy contenta
+    intent: inform_sentiment
+  - action: utter_sentiment_POS         # fantastico!
+  - action: utter_ask_tell_more_POS     # quieres contarme algo mas? (selector)
+  - user:   |
+        Claro
+    intent: confirm                     # sí o directamente 
+  - action: utter_si_contar             # soy todo oidos
+  - user:   |
+        Últimamente he estado muy tranquila
+    intent: inform_sentiment
+  - action: utter_sentiment_POS         #fantastico! %% es repeteix amb l'anterior. creem un 2?
+  - action: utter_selector_POS_last     # quieres contarme algo mas o aprender emociones positivas?
+  - user:   |
+        /feedbackemotionpos
+    intent: feedbackemotionpos
+  - action: utter_advice_POS            # explicación
+  - action: utter_selector_POS_finish   # te ha sido útil?
+  - user:   |
+        Lo he encontrado útil
+    intent: confirmfb                   # sí
+  - action: utter_advice_POS_finish     # despedida contenta
+  

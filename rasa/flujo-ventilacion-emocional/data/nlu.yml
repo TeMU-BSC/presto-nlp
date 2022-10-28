@@ -1220,7 +1220,6 @@ nlu:
 - intent: chitchat/help_me
   examples: |
     - ¿Puedes ayudarme?
-    - qué puedes hacer por mí
     - quiero que me ayudes
     - hablemos
 - intent: chitchat/how_are_u
@@ -1384,12 +1383,12 @@ nlu:
     - cuando es tu cumple
     - celebras tu cumple?
 
-- intent: chitchat/mybirthday
-  examples: |
-    - hoy es mi cumpleaños
-    - mañana es mi cumpleaños
-    - felicitame que es mi cumple
-    - vicky, sabes que hoy es mi cumple?
+#- intent: chitchat/mybirthday
+  #examples: |
+    #- hoy es mi cumpleaños
+    #- mañana es mi cumpleaños
+    #- felicitame que es mi cumple
+    #- vicky, sabes que hoy es mi cumple?
 
 - intent: chitchat/whichmusic
   examples: |

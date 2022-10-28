@@ -147,8 +147,8 @@ stories:
   - story: EmotionClassification - selector Denyhelp
     steps:
       - action: utter_selector_POS_last
-      - intent: deny
-      - action: utter_goodbye_nicemood
+      - intent: confirmtalk
+      - action: utter_ventilacion_nd_1
 
 # NEG stories
   - story: EmotionClassification - negative emotion # ok revisado
@@ -202,8 +202,8 @@ stories:
   - story: EmotionClassification - selector Denyhelp
     steps:
       - action: utter_selector_NEG_last
-      - intent: deny
-      - action: utter_goodbye_nicemood
+      - intent: confirmtalk
+      - action: utter_ventilacion_nd_1
 
   - story: non distorsion - negative emotion - no contar
     steps:
