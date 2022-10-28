@@ -27,6 +27,9 @@ nlu:
     - regular
     - fatal
     - mal muy mal
+    - estoy [contenta](emotion)
+    - estoy [feliz](emotion)
+    - últimamente he estado muy [tranquila](emotion)
 
 ### distorsiones - ejemplos extraidos directamente de su dataset. De momento con estos ejemplos el diet se comporta, pero es plausible su externalización en un componente custom
 - intent: sobregeneralizacion
@@ -1060,9 +1063,13 @@ nlu:
 
 ### Selectores
 
-- intent: feedbackemotion
+- intent: feedbackemotionneg
   examples: |
-    - /feedbackemotion
+    - /feedbackemotionneg
+    
+- intent: feedbackemotionpos
+  examples: |
+    - /feedbackemotionpos
 
 - intent: emergency
   examples: |
@@ -1103,9 +1110,9 @@ nlu:
     - /confirmEmotionClassification
 
 
-- intent: denypsicoeduc
+- intent: denyPsicoedu
   examples: |
-    - /denypsicoeduc
+    - /denyPsicoedu
 
 
 ### Greetings and commands
@@ -1233,7 +1240,7 @@ nlu:
     - dime algo que no sepa
     - cuéntame algo nuevo
     - cuéntame algo que no sepa
-- intent: chitchat/who_made_you
+- intent: chitchat/who_are_you
   examples: |
     - quién te ha creado
     - quién está detrás
@@ -1517,6 +1524,13 @@ nlu:
     - perra
     - petarda
     - mongola
+    
+- synonym: emotion
+  examples: |
+    - contento
+    - tranquila
+    - bien
+    - feliz
 
 # Entidad de refuerzo para desambiguar distorsion conflictiva con suicidio
 - synonym: miedo

@@ -21,7 +21,16 @@ intents:
 - confirm:
     ignore_entities:
     - sentiment
-- confirmtalk:
+- confirmfb:
+    ignore_entities:
+    - sentiment
+- denyfb:
+    ignore_entities:
+    - sentiment
+- confirmtalkpos:
+    ignore_entities:
+    - sentiment
+- confirmtalkneg:
     ignore_entities:
     - sentiment
 - denygv
@@ -91,12 +100,28 @@ intents:
     use_entities: true
 - confirmcontar:
     use_entities: true
+- denyContar:
+    use_entities: true
 - confirmEmotionClassification:
     use_entities: true
 - retrieval_alert_intent
-- denypsicoeduc:
+- denyPsicoGen:
     use_entities: true
-- feedbackemotion:
+- confirmPsicoGen:
+    use_entities: true
+- denyPsico1:
+    use_entities: true
+- denyPsicoedu:
+    use_entities: true
+- confirmPsico1:
+    use_entities: true
+- denySobre:
+    use_entities: true
+- confirmSobre:
+    use_entities: true
+- feedbackemotionpos:
+    use_entities: true
+- feedbackemotionneg:
     use_entities: true
 - faq: 
     use_entities: true
@@ -116,6 +141,8 @@ entities:
 - insult
 - lectura
 - place
+- emotion
+
 slots:
   sentiment:
     type: rasa.shared.core.slots.CategoricalSlot
@@ -177,7 +204,6 @@ responses:
   - text: ¡Hola! ¿Cómo has estado desde la última vez que hablamos? 
    
 
-
   utter_retrieval:
   - text: Aquí estoy para lo que quieras contarme 🙂. Si no te apetece seguir hablando de tus emociones, a veces suelo responder sobre aficiones, libros y música. :)
 
@@ -202,7 +228,7 @@ responses:
   - text: Lamento leer esto
   - text: Siento esto que me cuentas.
   
-  utter_selector_POS:
+  utter_ask_tell_more_POS:
   - buttons:
     - payload: /confirm
       title: Claro
@@ -230,32 +256,25 @@ responses:
     
   utter_selector_POS_last:
   - buttons:
-    - payload: /confirmtalk
+    - payload: /confirmtalkpos
       title: Me gustaría seguir hablando
-    - payload: /feedbackemotion
+    - payload: /feedbackemotionpos
       title: Quiero aprender algo sobre las emociones positivas
     text: ¿Quieres compartir conmigo algo más sobre esto o prefieres que te cuente un poco sobre las emociones positivas 🙂?
     
   utter_selector_NEG_last:
   - buttons:
-    - payload: /confirmtalk
+    - payload: /confirmtalkneg
       title: Me gustaría seguir hablando
-    - payload: /feedbackemotion
+    - payload: /feedbackemotionneg
       title: Quiero aprender algo sobre las emociones negativas
-    text: ¿Quieres compartir conmigo algo más sobre esto o prefieres que te cuente un poco sobre las emociones negativas 🙂?
-
-  utter_ask_tell_more_POS:
-  - buttons:
-    - payload: /confirm
-      title: Claro
-    - payload: /deny
-      title: En otro momento
-    text: ¿Te apetece contarme algo más sobre esto?
+    text: ¿Quieres compartir conmigo algo más o prefieres que te cuente un poco sobre las emociones negativas 🙂?
+    
   utter_selector_POS_finish:
   - buttons:
-    - payload: /confirm
+    - payload: /confirmfb
       title: Lo he encontrado útil
-    - payload: /deny
+    - payload: /denyfb
       title: No demasiado
     text: ¿Crees que te ha servido este consejo?
 
@@ -272,7 +291,7 @@ responses:
 
 
  ### TEST
-  utter_ventilacion_nd_final:
+  utter_ventilacion_nd_final: # == utter_advice_NEG?
   - text: Etiquetar la emoción es el primer paso para poder regular nuestro comportamiento a las necesidades de la situación. Ahora quédate con esta sensación. No la juzgues, simplemente obsérvala hasta que acabe bajando de intensidad. Recuerda que, cualquier emoción (sea agradable o desagradable) acaba disminuyendo con el tiempo.
   - text: Aunque ahora mismo te sientas mal, quería proponerte que aprovecharas este momento para probar de des-identificarte de la emoción (tú no eres esa emoción, eres mucho más que esta emoción). Ahora reconócela y observa la naturaleza cambiante y transitoria de la misma. Conocer mejor lo que nos sucede a nivel emocional, nos permite desarrollar una relación menos reactiva con la experiencia interior. Nos permite reconocer y soltar más fácilmente las tormentas emocionales.   
 
@@ -403,7 +422,7 @@ responses:
   - buttons:
       - payload: /confirmcontar
         title: Sí
-      - payload: /deny
+      - payload: /denyContar
         title: "No"
     text: Vaya, lamento leer esto. Me gustaría que me contaras algo más sobre esto ¿Te apetece?
 
@@ -434,7 +453,7 @@ responses:
   utter_ventilacion_nd_opcional:
   - text: meter aqui la posibilidad de educacion emocional
   utter_advice_NEG:
-  - text: Etiquetar la emoción es el primer paso para poder reholgular nuestro comportamiento a las necesidades de la situación. Ahora quédate con esta sensación. No la juzgues, simplemente obsérvala hasta que acabe bajando de intensidad. Recuerda que, cualquier emoción (sea agradable o desagradable) acaba disminuyendo con el tiempo.
+  - text: Etiquetar la emoción es el primer paso para poder regular nuestro comportamiento a las necesidades de la situación. Ahora quédate con esta sensación. No la juzgues, simplemente obsérvala hasta que acabe bajando de intensidad. Recuerda que, cualquier emoción (sea agradable o desagradable) acaba disminuyendo con el tiempo.
   - text: Aunque ahora mismo te sientas mal, quería proponerte que aprovecharas este momento para probar de des-identificarte de la emoción (tú no eres esa emoción, eres mucho más que esta emoción). Ahora reconócela y observa la naturaleza cambiante y transitoria de la misma. Conocer mejor lo que nos sucede a nivel emocional, nos permite desarrollar una relación menos reactiva con la experiencia interior. Nos permite reconocer y soltar más fácilmente las tormentas emocionales. 
   # utter_pruebacheckpointdist:
   # - buttons:
@@ -447,30 +466,30 @@ responses:
   ## psicoeducacion general
   utter_selector_psicoeduc_general:
   - buttons:
-    - payload: /confirm
+    - payload: /confirmPsicoGen
       title: "Sí"
-    - payload: /denypsicoeduc
+    - payload: /denyPsicoGen
       title: "Mejor no"
     text: Trabajar sobre ellas puede ayudarte a estar mejor. ¿Te animas a probarlo?
   - buttons:
-    - payload: /confirm
+    - payload: /confirmPsicoGen
       title: "Sí"
-    - payload: /denypsicoeduc
+    - payload: /denyPsicoGen
       title: "Mejor no"
     text: ¿Te gustaría saber más sobre ello?
 
     
   utter_selector_psicoeduc_1:
   - buttons:
-    - payload: /confirm
+    - payload: /confirmPsico1
       title: "Sí"
-    - payload: /deny
+    - payload: /denyPsicoedu
       title: "Mejor no"
     text: ¿Seguimos 😊?
   - buttons:
-    - payload: /confirm
+    - payload: /confirmPsico1
       title: "Sí"
-    - payload: /denypsicoeduc
+    - payload: /denyPsicoedu
       title: "Mejor no"
     text: ¿Quieres que continuemos?
   
@@ -480,14 +499,14 @@ responses:
   ### psicoeducacion sobregen
   utter_selector_psicoeduc_sobre_2:
   - buttons:
-    - payload: /confirm
+    - payload: /confirmSobre
       title: La verdad es que sí
-    - payload: /deny
+    - payload: /denySobre
       title: No demasiado
     text: ¿Te identificas con la situación de Anna?
 
   utter_psicoeduc_sobre:
-  - text: A veces tenemos tendencia a aplicar las conclusiones de una situación concreta a todos los escenarios que se le parecen, como estableciendo una regla general, sacamos conclusiones a partir de uno o varios hechos aislados y las aplicamos tanto a situaciones relacionadas con el hecho en cuestión como no relacionadas.  A esto le llamamos sobregeneralización.
+  - text: A veces tenemos tendencia a aplicar las conclusiones de una situación concreta a todos los escenarios que se le parecen, como estableciendo una regla general, sacamos conclusiones a partir de uno o varios hechos aislados y las aplicamos tanto a situaciones relacionadas con el hecho en cuestión como no relacionadas. A esto le llamamos sobregeneralización.
   utter_psicoeduc_sobre_2:
   - text: "Por ejemplo: Anna ha tenido un día difícil hoy en el trabajo y esperaba poder quedar con sus amigas para pasar un buen rato. Al salir de trabajar ha llamado a dos de sus amigas que le han dicho que finalmente no podrían quedar hoy, Anna muy triste ha pensado: A todo el mundo le doy igual, nadie quiere estar conmigo! Realmente hay muchos días en los que Anna queda con sus amigos o familiares lo pasa bien y se siente querida por ellos, pero hoy solo le viene este pensamiento a la cabeza."
 
