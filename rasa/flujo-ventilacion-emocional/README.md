@@ -52,3 +52,17 @@ rasa shell nlu
 ```bash
 rasa x
 ```
+
+## Build rasa docker image
+
+To build rasa docker image use: 
+
+```bash
+docker build -t paulandrei/rasa:2.8.12 .
+```
+
+Then, push the image to docker hub:
+
+```bash
+docker push paulandrei/rasa:2.8.12
+```
