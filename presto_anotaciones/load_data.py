@@ -16,12 +16,12 @@ def main(filename):
                 if t:
                     list_distortions.append(t)
 
-            info = {'id': instance[0], 'text': instance[1],
+            info = {'id': instance[0], 'text': instance[1], 'types': [],
                     'pre-ann-category': {'distortion': category_to_out[instance[2]], 'types': list_distortions}}
 
             out.write(json.dumps(info) + "\n")
 
 
 if __name__ == '__main__':
-    filenane = '/home/casimiro/projects/presto-nlp/presto_anotaciones/RC_data_10%_random.csv'
-    main(filenane)
+    filename = './RC_data.csv'
+    main(filename)
