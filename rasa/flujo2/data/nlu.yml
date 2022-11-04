@@ -23,11 +23,12 @@ nlu:
     - bastante jodido
     - estoy muy agobiada
     - muy horrible todo
-    - bien
+    - [bien](emotion)
     - regular
     - fatal
     - mal muy mal
     - estoy [contenta](emotion)
+    - estoy [bien](emotion)
     - estoy [feliz](emotion)
     - últimamente he estado muy [tranquila](emotion)
 
@@ -1034,16 +1035,18 @@ nlu:
     - No me deja tener redes sociales
     - No me deja vestirme como quiero
     - Me llama [puta](insult)
-    - Me llama guarra(insult)
-    - Dice que soy una fresca
-    - Me amenaza con sacarme a los hijos
+    - Me llama [guarra](insult)
+    - Dijo que era una [zorra](insult)
+    - Dice que soy una [fresca](insult)
+    - Me llama [perra](insult) delante de todo el mundo
+    - Me amenaza con sacarme a los [hijos](valorFamilia)
     - Me obliga a tener relaciones sexuales
     - Me obliga a hacerle felaciones
     - Me dio un golpe
     - Me hizo daño
-    - Mi [novio](valorPareja) Me menosprecia
-    - mi [marido](valorPareja) Me dice que no sirvo para nada
-    - mi [novio](valorPareja) Me culpa cuando se pone agresivo
+    - Mi [novio](valorPareja) me menosprecia
+    - mi [marido](valorPareja) me dice que no sirvo para nada
+    - mi [novio](valorPareja) me culpa cuando se pone agresivo
     - Controla todo lo que hago
     - Me insulta
     - Me vigila
@@ -1280,18 +1283,18 @@ nlu:
 
 - intent: chitchat/whichbook
   examples: |
-    - cuál es tu [libro](lectura) preferido
-    - qué [lectura](novela) me recomiendas
-    - qué tipo de [libro](lectura) te gusta
-    - qué [libro](novela) te gusta
-    - Cuál es tu [novela](lectura) preferida
-    - recomiéndame una [novela](lectura)
-    - qué [libro](lectura) podría leer
+    - cuál es tu [libro](books) preferido
+    - qué [lectura](books) me recomiendas
+    - qué tipo de [libro](books) te gusta
+    - qué [libro](books) te gusta
+    - Cuál es tu [novela](books) preferida
+    - recomiéndame una [novela](books)
+    - qué [comic](books) podría leer
     - ¿me podrías dar alguna idea para leer?
-    - dime un [libro](lectura)
-    - recomiéndame una [novela](lectura)
-    - ¿me podrías dar alguna idea para leerme un [comic](lectura)?
-    - [comic](lectura)
+    - dime un [libro](books)
+    - recomiéndame una [novela](books)
+    - ¿me podrías dar alguna idea para leerme un [comic](books)?
+    - [comic](books)
     - te gusta leer?
 
 
@@ -1345,10 +1348,11 @@ nlu:
     - cuál es tu [lugar](place) favorito
     - vicky cual es tu [lugar](place) favorito del mundo
     - cuál es tu [ciudad](place) preferida
-    - recomiéndame una [ciudad](place) para conocer
+    - recomiéndame un [pueblo](place) para conocer
     - dónde te gustaría viajar
-    - En qué [ciudad](place) vives
+    - En qué [localidad](place) vives
     - donde vives
+    - dime un [sitio](place) que te guste mucho
 
 - intent: chitchat/freetime
   examples: |
@@ -1368,11 +1372,11 @@ nlu:
     - cuál es tu [animal](animal) favorito
     - te gustan los [gatos](animal)
     - tienes [mascota](animal)
-    - como se llama tu [mascota](animal)
+    - como se llama tu [perro](animal)
     - te gustan los [animales](animal)
     - quieres tener algun [animal](animal)
     - que opinion tienes de los [animales](animal)
-    - [gatos](animal)
+    - [hamster](animal)
 
 - intent: chitchat/joke
   examples: |
@@ -1404,7 +1408,8 @@ nlu:
     - escuchas [musica](musica)
     - [musica](musica)
     - recomiendame una [cancion](musica)
-    - cual es tu [cancion](musica) favorita
+    - cual es tu [gruop](musica) favorito?
+    - qué [cantante] te gusta más?
 
 
 - intent: faq/tufuncion
@@ -1493,6 +1498,8 @@ nlu:
   examples: |
     - musica
     - cancion
+    - cantante
+    - grupo
 
 - synonym: animal
   examples: |
@@ -1500,6 +1507,8 @@ nlu:
     - gato
     - perro
     - mascota
+    - hamster
+    
 - synonym: place
   examples: |
     - lugar
@@ -1507,7 +1516,8 @@ nlu:
     - pueblo
     - localidad
     - sitio
-- synonym: lectura
+    
+- synonym: books
   examples: |
     - lectura
     - libro
@@ -1521,9 +1531,11 @@ nlu:
     - capullo
     - zorra
     - puta
+    - guarra
     - perra
     - petarda
     - mongola
+    - mierda
     
 - synonym: emotion
   examples: |
@@ -1537,3 +1549,5 @@ nlu:
   examples: |
     - miedo
     - pánico
+    - temor
+    - pavor

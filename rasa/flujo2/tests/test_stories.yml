@@ -32,3 +32,147 @@ stories:
     intent: confirmfb                   # sí
   - action: utter_advice_POS_finish     # despedida contenta
   
+- story: Story from Conversation ID b82a0b7455bc4cd5b041f57828f6372f
+
+  steps:
+
+  - intent: greet
+
+    user: |-
+
+      hola
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - action: utter_greet_ask_emotion
+
+  - intent: inform_sentiment
+
+    user: |-
+
+      estoy fatal
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_sentiment_NEG
+
+  - intent: etiquetado
+
+    user: |-
+
+      estoy gorda y soy tonta y perezosa
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_ventilacion_1
+
+  - intent: nlu_fallback
+
+    user: |-
+
+      quería adelgazar, pero me gustan demasiado las chucherías
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - action: utter_sentiment_NEU
+
+  - intent: deberias
+
+    user: |-
+
+      no tengo autocontrol, se me va de las manos
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_ventilacion_2
+
+  - intent: nlu_fallback
+
+    user: |-
+
+      no puedo seguir una dieta
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_psicoeduc_general
+
+  - action: utter_selector_psicoeduc_general
+
+  - intent: confirmPsicoGen
+
+    user: |-
+
+      /confirmPsicoGen
+
+  - action: utter_psicoeduc_etiquetado
+
+  - action: utter_selector_psicoeduc_1
+
+  - intent: confirmPsico1
+
+    user: |-
+
+      /confirmPsico1
+
+  - action: utter_psicoeduc_etiquetado_2
+
+  - action: utter_selector_psicoeduc_etiquetado_2
+
+  - intent: deny
+
+    user: |-
+
+      /deny
+
+  - action: utter_intervencion_etiquetado
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - intent: goodby_nicemood
+
+    user: |-
+
+      vale, voy a mirarlo
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - action: utter_goodbye_nicemood
+
+
+  

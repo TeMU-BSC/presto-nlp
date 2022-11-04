@@ -82,6 +82,22 @@ stories:
       - action: utter_selector_POS_last     # quieres contarme algo mas o aprender emociones positivas?
       - intent: confirmtalkpos              # contar más
       - action: utter_si_contar             # soy todo oídos
+      
+      
+  - story: EmotionClassification - selector Denyhelp Largo
+    steps:
+      - action: utter_selector_POS_last     # quieres contarme algo mas o aprender emociones positivas?
+      - intent: confirmtalkpos              # contar más
+      - action: utter_si_contar             # soy todo oídos
+      - or: 
+        - intent: inform_sentiment
+        - intent: nlu_fallback
+        - intent: sobregeneralizacion
+        - intent: etiquetado
+      - slot_was_set:
+          - sentiment: POS                  # positivo
+      - action: utter_sentiment_POS         # fantastico! %% es repeteix amb l'anterior. creem un 2?
+      - action: utter_ventilacion_nd_1     # Quieres contarme un poquito más sobre este tema?
 
   - story: EmotionClassification - neutral emotion 
     steps:

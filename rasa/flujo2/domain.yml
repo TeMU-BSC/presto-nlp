@@ -223,6 +223,8 @@ responses:
   - text: ¡Qué bien suena eso!
   - text: ¡Estoy contenta por ti!
   - text: ¡Wow que bien!
+  - text: Suena bien :-)
+  - text: ¡Está muy bien!
 
   utter_sentiment_NEG_sm:
   - text: Lamento leer esto
@@ -404,7 +406,7 @@ responses:
 
 ## Ventilacion emocional - no distorsion
   utter_ventilacion_nd_1:
-  - text: "Vaya, te animo a que me cuentes un poquito más sobre este tema."
+  - text: "Quieres contarme un poquito más sobre este tema?"
   - text: "¿Te apetece contarme algo más sobre esto 🙂?"
   - text: "Te animo a que me cuentes un poquito más sobre este tema. ¿Te apetece?"
 
