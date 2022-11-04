@@ -1,2 +1,4 @@
-venv/
+myvenv/
 .idea/
+rasa/flujo-ventilacion-emocional/notes.txt
+venv/
