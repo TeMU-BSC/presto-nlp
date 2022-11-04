@@ -51,6 +51,11 @@ rules:
   steps:
   - intent: confirmgv2
   - action: utter_ask_2_genderViolence
+  
+- rule: keep in gv flow 3
+  steps:
+  - intent: confirmgv3
+  - action: utter_call_to_emergency_gv
 
 - rule: denygv
   steps:

@@ -40,20 +40,6 @@ stories:
     - intent: confirmgv3
     - action: utter_call_to_emergency_gv
 
-
-  - story: gender_violence_ direct ultima no #ok revisado
-    steps:
-    - intent: genderViolence
-    - action: utter_start_genderViolence #selector con deny y emergency
-    - intent: confirmgv
-    - action: utter_ask_genderViolence
-    - intent: confirmgv2 #revisar
-    - action: utter_ask_2_genderViolence #revisar   ## Añadir mas
-    - intent: confirmgv3
-    - action: utter_call_to_emergency_gv
-
-
-
   - story: gender_violence_ direct ultima no #ok revisado
     steps:
     - intent: genderViolence

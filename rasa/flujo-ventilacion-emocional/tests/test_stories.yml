@@ -2,90 +2,177 @@
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
 stories:
-- story: happy path 1
+- story: 1 - Emotion POS - contar 1 - feedbackemotionpos - desp contento
   steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+  - user:   |
+        Hola
+    intent: greet                       # hola
+  - action: utter_greet_ask_emotion     # cómo estás hoy?
+  - user:   |
+        Estoy contenta
+    intent: inform_sentiment
+  - action: utter_sentiment_POS         # fantastico!
+  - action: utter_ask_tell_more_POS     # quieres contarme algo mas? (selector)
+  - user:   |
+        Claro
+    intent: confirm                     # sí o directamente 
+  - action: utter_si_contar             # soy todo oidos
+  - user:   |
+        Últimamente he estado muy tranquila
+    intent: inform_sentiment
+  - action: utter_sentiment_POS         #fantastico! %% es repeteix amb l'anterior. creem un 2?
+  - action: utter_selector_POS_last     # quieres contarme algo mas o aprender emociones positivas?
+  - user:   |
+        /feedbackemotionpos
+    intent: feedbackemotionpos
+  - action: utter_advice_POS            # explicación
+  - action: utter_selector_POS_finish   # te ha sido útil?
+  - user:   |
+        Lo he encontrado útil
+    intent: confirmfb                   # sí
+  - action: utter_advice_POS_finish     # despedida contenta
+  
+- story: Story from Conversation ID b82a0b7455bc4cd5b041f57828f6372f
 
-- story: happy path 2
   steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
 
-- story: sad path 1
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
+  - intent: greet
 
-- story: sad path 2
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
+    user: |-
 
-- story: sad path 3
-  steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
+      hola
 
-- story: say goodbye
-  steps:
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+  - slot_was_set:
 
-- story: bot challenge
-  steps:
-  - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot
+    - sentiment: NEU
+
+  - action: utter_greet_ask_emotion
+
+  - intent: inform_sentiment
+
+    user: |-
+
+      estoy fatal
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_sentiment_NEG
+
+  - intent: etiquetado
+
+    user: |-
+
+      estoy gorda y soy tonta y perezosa
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_ventilacion_1
+
+  - intent: nlu_fallback
+
+    user: |-
+
+      quería adelgazar, pero me gustan demasiado las chucherías
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - action: utter_sentiment_NEU
+
+  - intent: deberias
+
+    user: |-
+
+      no tengo autocontrol, se me va de las manos
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_ventilacion_2
+
+  - intent: nlu_fallback
+
+    user: |-
+
+      no puedo seguir una dieta
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_psicoeduc_general
+
+  - action: utter_selector_psicoeduc_general
+
+  - intent: confirmPsicoGen
+
+    user: |-
+
+      /confirmPsicoGen
+
+  - action: utter_psicoeduc_etiquetado
+
+  - action: utter_selector_psicoeduc_1
+
+  - intent: confirmPsico1
+
+    user: |-
+
+      /confirmPsico1
+
+  - action: utter_psicoeduc_etiquetado_2
+
+  - action: utter_selector_psicoeduc_etiquetado_2
+
+  - intent: deny
+
+    user: |-
+
+      /deny
+
+  - action: utter_intervencion_etiquetado
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - intent: goodby_nicemood
+
+    user: |-
+
+      vale, voy a mirarlo
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - action: utter_goodbye_nicemood
+
+
+  

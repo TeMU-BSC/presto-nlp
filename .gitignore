@@ -2,3 +2,7 @@ myvenv/
 .idea/
 rasa/flujo-ventilacion-emocional/notes.txt
 venv/
+prodigy/
+__pycache__/
+notes.txt
+preguntes.txt
