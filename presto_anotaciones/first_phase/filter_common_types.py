@@ -5,7 +5,7 @@ import json
 
 def main():
     # import the types annotated file
-    with open('presto_types.dedup.jsonl', 'r') as fin:
+    with open('presto_types.jsonl', 'r') as fin:
         data = list(map(json.loads, fin.readlines()))
 
     ids_counter = {}

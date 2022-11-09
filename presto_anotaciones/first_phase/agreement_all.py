@@ -5,7 +5,7 @@ import json
 
 for level in ['distortion', 'types']:
         if level == 'distortion':
-                an_file = f"--an-file /home/casimiro/presto-nlp/presto_anotaciones/presto_distortion.dedup.jsonl" 
+                an_file = f"--an-file /home/casimiro/presto-nlp/presto_anotaciones/presto_distortion.jsonl" 
         elif level == 'types':
                 an_file = f"--an-file /home/casimiro/presto-nlp/presto_anotaciones/types_de_los_coincidentes.jsonl" 
 

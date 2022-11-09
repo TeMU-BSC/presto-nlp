@@ -21,7 +21,7 @@ def obs_agreement(ann):
 if __name__ == '__main__':
         
     for level in ['distortion', 'types']:
-        file_ann_level = f'/home/casimiro/presto-nlp/presto_anotaciones/presto_{level}.dedup.jsonl'
+        file_ann_level = f'/home/casimiro/presto-nlp/presto_anotaciones/presto_{level}.jsonl'
         file_errors = f'/home/casimiro/presto-nlp/presto_anotaciones/errors_{level}.csv'
 
 
