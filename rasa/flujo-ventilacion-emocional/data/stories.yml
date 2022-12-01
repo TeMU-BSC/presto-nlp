@@ -4,20 +4,29 @@ stories:
 
 # Transervsal stories
 
-  - story: thanks
-    steps:
-      - intent: thanks
-      - action: utter_thanks
+  #- story: thanks
+    #steps:
+      #- intent: thanks
+      #- action: utter_thanks
+      #- action: utter_retrieval
 
-  - story: goodbye
+  - story: goodbye + confirm goodby
     steps:
       - intent: goodbye_nicemood
+      - action: utter_confirm_goodby
+      - intent: confirm_goodby
       - action: utter_goodbye_nicemood
-      - intent: thanks
+
+  - story: goodbye + deny goodby
+    steps:
+      - intent: goodbye_nicemood
+      - action: utter_confirm_goodby
+      - intent: deny_goodby
+      - action: utter_retrieval
 
 # POS stories
 
-  - story: Emotion POS 
+  - story: Emotion 3 x POS contar
     steps:
       - intent: greet                       # hola
       - action: utter_greet_ask_emotion     # cómo estás hoy?
@@ -29,6 +38,15 @@ stories:
       - slot_was_set:
           - sentiment: POS                  # positivo
       - action: utter_sentiment_POS         # fantastico!
+      - or: 
+        - intent: inform_sentiment
+        - intent: nlu_fallback
+        - intent: sobregeneralizacion
+        - intent: etiquetado 
+      - slot_was_set:
+          - sentiment: POS                  # positivo
+      - action: utter_sentiment_POS2         # fantastico!
+      
       - action: utter_ask_tell_more_POS     # quieres contarme algo mas? (selector)
       - intent: confirm                     # sí o directamente 
       - action: utter_si_contar             # soy todo oidos
@@ -42,7 +60,7 @@ stories:
       - action: utter_sentiment_POS         # fantastico! %% es repeteix amb l'anterior. creem un 2?
       - action: utter_selector_POS_last     # quieres contarme algo mas o aprender emociones positivas?
 
-  - story: Emotion POS deny 
+  - story: Emotion 3 x POS deny 
     steps:
      - intent: greet                        # hola
      - action: utter_greet_ask_emotion      # cómo estás hoy?
@@ -53,10 +71,86 @@ stories:
        - intent: etiquetado # rasa 3 con la condicion slot = pos y ya sino lista de intents + pos
      - slot_was_set:
         - sentiment: POS                    # positivo
-     - action: utter_sentiment_POS          # fantastico!
+     - action: utter_sentiment_POS         # fantastico!
+     - or: 
+        - intent: inform_sentiment
+        - intent: nlu_fallback
+        - intent: sobregeneralizacion
+        - intent: etiquetado 
+     - slot_was_set:
+        - sentiment: POS                  # positivo
+     - action: utter_sentiment_POS2         # fantastico!
      - action: utter_ask_tell_more_POS      # quieres contarme algo mas? (selector)
      - intent: deny                         # no
+     - action: utter_no_contar 
      - action: utter_selector_POS_last      # quieres contarme algo mas o aprender emociones positivas?
+    
+    ### aquestes són de prova per provar lo dels tres pos
+  - story: Emotion POS - POS - NEU contar
+    steps:
+      - intent: greet                       # hola
+      - action: utter_greet_ask_emotion     # cómo estás hoy?
+      - or: 
+        - intent: inform_sentiment
+        - intent: nlu_fallback
+        - intent: sobregeneralizacion
+        - intent: etiquetado 
+      - slot_was_set:
+          - sentiment: POS                  # positivo
+      - action: utter_sentiment_POS         # fantastico!
+      - or: 
+        - intent: inform_sentiment
+        - intent: nlu_fallback
+        - intent: sobregeneralizacion
+        - intent: etiquetado 
+      - slot_was_set:
+          - sentiment: POS                  # positivo
+      - action: utter_sentiment_POS2         # fantastico!
+      
+      - action: utter_ask_tell_more_POS     # quieres contarme algo mas? (selector)
+      - intent: confirm                     # sí o directamente 
+      - action: utter_si_contar             # soy todo oidos
+      - or: 
+        - intent: inform_sentiment
+        - intent: nlu_fallback
+        - intent: sobregeneralizacion
+        - intent: etiquetado
+      - slot_was_set:
+          - sentiment: NEU                  # neutro
+      - action: utter_selector_POS_last     # quieres contarme algo mas o aprender emociones positivas?
+
+     
+  - story: Emotion POS - NEU - POS contar
+    steps:
+      - intent: greet                       # hola
+      - action: utter_greet_ask_emotion     # cómo estás hoy?
+      - or: 
+        - intent: inform_sentiment
+        - intent: nlu_fallback
+        - intent: sobregeneralizacion
+        - intent: etiquetado 
+      - slot_was_set:
+          - sentiment: POS                  # positivo
+      - action: utter_sentiment_POS         # fantastico!
+      - or: 
+        - intent: inform_sentiment
+        - intent: nlu_fallback
+        - intent: sobregeneralizacion
+        - intent: etiquetado 
+      - slot_was_set:
+          - sentiment: NEU                  # neutro
+      - action: utter_sentiment_NEU         # de acuerdo, me cuentas más?
+      - or: 
+        - intent: inform_sentiment
+        - intent: nlu_fallback
+        - intent: sobregeneralizacion
+        - intent: etiquetado
+      - slot_was_set:
+          - sentiment: POS                  # positivo
+      - action: utter_sentiment_POS         # fantastico! %% es repeteix amb l'anterior. creem un 2?
+      - action: utter_selector_POS_last     # quieres contarme algo mas o aprender emociones positivas?
+
+ ##### fi de la prova
 
 
   - story: EmotionClassification - selector Confirm
@@ -64,18 +158,19 @@ stories:
       - action: utter_selector_POS_last     # quieres contarme algo mas o aprender emociones positivas?
       - intent: feedbackemotionpos          # aprender
       - action: utter_advice_POS            # explicación
-      - action: utter_selector_POS_finish   # te ha sido útil?
+      - action: utter_selector_feedback_advice   # te ha sido útil?
       - intent: confirmfb                   # sí
-      - action: utter_advice_POS_finish     # despedida contenta
+      - action: utter_positive_feedback     # despedida contenta
+      - action: utter_retrieval             # algo más?
       
   - story: EmotionClassification - selector Denyutility
     steps:
       - action: utter_selector_POS_last     # quieres contarme algo más o aprender emociones positivas?
       - intent: feedbackemotionpos          # aprender
       - action: utter_advice_POS            # explicación
-      - action: utter_selector_POS_finish   # te ha sido útil?
+      - action: utter_selector_feedback_advice   # te ha sido útil?
       - intent: denyfb                      # no
-      - action: utter_negative_feedback_POS # despedida y visita nuestro web
+      - action: utter_negative_feedback     # sorry y visita nuestro web
 
   - story: EmotionClassification - selector Denyhelp
     steps:
@@ -97,7 +192,6 @@ stories:
       - slot_was_set:
           - sentiment: POS                  # positivo
       - action: utter_sentiment_POS         # fantastico! %% es repeteix amb l'anterior. creem un 2?
-      - action: utter_ventilacion_nd_1     # Quieres contarme un poquito más sobre este tema?
 
   - story: EmotionClassification - neutral emotion 
     steps:
@@ -108,18 +202,6 @@ stories:
       - slot_was_set:
           - sentiment: NEU
       - action: utter_sentiment_NEU
-
-# sigue contando
-
-  - story: keepontalking
-    steps:
-      - or: 
-        - intent: inform_sentiment
-        - intent: nlu_fallback
-      - or: 
-        - intent: inform_sentiment
-        - intent: nlu_fallback     
-      - action: utter_si_contar             # soy todo oidos
 
 # NEG stories
 
@@ -138,7 +220,6 @@ stories:
         - intent: inform_sentiment
       - slot_was_set:
         - sentiment: NEG                    # estoy mal
-    # - action: utter_ventilacion_nd_1
       - action: utter_selector_contar       # lo siento. quieres contarme más?
       - intent: confirmcontar               # sí 
       - action: utter_si_contar             # soy todo oídos
@@ -175,18 +256,19 @@ stories:
       - action: utter_selector_NEG_last     # contar más o feedback emoción negativa?
       - intent: feedbackemotionneg          # aprender emociones negativas
       - action: utter_advice_NEG            # explicación
-      - action: utter_selector_POS_finish   # te ha sido útil?
+      - action: utter_selector_feedback_advice   # te ha sido útil?
       - intent: confirmfb                   # sí
-      - action: utter_advice_POS_finish     # despedida contenta
+      - action: utter_positive_feedback     # despedida contenta
+      - action: utter_retrieval             # algo más?
 
   - story: aprender emociones neg - no útil
     steps:
       - action: utter_selector_NEG_last     # contar más o feedback emoción negativa?
       - intent: feedbackemotionneg          # aprender emociones negativas
       - action: utter_advice_NEG            # explicación
-      - action: utter_selector_POS_finish   # te ha sido útil?
+      - action: utter_selector_feedback_advice   # te ha sido útil?
       - intent: denyfb                      # no
-      - action: utter_negative_feedback_POS # despedida y visita nuestro web
+      - action: utter_negative_feedback     # sorry y visita nuestro web
       
   - story: seguir contando
     steps:
@@ -198,8 +280,48 @@ stories:
         - intent: inform_sentiment
       - slot_was_set:
         - sentiment: NEG                    # estoy mal
-      - action: utter_ventilacion_nd_1      # vaya, te animo a que sigas
+      - action: utter_sentiment_NEG      # vaya, te animo a que sigas
 
+
+# stories "començades"
+
+  - story: negative emotion parcial
+    steps:
+      - or: 
+        - intent: nlu_fallback
+        - intent: inform_sentiment         
+      - slot_was_set:
+          - sentiment: NEG                  # mal
+      - action: utter_sentiment_NEG         # lo siento, cuéntame más
+      - or: 
+        - intent: nlu_fallback
+        - intent: inform_sentiment
+      - slot_was_set:
+        - sentiment: NEG                    # estoy mal
+      - action: utter_selector_contar       # lo siento. quieres contarme más?
+
+  - story: positive emotion parcial 
+    steps:
+      - or: 
+        - intent: inform_sentiment
+        - intent: nlu_fallback
+        - intent: sobregeneralizacion
+        - intent: etiquetado 
+      - slot_was_set:
+          - sentiment: POS                  # positivo
+      - action: utter_sentiment_POS         # fantastico!
+      
+    # sigue contando
+
+  - story: keepontalking
+    steps:
+      - or: 
+        - intent: inform_sentiment
+        - intent: nlu_fallback
+      - or: 
+        - intent: inform_sentiment
+        - intent: nlu_fallback     
+      - action: utter_si_contar             # soy todo oidos
 
 #---------------------------
 
@@ -232,7 +354,7 @@ stories:
         - intent: deberias
       # - slot_was_set:
       #     - sentiment: NEG
-      - action: utter_ventilacion_1         # sigue contando
+      - action: utter_flecha_descendiente_1         # sigue contando
       - or:
         - intent: sobregeneralizacion       # distorsion 2
         - intent: lectordementes
@@ -243,7 +365,7 @@ stories:
         - intent: deberias
       # - slot_was_set:
       #     - sentiment: NEG
-      - action: utter_ventilacion_2         # determinadas emociones son complicadas. Explícame más
+      - action: utter_flecha_descendiente_2         # determinadas emociones son complicadas. Explícame más
       - checkpoint: distorsion_ready        # tenemos una distorsión
       
   - story: chatting distorsions 2
@@ -259,7 +381,7 @@ stories:
         - intent: adivinacion
         - intent: deberias
         - intent: inform_sentiment   
-      - action: utter_sentiment_NEG         # lo lamento, cuéntame más
+      - action: utter_sentiment_NEU         # cuéntame más
       - or:
         - intent: sobregeneralizacion       # distorsion o mal
         - intent: lectordementes
@@ -271,7 +393,7 @@ stories:
         - intent: nlu_fallback 
       - slot_was_set:
         - sentiment: NEG            
-      - action: utter_ventilacion_1         # sigue contando
+      - action: utter_flecha_descendiente_1         # sigue contando
       - or:
         - intent: sobregeneralizacion       # distorsion 2
         - intent: lectordementes
@@ -280,7 +402,7 @@ stories:
         - intent: catastrofismo
         - intent: adivinacion
         - intent: deberias
-      - action: utter_ventilacion_2         # determinadas emociones son complicadas. Explícame más
+      - action: utter_flecha_descendiente_2         # determinadas emociones son complicadas. Explícame más
       - checkpoint: distorsion_ready        # tenemos una distorsión
     
     
@@ -297,7 +419,7 @@ stories:
         - intent: deberias
       # - slot_was_set:
       #     - sentiment: NEG
-      - action: utter_ventilacion_1         # sigue contando
+      - action: utter_flecha_descendiente_1         # sigue contando
       - or:
         - intent: sobregeneralizacion       # distorsion 2
         - intent: lectordementes
@@ -308,13 +430,13 @@ stories:
         - intent: deberias
       # - slot_was_set:
       #     - sentiment: NEG
-      - action: utter_ventilacion_2         # determinadas emociones son complicadas. Explícame más
+      - action: utter_flecha_descendiente_2         # determinadas emociones son complicadas. Explícame más
       - checkpoint: distorsion_ready        # tenemos una distorsión
 
 
 ### PSICOEDUCAT
 
-  - story: psicoeduc_sobre
+  - story: psicoeduc_sobre + feedback ok
     steps:
       - checkpoint: distorsion_ready        # distorsion detectada
       - intent: sobregeneralizacion         # sobregeneralizacion
@@ -326,13 +448,27 @@ stories:
       - intent: confirmPsico1               # sí -- falta neg
       - action: utter_psicoeduc_sobre_2     # ejemplo concreto
       - action: utter_selector_psicoeduc_sobre_2    # te sientes identificado?
-      - or:
-        - intent: confirmSobre
-        - intent: denySobre
-      - action: utter_intervencion_sobregen # orientación al web
+      - intent: confirmSobre
+#      - action: utter_intervencion_sobregen # orientación al web
+      - action: utter_intervencion_app_distorsiones
+      
+  - story: psicoeduc_sobre + feedback negativo
+    steps:
+      - checkpoint: distorsion_ready        # distorsion detectada
+      - intent: sobregeneralizacion         # sobregeneralizacion
+      - action: utter_psicoeduc_general     # explicación distorsion
+      - action: utter_selector_psicoeduc_general    # quieres trabajarlo?
+      - intent: confirmPsicoGen             # sí -- falta neg
+      - action: utter_psicoeduc_sobre       # explicación sobre
+      - action: utter_selector_psicoeduc_1  # quieres continuar
+      - intent: confirmPsico1               # sí -- falta neg
+      - action: utter_psicoeduc_sobre_2     # ejemplo concreto
+      - action: utter_selector_psicoeduc_sobre_2    # te sientes identificado?
+      - intent: denySobre
+      - action: utter_intervencion_feedback_negativo # orientación al web
+      - action: utter_intervencion_app_distorsiones
 
-
-  - story: intervencion_etiquetado
+  - story: intervencion_etiquetado + feedback ok
     steps:
       - checkpoint: distorsion_ready        # distorsion detectada
       - intent: etiquetado                  # etiquetado
@@ -344,12 +480,27 @@ stories:
       - intent: confirmPsico1               # sí -- falta neg
       - action: utter_psicoeduc_etiquetado_2            # ejemplo concreto
       - action: utter_selector_psicoeduc_etiquetado_2   # te sientes identificado?
-      - or:
-        - intent: confirm
-        - intent: deny
-      - action: utter_intervencion_etiquetado   # orientación al web
+      - intent: confirm
+#      - action: utter_intervencion_etiquetado   # orientación al web
+      - action: utter_intervencion_app_distorsiones
 
-  - story: intervencion_lectordementes
+  - story: intervencion_etiquetado + feedback negativo
+    steps:
+      - checkpoint: distorsion_ready        # distorsion detectada
+      - intent: etiquetado                  # etiquetado
+      - action: utter_psicoeduc_general     # explicación distorsion
+      - action: utter_selector_psicoeduc_general    # quieres trabajarlo?
+      - intent: confirmPsicoGen             # sí -- falta neg
+      - action: utter_psicoeduc_etiquetado  # explicación etiquetado
+      - action: utter_selector_psicoeduc_1  # quieres continuar
+      - intent: confirmPsico1               # sí -- falta neg
+      - action: utter_psicoeduc_etiquetado_2            # ejemplo concreto
+      - action: utter_selector_psicoeduc_etiquetado_2   # te sientes identificado?
+      - intent: deny
+      - action: utter_intervencion_feedback_negativo   # orientación al web
+      - action: utter_intervencion_app_distorsiones
+      
+  - story: intervencion_lectordementes + feedback ok
     steps:
       - checkpoint: distorsion_ready
       - intent: lectordementes
@@ -361,12 +512,27 @@ stories:
       - intent: confirmPsico1
       - action: utter_psicoeduc_lectordementes_2
       - action: utter_selector_psicoeduc_lectordementes_2
-      - or:
-        - intent: confirm
-        - intent: deny
-      - action: utter_intervencion_lectordementes
+      - intent: confirm
+#      - action: utter_intervencion_lectordementes
+      - action: utter_intervencion_app_distorsiones
 
-  - story: intervencion_adivinacion
+  - story: intervencion_lectordementes + feedback negativo
+    steps:
+      - checkpoint: distorsion_ready
+      - intent: lectordementes
+      - action: utter_psicoeduc_general
+      - action: utter_selector_psicoeduc_general
+      - intent: confirmPsicoGen
+      - action: utter_psicoeduc_lectordementes
+      - action: utter_selector_psicoeduc_1
+      - intent: confirmPsico1
+      - action: utter_psicoeduc_lectordementes_2
+      - action: utter_selector_psicoeduc_lectordementes_2
+      - intent: deny
+      - action: utter_intervencion_feedback_negativo
+      - action: utter_intervencion_app_distorsiones
+
+  - story: intervencion_adivinacion + feedback ok
     steps:
       - checkpoint: distorsion_ready
       - intent: adivinacion
@@ -378,12 +544,27 @@ stories:
       - intent: confirmPsico1
       - action: utter_psicoeduc_adivinacion_2
       - action: utter_selector_psicoeduc_adivinacion_2
-      - or:
-        - intent: confirm
-        - intent: deny
-      - action: utter_intervencion_adivinacion
+      - intent: confirm
+ #     - action: utter_intervencion_adivinacion
+      - action: utter_intervencion_app_distorsiones
 
-  - story: intervencion_deberias
+  - story: intervencion_adivinacion + feedback negativo
+    steps:
+      - checkpoint: distorsion_ready
+      - intent: adivinacion
+      - action: utter_psicoeduc_general
+      - action: utter_selector_psicoeduc_general
+      - intent: confirmPsicoGen
+      - action: utter_psicoeduc_adivinacion
+      - action: utter_selector_psicoeduc_1
+      - intent: confirmPsico1
+      - action: utter_psicoeduc_adivinacion_2
+      - action: utter_selector_psicoeduc_adivinacion_2
+      - intent: deny
+      - action: utter_intervencion_feedback_negativo
+      - action: utter_intervencion_app_distorsiones
+
+  - story: intervencion_deberias + feedback ok
     steps:
       - checkpoint: distorsion_ready
       - intent: deberias
@@ -395,12 +576,27 @@ stories:
       - intent: confirmPsico1
       - action: utter_psicoeduc_deberias_2
       - action: utter_selector_psicoeduc_deberias_2
-      - or:
-        - intent: confirm
-        - intent: deny
-      - action: utter_intervencion_deberias
+      - intent: confirm
+#      - action: utter_intervencion_deberias
+      - action: utter_intervencion_app_distorsiones
 
-  - story: intervencion_catastrofismo
+  - story: intervencion_deberias + feedback negativo
+    steps:
+      - checkpoint: distorsion_ready
+      - intent: deberias
+      - action: utter_psicoeduc_general
+      - action: utter_selector_psicoeduc_general
+      - intent: confirmPsicoGen
+      - action: utter_psicoeduc_deberias
+      - action: utter_selector_psicoeduc_1
+      - intent: confirmPsico1
+      - action: utter_psicoeduc_deberias_2
+      - action: utter_selector_psicoeduc_deberias_2
+      - intent: deny
+      - action: utter_intervencion_feedback_negativo
+      - action: utter_intervencion_app_distorsiones
+      
+  - story: intervencion_catastrofismo + feedback ok
     steps:
       - checkpoint: distorsion_ready
       - intent: catastrofismo
@@ -412,12 +608,27 @@ stories:
       - intent: confirmPsico1
       - action: utter_psicoeduc_catastrofismo_2
       - action: utter_selector_psicoeduc_catastrofismo_2
-      - or:
-        - intent: confirm
-        - intent: deny
-      - action: utter_intervencion_catastrofismo
+      - intent: confirm
+#      - action: utter_intervencion_catastrofismo
+      - action: utter_intervencion_app_distorsiones
 
-  - story: intervencion_pensamientoabsolutista
+  - story: intervencion_catastrofismo + feedback negativo
+    steps:
+      - checkpoint: distorsion_ready
+      - intent: catastrofismo
+      - action: utter_psicoeduc_general
+      - action: utter_selector_psicoeduc_general
+      - intent: confirmPsicoGen
+      - action: utter_psicoeduc_catastrofismo
+      - action: utter_selector_psicoeduc_1
+      - intent: confirmPsico1
+      - action: utter_psicoeduc_catastrofismo_2
+      - action: utter_selector_psicoeduc_catastrofismo_2
+      - intent: deny
+      - action: utter_intervencion_feedback_negativo
+      - action: utter_intervencion_app_distorsiones
+
+  - story: intervencion_pensamientoabsolutista + feedback ok
     steps:
       - checkpoint: distorsion_ready
       - intent: pensamientoabsolutista
@@ -429,10 +640,25 @@ stories:
       - intent: confirmPsico1
       - action: utter_psicoeduc_pensamientoabsolutista_2
       - action: utter_selector_psicoeduc_pensamientoabsolutista_2
-      - or:
-        - intent: confirm
-        - intent: deny
-      - action: utter_intervencion_pensamientoabsolutista
+      - intent: confirm
+ #     - action: utter_intervencion_pensamientoabsolutista
+      - action: utter_intervencion_app_distorsiones
+
+  - story: intervencion_pensamientoabsolutista + feedback negativo
+    steps:
+      - checkpoint: distorsion_ready
+      - intent: pensamientoabsolutista
+      - action: utter_psicoeduc_general
+      - action: utter_selector_psicoeduc_general
+      - intent: confirmPsicoGen
+      - action: utter_psicoeduc_pensamientoabsolutista
+      - action: utter_selector_psicoeduc_1
+      - intent: confirmPsico1
+      - action: utter_psicoeduc_pensamientoabsolutista_2
+      - action: utter_selector_psicoeduc_pensamientoabsolutista_2
+      - intent: deny
+      - action: utter_intervencion_feedback_negativo
+      - action: utter_intervencion_app_distorsiones
 
 ### se ha detectado distorsion pero el usuario no quiere continuar
   - story: no intervención
@@ -441,11 +667,11 @@ stories:
       - action: utter_selector_psicoeduc_general        # quieres trabajarlo?
       - intent: denyPsicoGen                            # no
       - action: utter_denypsicoeduc                     # de acuerdo, consulta el web
-
+      - action: utter_retrieval
 
   - story: no continuar
     steps:
       - action: utter_selector_psicoeduc_1              # quieres continuar?
       - intent: denyPsicoedu                            # no
       - action: utter_denypsicoeduc                     # de acuerdo, consulta el web
- 
+      - action: utter_retrieval

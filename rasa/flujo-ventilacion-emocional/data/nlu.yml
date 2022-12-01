@@ -3,25 +3,25 @@ nlu:
 - intent: inform_sentiment # no etiquetar emociones - gestionado por componente externo
   examples: |
     - mal
-    - me siento demasiado bien
+    - me siento demasiado [bien](emotion)
     - he tenido muchos problemas
     - ha sido una semana de mierda
     - lo he pasado fatal
     - Estos días estoy de muy buen humor
     - me he sentido genial gracias por preguntar
-    - estoy genial
+    - estoy [genial](emotion)
     - pues no estoy bien porque mi familia no para de hacerme la vida imposible, estoy desesperado y quiero que me dejen en paz
-    - no soy feliz
+    - no soy [feliz](emotion)
     - mi vida es una mierda
-    - estoy harto
+    - estoy [harto](emotion)
     - me encuentro fatal
     - he tenido un buen día
     - pues ahí andamos a ver qué pasa
-    - estresado
-    - amargado en el trabajo
+    - [estresado](emotion)
+    - [amargado](emotion) en el trabajo
     - no muy bien
-    - bastante jodido
-    - estoy muy agobiada
+    - bastante [jodido](emotion)
+    - estoy muy [agobiada](emotion)
     - muy horrible todo
     - [bien](emotion)
     - regular
@@ -175,55 +175,56 @@ nlu:
     - Siempre me pasa lo mismo
     - Siempre voy a ser un desastre
     - Siempre hago el ridículo
+    
 - intent: etiquetado
   examples: |
-    - soy imbecil
+    - soy [imbecil](insult)
     - no soy guapo
-    - alguien es estúpido
-    - soy completamente imbécil
+    - alguien es [estúpido](insult)
+    - soy completamente [imbécil](insult)
     - no soy inteligente
-    - mi [tio](valorFamilia) es insoportable
+    - mi [tio](valorFamilia) es [insoportable](insult)
     - siento que no soy inteligente
-    - la verdad es que no paro de pensar en que soy idiota
+    - la verdad es que no paro de pensar en que soy [idiota](insult)
     - no soy perfecto
     - soy lo peor
-    - mi [amiga](valorSocial) es idiota
-    - soy completamente idiota
-    - soy asqueroso
-    - soy imbecil no tengo remedio
-    - mi antiguo jefe es una mala persona
-    - mi [pareja](valorPareja) es completamente estúpido
+    - mi [amiga](valorSocial) es [idiota](insult)
+    - soy completamente [imbecil](insult)
+    - soy [asqueroso](insult)
+    - soy [imbecil](insult) no tengo remedio
+    - mi antiguo jefe es una [mala persona](insult)
+    - mi [pareja](valorPareja) es completamente [estúpido](insult)
     - no soy nada inteligente
-    - es rematadamente tonto
-    - Las personas son hipócritas, confías en ellas y te mienten
-    - Soy muy gafe, estropeo todo lo que toco.
-    - Mi [amiga](valorSocial) es muy egoísta, piensa solo en ella
+    - es rematadamente [tondo](insult)
+    - Las personas son [hipócritas](insult), confías en ellas y te mienten
+    - Soy muy [gafe](insult), estropeo todo lo que toco.
+    - Mi [amiga](valorSocial) es muy [egoísta](insult), piensa solo en ella
     - Soy un desastre
-    - Soy fea, nadie va a acercarse a mí
-    - Mis compañeros son malos
+    - Soy [fea](insult), nadie va a acercarse a mí
+    - Mis compañeros son [malos](insult)
     - Soy el peor jugador del mundo
     - Siempre soy impaciente y me salen las cosas mal
     - no soy bueno
-    - Soy un perdedor
-    - soy un fracaso
-    - soy un inútil
+    - Soy un [perdedor](insult)
+    - soy un [fracaso](insult)
+    - soy un [inútil](insult)
     - no soy listo
     - las personas no son buenas
-    - soy inaguantable
+    - soy [inaguantable](insult)
     - mi [hermana](valorFamilia) es perfecta
-    - soy torpe
-    - él siempre es un egoísta
-    - le doy vueltas a lo tonta que soy
+    - soy [torpe](insult)
+    - él siempre es un [egoísta](insult)
+    - le doy vueltas a lo [tonta](insult) que soy
     - mis [amigos](valorSocial) son insuperables
-    - mi mujer es una mentirosa
-    - soy repulsivo
-    - mi [padre](valorFamilia) es horrible
+    - mi mujer es una [mentirosa](insult)
+    - soy [repulsivo](insult)
+    - mi [padre](valorFamilia) es [horrible](insult)
     - soy un desgraciado
     - soy un irresponsable
     - mi [hijo](valorFamilia) es un inconsciente
     - mi mejor [amigo](valorSocial) es un triunfador
-    - soy la peor [madre](valorPareja) que existe
-    - soy espantoso
+    - soy la peor [madre](valorFamilia) que existe
+    - soy [espantoso](insult)
     - mis [amigos](valorSocial) son malas personas
     - mis [padres](valorFamilia) son insufribles
     - [mi mujer](valorPareja) es inaguantable
@@ -231,13 +232,13 @@ nlu:
     - en todo lo que hago soy un fracasado
     - mi [hermano](valorFamilia) es un ganador
     - mi [amigo](valorSocial) es el mejor
-    - mi compañero es insoportable
+    - mi compañero es [insoportable](insult)
     - mi compañera es una ganadora, todo le sale bien
     - soy un pobre infeliz
     - no soy una persona afortunada
     - mi [marido](valorPareja) es un despreocupado
-    - soy una ignorante
-    - [mi mujer](valorFamilia) es una embustera
+    - soy una [ignorante](insult)
+    - [mi mujer](valorFamilia) es una [embustera](insult)
     - soy aburrida
     - mi [amiga](valorSocial) es pesada
     - ella es alegre
@@ -257,8 +258,8 @@ nlu:
     - soy mediocre
     - soy una persona gris
     - mis [amigos](valorFamilia) sí que son felices
-    - mi tía es una cotilla
-    - soy un quejica
+    - mi [tía](valorFamilia) es una cotilla
+    - soy un [quejica](insult)
     - soy débil
     - mi [amiga](valorSocial) es fuerte
     - soy un cobarde
@@ -266,7 +267,7 @@ nlu:
     - mi jefe es un despota
     - mi [marido](valorPareja) es un insensible
     - mi [marido](valorPareja) es un desalmado
-    - soy un tacaño
+    - soy un [tacaño](insult)
     - mi compañero es un pretencioso
     - soy malvado
     - mi [amiga](valorSocial) es cruel
@@ -320,9 +321,10 @@ nlu:
     - Siempre he sido muy patosa, todos los deportes se me dan mal
     - No soy persistente, así no podré conseguir lo que me proponga
     - Éste señor es despreciable
-    - Soy odiosa
+    - Soy [odiosa](insult)
     - Soy el más flojo del equipo
-    - Mi [hermana](valorFamilia) es muy egoista
+    - Mi [hermana](valorFamilia) es muy [egoista](insult)
+    
 - intent: deberias
   examples: |
     - Tengo que estudiar como sea
@@ -1062,6 +1064,10 @@ nlu:
     - no me siento segura
     - siento que estoy en peligro
     - me siento insegura en mi casa con mi [pareja](valorPareja)
+    - me viola
+    - me folla siempre que quiere
+    - no le importa si quiero follar o no
+    - abusa de mí
 
 
 ### Selectores
@@ -1103,6 +1109,10 @@ nlu:
 - intent: retrieval_alert_intent
   examples: |
     - /retrieval_alert_intent
+    
+- intent: escala_suicidio
+  examples: |
+    - /escala_suicidio
 
 - intent: confirmcontar
   examples: |
@@ -1116,6 +1126,34 @@ nlu:
 - intent: denyPsicoedu
   examples: |
     - /denyPsicoedu
+    
+- intent: confirm_goodby
+  examples: |
+    - /confirm_goodby
+
+- intent: deny_goodby
+  examples: |
+    - /deny_goodby
+
+- intent: confirm_retrieval
+  examples: |
+    - /confirm_retrieval
+
+- intent: deny_retrieval
+  examples: |
+    - /deny_retrieval
+
+- intent: inicio_app
+  examples: |
+    - /inicio_app
+    
+- intent: recursos_emergencia
+  examples: |
+    - /recursos_emergencia
+
+- intent: modulo_distorsiones
+  examples: |
+    - /modulo_distorsiones
 
 
 ### Greetings and commands
@@ -1123,6 +1161,8 @@ nlu:
   examples: |
     - hey
     - hola
+    - hla
+    - nos dias
     - hola!!
     - Buenos días
     - Buenas tardes
@@ -1166,6 +1206,7 @@ nlu:
     - deu
     - adios, hasta pronto
     - adios Vicky
+    - a10
 - intent: confirm
   examples: |
     - sí
@@ -1206,6 +1247,8 @@ nlu:
     - gracias
     - te lo agradezco
     - muy agradecido por todo lo que haces Vicky
+    - muy agradecida
+    - thanks
     - muchísimas gracias por todo
     - de verdad no sé cómo agradecértelo
     - moltes gracies
@@ -1226,12 +1269,15 @@ nlu:
     - Cómo te suele llamar la gente
     - cuál es tu nombre?
     - quién eres
-    - 
+    - ¿eres humano?
+    
 - intent: chitchat/help_me
   examples: |
     - ¿Puedes ayudarme?
     - quiero que me ayudes
     - hablemos
+    - ayúdame
+    
 - intent: chitchat/how_are_u
   examples: |
     - ¿Cómo estás Vicky?
@@ -1265,7 +1311,7 @@ nlu:
   examples: |
     - eres [idiota](insult)
     - que [inutil](insult) eres por dios
-    - puta [gilipollas](insult)
+    - [puta](insult) [gilipollas](insult)
     - vicky eres [imbécil](insult)
     - [gilipollas](insult)
     - [Me cago en tu puta madre](insult)
@@ -1280,6 +1326,9 @@ nlu:
     - vete a [la mierda](insult)
     - desenchúfate
     - resetéate
+    - tú eres [imbecil](insult)
+    - ¿estás [tonta](insult) o qué?
+    - eres [idiota](insult), ¿no?
 
 - intent: chitchat/whichbook
   examples: |
@@ -1367,6 +1416,7 @@ nlu:
     - dime algo que te guste hacer
     - que hobbies tienes
     - tus hobbies
+    
 - intent: chitchat/haveyoupets
   examples: |
     - cuál es tu [animal](animal) favorito
@@ -1387,19 +1437,14 @@ nlu:
     - cuentame algun chiste
     - vicky quiero que me cuentes ahora mismo un chiste
 
-- intent: chitchat/birthday
-  examples: |
-    - cuándo es tu cumpleaños
-    - que dia es tu cumpleaños
-    - cuando es tu cumple
-    - celebras tu cumple?
 
-#- intent: chitchat/mybirthday
-  #examples: |
-    #- hoy es mi cumpleaños
-    #- mañana es mi cumpleaños
-    #- felicitame que es mi cumple
-    #- vicky, sabes que hoy es mi cumple?
+
+- intent: chitchat/mybirthday
+  examples: |
+    - hoy es mi cumpleaños
+    - mañana es mi cumpleaños
+    - felicitame que es mi cumple
+    - vicky, sabes que hoy es mi cumple?
 
 - intent: chitchat/whichmusic
   examples: |
@@ -1409,7 +1454,7 @@ nlu:
     - [musica](musica)
     - recomiendame una [cancion](musica)
     - cual es tu [gruop](musica) favorito?
-    - qué [cantante] te gusta más?
+    - qué [cantante](musica) te gusta más?
 
 
 - intent: faq/tufuncion
@@ -1438,6 +1483,8 @@ nlu:
   examples: |
     - Como puedo contactar con vosotros
     - dame un telefono de contacto
+    - cómo puedo contactaros?
+    - tenéis un email?
 
 - intent: faq/plantratamiento
   examples: |
@@ -1463,8 +1510,27 @@ nlu:
     - para que sirve el objetivo semanal
     - quiero informacion sobre el objetivo semanal
     - que es el objetivo semanal
+    
+- intent: faq/chatbot
+  examples: |
+    - por qué un chatbot?
+    - ¿Qué es un chatbot?
+    - por qué estoy hablando con un chatbot?
 
-
+- intent: incomprensible # no etiquetar emociones - gestionado por componente externo
+  examples: |
+    - poikgav 
+    - okñr wopv aopkva jtb bwro
+    - 9olvn 9tpwg'mreovflcdjacño
+    - JPEOGKEV WOEJ́Jnjokñ 
+    - 9opkgokjfvspar
+    - ogtogbksdñs otiqg o   efpo    óif
+    - estoy 9pokq alfpwk
+    - eres opekgo ḱbwpkqet
+    - 9uopklñwh opkagj9ytepolm ,.z-
+    - 9opkwh opkĺñ w
+    - oihytwin i0 9opihy wotp 
+    - hiok ihopti jobw
 
 
 ### Entities
@@ -1491,6 +1557,7 @@ nlu:
     - colega
     - conocido
     - vecina
+    - compañero
 
  # Entidades de refuerzo clasificador chitchat:
 
@@ -1543,6 +1610,12 @@ nlu:
     - tranquila
     - bien
     - feliz
+    - sereno
+    - jodido
+    - alegre
+    - preocupada
+    - angustiado
+    - triste
 
 # Entidad de refuerzo para desambiguar distorsion conflictiva con suicidio
 - synonym: miedo
@@ -1551,3 +1624,4 @@ nlu:
     - pánico
     - temor
     - pavor
+    - asustado

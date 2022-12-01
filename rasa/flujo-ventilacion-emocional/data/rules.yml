@@ -12,10 +12,10 @@ rules:
 
 
 
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye_nicemood
-  - action: utter_goodbye_nicemood
+#- rule: Say goodbye anytime the user says goodbye
+  #steps:
+  #- intent: goodbye_nicemood
+  #- action: utter_goodbye_nicemood
 
 ### fallback and chitchat rules
 
@@ -32,10 +32,50 @@ rules:
   - action: utter_chitchat
 
 
+### alert rules
+
 - rule: prioritize alert intent
   steps:
   - intent: alert
   - action: utter_alert
+
+- rule: confirm emergency
+  steps:
+  - intent: emergency
+  - action: utter_confirm_emergency
+
+- rule: alert detected
+  steps:
+  - intent: alert_detected
+  - action: utter_alert_detected
+ # - action: utter_alert_detected_selector
+  
+- rule: confirm retrieval
+  steps:
+  - intent: confirm_retrieval
+  - action: utter_si_contar
+  
+- rule: retrieval alert
+  steps:  
+  - intent: retrieval_alert_intent
+  - action: utter_si_contar
+
+- rule: deny retrieval
+  steps:
+  - intent: deny_retrieval
+  - action: utter_goodbye_nicemood
+ 
+- rule: no emergency
+  steps:
+  - intent: noemergency
+  - action: utter_noemergency
+#  - action: action_restart
+#  - action: action_listen
+  
+- rule: retrieval_alert_intent
+  steps:
+  - intent: retrieval_alert_intent
+  - action: utter_si_contar  
 
 - rule: prioritize gender violence intent
   steps:  
@@ -52,24 +92,30 @@ rules:
   - intent: confirmgv2
   - action: utter_ask_2_genderViolence
   
+- rule: keep in gv flow 2
+  steps:
+  - intent: no_confirmgv2
+  - action: utter_ask_2_genderViolence
+  
 - rule: keep in gv flow 3
   steps:
   - intent: confirmgv3
   - action: utter_call_to_emergency_gv
+#  - action: utter_retrieval
 
-- rule: denygv
+- rule: denygv 
   steps:
   - intent: denygv
   - action: utter_answer_no_genderViolence
   - action: utter_call_to_emergency_gv_denylastcuestion
-  
+#  - action: utter_retrieval  
 
-- rule: restart
-  steps: 
-  - intent: noemergency
-  - action: utter_noemergency
-  - action: action_restart
-  - action: action_listen
+#- rule: restart
+  #steps: 
+  #- intent: noemergency
+  #- action: utter_noemergency
+#  - action: action_restart
+#  - action: action_listen
 # - intent: utter_start_genderViolence:
 # - action: deny
 # - action: restart   PROBAR ESTO
@@ -93,11 +139,16 @@ rules:
 #     - action: utter_out_of_scope-wrap_up
 
 
-# ## gratitude
-# - rule: everytime the user says thanks.
-#   steps:
-#   - intent: thanks
-#   - action: utter_thanks
+## gratitude
+- rule: everytime the user says thanks.
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+  
+- rule: please rephrase
+  steps:
+  - intent: incomprensible
+  - action: utter_please_rephrase
 
 
 # - rule: Activate sentiment_form

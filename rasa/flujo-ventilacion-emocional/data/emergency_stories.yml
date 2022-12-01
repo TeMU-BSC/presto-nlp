@@ -2,7 +2,7 @@ version: "2.0"
 
 stories:
 
-  - story: emergency with alert
+  - story: emergency with alert + más preguntas
     steps: 
     - intent: alert
     - action: utter_alert
@@ -10,15 +10,32 @@ stories:
     - action: utter_confirm_emergency
     - intent: alert_detected
     - action: utter_alert_detected
-    - action: utter_alert_detected_selector
+#    - action: utter_alert_detected_selector
+#    - intent: mas_preguntas
+#    - action: utter_mas_preguntas
 
+  - story: emergency with alert + conta`r
+    steps: 
+    - intent: alert
+    - action: utter_alert
+    - intent: emergency
+    - action: utter_confirm_emergency
+    - intent: alert_detected
+    - action: utter_alert_detected
+ #   - action: utter_alert_detected_selector
+    - intent: retrieval_alert_intent
+    - action: utter_si_contar
+  #  - action: action_restart
+    - action: action_listen
+    
   - story: emergency_false_alarm # ok revisado
     steps:
-    # - intent: alert
-    # - action: utter_alert
+    - intent: alert
+    - action: utter_alert
+    - intent: noemergency
     - action: utter_noemergency
-    - action: action_restart
-    - action: action_listen #cambiar nombre y poner noemergency. Se queda hasta que decidan flujo final para ambos
+  #  - action: action_restart
+  #  - action: action_listen #cambiar nombre y poner noemergency. Se queda hasta que decidan flujo final para ambos
 
   - story: gender_violence_ denyfirstquestion #ok revisado
     steps:
@@ -26,9 +43,33 @@ stories:
     - action: utter_start_genderViolence #selector con deny y emergency
     - intent: noemergency
     - action: utter_noemergency
-    - action: action_restart
-    - action: action_listen
+  #  - action: action_restart
+  #  - action: action_listen
 
+  - story: gender_violence_ direct #ok revisado
+    steps:
+    - intent: genderViolence
+    - action: utter_start_genderViolence #selector con deny y emergency
+    - intent: confirmgv
+    - action: utter_ask_genderViolence
+    - intent: confirmgv2 
+    - action: utter_ask_2_genderViolence #revisar   ## Añadir mas
+    - intent: confirmgv3
+    - action: utter_call_to_emergency_gv # o recursos o contar
+ #   - action: utter_retrieval
+ 
+  - story: gender_violence_ direct #ok revisado
+    steps:
+    - intent: genderViolence
+    - action: utter_start_genderViolence #selector con deny y emergency
+    - intent: confirmgv
+    - action: utter_ask_genderViolence
+    - intent: no_confirmgv2 
+    - action: utter_ask_2_genderViolence #revisar   ## Añadir mas
+    - intent: confirmgv3
+    - action: utter_call_to_emergency_gv # o recursos o contar
+ #   - action: utter_retrieval
+    
   - story: gender_violence_ direct #ok revisado
     steps:
     - intent: genderViolence
@@ -38,8 +79,23 @@ stories:
     - intent: confirmgv2 #revisar
     - action: utter_ask_2_genderViolence #revisar   ## Añadir mas
     - intent: confirmgv3
-    - action: utter_call_to_emergency_gv
-
+    - action: utter_call_to_emergency_gv # o recursos o contar
+    - intent: confirm_retrieval         # contar
+    - action: utter_si_contar           # dime
+    
+  - story: gender_violence_ direct #ok revisado
+    steps:
+    - intent: genderViolence
+    - action: utter_start_genderViolence #selector con deny y emergency
+    - intent: confirmgv
+    - action: utter_ask_genderViolence
+    - intent: no_confirmgv2 #revisar
+    - action: utter_ask_2_genderViolence #revisar   ## Añadir mas
+    - intent: confirmgv3
+    - action: utter_call_to_emergency_gv # o recursos o contar
+    - intent: confirm_retrieval         # contar
+    - action: utter_si_contar           # dime
+    
   - story: gender_violence_ direct ultima no #ok revisado
     steps:
     - intent: genderViolence
@@ -51,12 +107,32 @@ stories:
     - intent: denygv
     - action: utter_answer_no_genderViolence
     - action: utter_call_to_emergency_gv_denylastcuestion
-
-
-  - story: retrieval_intent
+  #  - action: utter_retrieval
+    #- action: utter_answer_no_genderViolence
+    #- action: utter_call_to_emergency_gv_denylastcuestion
+    #- action: utter_keep_talking
+    
+  - story: gender_violence_ direct ultima no #ok revisado
     steps:
-      - intent: retrieval_alert_intent
-      - action: utter_retrieval
+    - intent: genderViolence
+    - action: utter_start_genderViolence #selector con deny y emergency
+    - intent: confirmgv
+    - action: utter_ask_genderViolence
+    - intent: no_confirmgv2 #revisar
+    - action: utter_ask_2_genderViolence #revisar   ## Añadir mas
+    - intent: denygv
+    - action: utter_answer_no_genderViolence
+    - action: utter_call_to_emergency_gv_denylastcuestion
+ #   - action: utter_retrieval
+    #- action: utter_answer_no_genderViolence
+    #- action: utter_call_to_emergency_gv_denylastcuestion
+    #- action: utter_keep_talking
+
+
+  #- story: retrieval_intent
+    #steps:
+      #- intent: retrieval_alert_intent
+      #- action: utter_retrieval
 
   # # - story: emergency # ok revisado
   # #   steps:
