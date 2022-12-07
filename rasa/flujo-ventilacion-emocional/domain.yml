@@ -90,6 +90,7 @@ intents:
     use_entities: false
     ignore_entities:
     - sentiment
+- no_alert_detected
 - genderViolence:
     use_entities: true
     ignore_entities:
@@ -141,6 +142,9 @@ intents:
 - inicio_app
 - recursos_emergencia
 - modulo_distorsiones
+- plan_tratamiento
+- privacidad_app
+- objetivos_plan
 
 entities: 
 - sentiment
@@ -749,6 +753,12 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
     - payload: /denyfb
       title: "No demasiado"
     text: "¿Crees que te servirá mi explicación para entender de otra forma las emociones positivas?"
+  - buttons:
+    - payload: /confirmfb
+      title: "Lo he encontrado útil"
+    - payload: /denyfb
+      title: "No demasiado"
+    text: "¿Crees que te ha servido mi explicación? Puede ayudarte a entender de otra forma las emociones positivas."
     
   utter_positive_feedback:
   - text: "Me alegra ver que, como a mí en su día, esta reflexión te haya sido de utilidad. \nEstaré aquí siempre que me necesites. ¡Hasta pronto! 🙂"
@@ -849,7 +859,7 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   - buttons: 
     - payload: /alert_detected
       title: "Sí"
-    - payload: /alert_detected
+    - payload: /no_alert_detected
       title: "No"
     text: "¿Tienes miedo de hacerte daño en este momento?"
   
@@ -991,26 +1001,46 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   - text: "Uy...creo que esto era un insulto. No me gustan demasiado. ¿Probamos de otra forma?"
   
   utter_chitchat/mybirthday:
-  - text: "¡Muchas felicidades! Que lo disfrutes. ¡Estoy muy contenta por tí!"
+  - text: "Muchas felicidades cumpleañero/a! Por qué no aprovechas y te autoregalas algo que te apetezca? Puede ser un paseo por algun sitio al que te guste ir, un detalle de una tienda, una actividad como ir al cine..."
   
 ## FAQs
   utter_faq/plantratamiento:
-  - text: "El plan de tratamiento es un plan terapéutico personalizado según las respuestas que nos das al contestar las preguntas de evaluación. Así podemos personalizar el plan más adecuado según tus necesidades. Consiste en una serie de módulos de intervención que esperamos te ayuden a sentirte mejor."
+  - buttons:
+    - payload: /plan_tratamiento
+      title: "Ir al plan"
+    - payload: /confirm_retrieval
+      title: "Continuar la conversación"
+    text: "Una vez creado tu plan de tratamiento personalizado, tendrás acceso a una serie de módulos de intervención para poder trabajar sobre problemas específicos con la finalidad de sentirte mejor.\nPuedes trabajar sobre un máximo de 3 módulos a la vez, aunque te recomendamos focalizarte en uno a la semana.\nTe recomendamos que pruebes las diferentes funciones dentro de los módulos. Recuerda que aunque ya hayas completado uno, siempre puedes volver a acceder a lo que te haya sido útil :)"
   
   utter_faq/contacto: 
   - text: "Para cualquier consulta o pregunta que tengas puedes dirigirte al equipo investigador escribiendo a ✉️ info@prestoclinic.cat."
   
   utter_faq/privacidad:
-  - text: "Los datos son anonimizados 🤐. Esto quiere decir que los datos (sin saber de quién son), serán usados para mejorar la aplicación y para validar su utilidad clínica en estudios de investigación y así poder ofrecerlo en el futuro a más personas. Estos datos serán siempre y solamente almacenados, procesados y analizados por personal investigador🔬 autorizado del Hospital Clínic de Barcelona 🏥. Puedes saber más sobre la privacidad del chatbot y de PRESTOapp en el enlace a continuación."
+  - buttons:
+    - payload: /privacidad_app
+      title: "Más sobre privacidad"
+    - payload: /confirm_retrieval
+      title: "Continuar la conversación"
+    text: "Los datos son anonimizados 🤐. Esto quiere decir que los datos (sin saber de quién son), serán usados para mejorar la aplicación y para validar su utilidad clínica en estudios de investigación y así poder ofrecerlo en el futuro a más personas. Estos datos serán siempre y solamente almacenados, procesados y analizados por personal investigador🔬 autorizado del Hospital Clínic de Barcelona 🏥. Puedes saber más sobre la privacidad del chatbot y de PRESTOapp en el enlace a continuación."
   
   utter_faq/tufuncion: 
   - text: "🙋 Mi función es acompañarte, guiarte y ofrecerte herramientas, para poder mejorar tu bienestar emocional, acercarte a tus objetivos vitales y, quizás así, poder sentirte mejor 🙂. Aquí vas a ser tú la persona que elija, tanto el momento en el que trabajar, como la forma, el orden de intervención o incluso el método. \nA través de nuestra conversación 💬, me gustaría que fuéramos descubriendo cuáles son tus necesidades emocionales en las que te puedo ayudar para que te sientas mejor. Quiero ser tu aliada en esta decisión tan valiente 💪 y valiosa de dedicarte tiempo a ti y a tu salud mental 🧠✔️."
   
   utter_faq/modulos:
-  - text: "Una vez creado tu plan de tratamiento personalizado (URL), tendrás acceso a una serie de módulos de intervención para poder trabajar sobre problemas específicos con la finalidad de sentirte mejor. \nPuedes trabajar sobre un máximo de 3 módulos a la vez, aunque te recomendamos focalizarte en uno a la semana.\nTe recomendamos que pruebes las diferentes funciones dentro de los módulos. Recuerda que aunque ya hayas completado uno, siempre puedes volver a acceder a lo que te haya sido útil 😊"
+  - buttons:
+    - payload: /plan_tratamiento
+      title: "Ir al plan"
+    - payload: /confirm_retrieval
+      title: "Continuar la conversación"
+    text: "Una vez creado tu plan de tratamiento personalizado (URL), tendrás acceso a una serie de módulos de intervención para poder trabajar sobre problemas específicos con la finalidad de sentirte mejor. \nPuedes trabajar sobre un máximo de 3 módulos a la vez, aunque te recomendamos focalizarte en uno a la semana.\nTe recomendamos que pruebes las diferentes funciones dentro de los módulos. Recuerda que aunque ya hayas completado uno, siempre puedes volver a acceder a lo que te haya sido útil 😊"
   
   utter_faq/objetivo:
-  - text: "El objetivo semanal tiene un papel muy importante en los módulos de intervención. Consiste en marcar unas metas a realizar diariamente durante una semana para mejorar tu malestar en un aspecto particular."
+  - buttons:
+    - payload: /objetivos_plan
+      title: "Ir a objetivos"
+    - payload: /confirm_retrieval
+      title: "Continuar la conversación"
+    text: "El objetivo semanal tiene un papel muy importante en los módulos de intervención. Consiste en marcar unas metas a realizar diariamente durante una semana para mejorar tu malestar en un aspecto particular."
   
   utter_faq/chatbot:
   - text: "El chatbot es una plataforma de diálogo inteligente. Está creado por profesionales de la salud mental con la intención que te sientas acompañado y puedas trabajar para sentirte mejor a través de herramientas personalizadas."
@@ -1420,7 +1450,7 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
       title: "Sí"
     - payload: /no_confirmgv2
       title: "No, en absoluto"
-    text: "Lamento leer ésto. Me gustaría saber si has pensado en hacerte daño últimamente. ¿Te encuentras en peligro en este momento?"
+    text: "Lamento leer ésto. ¿Te encuentras en peligro en este momento?"
   - buttons:
     - payload: /confirmgv2
       title: "Sí"

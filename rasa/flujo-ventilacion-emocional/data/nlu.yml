@@ -1154,6 +1154,20 @@ nlu:
 - intent: modulo_distorsiones
   examples: |
     - /modulo_distorsiones
+    
+- intent: plan_tratamiento
+  examples: |
+    - /plan_tratamiento
+    
+- intent: privacidad_app
+  examples: |
+    - /privacidad_app
+    
+- intent: objetivos_plan
+  examples: |
+    - /objetivos_plan
+    
+    
 
 
 ### Greetings and commands
@@ -1270,6 +1284,8 @@ nlu:
     - cuál es tu nombre?
     - quién eres
     - ¿eres humano?
+    - quién te ha creado? 
+    - para quién trabajas?
     
 - intent: chitchat/help_me
   examples: |

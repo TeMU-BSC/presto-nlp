@@ -51,7 +51,7 @@ policies: # dialogo
     #  augmentation_factor: 10 
      
    - name: UnexpecTEDIntentPolicy # el fallback del flujo conversacional
-     tolerance: 0.1 # estava a 0.2 i l'he baixat
+     tolerance: 0.05 # estava a 0.2 i l'he baixat
      epochs: 20
 
 ### Conversational contextualization --> se ha alterado esta politica para ver si generamos mayor consistencia en el desarrollo de las conversaciones contextuales

@@ -49,10 +49,25 @@ rules:
   - intent: alert_detected
   - action: utter_alert_detected
  # - action: utter_alert_detected_selector
+ 
+- rule: no alert detected
+  steps:
+  - intent: no_alert_detected
+  - action: utter_alert_detected
   
 - rule: confirm retrieval
   steps:
   - intent: confirm_retrieval
+  - action: utter_si_contar
+  
+- rule: confirmtalkpos
+  steps:
+  - intent: confirmtalkpos
+  - action: utter_si_contar
+  
+- rule: confirmtalkneg
+  steps:
+  - intent: confirmtalkneg
   - action: utter_si_contar
   
 - rule: retrieval alert
@@ -149,6 +164,54 @@ rules:
   steps:
   - intent: incomprensible
   - action: utter_please_rephrase
+  
+## despedida
+- rule: confirma goodbye
+  steps:
+  - intent: goodbye_nicemood
+  - action: utter_confirm_goodby
+  
+- rule: despedida sí
+  steps:  
+  - intent: confirm_goodby
+  - action: utter_goodbye_nicemood
+
+- rule: despedida no
+  steps:
+  - intent: deny_goodby
+  - action: utter_retrieval
+
+# para quan apreta un botó
+- rule: acaba con inicio_app
+  steps:
+  - intent: inicio_app
+  - action: action_listen
+  
+- rule: acaba con recursos_emergencia
+  steps:
+  - intent: recursos_emergencia
+  - action: action_listen
+  
+- rule: acaba con escala_suicidio
+  steps:
+  - intent: escala_suicidio
+  - action: action_listen
+  
+- rule: acaba con modulo_distorsiones
+  steps:
+  - intent: modulo_distorsiones
+  - action: action_listen
+  
+#escolta en les fletxes descendents
+#- rule: escucha utter_flecha_descendiente_1
+  #steps:
+  #- intent: utter_flecha_descendiente_1
+  #- action: action_listen
+  
+#- rule: escucha utter_flecha_descendiente_2
+  #steps:
+  #- intent: utter_flecha_descendiente_2
+  #- action: action_listen
 
 
 # - rule: Activate sentiment_form

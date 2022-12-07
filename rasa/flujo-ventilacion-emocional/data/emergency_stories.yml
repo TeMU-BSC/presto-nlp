@@ -2,7 +2,19 @@ version: "2.0"
 
 stories:
 
-  - story: emergency with alert + más preguntas
+  #- story: emergency with alert + más preguntas
+    #steps: 
+    #- intent: alert
+    #- action: utter_alert
+    #- intent: emergency
+    #- action: utter_confirm_emergency
+    #- intent: alert_detected
+    #- action: utter_alert_detected
+#    - action: utter_alert_detected_selector
+#    - intent: mas_preguntas
+#    - action: utter_mas_preguntas
+
+  - story: emergency with alert + contar
     steps: 
     - intent: alert
     - action: utter_alert
@@ -10,17 +22,19 @@ stories:
     - action: utter_confirm_emergency
     - intent: alert_detected
     - action: utter_alert_detected
-#    - action: utter_alert_detected_selector
-#    - intent: mas_preguntas
-#    - action: utter_mas_preguntas
-
-  - story: emergency with alert + conta`r
+ #   - action: utter_alert_detected_selector
+    - intent: retrieval_alert_intent
+    - action: utter_si_contar
+  #  - action: action_restart
+    - action: action_listen
+    
+  - story: emergency with no_alert + contar
     steps: 
     - intent: alert
     - action: utter_alert
     - intent: emergency
     - action: utter_confirm_emergency
-    - intent: alert_detected
+    - intent: no_alert_detected
     - action: utter_alert_detected
  #   - action: utter_alert_detected_selector
     - intent: retrieval_alert_intent
