@@ -1286,7 +1286,12 @@ nlu:
     - ¿eres humano?
     - quién te ha creado? 
     - para quién trabajas?
-    
+    - quién te ha creado
+    - quién está detrás
+    - para quien trabajas
+    - quienes te han desarrollado
+    - que equipo es el que te ha hecho
+        
 - intent: chitchat/help_me
   examples: |
     - ¿Puedes ayudarme?
@@ -1305,13 +1310,13 @@ nlu:
     - dime algo que no sepa
     - cuéntame algo nuevo
     - cuéntame algo que no sepa
-- intent: chitchat/who_are_you
-  examples: |
-    - quién te ha creado
-    - quién está detrás
-    - para quien trabajas
-    - quienes te han desarrollado
-    - que equipo es el que te ha hecho
+#- intent: chitchat/who_are_you
+  #examples: |
+    #- quién te ha creado
+    #- quién está detrás
+    #- para quien trabajas
+    #- quienes te han desarrollado
+    #- que equipo es el que te ha hecho
 - intent: chitchat/whichteam
   examples: |
     - De qué equipo eres
@@ -1606,19 +1611,7 @@ nlu:
     - libro
     - comic
     - novela
-- synonym: insult
-  examples: |
-    - idiota
-    - imbecil
-    - gilipollas
-    - capullo
-    - zorra
-    - puta
-    - guarra
-    - perra
-    - petarda
-    - mongola
-    - mierda
+
     
 - synonym: emotion
   examples: |
@@ -1641,3 +1634,17 @@ nlu:
     - temor
     - pavor
     - asustado
+
+- synonym: insult
+  examples: |
+    - idiota
+    - imbecil
+    - gilipollas
+    - capullo
+    - zorra
+    - puta
+    - guarra
+    - perra
+    - petarda
+    - mongola
+    - mierda

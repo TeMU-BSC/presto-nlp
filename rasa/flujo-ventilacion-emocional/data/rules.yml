@@ -202,6 +202,14 @@ rules:
   - intent: modulo_distorsiones
   - action: action_listen
   
+- rule: calla
+  steps:
+  - or:
+    - intent: plan_tratamiento
+    - intent: privacidad_app
+    - intent: plan_tratamiento
+    - intent: objetivos_plan
+  - action: action_listen
 #escolta en les fletxes descendents
 #- rule: escucha utter_flecha_descendiente_1
   #steps:

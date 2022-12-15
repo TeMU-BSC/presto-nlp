@@ -523,7 +523,6 @@ stories:
   - story: seguir conversación NEG + NEG - NEU - NEG contar
     steps:
       - or:
-        - intent: confirm_retrieval
         - intent: retrieval_alert_intent
         - intent: confirmtalkpos              # contar más
         - intent: confirmtalkneg              # contar más

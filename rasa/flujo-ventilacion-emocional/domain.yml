@@ -941,8 +941,9 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   - text: "Soy Vicky, tu terapeuta virtual. Mi función es ayudarte con tu salud mental. En este espacio, me voy a encargar de identificar y trabajar contigo sobre aquellos patrones de pensamiento que te hacen sentir mal. "
   
   utter_chitchat/help_me:
-  - text: "Claro, estoy aquí precisamente para ayudar a cuidar de eso tan importante como la salud mental. ¿Por dónde quieres empezar?"
-  - text: "Mi misión es ayudarte a cuidar algo tan importante como la salud mental."
+#  - text: "Claro, estoy aquí precisamente para ayudar a cuidar de eso tan importante como la salud mental. ¿Por dónde quieres empezar?"
+#  - text: "Mi misión es ayudarte a cuidar algo tan importante como la salud mental."
+  - text: "Vaya, lamento que te encuentres así… ¡Déjame ayudarte! Me gustaría conocer más a fondo lo que te ocurre. Explícame más sobre esto…"
   
   utter_chitchat/how_are_u:
   - text: "Como todo el mundo, tengo días mejores y días peores. Algo que me anima siempre es poder ayudarte 😊"
@@ -1032,7 +1033,7 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
       title: "Ir al plan"
     - payload: /confirm_retrieval
       title: "Continuar la conversación"
-    text: "Una vez creado tu plan de tratamiento personalizado (URL), tendrás acceso a una serie de módulos de intervención para poder trabajar sobre problemas específicos con la finalidad de sentirte mejor. \nPuedes trabajar sobre un máximo de 3 módulos a la vez, aunque te recomendamos focalizarte en uno a la semana.\nTe recomendamos que pruebes las diferentes funciones dentro de los módulos. Recuerda que aunque ya hayas completado uno, siempre puedes volver a acceder a lo que te haya sido útil 😊"
+    text: "Una vez creado tu plan de tratamiento personalizado, tendrás acceso a una serie de módulos de intervención para poder trabajar sobre problemas específicos con la finalidad de sentirte mejor. \nPuedes trabajar sobre un máximo de 3 módulos a la vez, aunque te recomendamos focalizarte en uno a la semana.\nTe recomendamos que pruebes las diferentes funciones dentro de los módulos. Recuerda que aunque ya hayas completado uno, siempre puedes volver a acceder a lo que te haya sido útil 😊"
   
   utter_faq/objetivo:
   - buttons:
