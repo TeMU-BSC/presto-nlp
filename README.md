@@ -2,9 +2,7 @@
 
 This is the repository for PRESTO chatbot and distortions annotations.
 
-PRESTO is a multidisciplinary project that seeks to optimize care for mental health problems by integrating data science, mobile digital technologies and artificial intelligence. For more information about PRESTO, please refer to the [project site](https://www.prestoclinic.cat/?lang=en)
-
-Presto NLP
+PRESTO is a multidisciplinary project that seeks to optimize care for mental health problems by integrating data science, mobile digital technologies and artificial intelligence. For more information about PRESTO, please refer to the [project site](https://www.prestoclinic.cat/?lang=en).
 
 ## Project Index
 
