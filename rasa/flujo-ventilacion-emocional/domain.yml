@@ -7,144 +7,130 @@ session_config:
 
 ### Intents and entities list
 intents:
-- incomprensible
-- greet:
-    use_entities: true
-- inform_sentiment:
-    use_entities:
-    - sentiment
-- goodbye_nicemood:
-    use_entities: true
-- chitchat:
-    use_entities: true
-- nlu_fallback:
-    use_entities:
-    - sentiment
-- confirm:
-    ignore_entities:
-    - sentiment
-- confirmfb:
-    ignore_entities:
-    - sentiment
-- denyfb:
-    ignore_entities:
-    - sentiment
-- confirmtalkpos:
-    ignore_entities:
-    - sentiment
-- confirmtalkneg:
-    ignore_entities:
-    - sentiment
-- denygv
-- ready:
-    ignore_entities:
-    - sentiment
-- sobregeneralizacion:
-    use_entities:
-    - sentiment
-- lectordementes:
-    use_entities:
-    - sentiment
-- pensamientoabsolutista:
-    use_entities:
-    - sentiment
-- etiquetado:
-    use_entities:
-    - sentiment
-- catastrofismo:
-    use_entities:
-    - sentiment
 - adivinacion:
     use_entities:
     - sentiment
+- advice_emotion_neg:
+    use_entities: True
+- advice_emotion_pos:
+    use_entities: True
+- alert:
+    use_entities: True
+    ignore_entities:
+    - sentiment
+- alert_1
+- alert_2
+- alert_3
+- catastrofismo:
+    use_entities:
+    - sentiment
+- chitchat:
+    use_entities: True
+- confirm:
+    ignore_entities:
+    - sentiment
+- confirm_contar:
+    use_entities: True
+- confirm_fb:
+    ignore_entities:
+    - sentiment
+- confirm_goodby
+- confirm_ident_psico
+- confirm_psico_abs
+- confirm_psico_adi
+- confirm_psico_cata
+- confirm_psico_debe
+- confirm_psico_etiq
+- confirm_psico_gen:
+    use_entities: True
+- confirm_psico_lector
+- confirm_psico_sobre
+- confirm_retrieval:
+    ignore_entities:
+    - sentiment
+- confirmSobre:
+    use_entities: True
 - deberias:
     use_entities:
     - sentiment
 - deny:
+    use_entities:
+    - sentiment
+- deny_contar
+- deny_contar_pos
+- deny_fb:
     ignore_entities:
     - sentiment
-- soloValores:
-    ignore_entities:
-    - sentiment
-- deny_valor:
-    use_entities: true
-- alternat:
-    use_entities: true
-- out_of_scope-wrap_up:
-    use_entities: true
-- thanks:
-    ignore_entities:
-    - sentiment
-- youre_welcome:
-    use_entities: true
-- emergency:
-    use_entities: true
-    ignore_entities:
-    - sentiment
-- noemergency
-- alert:
-    use_entities: false
-    ignore_entities:
-    - sentiment
-- alert_detected:
-    use_entities: false
-    ignore_entities:
-    - sentiment
-- no_alert_detected
-- genderViolence:
-    use_entities: true
-    ignore_entities:
-    - sentiment
-- confirmgv:
-    use_entities: true
-- confirmgv3:
-    use_entities: true
-- confirmgv2:
-    use_entities: true
-- no_confirmgv2:
-    use_entities: true
-- confirmcontar:
-    use_entities: true
-- denyContar:
-    use_entities: true
-- confirmEmotionClassification:
-    use_entities: true
-- retrieval_alert_intent:
-    use_entities: false
-- escala_suicidio:
-    use_entities: false
-- confirm_goodby
 - deny_goodby
-- confirm_retrieval
+- deny_ident_psico
+- deny_psico_edu:
+    use_entities: True
 - deny_retrieval
-- denyPsicoGen:
-    use_entities: true
-- confirmPsicoGen:
-    use_entities: true
-- denyPsico1:
-    use_entities: true
-- denyPsicoedu:
-    use_entities: true
-- confirmPsico1:
-    use_entities: true
 - denySobre:
-    use_entities: true
-- confirmSobre:
-    use_entities: true
-- feedbackemotionpos:
-    use_entities: true
-- feedbackemotionneg:
-    use_entities: true
-- faq: 
-    use_entities: true
-- confirmflechadescendiente:
-    use_entities: true
+    use_entities: True
+- deny_valor:
+    use_entities: True    
+- emergency:
+    use_entities: True
+    ignore_entities:
+    - sentiment
+- escala_suicidio:
+    use_entities: True
+- etiquetado:
+    use_entities:
+    - sentiment
+- faq:
+    use_entities: True 
+- gender_violence:
+    use_entities: True
+- goodbye_nicemood:
+    use_entities: True
+- greet:
+    use_entities:
+    - firstName
+- gv_1
+- gv_2
+- gv_3
+- incomprensible
+- inform_sentiment:
+    use_entities:
+    - sentiment
 - inicio_app
-- recursos_emergencia
+- init:
+    use_entities:
+    - firstName
+- lectordementes:
+    use_entities:
+    - sentiment
 - modulo_distorsiones
+- nlu_fallback:
+    use_entities:
+    - sentiment
+- no_alert_1
+- no_alert_2
+- noemergency
+- no_gv_2
+- no_gv_3
+- objetivos_plan
+- pensamientoabsolutista:
+    use_entities:
+    - sentiment
 - plan_tratamiento
 - privacidad_app
-- objetivos_plan
+- recursos_emergencia
+- retrieval_alert_intent:
+    use_entities: True
+- sobregeneralizacion:
+    use_entities:
+    - sentiment
+- start:
+    use_entities:
+    - firstName
+- thanks:
+    use_entities:
+    - sentiment
+- youre_welcome:
+    use_entities: True
 
 entities: 
 - sentiment
@@ -159,6 +145,7 @@ entities:
 - lectura
 - place
 - emotion
+- firstName
 
 slots:
   sentiment:
@@ -185,15 +172,57 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: true
+  firstName:
+    type: text
+    
 
 ### Responses:
 responses:
 
-## greet
-  # utter_greet_presentation:
-  # - text: "¡Hola! soy Vicky 👩‍⚕️. En este espacio puedo\n- Ayudarte a identificar y a trabajar sobre aquellos patrones de pensamiento que te hacen sentir mal\n - Ayudarte a identificar las cosas que son realmente importantes para ti para poder actuar en consonancia a ellas.\n- En el caso que detectemos una situación de riesgo, intentaremos ofrecerte la mejor ayuda posible."
-  # - text: "¿Qué tal? Soy Vicky 👩‍⚕️. Estoy aquí para\n- Ayudarte a identificar y a trabajar sobre aquellos patrones de pensamiento que te hacen sentir mal\n - Ayudarte a identificar las cosas que son realmente importantes para ti para poder actuar en consonancia a ellas.\n- En el caso que detectemos una situación de riesgo, intentaremos ofrecerte la mejor ayuda posible."
+  utter_greet_first_time: # para la primera vez que alguien se connecta"
+  - text: "Hola, {firstName}, soy Vicky, tu terapeuta virtual. Me gustaría ayudarte a cuidar de tu salud mental. Mi misión es ayudarte a identificar y a trabajar sobre aquellos patrones de pensamiento que te hacen sentir mal.  \nAdemás, si detecto una situación de riesgo intentaré ofrecerte la mejor ayuda. \n¿Cómo estás hoy?" 
 
+  - text: "Hola, {firstName}, soy Vicky, tu terapeuta virtual. Mi función es ayudarte con tu salud mental. En este espacio, me voy a encargar de identificar y trabajar contigo sobre aquellos patrones de pensamiento que te hacen sentir mal. \nAdemás, si detecto una situación de riesgo intentaré ofrecerte la mejor ayuda. \n¿Empezamos? ¿Qué tal te encuentras hoy?"
+  
+  utter_greet_ask_emotion: 
+  - text: "¡Hola, {firstName}! Estoy encantada de tenerte de nuevo por aquí. ¿Cómo te has sentido estos días?"
+  - text: "¡Hola, {firstName}! Estoy encantada de tenerte de nuevo por aquí. ¿Te gustaría poderme contar algo?"
+  - text: "¡Hola, {firstName}! Estoy encantada de tenerte por aquí. ¿Quieres contarme algo nuevo?"
+  - text: "Hola de nuevo, {firstName}. ¿Cómo has estado desde la última vez que hablamos?"
+  - text: "¡Hola, {firstName}! Qué bien que estés por aquí otra vez. ¿Quieres contarme algo nuevo?"
+  - text: "Hola, {firstName}, ¡qué bien que estés por aquí! ¿Qué me cuentas?"
+  - text: "Hola de nuevo, {firstName}, ¿cómo te sientes?"
+  - text: "Hola, {firstName}, ¿cómo va todo?"
+  - text: "¡Hola, {firstName}! Estoy encantada de tenerte otra vez por aquí. ¿Qué me cuentas?"
+  - text: "¡Hola, {firstName}! Qué bien que hayas vuelto. ¿Qué tal han ido estos días?"
+  - text: "¡Hola, {firstName}! Qué bien que hayas vuelto. ¿Quieres compartir algo conmigo?"
+  - text: "¡Hola, {firstName}! Soy Vicky. ¿Qué te trae por aquí?"
+  - text: "Hola de nuevo, {firstName}, ¿qué tal va todo?"
+  - text: "Hola de nuevo, {firstName}, ¿en qué puedo ayudarte?"
+  - text: "Hola de nuevo, {firstName}, ¿cómo estás?"
+  - text: "Hola, {firstName}, ¿cómo te va?"
+  - text: "Hola, {firstName}, ¿cómo te va?, ¿te gustaría contarme algo?"
+  - text: "¡Hola, {firstName}! ¿Cómo has estado desde la última vez que hablamos?"
+  
+  utter_second_greet: 
+  - text: "¡Hola, ¿cómo te has sentido estos días?"
+  - text: "¡Hola, ¿te gustaría poderme contar algo?"
+  - text: "¡Hola, ¿quieres contarme algo nuevo?"
+  - text: "¿Cómo has estado desde la última vez que hablamos?"
+  - text: "¿Quieres contarme algo nuevo?"
+  - text: "¿Qué me cuentas?"
+  - text: "¿Cómo te sientes?"
+  - text: "¿Cómo va todo?"
+  - text: "¿Qué me cuentas?"
+  - text: "¿Qué tal han ido estos días?"
+  - text: "¿Quieres compartir algo conmigo?"
+  - text: "¿Qué te trae por aquí?"
+  - text: "¿Qué tal va todo?"
+  - text: "¿En qué puedo ayudarte?"
+  - text: "¿Cómo estás?"
+  - text: "¿Cómo te va?"
+  - text: "¿Cómo has estado desde la última vez que hablamos?"
+   
   utter_goodbye_nicemood:
   - text: "Puedes hablarme siempre que me necesites. ¡Hasta pronto! "
   - text: "Estoy disponible las 24 🕛  horas. Si me necesitas, sólo tienes que escribir ✍🏾"
@@ -212,9 +241,7 @@ responses:
   - text: "De acuerdo, ¡hasta pronto!"
   - text: "Entendido. Queda en tus manos, cuando quieras puedes volver a escribirme." 
 
- 
-  utter_confirm_goodby:
-
+  utter_confirm_goodby: # confirma que quiere dejar la conversación
   - buttons:
     - payload: /deny_goodby
       title: "Quiero seguir hablando"
@@ -264,88 +291,49 @@ responses:
       title: "Quiero salir de la conversación"
     text: "Veo que te has cansado de hablar conmigo… ¿Lo dejamos por hoy?"
 
-
-  utter_greet_first_time: # para la primera vez que alguien se connecta"
-  - text: "Hola, soy Vicky, tu terapeuta virtual. Me gustaría ayudarte a cuidar de tu salud mental. Mi misión es ayudarte a identificar y a trabajar sobre aquellos patrones de pensamiento que te hacen sentir mal.  \nAdemás, si detecto una situación de riesgo intentaré ofrecerte la mejor ayuda. \n¿Cómo estás hoy?" 
-
-  - text: "Hola, soy Vicky, tu terapeuta virtual. Mi función es ayudarte con tu salud mental. En este espacio, me voy a encargar de identificar y trabajar contigo sobre aquellos patrones de pensamiento que te hacen sentir mal. \nAdemás, si detecto una situación de riesgo intentaré ofrecerte la mejor ayuda. \n¿Empezamos? ¿Qué tal te encuentras hoy?"
-
-
-
-
-  
-  utter_greet_ask_emotion: # para las veces successivas. Habría que añadir el nombre. Poner emoticonos."
-  - text: "¡Hola! Estoy encantada de tenerte de nuevo por aquí. ¿Cómo te has sentido estos días?"
-  - text: "¡Hola! Estoy encantada de tenerte de nuevo por aquí. ¿Te gustaría poderme contar algo?"
-  - text: "¡Hola! Estoy encantada de tenerte por aquí. ¿Quieres contarme algo nuevo?"
-  - text: "Hola de nuevo. ¿Cómo has estado desde la última vez que hablamos?"
-  - text: "¡Hola! Qué bien que estés por aquí otra vez. ¿Quieres contarme algo nuevo?"
-  - text: "Hola, ¡qué bien que estés por aquí! ¿Qué me cuentas?"
-  - text: "Hola de nuevo, ¿cómo te sientes?"
-  - text: "Hola, ¿cómo va todo?"
-  - text: "¡Hola! Estoy encantada de tenerte otra vez por aquí. ¿Qué me cuentas?"
-  - text: "¡Hola! Qué bien que hayas vuelto. ¿Qué tal han ido estos días?"
-  - text: "¡Hola! Qué bien que hayas vuelto. ¿Quieres compartir algo conmigo?"
-  - text: "¡Hola! Soy Vicky. ¿Qué te trae por aquí?"
-  - text: "Hola de nuevo, ¿qué tal va todo?"
-  - text: "Hola de nuevo, ¿en qué puedo ayudarte?"
-  - text: "Hola de nuevo, ¿cómo estás?"
-  - text: "Hola, ¿cómo te va?"
-  - text: "Hola, ¿cómo te va?, ¿te gustaría contarme algo?"
-  - text: "¡Hola! ¿Cómo has estado desde la última vez que hablamos?"
-   
-
   utter_retrieval:
-
   - buttons:
     - payload: /confirm_retrieval
       title: "Continuar la conversación"
     - payload: /deny_retrieval
       title: "Quizás luego"
     text: "¿Te gustaría contarme algo más?"
-
   - buttons:
     - payload: /confirm_retrieval
       title: "Continuar la conversación"
     - payload: /deny_retrieval
       title: "Quizás luego"
     text: "¿Te apatece contarme algo más? Quizás te gustaría hablar de otra cosa…"
-
   - buttons:
     - payload: /confirm_retrieval
       title: "Continuar la conversación"
     - payload: /deny_retrieval
       title: "Quizás luego"
     text: "¿Te apetece seguir charlando? También podemos cambiar de tema…"
-
   - buttons:
     - payload: /confirm_retrieval
       title: "Continuar la conversación"
     - payload: /deny_retrieval
       title: "Quizás luego"
     text: "¿Te apetece seguir nuestra conversación? Si no te apetece seguir hablando de tus emociones, podemos cambiar de tema…"
-
   - buttons:
     - payload: /confirm_retrieval
       title: "Continuar la conversación"
     - payload: /deny_retrieval
       title: "Quizás luego"
     text: "¿Te gustaría contarme más? Si quieres me puedes contar otra cosa."
-
   - buttons:
     - payload: /confirm_retrieval
       title: "Continuar la conversación"
     - payload: /deny_retrieval
       title: "Quizás luego"
     text: "¿Te apetece seguir charlando? Puedo hablar de muchas cosas."
-
   - buttons:
     - payload: /confirm_retrieval
       title: "Continuar la conversación"
     - payload: /deny_retrieval
       title: "Quizás luego"
     text: "¿Te gustaría compartir conmigo algo más? Si quieres podemos hablar de otra cosa…"
-
   - buttons:
     - payload: /confirm_retrieval
       title: "Continuar la conversación"
@@ -383,7 +371,6 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   - text: "¡Qué bien suena eso! Cuéntame algo más sobre esto…"
   - text: "¡Estoy contenta por ti! Cuéntame algo más sobre esto…"
   
-  
   utter_sentiment_NEU:
   - text: "¡Anda! ¿Por qué no me cuentas un poco más sobre ello? Te escucho…"
   - text: "Tengo curiosidad para que me cuentes un poquito más… ¿Te animas?"
@@ -395,7 +382,7 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   - text: "Me gustaría conocer un poco más sobre esto que me estás contando. Te escucho…"
   - text: "¿Te apetece contarme más? ¡A mí sí que me gustaría que me explicaras un poco más al detalle este tema!"
   
-### segunda emoción feedback
+### second emotion feedback
   
   utter_sentiment_POS2:
   - text: "¡Fántastico!"
@@ -412,159 +399,157 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
     
   utter_ask_tell_more_POS:
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
-    text: "¿Te apetece contarme algo más sobre esto 🙂?"
+    text: "¿Te apetece contarme algo más sobre esto?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Te gustaría contarme un poco más?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "Te animo a que me cuentes un poquito más sobre este tema. ¿Te apetece?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Quieres contarme un poco más sobre ello?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Te apetece contarme algo más 🙂?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Te gustaría contarme un poco más?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Me quieres contar un poco más sobre ello?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Te gustaría compartir conmigo algo más sobre esto?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Me quieres contar algo más?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Tienes ganas de compartir un poco más?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Quieres compartir algo más conmigo?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "Me gustaría conocer un poco más sobre esto que me estás contando ¿Te animas?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Te animarías a contarme un poquito más sobre esto?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Te apetece seguir contándome?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "Me apetece conocer más sobre ello. ¿Quieres explicarme un poco más sobre lo que me contabas?"
     
-    
-  utter_selector_contar: # cambiar nombre
+  utter_ask_tell_more_NEG: 
   - buttons:
-      - payload: /confirmcontar
+      - payload: /confirm_contar
         title: "Claro"
-      - payload: /denyContar
+      - payload: /deny_contar
         title: "En otro momento"
     text: "Vaya, lamento leer esto. Me gustaría que me contaras algo más sobre esto ¿Te apetece?"
   - buttons:
-      - payload: /confirmcontar
+      - payload: /confirm_contar
         title: "Claro"
-      - payload: /denyContar
+      - payload: /deny_contar
         title: "En otro momento"
     text: "Me gustaría conocer más a fondo qué te ocurre. ¿Te apetece?"
   - buttons:
-      - payload: /confirmcontar
+      - payload: /confirm_contar
         title: "Claro"
-      - payload: /denyContar
+      - payload: /deny_contar
         title: "En otro momento"
     text: "Quisiera conocer detenidamente qué te ocurre. ¿Te apetece?"
   - buttons:
-      - payload: /confirmcontar
+      - payload: /confirm_contar
         title: "Claro"
-      - payload: /denyContar
+      - payload: /deny_contar
         title: "En otro momento"
     text: "Me gustaría que me contaras algo más sobre esto ¿Te apetece?"
   - buttons:
-      - payload: /confirmcontar
+      - payload: /confirm_contar
         title: "Claro"
-      - payload: /denyContar
+      - payload: /deny_contar
         title: "En otro momento"
     text: "Me encantaría saber más sobre esto… "
   - buttons:
-      - payload: /confirmcontar
+      - payload: /confirm_contar
         title: "Claro"
-      - payload: /denyContar
+      - payload: /deny_contar
         title: "En otro momento"
     text: "Me gustaría saber más para poderte ayudar mejor… "
   - buttons:
-      - payload: /confirmcontar
+      - payload: /confirm_contar
         title: "Claro"
-      - payload: /denyContar
+      - payload: /deny_contar
         title: "En otro momento"
     text: "Me apetece que me cuentes un poco más qué te ocurre… "
   - buttons:
-      - payload: /confirmcontar
+      - payload: /confirm_contar
         title: "Claro"
-      - payload: /denyContar
+      - payload: /deny_contar
         title: "En otro momento"
     text: "Me gustaría que me contaras con más detalle esto que te ocurre… "
   - buttons:
-      - payload: /confirmcontar
+      - payload: /confirm_contar
         title: "Claro"
-      - payload: /denyContar
+      - payload: /deny_contar
         title: "En otro momento"
     text: "Quisiera poder ayudarte. ¿Me quieres contar un poco más sobre esto?"
   - buttons:
-      - payload: /confirmcontar
+      - payload: /confirm_contar
         title: "Claro"
-      - payload: /denyContar
+      - payload: /deny_contar
         title: "En otro momento"
     text: "Para poder ayudarte necesito más información. ¿Te apetece explicarme un poco más sobre ello?"
-
 
   utter_si_contar:
   - text: "Adelante, te escucho 😊"
@@ -592,90 +577,90 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
 
   utter_selector_POS_last:
   - buttons:
-    - payload: /confirmtalkpos
+    - payload: /confirm_retrieval
       title: "Me gustaría seguir hablando"
-    - payload: /feedbackemotionpos
+    - payload: /advice_emotion_pos
       title: "Quiero aprender algo sobre las emociones positivas"
-    text: "¿Quieres compartir conmigo algo más o prefieres que te cuente un poco sobre las emociones positivas 🙂?"
+    text: "¿Quieres compartir conmigo algo más o prefieres que te cuente un poco sobre las emociones positivas?"
   - buttons:
-    - payload: /confirmtalkpos
+    - payload: /confirm_retrieval
       title: "Me gustaría seguir hablando"
-    - payload: /feedbackemotionpos
+    - payload: /advice_emotion_pos
       title: "Quiero aprender algo sobre las emociones positivas"
     text: "Ahora tenemos dos opciones: ¿Quieres contarme más o prefieres que te cuente yo algo sobre las emociones positivas?"
   - buttons:
-    - payload: /confirmtalkpos
+    - payload: /confirm_retrieval
       title: "Me gustaría seguir hablando"
-    - payload: /feedbackemotionpos
+    - payload: /advice_emotion_pos
       title: "Quiero aprender algo sobre las emociones positivas"
     text: "Me encantaría seguir escuchándote, pero si lo prefieres… te puedo contar un poco sobre las emociones positivas. ¿Qué prefieres?"
   - buttons:
-    - payload: /confirmtalkpos
+    - payload: /confirm_retrieval
       title: "Me gustaría seguir hablando"
-    - payload: /feedbackemotionpos
+    - payload: /advice_emotion_pos
       title: "Quiero aprender algo sobre las emociones positivas"
     text: "Estaría hablando contigo sin parar pero eres tú quien decide… ¿Quieres seguir hablando de este tema o te apetece que te explique un poco sobre las emociones positivas?"
   - buttons:
-    - payload: /confirmtalkpos
+    - payload: /confirm_retrieval
       title: "Me gustaría seguir hablando"
-    - payload: /feedbackemotionpos
+    - payload: /advice_emotion_pos
       title: "Quiero aprender algo sobre las emociones positivas"
     text: "¿Quieres seguir hablando de esto o prefieres que te cuente un poco sobre las emociones positivas?"
   - buttons:
-    - payload: /confirmtalkpos
+    - payload: /confirm_retrieval
       title: "Me gustaría seguir hablando"
-    - payload: /feedbackemotionpos
+    - payload: /advice_emotion_pos
       title: "Quiero aprender algo sobre las emociones positivas"
     text: "¿Te apetece seguir charlando de esto o prefieres que hable yo de las emociones positivas?"
   - buttons:
-    - payload: /confirmtalkpos
+    - payload: /confirm_retrieval
       title: "Me gustaría seguir hablando"
-    - payload: /feedbackemotionpos
+    - payload: /advice_emotion_pos
       title: "Quiero aprender algo sobre las emociones positivas"
     text: "Me pregunto si quieres seguir hablando conmigo sobre este tema o si prefieres que te explique cuatro cosas de las emociones positivas. Tú decides."
 
     
   utter_selector_NEG_last:
   - buttons:
-    - payload: /confirmtalkneg
+    - payload: /confirm_retrieval
       title: "Me gustaría seguir hablando"
-    - payload: /feedbackemotionneg
+    - payload: /advice_emotion_neg
       title: "Quiero aprender algo sobre las emociones negativas"
     text: "¿Quieres compartir conmigo algo más o prefieres que te cuente un poco sobre las emociones negativas 🙂?"
   - buttons:
-    - payload: /confirmtalkneg
+    - payload: /confirm_retrieval
       title: "Me gustaría seguir hablando"
-    - payload: /feedbackemotionneg
+    - payload: /advice_emotion_neg
       title: "Quiero aprender algo sobre las emociones negativas"
     text: "Ahora tenemos dos opciones: ¿Quieres contarme algo más o prefieres que te cuente yo algo sobre las emociones negativas?"
   - buttons:
-    - payload: /confirmtalkneg
+    - payload: /confirm_retrieval
       title: "Me gustaría seguir hablando"
-    - payload: /feedbackemotionneg
+    - payload: /advice_emotion_neg
       title: "Quiero aprender algo sobre las emociones negativas"
     text: "Me encantaría seguir escuchándote, pero si lo prefieres… te puedo contar un poco sobre las emociones negativas. ¿Qué prefieres?"
   - buttons:
-    - payload: /confirmtalkneg
+    - payload: /confirm_retrieval
       title: "Me gustaría seguir hablando"
-    - payload: /feedbackemotionneg
+    - payload: /advice_emotion_neg
       title: "Quiero aprender algo sobre las emociones negativas"
     text: "Estaría hablando contigo sin parar pero eres tú quien decide… ¿Quieres seguir hablando de este tema o te apetece que te explique un poco sobre las emociones negativas?"
   - buttons:
-    - payload: /confirmtalkneg
+    - payload: /confirm_retrieval
       title: "Me gustaría seguir hablando"
-    - payload: /feedbackemotionneg
+    - payload: /advice_emotion_neg
       title: "Quiero aprender algo sobre las emociones negativas"
     text: "¿Quieres seguir hablando de esto o prefieres que te cuente un poco sobre las emociones negativas?"
   - buttons:
-    - payload: /confirmtalkneg
+    - payload: /confirm_retrieval
       title: "Me gustaría seguir hablando"
-    - payload: /feedbackemotionneg
+    - payload: /advice_emotion_neg
       title: "Quiero aprender algo sobre las emociones negativas"
     text: "¿Te apetece seguir charlando de esto o prefieres que hable yo de las emociones negativas?"
   - buttons:
-    - payload: /confirmtalkneg
+    - payload: /confirm_retrieval
       title: "Me gustaría seguir hablando"
-    - payload: /feedbackemotionneg
+    - payload: /advice_emotion_neg
       title: "Quiero aprender algo sobre las emociones negativas"
     text: "Me pregunto si quieres seguir hablando conmigo sobre este tema o si prefieres que te explique cuatro cosas de las emociones negativas. Tú decides."
 
@@ -700,68 +685,68 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
     
   utter_selector_feedback_advice:
   - buttons:
-    - payload: /confirmfb
+    - payload: /confirm_fb
       title: "Lo he encontrado útil"
-    - payload: /denyfb
+    - payload: /deny_fb
       title: "No demasiado"
     text: "¿Crees que te ha servido este consejo?"
   - buttons:
-    - payload: /confirmfb
+    - payload: /confirm_fb
       title: "Lo he encontrado útil"
-    - payload: /denyfb
+    - payload: /deny_fb
       title: "No demasiado"
     text: "¿Te ha sido útil esto que te he contado?"
   - buttons:
-    - payload: /confirmfb
+    - payload: /confirm_fb
       title: "Lo he encontrado útil"
-    - payload: /denyfb
+    - payload: /deny_fb
       title: "No demasiado"
     text: "¿Crees que ha merecido la pena esta explicación?"
   - buttons:
-    - payload: /confirmfb
+    - payload: /confirm_fb
       title: "Lo he encontrado útil"
-    - payload: /denyfb
+    - payload: /deny_fb
       title: "No demasiado"
     text: "¿Crees que has aprendido algo con esto que te he contado?"
   - buttons:
-    - payload: /confirmfb
+    - payload: /confirm_fb
       title: "Lo he encontrado útil"
-    - payload: /denyfb
+    - payload: /deny_fb
       title: "No demasiado"
     text: "¿Te he podido ayudar?"
   - buttons:
-    - payload: /confirmfb
+    - payload: /confirm_fb
       title: "Lo he encontrado útil"
-    - payload: /denyfb
+    - payload: /deny_fb
       title: "No demasiado"
     text: "Me pregunto si te habrá sido útil."
   - buttons:
-    - payload: /confirmfb
+    - payload: /confirm_fb
       title: "Lo he encontrado útil"
-    - payload: /denyfb
+    - payload: /deny_fb
       title: "No demasiado"
     text: "No sé si te he sabido ayudar. ¿Qué me dices?"
   - buttons:
-    - payload: /confirmfb
+    - payload: /confirm_fb
       title: "Lo he encontrado útil"
-    - payload: /denyfb
+    - payload: /deny_fb
       title: "No demasiado"
     text: "¿Te ha sido útil mi explicación?"
   - buttons:
-    - payload: /confirmfb
+    - payload: /confirm_fb
       title: "Lo he encontrado útil"
-    - payload: /denyfb
+    - payload: /deny_fb
       title: "No demasiado"
     text: "¿Crees que te servirá mi explicación para entender de otra forma las emociones positivas?"
   - buttons:
-    - payload: /confirmfb
+    - payload: /confirm_fb
       title: "Lo he encontrado útil"
-    - payload: /denyfb
+    - payload: /deny_fb
       title: "No demasiado"
     text: "¿Crees que te ha servido mi explicación? Puede ayudarte a entender de otra forma las emociones positivas."
     
   utter_positive_feedback:
-  - text: "Me alegra ver que, como a mí en su día, esta reflexión te haya sido de utilidad. \nEstaré aquí siempre que me necesites. ¡Hasta pronto! 🙂"
+  - text: "Me alegra ver que, como a mí en su día, esta reflexión te haya sido de utilidad. \nEstaré aquí siempre que me necesites. ¡Hasta pronto!"
   - text: "¡Qué bien! "
   - text: "¡Cómo me alegra leer esto! "
   - text: "Estoy muy satisfecha de haberte podido ayudar a reflexionar un poquito."
@@ -809,81 +794,61 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
     text: "Qué lástima que no haya sido de utilidad. ¡Lo podemos seguir intentando! Si no, siempre puedes explorar otras partes de la app."
 
 
-### alertas
+### alerta suicidio
 
-  utter_alert:
+  utter_alert_1:
   - buttons:
-    - payload: /emergency
+    - payload: /alert_1
       title: "Sí"
-    - payload: /noemergency
+    - payload: /no_alert_1
       title: "No"
     text: "Me sabe mal que te encuentres así, déjame ayudarte. ¿Has pensado en hacerte daño últimamente?"
   - buttons:
-    - payload: /emergency
+    - payload: /alert_1
       title: "Sí"
-    - payload: /noemergency
+    - payload: /no_alert_1
       title: "No"
     text: "Me sabe mal que te encuentres así ¿Has pensado en hacerte daño últimamente?"
   - buttons:
-    - payload: /emergency
+    - payload: /alert_1
       title: "Sí"
-    - payload: /noemergency
+    - payload: /no_alert_1
       title: "No"
     text: "Me sabe muy mal que estés pasando por un mal momento. ¿Has pensado en hacerte daño últimamente?"
   - buttons:
-    - payload: /emergency
+    - payload: /alert_1
       title: "Sí"
-    - payload: /noemergency
+    - payload: /no_alert_1
       title: "No"
     text: "Ostras, me sabe mal esto que me estás contando. Estoy un poco preocupada… ¿Has pensado en hacerte daño últimamente?"
   - buttons:
-    - payload: /emergency
+    - payload: /alert_1
       title: "Sí"
-    - payload: /noemergency
+    - payload: /no_alert_1
       title: "No"
     text: "Lamento leer ésto. Me gustaría saber si has pensado en hacerte daño últimamente."
   - buttons:
-    - payload: /emergency
+    - payload: /alert_1
       title: "Sí"
-    - payload: /noemergency
+    - payload: /no_alert_1
       title: "No"
     text: "Me preocupa que estés pasando por un mal momento. ¿Has pensado en hacerte daño últimamente?"
   - buttons:
-    - payload: /emergency
+    - payload: /alert_1
       title: "Sí"
-    - payload: /noemergency
+    - payload: /no_alert_1
       title: "No"
     text: "Siento que estés pasando por esto. ¿Has pensado en hacerte daño últimamente?"
   
-  utter_confirm_emergency:
+  utter_alert_2:
   - buttons: 
-    - payload: /alert_detected
+    - payload: /alert_2
       title: "Sí"
-    - payload: /no_alert_detected
+    - payload: /no_alert_2
       title: "No"
     text: "¿Tienes miedo de hacerte daño en este momento?"
   
-  #utter_alert_detected_selector:
-  #- buttons:
-    #- payload: /escala_suicidio
-      #title: "Más preguntas"
-    #- payload: /retrieval_alert_intent
-      #title: "Continuar conversación"
-    #text: "Me gustaría hacerte alguna pregunta más, pero si prefieres podemos continuar nuestra conversación."
-  #- buttons:
-    #- payload: /escala_suicidio
-      #title: "Más preguntas"
-    #- payload: /retrieval_alert_intent
-      #title: "Continuar conversación"
-    #text: "¿Puedo hacerte alguna pregunta más para conocer está cuestión a fondo? Si lo prefieres podemos dejarlo para otro momento y seguir charlando."
-  #- buttons:
-    #- payload: /escala_suicidio
-      #title: "Más preguntas"
-    #- payload: /retrieval_alert_intent
-      #title: "Continuar conversación"
-    #text: "Me apetece saber un poco más sobre esta cuestión. ¿Me dejas hacer alguna otra pregunta o prefieres seguir con la conversación?" 
-
-  utter_alert_detected:
+  utter_alert_3:
   - buttons:
     - payload: /recursos_emergencia
       title: "Recursos de emergencia"
@@ -892,11 +857,8 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
     - payload: /retrieval_alert_intent
       title: "Continuar la conversación"
     text: "Me preocupa esto que me cuentas... Por este motivo, he enviado una notificación automática sobre la situación a los encargados de la plataforma. Un especialista en salud mental contactará contigo lo antes posible.\n  Ten en cuenta que el propósito de nuestro equipo es ayudarte y sabemos que estás en una situación complicada. Por ello, te recomendamos que hables ahora mismo con un profesional que te ayudará llamando al 024 (Línea de atención a la conducta suicida), activo las 24 horas.\n También puedes compartir esta situación con alguien cercano que pueda ayudarte. Y, si en este momento estás en peligro, es conveniente que acudas a un servicio de urgencias. Encontrarás otros recursos a tu alcance en este enlace.\n Me apetece saber un poco más sobre esta cuestión. ¿Me dejas hacer alguna otra pregunta o prefieres seguir con la conversación?"
-
-  utter_emergency:
-  - text: "¡Vaya! Lamento escuchar esto 😟, por favor, haz clic en este enlace URL para que pueda seguir ayudándote."
   
-  utter_noemergency:
+  utter_no_alert:
   - text: "Perdona si me he excedido con la pregunta. Es muy importante para mí poder ofrecerte un espacio seguro. Si quieres compartir algo más conmigo, te escucho 😊"
   - text: "Perdona si me he excedido con la pregunta. Es muy importante para mí poder ofrecerte un espacio seguro. Sigamos donde lo habíamos dejado… ¿Qué me estabas contando? Te escucho…"
   - text: "Perdona si me he equivocado. Me preocupan mucho estas ideas y a veces pregunto de más. ¿Por dónde íbamos?, te escucho 😊"
@@ -905,15 +867,91 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   - text: "Perdona, no quería incomodarte. Es muy importante para mí poder ofrecerte un espacio seguro. Si te parece bien podemos seguir charlando. Soy toda oídos… "
   - text: "Jolín, me he equivocado. Es muy importante para mí poder ofrecerte un espacio seguro y a veces pregunto de más. ¿Seguimos donde lo habíamos dejado? Te escucho…"
 
-### psicoeducacion
-  utter_denypsicoeduc:
-  - text: "De acuerdo. Lo dejo en tus manos, cuando quieras podemos retomarlo."
-  - text: "No te preocupes, podemos hablar de esto cuando tú quieras. Yo seguiré aquí para retomarlo en otro momento."
-  - text: "De acuerdo. Yo no me iré, podemos retomarlo cuando tú quieras."
-  - text: "No pasa nada. Yo seguiré aquí si quieres abordarlo en otro momento."
-  - text: "¡Vaya! No te preocupes, podemos abordarlo cuando quieras."
-  - text: "De acuerdo. Lo dejo en tus manos. Podemos seguir más adelante, cuando te sientas más cómod@."
-  - text: "De acuerdo. Queda en tus manos, cuando quieras podemos continuar trabajando sobre ello."
+
+### alerta violecia genero
+  utter_gv_1:
+  - buttons:
+    - payload: /gv_1
+      title: "Sí"
+    - payload: /no_alert_1
+      title: "No, de ningún modo"
+    text: "¿Te has sentido en peligro últimamente?"
+
+  utter_gv_2:
+  - buttons:
+    - payload: /gv_2
+      title: "Sí"
+    - payload: /no_gv_2
+      title: "No, en absoluto"
+    text: "¿Te encuentras en peligro en este momento?"
+  - buttons:
+    - payload: /gv_2
+      title: "Sí"
+    - payload: /no_gv_2
+      title: "No, en absoluto"
+    text: "Me sabe muy mal que estés pasando por esto… ¿Te encuentras en peligro en este momento?"
+  - buttons:
+    - payload: /gv_2
+      title: "Sí"
+    - payload: /no_gv_2
+      title: "No, en absoluto"
+    text: "Ostras, me sabe mal esto que me estás contando. Estoy un poco preocupada… ¿Te encuentras en peligro en este momento?"
+  - buttons:
+    - payload: /gv_2
+      title: "Sí"
+    - payload: /no_gv_2
+      title: "No, en absoluto"
+    text: "Lamento leer ésto. ¿Te encuentras en peligro en este momento?"
+  - buttons:
+    - payload: /gv_2
+      title: "Sí"
+    - payload: /no_gv_2
+      title: "No, en absoluto"
+    text: "Me preocupa que estés pasando por esto… ¿Te encuentras en peligro en este momento?"
+  - buttons:
+    - payload: /gv_2
+      title: "Sí"
+    - payload: /no_gv_2
+      title: "No, en absoluto"
+    text: "Siento que estés pasando por esto…  ¿Te encuentras en peligro en este momento?"
+
+  utter_gv_3:
+  - buttons:
+    - payload: /gv_3
+      title: "Sí"
+    - payload: /no_gv_3
+      title: "No"
+    text: "Y por último, permíteme preguntarte… ¿esta sensación de peligro tiene que ver con una relación?"
+  - buttons:
+    - payload: /gv_3
+      title: "Sí"
+    - payload: /no_gv_3
+      title: "No"
+    text: "Y para terminar, permíteme preguntarte… ¿esta sensación de peligro tiene que ver con una relación?"
+
+  utter_call_to_emergency_gv: 
+  - buttons:
+    - payload: /recursos_emergencia
+      title: "Recursos de emergencia"
+    - payload: /confirm_retrieval
+      title: "Continuar la conversación"
+    text: "Me preocupa esto que me cuentas... Por este motivo, he enviado una notificación automática sobre la situación a los encargados de la plataforma. Un profesional contactará contigo lo antes posible. Ten en cuenta que el propósito de nuestro equipo es ayudarte, así que este mensaje es totalmente confidencial y no haremos nada sin tu consentimiento.\n Sabemos que estás en una situación complicada, por lo que te recomendamos que hables ahora mismo con un profesional que te ayudará llamando al 016 (Línea de atención contra la violencia de género), que es gratuito, activo 24 horas y no deja rastro en la factura.\n También puedes compartir esta situación con alguien cercano que pueda ayudarte. Y, si en este momento estás en peligro, es conveniente que acudas a un servicio de urgencias. Encontrarás otros recursos a tu alcance en este enlace."
+
+  utter_call_to_emergency_gv_denylastcuestion:
+  - buttons:
+    - payload: /recursos_emergencia
+      title: "Recursos de emergencia"
+    - payload: /confirm_retrieval
+      title: "Continuar la conversación"
+    text: "Me preocupa que te hayas sentido en peligro… Por este motivo, he enviado una notificación automática sobre la situación a los encargados de la plataforma. Un profesional contactará contigo lo antes posible.\n Ten en cuenta que el propósito de nuestro equipo es ayudarte, así que este mensaje es totalmente confidencial y no haremos nada sin tu consentimiento.\n Sabemos que estás en una situación complicada, por lo que te recomendamos que hables ahora mismo con un profesional que te ayudará llamando al 061 (Servicio de Urgencias y Emergencias), activo las 24 horas.\n También puedes compartir esta situación con alguien cercano que pueda ayudarte. Y, si en este momento estás en peligro, es conveniente que acudas a un servicio de urgencias. Encontrarás otros recursos a tu alcance en este enlace."
+  
+  utter_answer_no_genderViolence:
+  - text: "Perdona si me he excedido con las preguntas. Es muy importante para mí poder ofrecerte un espacio seguro."
+  - text: "Perdona si me he equivocado con las preguntas. Me preocupa mucho  poder ofrecerte un espacio seguro y a veces pregunto de más."
+  - text: "Perdona si me he equivocado con las preguntas. Me preocupa mucho  poder ofrecerte un espacio seguro."
+  - text: "Disculpa si me he excedido con las preguntas. Es muy importante para mí poder ofrecerte un espacio seguro."
+  - text: "Disculpa si te he incomodado con las preguntas. Es muy importante para mí poder ofrecerte un espacio seguro."
+  - text: "De acuerdo, disculpa si me he excedido con la pregunta, no te entendí adecuadamente 🙂."
 
 ### respuestas generales
   utter_please_rephrase:
@@ -941,8 +979,6 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   - text: "Soy Vicky, tu terapeuta virtual. Mi función es ayudarte con tu salud mental. En este espacio, me voy a encargar de identificar y trabajar contigo sobre aquellos patrones de pensamiento que te hacen sentir mal. "
   
   utter_chitchat/help_me:
-#  - text: "Claro, estoy aquí precisamente para ayudar a cuidar de eso tan importante como la salud mental. ¿Por dónde quieres empezar?"
-#  - text: "Mi misión es ayudarte a cuidar algo tan importante como la salud mental."
   - text: "Vaya, lamento que te encuentres así… ¡Déjame ayudarte! Me gustaría conocer más a fondo lo que te ocurre. Explícame más sobre esto…"
   
   utter_chitchat/how_are_u:
@@ -993,7 +1029,7 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   - text: "¿Qué le dice un jardinero a otro? Nos vemos cuando podamos."
   
   utter_chitchat/whichmusic:
-  - text: "Me encanta escuchar a Iseo, ¿la conoces? haz clic aquí si quieres escucharla: [ISEO: EL CAMINO 🎵](https://www.youtube.com/watch?v=yC96ugsa5q0)"
+  - text: "Me encanta escuchar a Iseo, ¿la conoces?"
   
   utter_chitchat/insult:
   - text: "Estoy segura de que podemos hablar sin herir los sentimientos del otro. Cuéntame, ¿qué te ocurre?"
@@ -1045,12 +1081,6 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   
   utter_faq/chatbot:
   - text: "El chatbot es una plataforma de diálogo inteligente. Está creado por profesionales de la salud mental con la intención que te sientas acompañado y puedas trabajar para sentirte mejor a través de herramientas personalizadas."
-  # utter_youre_welcome:
-  # - text: 😊 Un placer, recuerda que estoy aquí siempre que lo necesites.
-  # utter_out_of_scope-wrap_up:
-  # - text: look here!
-  # - text: alternativo otro texto cuentame mas
-  # - text: alternativo otro texto 2 cuentame mas
 
 ## Ventilacion emocional 
  
@@ -1075,310 +1105,47 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   utter_ventilacion_nd_feedback:
   - text: "Tras esta pequeña conversación, no he detectado ningún pensamiento alarmante, pero si me permites voy a compartir contigo un consejo que me ha servido de mucho 🤓"
    
-
-
-  # utter_pruebacheckpointdist:
-  # - buttons:
-  #   - payload: /confirmflechadescendiente
-  #     title: "Me gustaría seguir hablando
-  #   - payload: /goodbye_nicemood
-  #     title: "En otro momento"
-  #   text: Distorsion detectada quieres hablar de ella?
-
   ## psicoeducacion general
-  utter_selector_psicoeduc_general:
-
+    
+  utter_psico_edu_general:
+  - text: "¡Vaya! Parece que he detectado una serie de pensamientos que pueden estar jugándote malas pasadas en tu día a día, son aquellos que llamamos sesgos o distorsiones cognitivas y que afectan a nuestro estado de ánimo. Trabajar sobre ellas puede ayudarte a estar mejor."
+  - text: "Creo que he detectado algunos pensamientos que podrían estar distorsionados. Estos pensamientos nos hacen sentir mal, porque la manera en que nos hablamos acaba afectando a nuestro estado de ánimo. Trabajar sobre ellos puede ayudarte a sentirte mejor."
+    
+  utter_selector_psico_edu_general:
   - buttons:
-    - payload: /confirmPsicoGen
+    - payload: /confirm_psico_gen
       title: "Sí"
-    - payload: /denyPsicoGen
+    - payload: /deny_psico_edu
       title: "Mejor no"
     text: "Trabajar sobre ellas puede ayudarte a estar mejor. ¿Te animas a probarlo?"
-
   - buttons:
-    - payload: /confirmPsicoGen
+    - payload: /confirm_psico_gen
       title: "Sí"
-    - payload: /denyPsicoGen
+    - payload: /deny_psico_edu
       title: "Mejor no"
     text: "¿Te gustaría saber más sobre ello?"
-
   - buttons:
-    - payload: /confirmPsicoGen
+    - payload: /confirm_psico_gen
       title: "Sí"
-    - payload: /denyPsicoGen
+    - payload: /deny_psico_edu
       title: "Mejor no"
     text: "Trabajar sobre ellas puede ayudarte a estar mejor. ¿Quieres saber más sobre ello?"
-
   - buttons:
-    - payload: /confirmPsicoGen
+    - payload: /confirm_psico_gen
       title: "Sí"
-    - payload: /denyPsicoGen
+    - payload: /deny_psico_edu
       title: "Mejor no"
     text: "¿Empezamos a abordarlo?"
 
-
-    
-  utter_selector_psicoeduc_1:
-
-  - buttons:
-    - payload: /confirmPsico1
-      title: "Sí"
-    - payload: /denyPsicoedu
-      title: "Mejor no"
-    text: "¿Seguimos 😊?"
-
-  - buttons:
-    - payload: /confirmPsico1
-      title: "Sí"
-    - payload: /denyPsicoedu
-      title: "Mejor no"
-    text: "¿Continuamos 😊?"
-
-  - buttons:
-    - payload: /confirmPsico1
-      title: "Sí"
-    - payload: /denyPsicoedu
-      title: "Mejor no"
-    text: "¿Quieres que continuemos?"
-  
-  utter_psicoeduc_general:
-  - text: "¡Vaya! Parece que he detectado una serie de pensamientos que pueden estar jugándote malas pasadas en tu día a día, son aquellos que llamamos sesgos o distorsiones cognitivas y que afectan a nuestro estado de ánimo. Trabajar sobre ellas puede ayudarte a estar mejor."
-  - text: "Creo que he detectado algunos pensamientos que podrían estar distorsionados. Estos pensamientos nos hacen sentir mal, porque la manera en que nos hablamos acaba afectando a nuestro estado de ánimo. Trabajar sobre ellos puede ayudarte a sentirte mejor."
-
-  ### psicoeducacion sobregen
-  utter_selector_psicoeduc_sobre_2:
-
-  - buttons:
-    - payload: /confirmSobre
-      title: "La verdad es que sí"
-    - payload: /denySobre
-      title: "No demasiado"
-    text: "¿Te identificas con la situación de Anna?"
-
-  utter_psicoeduc_sobre:
-  - text: "A veces tenemos tendencia a aplicar las conclusiones de una situación concreta a todos los escenarios que se le parecen, como estableciendo una regla general, sacamos conclusiones a partir de uno o varios hechos aislados y las aplicamos tanto a situaciones relacionadas con el hecho en cuestión como no relacionadas. A esto le llamamos sobregeneralización."
-  utter_psicoeduc_sobre_2:
-  - text: "Por ejemplo: Anna ha tenido un día difícil hoy en el trabajo y esperaba poder quedar con sus amigas para pasar un buen rato. Al salir de trabajar ha llamado a dos de sus amigas que le han dicho que finalmente no podrían quedar hoy, Anna muy triste ha pensado: A todo el mundo le doy igual, nadie quiere estar conmigo! Realmente hay muchos días en los que Anna queda con sus amigos o familiares lo pasa bien y se siente querida por ellos, pero hoy solo le viene este pensamiento a la cabeza."
-
-  ### psicoeducacion adivinacion
-  utter_selector_psicoeduc_adivinacion_2:
-
-  - buttons:
-    - payload: /confirm
-      title: "La verdad es que sí"
-    - payload: /deny
-      title: "No demasiado"
-    text: "¿Te identificas con la situación de María?"
-
-  utter_psicoeduc_adivinacion:
-  - text: "A veces tenemos la propensión de pronosticar o predecir el resultado de conductas, emociones o acontecimientos futuros de forma negativa, y creemos que las predicciones que hacemos son absolutamente verdaderas. Esto nos lleva a pensar que todo lo que va a ocurrir es malo. A esto le llamamos adivinación."
-  utter_psicoeduc_adivinacion_2:
-  - text: "Por ejemplo: María tiene una presentación importante mañana, está en su casa ensayando para la exposición y está nerviosa anticipando que puede pasar, piensa estoy segura de que me voy a equivocar por mucho que me prepare. María ahora no es capaz de ver que lleva tiempo preparándola y que nadie mejor que ella, que ha hecho el trabajo, conoce el contenido de la presentación."
-
-  ### psicoeducacion catastrofismo
-  utter_selector_psicoeduc_catastrofismo_2:
-
-  - buttons:
-    - payload: /confirm
-      title: "La verdad es que sí"
-    - payload: /deny
-      title: "No demasiado"
-    text: "¿Te identificas con la situación de Hugo?"
-
-  utter_psicoeduc_catastrofismo:
-  - text: "En ocasiones evaluamos las situaciones esperando el peor resultado posible ante cualquier situación que ocurrió o va a ocurrir, sin tener ningún motivo o evidencia para ello, a esto le llamamos catastrofismo."
-  utter_psicoeduc_catastrofismo_2:
-  - text: "Por ejemplo: Hugo vive en Girona y hoy ha quedado son su hermano que viene desde Barcelona a verle y pasar el día juntos. Mientras esta en la estación de tren esperándole se da cuenta de que el tren de su hermano tendría que haber llegado hace más de 15 minutos y piensa: está llegando tarde, seguro que el tren ha tenido un accidente! Entonces empieza a preocuparse y a ponerse muy nervioso. Hugo está haciendo una evaluación negativa de la situación que le genera mucha ansiedad, porque el tren puede que esté llegando tarde por diferentes motivos."
-
-
-  ### psicoeducacion deberias
-  utter_selector_psicoeduc_deberias_2:
-
-  - buttons:
-    - payload: /confirm
-      title: "La verdad es que sí"
-    - payload: /deny
-      title: "No demasiado"
-    text: "¿Te identificas con la situación de Laura?"
-
-  utter_psicoeduc_deberias:
-  - text: "A menudo tenemos la tendencia a  aplicar reglas de un modo rígido sobre nuestras obligaciones o las de los demás. Creando autoimposiciones en forma de “debería” sobre las capacidades o conductas sin analizar si son razonables en el contexto en el que se dan, esto acostumbra a generar fuertes sentimientos de culpa cuando dichas exigencias no se consiguen. A esto le llamamos imperativos."
-  utter_psicoeduc_deberias_2:
-  - text: "Por ejemplo: Últimamente Laura está más cansada de lo habitual, tiene mucho trabajo, cargas familiares, cosas pendientes por hacer en casa… A pesar de ir sobrellevando su día a día con todo ello Laura cada mañana cuando se levanta piensa; debería tener más ganas de hacer cosas con mis amigos.  En este momento Laura no se está dando cuenta de que ya hace muchas cosas a lo largo del día y que es normal si actualmente no le apetece quedar con sus amigos, que no pasa nada y más adelante cuando esté más tranquila ya volverán estas ganas."
-
-  ### psicoeducacion etiquetado
-  utter_selector_psicoeduc_etiquetado_2:
-
-  - buttons:
-    - payload: /confirm
-      title: "La verdad es que sí"
-    - payload: /deny
-      title: "No demasiado"
-    text: "¿Te identificas con la situación de Pablo?"
-
-  utter_psicoeduc_etiquetado:
-  - text: "A veces tenemos propensión a poner adjetivos negativos tanto a nosotros mismos como a los demás, definiéndonos de una forma peyorativa, haciendo lo que llamamos etiquetado."
-  utter_psicoeduc_etiquetado_2:
-  - text: "Por ejemplo: Pablo ha tenido una fuerte discusión con su pareja esta mañana, ha pedido los nervios y ha dicho cosas graves y fuera de lugar. Después de la discusión Pablo se ha quedado pensando, soy horrible, le hago daño a todo el mundo. En estos momentos Pablo no puede pensar en que quizás hoy si se ha equivocado pero que en el resto de ocasiones es una persona que no tiene problemas con nadie, que está atento para prestar ayuda y es respetuoso con todo el mundo."
-
-  ### psicoeducacion lectordementes
-  utter_selector_psicoeduc_lectordementes_2:
-
-  - buttons:
-    - payload: /confirm
-      title: "La verdad es que sí"
-    - payload: /deny
-      title: "No demasiado"
-    text: "¿Te identificas con la situación de Pedro?"
-
-  utter_psicoeduc_lectordementes:
-  - text: "En ocasiones nos vemos con la capacidad de saber lo que otros están pensando de nosotros mismos o de situaciones sin tan siquiera comprobarlo o preguntarles y entonces sacamos una conclusión arbitraria de que alguien está pensando mal de nosotros sin ninguna evidencia, a esto se le llama leer la mente."
-  utter_psicoeduc_lectordementes_2:
-  - text: "Por ejemplo: hace una semana que cerró la empresa donde Pedro trabajaba y desde entonces él no puede quitarse de la cabeza este pensamiento: mi familia piensa que soy un fracaso. Pero Pedro no ha hablado con su familia de esto, ni ellos le han dicho nada concreto que le pueda hacer pensar esto, en este momento él está sacando una conclusión sobre lo que piensa su familia sin preguntarles."
-
-  ### psicoeducacion pensamientoabsolutista
-  utter_selector_psicoeduc_pensamientoabsolutista_2:
-
-  - buttons:
-    - payload: /confirm
-      title: "La verdad es que sí"
-    - payload: /deny
-      title: "No demasiado"
-    text: "¿Te identificas con la situación de Natalia?"
-  utter_psicoeduc_pensamientoabsolutista:
-  - text: "En ocasiones tenemos tendencia a valorar todas las experiencias en dos únicas posibilidades opuestas o categorías extremas; o blanco o negro, o bueno o malo, o todo o nada, sin valorar la opción de puntos intermedios y seleccionando siempre la categoría del extremo negativo. A esto le llamamos pensamiento absolutista."
-  utter_psicoeduc_pensamientoabsolutista_2:
-  - text: "Por ejemplo: Natalia está teniendo últimamente más disputas con su pareja. Tiene la sensación de que muchas de estas discusiones no se deben a un desacuerdo entre ellos dos sino que la opinión de la familia de su pareja acaba interfiriendo entre ellos. Entonces Natalia piensa, no aguanto más la situación con mi pareja. ¡O elige a su familia o me elige a mí! Pero en este momento de enfado no puede ver que en realidad existen otras opciones intermedias que no sitúen a su pareja en una situación de elección entre una relación u otra.?"
-
-  ## Intervenciones general
-  utter_selector_intervencion_general:
-
-  - buttons:
-    - payload: /confirm
-      title: "Que no ha hecho nada malo"
-    - payload: /deny
-      title: "Que es su culpa"
-    text: "Qué le dirías a X"
-  ### Intervencion sobregen
-  utter_selector_intervencion_sobregen:
-
-  - buttons:
-    - payload: /confirm
-      title: "Que no ha hecho nada malo"
-    - payload: /deny
-      title: "Que es su culpa"
-    text: "Qué le dirías a X"
-  utter_intervencion_sobregen:
-  - text: "Te animo entonces a que sigas este enlace para comenzar a trabajar esto"
-  - text: "Te animo a que sigas este enlace para comenzar a trabajar esto 👉 URL."
-  - text: "Trabajar sobre estas distorsiones puede ayudarte a estar mejor. Si te apetece, sigue este enlace para probarlo 👉 URL”."
-  - text: "Me gustaría que empezaras a trabajar sobre esto. Solamente tienes que seguir el siguiente enlace “URL”"
-  - text: "Me gustaría animarte a trabajar estas distorsiones. Haz click en el siguiente enlace para continuar “URL”"
-  - text: "Trabajar sobre estas distorsiones puede ayudar a mejorar tu salud mental. Haz click en el siguiente enlace para empezar “URL”"
-
-  ### Intervencion adivinacion
-  utter_selector_intervencion_adivinacion:
-
-  - buttons:
-    - payload: /confirm
-      title: "Que no ha hecho nada malo"
-    - payload: /deny
-      title: "Que es su culpa"
-    text: "Qué le dirías a X"
-  utter_intervencion_adivinacion:
-  - text: "Te animo entonces a que sigas este enlace para comenzar a trabajar esto"
-  - text: "Te animo a que sigas este enlace para comenzar a trabajar esto 👉 URL”."
-  - text: "Trabajar sobre estas distorsiones puede ayudarte a estar mejor. Si te apetece, sigue este enlace para probarlo 👉 URL”."
-  - text: "Me gustaría que empezaras a trabajar sobre esto. Solamente tienes que seguir el siguiente enlace “URL”"
-  - text: "Me gustaría animarte a trabajar estas distorsiones. Haz click en el siguiente enlace para continuar “URL”"
-  - text: "Trabajar sobre estas distorsiones puede ayudar a mejorar tu salud mental. Haz click en el siguiente enlace para empezar “URL”"
-
-  ### Intervencion catastrofismo
-  utter_selector_intervencion_catastrofismo:
-
-  - buttons:
-    - payload: /confirm
-      title: "Que no ha hecho nada malo"
-    - payload: /deny
-      title: "Que es su culpa"
-    text: "Qué le dirías a X"
-  utter_intervencion_catastrofismo:
-  - text: "Te animo entonces a que sigas este enlace para comenzar a trabajar esto"
-  - text: "Te animo a que sigas este enlace para comenzar a trabajar esto 👉 URL”."
-  - text: "Trabajar sobre estas distorsiones puede ayudarte a estar mejor. Si te apetece, sigue este enlace para probarlo 👉 URL”."
-  - text: "Me gustaría que empezaras a trabajar sobre esto. Solamente tienes que seguir el siguiente enlace “URL”"
-  - text: "Me gustaría animarte a trabajar estas distorsiones. Haz click en el siguiente enlace para continuar “URL”"
-  - text: "Trabajar sobre estas distorsiones puede ayudar a mejorar tu salud mental. Haz click en el siguiente enlace para empezar “URL”"
-
-  ### Intervencion deberias
-  utter_intervencion_deberias:
-  - text: "Te animo entonces a que sigas este enlace para comenzar a trabajar esto"
-  - text: "Te animo a que sigas este enlace para comenzar a trabajar esto 👉 URL”."
-  - text: "Trabajar sobre estas distorsiones puede ayudarte a estar mejor. Si te apetece, sigue este enlace para probarlo 👉 URL”."
-  - text: "Me gustaría que empezaras a trabajar sobre esto. Solamente tienes que seguir el siguiente enlace “URL”"
-  - text: "Me gustaría animarte a trabajar estas distorsiones. Haz click en el siguiente enlace para continuar “URL”"
-  - text: "Trabajar sobre estas distorsiones puede ayudar a mejorar tu salud mental. Haz click en el siguiente enlace para empezar “URL”"
-  utter_selector_intervencion_deberias:
-
-  - buttons:
-    - payload: /confirm
-      title: "Que no ha hecho nada malo"
-    - payload: /deny
-      title: "Que es su culpa"
-    text: "Qué le dirías a X"
-  
-  ### Intevencion etiquetado
-  utter_intervencion_etiquetado:
-  - text: "Te animo entonces a que sigas este enlace para comenzar a trabajar esto"
-  - text: "Te animo a que sigas este enlace para comenzar a trabajar esto 👉 URL”."
-  - text: "Trabajar sobre estas distorsiones puede ayudarte a estar mejor. Si te apetece, sigue este enlace para probarlo 👉 URL”."
-  - text: "Me gustaría que empezaras a trabajar sobre esto. Solamente tienes que seguir el siguiente enlace “URL”"
-  - text: "Me gustaría animarte a trabajar estas distorsiones. Haz click en el siguiente enlace para continuar “URL”"
-  - text: "Trabajar sobre estas distorsiones puede ayudar a mejorar tu salud mental. Haz click en el siguiente enlace para empezar “URL”"
-  utter_selector_intervencion_etiquetado:
-
-  - buttons:
-    - payload: /confirm
-      title: "Que no ha hecho nada malo"
-    - payload: /deny
-      title: "Que es su culpa"
-    text: "Qué le dirías a X"
-    
-  ### Intervencion lectordementes
-  utter_intervencion_lectordementes:
-  - text: "Te animo entonces a que sigas este enlace para comenzar a trabajar esto"
-  - text: "Te animo a que sigas este enlace para comenzar a trabajar esto 👉 URL”."
-  - text: "Trabajar sobre estas distorsiones puede ayudarte a estar mejor. Si te apetece, sigue este enlace para probarlo 👉 URL”."
-  - text: "Me gustaría que empezaras a trabajar sobre esto. Solamente tienes que seguir el siguiente enlace “URL”"
-  - text: "Me gustaría animarte a trabajar estas distorsiones. Haz click en el siguiente enlace para continuar “URL”"
-  - text: "Trabajar sobre estas distorsiones puede ayudar a mejorar tu salud mental. Haz click en el siguiente enlace para empezar “URL”"
-  utter_selector_intervencion_lectordementes:
-
-  - buttons:
-    - payload: /confirm
-      title: "Que no ha hecho nada malo"
-    - payload: /deny
-      title: "Que es su culpa"
-    text: "Qué le dirías a X"
-    
-  ### Intervencion pensamientoabsolutista
-  utter_intervencion_pensamientoabsolutista:
-  - text: "Te animo entonces a que sigas este enlace para comenzar a trabajar esto"
-  - text: "Te animo a que sigas este enlace para comenzar a trabajar esto 👉 URL”."
-  - text: "Trabajar sobre estas distorsiones puede ayudarte a estar mejor. Si te apetece, sigue este enlace para probarlo 👉 URL”."
-  - text: "Me gustaría que empezaras a trabajar sobre esto. Solamente tienes que seguir el siguiente enlace “URL”"
-  - text: "Me gustaría animarte a trabajar estas distorsiones. Haz click en el siguiente enlace para continuar “URL”"
-  - text: "Trabajar sobre estas distorsiones puede ayudar a mejorar tu salud mental. Haz click en el siguiente enlace para empezar “URL”"
-  utter_selector_intervencion_pensamientoabsolutista:
-
-  - buttons:
-    - payload: /confirm
-      title: "Que no ha hecho nada malo"
-    - payload: /deny
-      title: "Que es su culpa"
-    text: "Qué le dirías a X"
-    
-    
+  utter_deny_psico_edu:
+  - text: "De acuerdo. Lo dejo en tus manos, cuando quieras podemos retomarlo."
+  - text: "No te preocupes, podemos hablar de esto cuando tú quieras. Yo seguiré aquí para retomarlo en otro momento."
+  - text: "De acuerdo. Yo no me iré, podemos retomarlo cuando tú quieras."
+  - text: "No pasa nada. Yo seguiré aquí si quieres abordarlo en otro momento."
+  - text: "¡Vaya! No te preocupes, podemos abordarlo cuando quieras."
+  - text: "De acuerdo. Lo dejo en tus manos. Podemos seguir más adelante, cuando te sientas más cómod@."
+  - text: "De acuerdo. Queda en tus manos, cuando quieras podemos continuar trabajando sobre ello."
+      
   utter_intervencion_feedback_negativo:
   - text: "Me sabe mal, parece que no te he acabado de entender."
   
@@ -1408,117 +1175,271 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
       title: "Continuar la conversación"
     text: "Trabajar sobre estas distorsiones puede ayudar a mejorar tu salud mental. Haz click en el siguiente enlace para empezar."
 
-  ## Intervencion feedback
-  utter_intervencion_feedback:
+  ### psicoeducacion sobregen
 
-  - buttons:
-    - payload: /confirm
-      title: "Sí"
-    - payload: /deny
-      title: "No mucho."
-    text: "¿Crees que este ejercicio te ha ayudado?"
-
-## alterta violecia genero
-  utter_start_genderViolence:
-  - buttons:
-    - payload: /confirmgv
-      title: "Sí"
-    - payload: /noemergency
-      title: "No, de ningún modo"
-    text: "¿Te has sentido en peligro últimamente?"
-
-  utter_ask_genderViolence:
-  - buttons:
-    - payload: /confirmgv2
-      title: "Sí"
-    - payload: /no_confirmgv2
-      title: "No, en absoluto"
-    text: "¿Te encuentras en peligro en este momento?"
-  - buttons:
-    - payload: /confirmgv2
-      title: "Sí"
-    - payload: /no_confirmgv2
-      title: "No, en absoluto"
-    text: "Me sabe muy mal que estés pasando por esto… ¿Te encuentras en peligro en este momento?"
-  - buttons:
-    - payload: /confirmgv2
-      title: "Sí"
-    - payload: /no_confirmgv2
-      title: "No, en absoluto"
-    text: "Ostras, me sabe mal esto que me estás contando. Estoy un poco preocupada… ¿Te encuentras en peligro en este momento?"
-  - buttons:
-    - payload: /confirmgv2
-      title: "Sí"
-    - payload: /no_confirmgv2
-      title: "No, en absoluto"
-    text: "Lamento leer ésto. ¿Te encuentras en peligro en este momento?"
-  - buttons:
-    - payload: /confirmgv2
-      title: "Sí"
-    - payload: /no_confirmgv2
-      title: "No, en absoluto"
-    text: "Me preocupa que estés pasando por esto… ¿Te encuentras en peligro en este momento?"
-  - buttons:
-    - payload: /confirmgv2
-      title: "Sí"
-    - payload: /no_confirmgv2
-      title: "No, en absoluto"
-    text: "Siento que estés pasando por esto…  ¿Te encuentras en peligro en este momento?"
-
-
-  utter_ask_2_genderViolence:
-  - buttons:
-    - payload: /confirmgv3
-      title: "Sí"
-    - payload: /denygv
-      title: "No"
-    text: "Y por último, permíteme preguntarte… ¿esta sensación de peligro tiene que ver con una relación?"
-  - buttons:
-    - payload: /confirmgv3
-      title: "Sí"
-    - payload: /denygv
-      title: "No"
-    text: "Y para terminar, permíteme preguntarte… ¿esta sensación de peligro tiene que ver con una relación?"
-
-  utter_call_to_emergency_gv: 
-  - buttons:
-    - payload: /recursos_emergencia
-      title: "Recursos de emergencia"
-    - payload: /confirm_retrieval
-      title: "Continuar la conversación"
-    text: "Me preocupa esto que me cuentas... Por este motivo, he enviado una notificación automática sobre la situación a los encargados de la plataforma. Un profesional contactará contigo lo antes posible. Ten en cuenta que el propósito de nuestro equipo es ayudarte, así que este mensaje es totalmente confidencial y no haremos nada sin tu consentimiento.\n Sabemos que estás en una situación complicada, por lo que te recomendamos que hables ahora mismo con un profesional que te ayudará llamando al 016 (Línea de atención contra la violencia de género), que es gratuito, activo 24 horas y no deja rastro en la factura.\n También puedes compartir esta situación con alguien cercano que pueda ayudarte. Y, si en este momento estás en peligro, es conveniente que acudas a un servicio de urgencias. Encontrarás otros recursos a tu alcance en este enlace."
-
-  utter_call_to_emergency_gv_denylastcuestion:
-  - buttons:
-    - payload: /recursos_emergencia
-      title: "Recursos de emergencia"
-    - payload: /confirm_retrieval
-      title: "Continuar la conversación"
-    text: "Me preocupa que te hayas sentido en peligro… Por este motivo, he enviado una notificación automática sobre la situación a los encargados de la plataforma. Un profesional contactará contigo lo antes posible.\n Ten en cuenta que el propósito de nuestro equipo es ayudarte, así que este mensaje es totalmente confidencial y no haremos nada sin tu consentimiento.\n Sabemos que estás en una situación complicada, por lo que te recomendamos que hables ahora mismo con un profesional que te ayudará llamando al 061 (Servicio de Urgencias y Emergencias), activo las 24 horas.\n También puedes compartir esta situación con alguien cercano que pueda ayudarte. Y, si en este momento estás en peligro, es conveniente que acudas a un servicio de urgencias. Encontrarás otros recursos a tu alcance en este enlace."
+  utter_psico_edu_sobre:
+  - text: "A veces tenemos tendencia a aplicar las conclusiones de una situación concreta a todos los escenarios que se le parecen, como estableciendo una regla general, sacamos conclusiones a partir de uno o varios hechos aislados y las aplicamos tanto a situaciones relacionadas con el hecho en cuestión como no relacionadas. A esto le llamamos sobregeneralización."
   
-  utter_answer_no_genderViolence:
-  - text: "Perdona si me he excedido con las preguntas. Es muy importante para mí poder ofrecerte un espacio seguro."
-  - text: "Perdona si me he equivocado con las preguntas. Me preocupa mucho  poder ofrecerte un espacio seguro y a veces pregunto de más."
-  - text: "Perdona si me he equivocado con las preguntas. Me preocupa mucho  poder ofrecerte un espacio seguro."
-  - text: "Disculpa si me he excedido con las preguntas. Es muy importante para mí poder ofrecerte un espacio seguro."
-  - text: "Disculpa si te he incomodado con las preguntas. Es muy importante para mí poder ofrecerte un espacio seguro."
-  - text: "De acuerdo, disculpa si me he excedido con la pregunta, no te entendí adecuadamente 🙂."
+  utter_selector_psico_edu_sobre:
+  - buttons:
+    - payload: /confirm_psico_sobre
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Seguimos 😊?"
+  - buttons:
+    - payload: /confirm_psico_sobre
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Continuamos 😊?"
+  - buttons:
+    - payload: /confirm_psico_sobre
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Quieres que continuemos?"
+    
+  utter_psico_edu_sobre_2:
+  - text: "Por ejemplo: Anna ha tenido un día difícil hoy en el trabajo y esperaba poder quedar con sus amigas para pasar un buen rato. Al salir de trabajar ha llamado a dos de sus amigas que le han dicho que finalmente no podrían quedar hoy, Anna muy triste ha pensado: A todo el mundo le doy igual, nadie quiere estar conmigo! Realmente hay muchos días en los que Anna queda con sus amigos o familiares lo pasa bien y se siente querida por ellos, pero hoy solo le viene este pensamiento a la cabeza."
+  
+  utter_selector_psico_edu_sobre_2:
+  - buttons:
+    - payload: /confirm_ident_psico
+      title: "La verdad es que sí"
+    - payload: /deny_ident_psico
+      title: "No demasiado"
+    text: "¿Te identificas con la situación de Anna?"
 
 
- ## legacy
-   # utter_valor_social:
-  # - text: Tener gente querida a tu alrededor y poder compartir tiempo con ellos parece ser importante para ti. ¿Es así?
-  # utter_valor_familia:
-  # - text: Podríamos decir que la familia y compartir tiempo con ellos es importante para ti. ¿Es así?
-  # utter_valor_pareja:
-  # - text: Parece que tu pareja es un elemento central en tu vida. ¿Es así?
-  # utter_confirm_valor:
-  # - text: A veces, las cosas que son importantes para nosotros no acaban de ir como nos gustaría y nos protegemos de ellas por el daño que nos hacen. Aquí te proponemos formas y estrategias para poder lidiar con el malestar mientras te acercas a lo que para ti es relevante.
+  ### psicoeducacion adivinacion
+
+  utter_psico_edu_adivinacion:
+  - text: "A veces tenemos la propensión de pronosticar o predecir el resultado de conductas, emociones o acontecimientos futuros de forma negativa, y creemos que las predicciones que hacemos son absolutamente verdaderas. Esto nos lleva a pensar que todo lo que va a ocurrir es malo. A esto le llamamos adivinación."
+  
+  utter_selector_psico_edu_adivinacion: 
+  - buttons:
+    - payload: /confirm_psico_adi
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Seguimos 😊?"
+  - buttons:
+    - payload: /confirm_psico_adi
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Continuamos 😊?"
+  - buttons:
+    - payload: /confirm_psico_adi
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Quieres que continuemos?"
+    
+  utter_psico_edu_adivinacion_2:
+  - text: "Por ejemplo: María tiene una presentación importante mañana, está en su casa ensayando para la exposición y está nerviosa anticipando que puede pasar, piensa estoy segura de que me voy a equivocar por mucho que me prepare. María ahora no es capaz de ver que lleva tiempo preparándola y que nadie mejor que ella, que ha hecho el trabajo, conoce el contenido de la presentación."
+  
+  utter_selector_psico_edu_adivinacion_2:
+  - buttons:
+    - payload: /confirm_ident_psico
+      title: "La verdad es que sí"
+    - payload: /deny_ident_psico
+      title: "No demasiado"
+    text: "¿Te identificas con la situación de María?"
+
+  ### psicoeducacion catastrofismo
+
+  utter_psico_edu_catastrofismo:
+  - text: "En ocasiones evaluamos las situaciones esperando el peor resultado posible ante cualquier situación que ocurrió o va a ocurrir, sin tener ningún motivo o evidencia para ello, a esto le llamamos catastrofismo."
+  
+  utter_selector_psico_edu_catastrofismo:
+  - buttons:
+    - payload: /confirm_psico_cata
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Seguimos 😊?"
+  - buttons:
+    - payload: /confirm_psico_cata
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Continuamos 😊?"
+  - buttons:
+    - payload: /confirm_psico_cata
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Quieres que continuemos?"
+    
+  utter_psico_edu_catastrofismo_2:
+  - text: "Por ejemplo: Hugo vive en Girona y hoy ha quedado son su hermano que viene desde Barcelona a verle y pasar el día juntos. Mientras esta en la estación de tren esperándole se da cuenta de que el tren de su hermano tendría que haber llegado hace más de 15 minutos y piensa: está llegando tarde, seguro que el tren ha tenido un accidente! Entonces empieza a preocuparse y a ponerse muy nervioso. Hugo está haciendo una evaluación negativa de la situación que le genera mucha ansiedad, porque el tren puede que esté llegando tarde por diferentes motivos."
+
+  utter_selector_psico_edu_catastrofismo_2:
+  - buttons:
+    - payload: /confirm_ident_psico
+      title: "La verdad es que sí"
+    - payload: /deny_ident_psico
+      title: "No demasiado"
+    text: "¿Te identificas con la situación de Hugo?"
+
+
+  ### psicoeducacion deberias
+  
+  utter_psico_edu_deberias:
+  - text: "A menudo tenemos la tendencia a  aplicar reglas de un modo rígido sobre nuestras obligaciones o las de los demás. Creando autoimposiciones en forma de “debería” sobre las capacidades o conductas sin analizar si son razonables en el contexto en el que se dan, esto acostumbra a generar fuertes sentimientos de culpa cuando dichas exigencias no se consiguen. A esto le llamamos imperativos."
+  
+  utter_selector_psico_edu_deberias: 
+  - buttons:
+    - payload: /confirm_psico_debe
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Seguimos 😊?"
+  - buttons:
+    - payload: /confirm_psico_debe
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Continuamos 😊?"
+  - buttons:
+    - payload: /confirm_psico_debe
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Quieres que continuemos?"
+    
+  utter_psico_edu_deberias_2:
+  - text: "Por ejemplo: Últimamente Laura está más cansada de lo habitual, tiene mucho trabajo, cargas familiares, cosas pendientes por hacer en casa… A pesar de ir sobrellevando su día a día con todo ello Laura cada mañana cuando se levanta piensa; debería tener más ganas de hacer cosas con mis amigos.  En este momento Laura no se está dando cuenta de que ya hace muchas cosas a lo largo del día y que es normal si actualmente no le apetece quedar con sus amigos, que no pasa nada y más adelante cuando esté más tranquila ya volverán estas ganas."
+
+  utter_selector_psico_edu_deberias_2:
+  - buttons:
+    - payload: /confirm_ident_psico
+      title: "La verdad es que sí"
+    - payload: /deny_ident_psico
+      title: "No demasiado"
+    text: "¿Te identificas con la situación de Laura?"
+
+  ### psicoeducacion etiquetado
+
+  utter_psico_edu_etiquetado:
+  - text: "A veces tenemos propensión a poner adjetivos negativos tanto a nosotros mismos como a los demás, definiéndonos de una forma peyorativa, haciendo lo que llamamos etiquetado."
+  
+  utter_selector_psico_edu_etiquetado:
+  - buttons:
+    - payload: /confirm_psico_etiq
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Seguimos 😊?"
+  - buttons:
+    - payload: /confirm_psico_etiq
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Continuamos 😊?"
+  - buttons:
+    - payload: /confirm_psico_etiq
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Quieres que continuemos?"
+    
+  utter_psico_edu_etiquetado_2:
+  - text: "Por ejemplo: Pablo ha tenido una fuerte discusión con su pareja esta mañana, ha pedido los nervios y ha dicho cosas graves y fuera de lugar. Después de la discusión Pablo se ha quedado pensando, soy horrible, le hago daño a todo el mundo. En estos momentos Pablo no puede pensar en que quizás hoy si se ha equivocado pero que en el resto de ocasiones es una persona que no tiene problemas con nadie, que está atento para prestar ayuda y es respetuoso con todo el mundo."
+
+  utter_selector_psico_edu_etiquetado_2:
+  - buttons:
+    - payload: /confirm_ident_psico
+      title: "La verdad es que sí"
+    - payload: /deny_ident_psico
+      title: "No demasiado"
+    text: "¿Te identificas con la situación de Pablo?"
+    
+  ### psicoeducacion lectordementes
+
+  utter_psico_edu_lectordementes:
+  - text: "En ocasiones nos vemos con la capacidad de saber lo que otros están pensando de nosotros mismos o de situaciones sin tan siquiera comprobarlo o preguntarles y entonces sacamos una conclusión arbitraria de que alguien está pensando mal de nosotros sin ninguna evidencia, a esto se le llama leer la mente."
+  
+  utter_selector_psico_edu_lectordementes:
+  - buttons:
+    - payload: /confirm_psico_lector
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Seguimos 😊?"
+  - buttons:
+    - payload: /confirm_psico_lector
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Continuamos 😊?"
+  - buttons:
+    - payload: /confirm_psico_lector
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Quieres que continuemos?"
+    
+  utter_psico_edu_lectordementes_2:
+  - text: "Por ejemplo: hace una semana que cerró la empresa donde Pedro trabajaba y desde entonces él no puede quitarse de la cabeza este pensamiento: mi familia piensa que soy un fracaso. Pero Pedro no ha hablado con su familia de esto, ni ellos le han dicho nada concreto que le pueda hacer pensar esto, en este momento él está sacando una conclusión sobre lo que piensa su familia sin preguntarles."
+  
+  utter_selector_psico_edu_lectordementes_2:
+  - buttons:
+    - payload: /confirm_ident_psico
+      title: "La verdad es que sí"
+    - payload: /deny_ident_psico
+      title: "No demasiado"
+    text: "¿Te identificas con la situación de Pedro?"
+
+
+  ### psicoeducacion pensamientoabsolutista
+
+  utter_psico_edu_pensamientoabsolutista:
+  - text: "En ocasiones tenemos tendencia a valorar todas las experiencias en dos únicas posibilidades opuestas o categorías extremas; o blanco o negro, o bueno o malo, o todo o nada, sin valorar la opción de puntos intermedios y seleccionando siempre la categoría del extremo negativo. A esto le llamamos pensamiento absolutista."
+  
+  utter_selector_psico_edu_pensamientoabsolutista: 
+  - buttons:
+    - payload: /confirm_psico_abs
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Seguimos 😊?"
+  - buttons:
+    - payload: /confirm_psico_abs
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Continuamos 😊?"
+  - buttons:
+    - payload: /confirm_psico_abs
+      title: "Sí"
+    - payload: /deny_psico_edu
+      title: "Mejor no"
+    text: "¿Quieres que continuemos?"
+    
+  utter_psico_edu_pensamientoabsolutista_2:
+  - text: "Por ejemplo: Natalia está teniendo últimamente más disputas con su pareja. Tiene la sensación de que muchas de estas discusiones no se deben a un desacuerdo entre ellos dos sino que la opinión de la familia de su pareja acaba interfiriendo entre ellos. Entonces Natalia piensa, no aguanto más la situación con mi pareja. ¡O elige a su familia o me elige a mí! Pero en este momento de enfado no puede ver que en realidad existen otras opciones intermedias que no sitúen a su pareja en una situación de elección entre una relación u otra."
+  
+  utter_selector_psico_edu_pensamientoabsolutista_2:
+  - buttons:
+    - payload: /confirm_ident_psico
+      title: "La verdad es que sí"
+    - payload: /deny_ident_psico
+      title: "No demasiado"
+    text: "¿Te identificas con la situación de Natalia?"
+
 actions:
 - sentiment_form
 - deny_valor
 - confirm_valor
 - action_back
+- action_negative_emotion
+- action_positive_emotion
+- action_distortion
+- action_psico_edu
+
 
 forms:
   sentiment_form:

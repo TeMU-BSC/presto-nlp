@@ -28,6 +28,7 @@ nlu:
     - fatal
     - mal muy mal
     - estoy [contenta](emotion)
+    - estoy [triste](emotion)
     - estoy [bien](emotion)
     - estoy [feliz](emotion)
     - últimamente he estado muy [tranquila](emotion)
@@ -475,6 +476,7 @@ nlu:
     - No debo cometer errores si quiero que la gente se quede a mi lado
     - Tengo que ser feliz, tengo todo lo que necesito y aún así me siento triste.
     - Deberia querer más a mi [pareja](valorPareja), ella hace todo por mi y yo no.
+    
 - intent: lectordementes
   examples: |
     - Simplemente lo sé, estoy convencida. Piensa que soy lo peor.
@@ -615,6 +617,7 @@ nlu:
     - Se que piensan que estoy gorda, lo noto en como me miran
     - No me ha saludado hoy, está enfadado conmigo
     - Estoy segura que me quieren fuera de su casa, lo noto
+    
 - intent: pensamientoabsolutista
   examples: |
     - O me ayuda o no quiero saber nada de esa persona.
@@ -742,6 +745,7 @@ nlu:
     - O me llaman cada día o es que no les importo mucho
     - O encuentro [pareja](valorPareja) o seré un desgraciado
     - Sino consigo el nuevo empleo es que soy mal en mi profesión
+    
 - intent: adivinacion
   examples: |
     - estoy convencida de que me sentiré mal
@@ -1024,7 +1028,7 @@ nlu:
     - me gustaria estar muerto
     - ojala estuviera muerta
 
-- intent: genderViolence
+- intent: gender_violence
   examples: |
     - mi [marido](valorPareja) me ha levantado la mano
     - mi [pareja](valorPareja) me pega
@@ -1072,102 +1076,129 @@ nlu:
 
 ### Selectores
 
-- intent: feedbackemotionneg
+- intent: advice_emotion_neg
   examples: |
-    - /feedbackemotionneg
-    
-- intent: feedbackemotionpos
+    - /advice_emotion_neg
+- intent: advice_emotion_pos
   examples: |
-    - /feedbackemotionpos
-
-- intent: emergency
+    - /advice_emotion_pos
+- intent: alert_1
   examples: |
-    - /emergency
-    
-- intent: alert_detected
+    - /alert_1
+- intent: alert_2
   examples: |
-    - /alert_detected
-
-- intent: confirmgv
+    - /alert_2
+- intent: confirm
   examples: |
-    - /confirmgv
-- intent: confirmgv2
+    - /confirm
+- intent: confirm_contar
   examples: |
-    - /confirmgv2
-- intent: confirmgv3
+    - /confirm_contar
+- intent: confirm_fb
   examples: |
-    - /confirmgv3
-
-- intent: denygv
-  examples: |
-    - /denygv
-
-- intent: noemergency
-  examples: |
-    - /noemergency
-    
-- intent: retrieval_alert_intent
-  examples: |
-    - /retrieval_alert_intent
-    
-- intent: escala_suicidio
-  examples: |
-    - /escala_suicidio
-
-- intent: confirmcontar
-  examples: |
-    - /confirmcontar
-
-- intent: confirmEmotionClassification
-  examples: |
-    - /confirmEmotionClassification
-
-
-- intent: denyPsicoedu
-  examples: |
-    - /denyPsicoedu
-    
+    - /confirm_fb
 - intent: confirm_goodby
   examples: |
     - /confirm_goodby
-
-- intent: deny_goodby
+- intent: confirm_ident_psico
   examples: |
-    - /deny_goodby
-
+    - /confirm_ident_psico
+- intent: confirm_psico_abs
+  examples: |
+    - /confirm_psico_abs
+- intent: confirm_psico_adi
+  examples: |
+    - /confirm_psico_adi
+- intent: confirm_psico_cata
+  examples: |
+    - /confirm_psico_cata
+- intent: confirm_psico_debe
+  examples: |
+    - /confirm_psico_debe
+- intent: confirm_psico_etiq
+  examples: |
+    - /confirm_psico_etiq
+- intent: confirm_psico_gen
+  examples: |
+    - /confirm_psico_gen
+- intent: confirm_psico_lector
+  examples: |
+    - /confirm_psico_lector
+- intent: confirm_psico_sobre
+  examples: |
+    - /confirm_psico_sobre
 - intent: confirm_retrieval
   examples: |
     - /confirm_retrieval
-
+- intent: deny
+  examples: |
+    - /deny
+- intent: deny_contar
+  examples: |
+    - /deny_contar
+- intent: deny_contar_pos
+  examples: |
+    - /deny_contar_pos
+- intent: deny_fb
+  examples: |
+    - /deny_fb
+- intent: deny_goodby
+  examples: |
+    - /deny_goodby
+- intent: deny_ident_psico
+  examples: |
+    - /deny_ident_psico
+- intent: deny_psico_edu
+  examples: |
+    - /deny_psico_edu
 - intent: deny_retrieval
   examples: |
     - /deny_retrieval
-
+- intent: escala_suicidio
+  examples: |
+    - /escala_suicidio
+- intent: gv_1
+  examples: |
+    - /gv_1
+- intent: gv_2
+  examples: |
+    - /gv_2
+- intent: gv_3
+  examples: |
+    - /gv_3
 - intent: inicio_app
   examples: |
     - /inicio_app
-    
-- intent: recursos_emergencia
-  examples: |
-    - /recursos_emergencia
-
 - intent: modulo_distorsiones
   examples: |
     - /modulo_distorsiones
-    
-- intent: plan_tratamiento
+- intent: no_alert_1
   examples: |
-    - /plan_tratamiento
-    
-- intent: privacidad_app
+    - /no_alert_1
+- intent: no_alert_2
   examples: |
-    - /privacidad_app
-    
+    - /no_alert_2
+- intent: no_gv_2
+  examples: |
+    - /no_gv_2
+- intent: no_gv_3
+  examples: |
+    - /no_gv_3
 - intent: objetivos_plan
   examples: |
     - /objetivos_plan
-    
-    
+- intent: plan_tratamiento
+  examples: |
+    - /plan_tratamiento
+- intent: privacidad_app
+  examples: |
+    - /privacidad_app
+- intent: recursos_emergencia
+  examples: |
+    - /recursos_emergencia
+- intent: retrieval_alert_intent
+  examples: |
+    - /retrieval_alert_intent
 
 
 ### Greetings and commands
@@ -1193,6 +1224,7 @@ nlu:
     - Qué tal vicky, hola
     - bon dia
     - bona tarde
+    - hola Vicky, ¿cómo estás?
     
 
 - intent: nlu_fallback #refuerzo inputs ambiguos
@@ -1221,6 +1253,7 @@ nlu:
     - adios, hasta pronto
     - adios Vicky
     - a10
+    
 - intent: confirm
   examples: |
     - sí
@@ -1238,6 +1271,8 @@ nlu:
     - si
     - hombre claro
     - claro
+    - pues claro
+    
 - intent: ready
   examples: |
     - ya
@@ -1246,6 +1281,7 @@ nlu:
     - ya he hecho el ejercicio
     - continuar
     - /ready
+    
 - intent: deny
   examples: |
     - No
@@ -1256,6 +1292,9 @@ nlu:
     - la verdad es que no quiero
     - negativo
     - /deny
+    - ni hablar
+    - ni pensarlo
+    
 - intent: thanks
   examples: |
     - gracias
@@ -1267,6 +1306,7 @@ nlu:
     - de verdad no sé cómo agradecértelo
     - moltes gracies
     - gracies
+    
 - intent: youre_welcome
   examples: |
     - de nada
@@ -1304,6 +1344,7 @@ nlu:
     - ¿Cómo estás Vicky?
     - ¿tienes sentimientos?
     - Cómo te encuentras
+    
 - intent: chitchat/something_curious
   examples: |
     - cuéntame alguna curiosidad
@@ -1367,7 +1408,6 @@ nlu:
     - [comic](books)
     - te gusta leer?
 
-
 - intent: chitchat/whichpolitics
   examples: |
     - de qué partido politico eres
@@ -1375,7 +1415,11 @@ nlu:
     - que opinas de la politica
     - de que partido eres
     - eres de izquierdas o de derechas
-
+    - eres independentista
+    - eres nazi
+    - eres comunista
+    - eres facha
+    - eres socialista
 
 - intent: chitchat/whichmovie
   examples: |
@@ -1457,8 +1501,6 @@ nlu:
     - quiero que me cuentes algo que me haga reir
     - cuentame algun chiste
     - vicky quiero que me cuentes ahora mismo un chiste
-
-
 
 - intent: chitchat/mybirthday
   examples: |
@@ -1565,6 +1607,7 @@ nlu:
     - hermana
     - abuelo
     - abuela
+    
 - synonym: valorPareja
   examples: |
     - novio
@@ -1572,6 +1615,7 @@ nlu:
     - pareja
     - esposa
     - mi mujer
+    
 - synonym: valorSocial
   examples: |
     - amigo
@@ -1612,7 +1656,6 @@ nlu:
     - comic
     - novela
 
-    
 - synonym: emotion
   examples: |
     - contento
