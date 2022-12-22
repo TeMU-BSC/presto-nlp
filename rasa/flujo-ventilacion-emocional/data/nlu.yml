@@ -1136,6 +1136,9 @@ nlu:
 - intent: deny_contar
   examples: |
     - /deny_contar
+- intent: deny_contar_pos
+  examples: |
+    - /deny_contar_pos
 - intent: deny_fb
   examples: |
     - /deny_fb
@@ -1221,6 +1224,7 @@ nlu:
     - Qué tal vicky, hola
     - bon dia
     - bona tarde
+    - hola Vicky, ¿cómo estás?
     
 
 - intent: nlu_fallback #refuerzo inputs ambiguos
@@ -1267,6 +1271,7 @@ nlu:
     - si
     - hombre claro
     - claro
+    - pues claro
     
 - intent: ready
   examples: |
@@ -1287,6 +1292,8 @@ nlu:
     - la verdad es que no quiero
     - negativo
     - /deny
+    - ni hablar
+    - ni pensarlo
     
 - intent: thanks
   examples: |

@@ -4,11 +4,15 @@ rules:
 
 ### greetings rules
 
+- rule: start
+  steps:
+  - intent: start
+  - action: utter_greet_ask_emotion
+  
 - rule: saluda
   steps:
   - intent: greet
-  - action: utter_greet_ask_emotion
- # - action: action_hello_world
+  - action: utter_second_greet
   
 - rule: saluda first time
   steps:
@@ -49,6 +53,22 @@ rules:
 - rule: deny contar
   steps:
   - intent: deny_contar
+  - action: utter_no_contar
+  - action: utter_retrieval
+  
+- rule: deny contar pos
+  steps:
+  - intent: deny_contar_pos
+  - action: utter_retrieval
+  
+- rule: sí
+  steps:
+  - intent: confirm
+  - action: utter_retrieval
+
+- rule: no
+  steps:
+  - intent: deny
   - action: utter_retrieval
   
 ### chitchat and FAQs

@@ -22,7 +22,6 @@ class ActionHelloWorld(Action):
         prova = tracker.events
         for i, item in enumerate(prova):
             if item["event"] == "user":
-                #text = str(item["parse_data"]["intent"]["name"])
                 text = str(item["parse_data"]["intent"]["name"])
                 dispatcher.utter_message(text)
             if item["event"] == "slot" and item["name"] == "sentiment":
@@ -32,8 +31,7 @@ class ActionHelloWorld(Action):
                 dispatcher.utter_message(text)
             if item["event"] == "bot":
                 text = item.get("metadata", "no hi ha metadata").get("utter_action", "no hi ha action")
-                #text = str(item)
-                
+                                
                 dispatcher.utter_message(text)
                 
 def create_my_events_list(self, events):

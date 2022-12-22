@@ -57,6 +57,7 @@ intents:
     use_entities:
     - sentiment
 - deny_contar
+- deny_contar_pos
 - deny_fb:
     ignore_entities:
     - sentiment
@@ -122,6 +123,9 @@ intents:
 - sobregeneralizacion:
     use_entities:
     - sentiment
+- start:
+    use_entities:
+    - firstName
 - thanks:
     use_entities:
     - sentiment
@@ -180,7 +184,7 @@ responses:
 
   - text: "Hola, {firstName}, soy Vicky, tu terapeuta virtual. Mi función es ayudarte con tu salud mental. En este espacio, me voy a encargar de identificar y trabajar contigo sobre aquellos patrones de pensamiento que te hacen sentir mal. \nAdemás, si detecto una situación de riesgo intentaré ofrecerte la mejor ayuda. \n¿Empezamos? ¿Qué tal te encuentras hoy?"
   
-  utter_greet_ask_emotion: # para las veces successivas. Habría que añadir el nombre. Poner emoticonos."
+  utter_greet_ask_emotion: 
   - text: "¡Hola, {firstName}! Estoy encantada de tenerte de nuevo por aquí. ¿Cómo te has sentido estos días?"
   - text: "¡Hola, {firstName}! Estoy encantada de tenerte de nuevo por aquí. ¿Te gustaría poderme contar algo?"
   - text: "¡Hola, {firstName}! Estoy encantada de tenerte por aquí. ¿Quieres contarme algo nuevo?"
@@ -199,6 +203,25 @@ responses:
   - text: "Hola, {firstName}, ¿cómo te va?"
   - text: "Hola, {firstName}, ¿cómo te va?, ¿te gustaría contarme algo?"
   - text: "¡Hola, {firstName}! ¿Cómo has estado desde la última vez que hablamos?"
+  
+  utter_second_greet: 
+  - text: "¡Hola, ¿cómo te has sentido estos días?"
+  - text: "¡Hola, ¿te gustaría poderme contar algo?"
+  - text: "¡Hola, ¿quieres contarme algo nuevo?"
+  - text: "¿Cómo has estado desde la última vez que hablamos?"
+  - text: "¿Quieres contarme algo nuevo?"
+  - text: "¿Qué me cuentas?"
+  - text: "¿Cómo te sientes?"
+  - text: "¿Cómo va todo?"
+  - text: "¿Qué me cuentas?"
+  - text: "¿Qué tal han ido estos días?"
+  - text: "¿Quieres compartir algo conmigo?"
+  - text: "¿Qué te trae por aquí?"
+  - text: "¿Qué tal va todo?"
+  - text: "¿En qué puedo ayudarte?"
+  - text: "¿Cómo estás?"
+  - text: "¿Cómo te va?"
+  - text: "¿Cómo has estado desde la última vez que hablamos?"
    
   utter_goodbye_nicemood:
   - text: "Puedes hablarme siempre que me necesites. ¡Hasta pronto! "
@@ -376,93 +399,93 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
     
   utter_ask_tell_more_POS:
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Te apetece contarme algo más sobre esto?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Te gustaría contarme un poco más?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "Te animo a que me cuentes un poquito más sobre este tema. ¿Te apetece?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Quieres contarme un poco más sobre ello?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Te apetece contarme algo más 🙂?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Te gustaría contarme un poco más?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Me quieres contar un poco más sobre ello?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Te gustaría compartir conmigo algo más sobre esto?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Me quieres contar algo más?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Tienes ganas de compartir un poco más?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Quieres compartir algo más conmigo?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "Me gustaría conocer un poco más sobre esto que me estás contando ¿Te animas?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Te animarías a contarme un poquito más sobre esto?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "¿Te apetece seguir contándome?"
   - buttons:
-    - payload: /confirm
+    - payload: /confirm_contar
       title: "Claro"
-    - payload: /deny
+    - payload: /deny_contar_pos
       title: "En otro momento"
     text: "Me apetece conocer más sobre ello. ¿Quieres explicarme un poco más sobre lo que me contabas?"
     
@@ -1412,7 +1435,6 @@ actions:
 - deny_valor
 - confirm_valor
 - action_back
-- action_hello_world
 - action_negative_emotion
 - action_positive_emotion
 - action_distortion
