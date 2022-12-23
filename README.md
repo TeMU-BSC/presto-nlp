@@ -9,4 +9,4 @@ PRESTO is a multidisciplinary project that seeks to optimize care for mental hea
 · To work on Vicky, the mental health chatbot, go to [presto-nlp/rasa/vickybot](https://github.com/TeMU-BSC/presto-nlp/tree/master/rasa/vickybot)
 
 
-· To work on distortions annotations, go to [presto-nlp/presto_anotaciones/](https://github.com/TeMU-BSC/presto-nlp/tree/master/presto_anotaciones)
+· To work on distortions annotations, go to [presto-nlp/presto_anotaciones](https://github.com/TeMU-BSC/presto-nlp/tree/master/presto_anotaciones)
