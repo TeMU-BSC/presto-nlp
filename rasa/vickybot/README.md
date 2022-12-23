@@ -75,7 +75,7 @@ git clone https://github.com/TeMU-BSC/presto-nlp
 
 Copy docker-compose.override.yml to Rasa X folder
 ```bash
-sudo cp presto-nlp/vickyboy/rasax/docker-compose.override.yml /etc/rasa/
+sudo cp presto-nlp/rasa/vickyboy/rasax/docker-compose.override.yml /etc/rasa/
 ```
 
 Start Rasa X and create new user for Rasa X admin panel 
