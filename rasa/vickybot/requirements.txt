@@ -1,0 +1,4 @@
+pysentimiento==0.2.5
+rasa==2.8.12
+transformers==4.12.2
+scipy==1.7.3

@@ -1,0 +1,349 @@
+version: "2.0"
+
+rules:
+
+### greetings rules
+
+- rule: start
+  steps:
+  - intent: start
+  - action: utter_greet_ask_emotion
+  
+- rule: saluda
+  steps:
+  - intent: greet
+  - action: utter_second_greet
+  
+- rule: saluda first time
+  steps:
+  - intent: init
+  - action: utter_greet_first_time
+  
+- rule: confirm goodby
+  steps:
+  - intent: goodbye_nicemood
+  - action: utter_confirm_goodby
+  
+- rule: goodby
+  steps:
+  - intent: confirm_goodby
+  - action: utter_goodbye_nicemood
+  
+- rule: goodby
+  steps:
+  - intent: deny_goodby
+  - action: utter_retrieval
+  
+### seguir la conversación
+- rule: confirm retrieval
+  steps:
+  - intent: confirm_retrieval
+  - action: utter_si_contar
+  
+- rule: confirm contar
+  steps:
+  - intent: confirm_contar
+  - action: utter_si_contar
+  
+- rule: deny retrieval
+  steps:
+  - intent: deny_retrieval
+  - action: utter_goodbye_nicemood
+  
+- rule: deny contar
+  steps:
+  - intent: deny_contar
+  - action: utter_no_contar
+  - action: utter_retrieval
+  
+- rule: deny contar pos
+  steps:
+  - intent: deny_contar_pos
+  - action: utter_retrieval
+  
+- rule: sí
+  steps:
+  - intent: confirm
+  - action: utter_retrieval
+
+- rule: no
+  steps:
+  - intent: deny
+  - action: utter_retrieval
+  
+### chitchat and FAQs
+  
+- rule: respond to chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+  
+- rule: respond to FAQs
+  steps:
+  - intent: faq
+  - action: utter_faq
+  
+- rule: everytime the user says thanks.
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+  
+- rule: please rephrase
+  steps:
+  - intent: incomprensible
+  - action: utter_please_rephrase
+  
+### alert rules
+
+- rule: prioritize alert intent
+  steps:
+  - intent: alert
+  - action: utter_alert_1
+
+- rule: confirm emergency
+  steps:
+  - intent: alert_1
+  - action: utter_alert_2
+
+- rule: alert detected
+  steps:
+  - intent: alert_2
+  - action: utter_alert_3
+ 
+- rule: no alert detected
+  steps:
+  - intent: no_alert_2
+  - action: utter_alert_3
+  
+- rule: retrieval alert
+  steps:  
+  - intent: retrieval_alert_intent
+  - action: utter_si_contar
+  
+- rule: no emergency
+  steps:
+  - intent: no_alert_1
+  - action: utter_no_alert
+
+
+- rule: prioritize gender violence intent
+  steps:  
+  - intent: gender_violence
+  - action: utter_gv_1
+
+- rule: keep in gv flow
+  steps: 
+  - intent: gv_1
+  - action: utter_gv_2
+
+- rule: keep in gv flow 2
+  steps:
+  - intent: gv_2
+  - action: utter_gv_3
+  
+- rule: keep in gv flow 2
+  steps:
+  - intent: no_gv_2
+  - action: utter_gv_3
+  
+- rule: keep in gv flow 3
+  steps:
+  - intent: gv_3
+  - action: utter_call_to_emergency_gv
+#  - action: utter_retrieval
+
+- rule: deny gv 
+  steps:
+  - intent: no_gv_3
+  - action: utter_answer_no_genderViolence
+  - action: utter_call_to_emergency_gv_denylastcuestion
+
+### emotions
+  
+- rule: fallback + neg
+  steps:
+  - intent: nlu_fallback
+  - slot_was_set:
+    - sentiment: NEG              
+  - action: action_negative_emotion
+  
+- rule: sentiment + neg
+  steps:
+  - intent: inform_sentiment
+  - slot_was_set:
+    - sentiment: NEG              
+  - action: action_negative_emotion
+  
+- rule: fallback + pos
+  steps:
+  - intent: nlu_fallback
+  - slot_was_set:
+    - sentiment: POS              
+  - action: action_positive_emotion
+  
+- rule: sentiment + pos
+  steps:
+  - intent: inform_sentiment
+  - slot_was_set:
+    - sentiment: POS              
+  - action: action_positive_emotion
+  
+- rule: fallback + neu
+  steps:
+  - intent: nlu_fallback
+  - slot_was_set:
+    - sentiment: NEU              
+  - action: utter_sentiment_NEU
+  
+- rule: sentiment + neu
+  steps:
+  - intent: inform_sentiment
+  - slot_was_set:
+    - sentiment: NEU              
+  - action: utter_sentiment_NEU
+  
+### consejo
+
+- rule: consejo emociones positivas
+  steps:
+  - intent: advice_emotion_pos
+  - action: utter_advice_POS
+  - action: utter_selector_feedback_advice
+  
+- rule: consejo emociones negativas
+  steps:
+  - intent: advice_emotion_neg
+  - action: utter_advice_NEG
+  - action: utter_selector_feedback_advice
+  
+- rule: consejo útil
+  steps:
+  - intent: confirm_fb
+  - action: utter_positive_feedback
+  - action: utter_retrieval
+  
+- rule: consejo no útil
+  steps:
+  - intent: deny_fb
+  - action: utter_negative_feedback
+
+### chatting distortions
+- rule: sobregeneralizacion
+  steps:
+  - intent: sobregeneralizacion
+  - action: action_distortion
+  
+- rule: etiquetado
+  steps:
+  - intent: etiquetado
+  - action: action_distortion
+  
+- rule: deberias
+  steps:
+  - intent: deberias
+  - action: action_distortion
+  
+- rule: lectordementes
+  steps:
+  - intent: lectordementes
+  - action: action_distortion
+  
+- rule: pensamientoabsolutista
+  steps:
+  - intent: pensamientoabsolutista
+  - action: action_distortion
+  
+- rule: adivinacion
+  steps:
+  - intent: adivinacion
+  - action: action_distortion
+  
+- rule: catastrofismo
+  steps:
+  - intent: catastrofismo
+  - action: action_distortion
+
+### psicoeducation
+
+- rule: confirm psico edu
+  steps:
+  - intent: confirm_psico_gen
+  - action: action_psico_edu 
+  
+- rule: deny psico edu
+  steps:
+  - intent: deny_psico_edu 
+  - action: utter_deny_psico_edu
+  - action: utter_retrieval
+  
+- rule: confirm identification psicoeducation
+  steps:
+  - intent: confirm_ident_psico
+  - action: utter_intervencion_app_distorsiones
+ # - action: utter_retrieval
+  
+- rule: deny ident psicoeducation
+  steps:
+  - intent: deny_ident_psico
+  - action: utter_intervencion_feedback_negativo
+  - action: utter_intervencion_app_distorsiones
+  
+
+# psicoeducation 2nd part
+
+- rule: ejemplo psico sobre
+  steps:
+  - intent: confirm_psico_sobre
+  - action: utter_psico_edu_sobre_2
+  - action: utter_selector_psico_edu_sobre_2
+  
+- rule: ejemplo psico lectordementes
+  steps:
+  - intent: confirm_psico_lector
+  - action: utter_psico_edu_lectordementes_2
+  - action: utter_selector_psico_edu_lectordementes_2
+  
+- rule: ejemplo psico etiquetado
+  steps:
+  - intent: confirm_psico_etiq
+  - action: utter_psico_edu_etiquetado_2
+  - action: utter_selector_psico_edu_etiquetado_2
+  
+- rule: ejemplo psico adivinacion
+  steps:
+  - intent: confirm_psico_adi
+  - action: utter_psico_edu_adivinacion_2
+  - action: utter_selector_psico_edu_adivinacion_2
+  
+- rule: ejemplo psico deberias
+  steps:
+  - intent: confirm_psico_debe
+  - action: utter_psico_edu_deberias_2
+  - action: utter_selector_psico_edu_deberias_2
+  
+- rule: ejemplo psico catastrofismo
+  steps:
+  - intent: confirm_psico_cata
+  - action: utter_psico_edu_catastrofismo_2
+  - action: utter_selector_psico_edu_catastrofismo_2
+  
+- rule: ejemplo psico pensamientoabsolutista
+  steps:
+  - intent: confirm_psico_abs
+  - action: utter_psico_edu_pensamientoabsolutista_2
+  - action: utter_selector_psico_edu_pensamientoabsolutista_2
+  
+### just listen
+  
+- rule: no digas nada
+  steps:
+  - or:
+    - intent: inicio_app
+    - intent: recursos_emergencia
+    - intent: escala_suicidio
+    - intent: modulo_distorsiones
+    - intent: plan_tratamiento
+    - intent: privacidad_app
+    - intent: plan_tratamiento
+    - intent: objetivos_plan
+  - action: action_listen

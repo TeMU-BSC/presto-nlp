@@ -1,0 +1,17 @@
+.idea
+.rasa
+__pycache__
+**/.git
+**/.gitignore
+**/.vscode
+**/coverage
+**/.env
+**/.ssh
+Dockerfile
+DockerfileActions
+README.md
+docker-compose.yml
+**/.DS_Store
+**/venv
+**/env
+Makefile

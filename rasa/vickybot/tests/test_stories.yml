@@ -1,0 +1,515 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: 1 - Emotion POS - contar 1 - feedbackemotionpos - desp contento
+  steps:
+  - user:   |
+        Hola
+    intent: greet                       # hola
+  - action: utter_greet_ask_emotion     # cómo estás hoy?
+  - user:   |
+        Estoy contenta
+    intent: inform_sentiment
+  - action: utter_sentiment_POS         # fantastico!
+  - action: utter_ask_tell_more_POS     # quieres contarme algo mas? (selector)
+  - user:   |
+        Claro
+    intent: confirm                     # sí o directamente 
+  - action: utter_si_contar             # soy todo oidos
+  - user:   |
+        Últimamente he estado muy tranquila
+    intent: inform_sentiment
+  - action: utter_sentiment_POS         #fantastico! %% es repeteix amb l'anterior. creem un 2?
+  - action: utter_selector_POS_last     # quieres contarme algo mas o aprender emociones positivas?
+  - user:   |
+        /feedbackemotionpos
+    intent: feedbackemotionpos
+  - action: utter_advice_POS            # explicación
+  - action: utter_selector_POS_finish   # te ha sido útil?
+  - user:   |
+        Lo he encontrado útil
+    intent: confirmfb                   # sí
+  - action: utter_advice_POS_finish     # despedida contenta
+  
+- story: Story from Conversation ID b82a0b7455bc4cd5b041f57828f6372f
+
+  steps:
+
+  - intent: greet
+
+    user: |-
+
+      hola
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - action: utter_greet_ask_emotion
+
+  - intent: inform_sentiment
+
+    user: |-
+
+      estoy fatal
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_sentiment_NEG
+
+  - intent: etiquetado
+
+    user: |-
+
+      estoy gorda y soy tonta y perezosa
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_ventilacion_1
+
+  - intent: nlu_fallback
+
+    user: |-
+
+      quería adelgazar, pero me gustan demasiado las chucherías
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - action: utter_sentiment_NEU
+
+  - intent: deberias
+
+    user: |-
+
+      no tengo autocontrol, se me va de las manos
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_ventilacion_2
+
+  - intent: nlu_fallback
+
+    user: |-
+
+      no puedo seguir una dieta
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_psicoeduc_general
+
+  - action: utter_selector_psicoeduc_general
+
+  - intent: confirmPsicoGen
+
+    user: |-
+
+      /confirmPsicoGen
+
+  - action: utter_psicoeduc_etiquetado
+
+  - action: utter_selector_psicoeduc_1
+
+  - intent: confirmPsico1
+
+    user: |-
+
+      /confirmPsico1
+
+  - action: utter_psicoeduc_etiquetado_2
+
+  - action: utter_selector_psicoeduc_etiquetado_2
+
+  - intent: deny
+
+    user: |-
+
+      /deny
+
+  - action: utter_intervencion_etiquetado
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - intent: goodby_nicemood
+
+    user: |-
+
+      vale, voy a mirarlo
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - action: utter_goodbye_nicemood
+
+
+- story: Story from Conversation ID 3d94e6f79bc143e4b28c0d61391f8f46
+
+  steps:
+
+  - intent: confirm
+
+    user: |-
+
+      sií
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - action: utter_sentiment_NEU
+
+  - intent: deny
+
+    user: |-
+
+      no
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_selector_POS_last
+
+  - intent: feedbackemotionpos
+
+    user: |-
+
+      /feedbackemotionpos
+
+  - action: utter_advice_POS
+
+  - action: utter_selector_POS_finish
+
+  - intent: confirmfb
+
+    user: |-
+
+      /confirmfb
+
+  - action: utter_advice_POS_finish
+
+  - intent: goodbye_nicemood
+
+    user: |-
+
+      hasta otra
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - action: utter_goodbye_nicemood
+  
+ story: Story from Conversation ID 5539b822c4ac4fedb161bbf318c8c5f2
+
+  steps:
+
+  - intent: greet
+
+    user: |-
+
+      hola
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - action: utter_greet_ask_emotion
+
+  - intent: alert
+
+    user: |-
+
+      quiero morir
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_alert
+
+  - intent: emergency
+
+    user: |-
+
+      /emergency
+
+  - action: utter_confirm_emergency
+
+  - intent: alert_detected
+
+    user: |-
+
+      /alert_detected
+
+  - action: utter_alert_detected
+
+  - action: utter_alert_detected_selector
+
+  - intent: mas_preguntas
+
+    user: |-
+
+      /mas_preguntas
+
+  - action: utter_mas_preguntas
+
+  - intent: thanks
+
+    user: |-
+
+      vale, gracias
+
+  - slot_was_set:
+
+    - sentiment: POS
+
+  - action: utter_thanks
+
+  - intent: goodbye_nicemood
+
+    user: |-
+
+      adiós
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - action: utter_goodbye_nicemood
+
+
+- story: Story from Conversation ID 8d7d0e43429040409e28da5ee79dc1c5
+
+  steps:
+
+  - intent: greet
+
+    user: |-
+
+      hola
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - action: utter_greet_ask_emotion
+
+  - intent: etiquetado
+
+    user: |-
+
+      soy [imbécil](insult)
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_sentiment_NEG
+
+  - intent: etiquetado
+
+    user: |-
+
+      soy [giliopollas](insult)
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_flecha_descendiente_1
+
+  - intent: sobregeneralizacion
+
+    user: |-
+
+      todo lo hago mal
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_flecha_descendiente_2
+
+  - intent: deberias
+
+    user: |-
+
+      cuando intento hacer algo bueno, la [cago](insult)
+
+  - slot_was_set:
+
+    - sentiment: NEG
+
+  - action: utter_psicoeduc_general
+
+  - action: utter_selector_psicoeduc_general
+
+  - intent: confirmPsicoGen
+
+    user: |-
+
+      /confirmPsicoGen
+
+  - action: utter_psicoeduc_deberias
+
+  - action: utter_selector_psicoeduc_1
+
+  - intent: denyPsicoedu
+
+    user: |-
+
+      /denyPsicoedu
+
+  - action: utter_denypsicoeduc
+
+  - intent: nlu_fallback
+
+    user: |-
+
+      vale, ya lo miraré
+
+  - slot_was_set:
+
+    - sentiment: NEU
+
+  - intent: goodbye_nicemood
+
+    user: |-
+
+      hasta luego
+
+  - slot_was_set:
+
+    - sentiment: POS
+
+  - action: utter_goodbye_nicemood
+
+version: "2.0"
+stories:
+- story: Story from Conversation ID 1e9feec5e9d645b2ac2375c45e184a38
+  steps:
+  - intent: greet
+    user: |-
+      hola
+  - slot_was_set:
+    - sentiment: NEU
+  - action: utter_greet_ask_emotion
+  - intent: nlu_fallback
+    user: |-
+      bien, [tranquila]{"entity": "emotion", "value": "emotion"}
+  - slot_was_set:
+    - sentiment: POS
+  - action: utter_sentiment_POS
+  - intent: nlu_fallback
+    user: |-
+      útlimamente las cosas me salen bien
+  - slot_was_set:
+    - sentiment: POS
+  - action: utter_sentiment_POS2
+  - action: utter_ask_tell_more_POS
+  - intent: confirm
+    user: |-
+      /confirm
+  - action: utter_si_contar
+  - intent: nlu_fallback
+    user: |-
+      mis [hijos](valorFamilia) estan bien, y me va bien en el trabajo
+  - slot_was_set:
+    - sentiment: POS
+  - slot_was_set:
+    - valorFamilia: hijos
+  - action: utter_selector_POS_last
+  - intent: feedbackemotionpos
+    user: |-
+      /feedbackemotionpos
+  - action: utter_advice_POS
+  - action: utter_selector_feedback_advice
+  - intent: confirmfb
+    user: |-
+      /confirmfb
+  - action: utter_positive_feedback
+  - action: utter_retrieval
+  - intent: deny_retrieval
+    user: |-
+      /deny_retrieval
+  - action: utter_goodbye_nicemood
+
+version: "2.0"
+stories:
+- story: Story from Conversation ID c35ef0dfbb5a420abd12815742883618
+  steps:
+  - intent: greet
+    user: |-
+      hola
+  - slot_was_set:
+    - sentiment: NEU
+  - action: utter_greet_ask_emotion
+  - intent: nlu_fallback
+    user: |-
+      últimamente las cosas me van bien
+  - slot_was_set:
+    - sentiment: POS
+  - action: utter_sentiment_POS
+  - intent: lectordementes
+    user: |-
+      creo que me van a subir el sueldo
+  - slot_was_set:
+    - sentiment: NEU
+  - action: utter_sentiment_NEU
+  - intent: nlu_fallback
+    user: |-
+      bueno, el proyecto en el que trabajo va muy bien
+  - slot_was_set:
+    - sentiment: POS
+  - action: utter_sentiment_POS
+  - action: utter_selector_POS_last
+  - intent: feedbackemotionpos
+    user: |-
+      /feedbackemotionpos
+  - action: utter_advice_POS
+  - action: utter_selector_feedback_advice
+  - intent: denyfb
+    user: |-
+      /denyfb
+  - action: utter_negative_feedback
+  - action: utter_retrieval
+  - intent: deny_retrieval
+    user: |-
+      /deny_retrieval
+  - action: utter_goodbye_nicemood
+
+

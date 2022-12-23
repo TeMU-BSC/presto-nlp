@@ -1,0 +1,19 @@
+version: "2.0"
+stories:
+- story: 1 - Emotion POS - contar 1 - feedbackemotionpos - desp contento (/home/carme/presto-nlp/rasa/flujo2/tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet_ask_emotion
+  - intent: inform_sentiment
+  - action: utter_sentiment_POS  # predicted: utter_sentiment_NEG
+  - action: utter_ask_tell_more_POS
+  - intent: confirm
+  - action: utter_si_contar  # predicted: utter_intervencion_catastrofismo
+  - intent: inform_sentiment
+  - action: utter_sentiment_POS
+  - action: utter_selector_POS_last
+  - intent: feedbackemotionpos
+  - action: utter_advice_POS
+  - action: utter_selector_POS_finish
+  - intent: confirmfb
+  - action: utter_advice_POS_finish

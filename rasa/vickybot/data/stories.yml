@@ -1,0 +1,21 @@
+version: "2.0"
+
+stories:
+
+# Transervsal stories
+
+# Acabar la conversación
+
+  - story: goodbye + confirm goodby
+    steps:
+      - intent: goodbye_nicemood
+      - action: utter_confirm_goodby
+      - intent: confirm_goodby
+      - action: utter_goodbye_nicemood
+
+  - story: goodbye + deny goodby
+    steps:
+      - intent: goodbye_nicemood
+      - action: utter_confirm_goodby
+      - intent: deny_goodby
+      - action: utter_retrieval
