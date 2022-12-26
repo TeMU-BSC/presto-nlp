@@ -25,7 +25,6 @@ class SNSEventBroker(EventBroker):
         return cls(topicArns=config.url, **config.kwargs)
 
     def publish(self, event: Dict[Text, Any]) -> None:
-        logger.info(event)
         stage = event.get('sender_id').split('@')[1]
         topicArn = self.topicArns.get(stage)
         if topicArn:
