@@ -6,3 +6,6 @@ prodigy/
 __pycache__/
 notes.txt
 preguntes.txt
+.cache
+.config
+.keras
