@@ -109,6 +109,7 @@ intents:
 - no_alert_1
 - no_alert_2
 - noemergency
+- no_gv_1
 - no_gv_2
 - no_gv_3
 - objetivos_plan
@@ -873,7 +874,7 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   - buttons:
     - payload: /gv_1
       title: "Sí"
-    - payload: /no_alert_1
+    - payload: /no_gv_1
       title: "No, de ningún modo"
     text: "¿Te has sentido en peligro últimamente?"
 
