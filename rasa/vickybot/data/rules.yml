@@ -32,7 +32,7 @@ rules:
 - rule: goodby
   steps:
   - intent: deny_goodby
-  - action: utter_retrieval
+  - action: utter_si_contar
   
 ### seguir la conversación
 - rule: confirm retrieval
@@ -140,6 +140,11 @@ rules:
   steps:
   - intent: gv_2
   - action: utter_gv_3
+  
+- rule: no emergency gv
+  steps:
+  - intent: no_gv_1
+  - action: utter_no_alert
   
 - rule: keep in gv flow 2
   steps:
