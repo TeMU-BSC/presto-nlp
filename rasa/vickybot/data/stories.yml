@@ -18,4 +18,4 @@ stories:
       - intent: goodbye_nicemood
       - action: utter_confirm_goodby
       - intent: deny_goodby
-      - action: utter_retrieval
+      - action: utter_si_contar
