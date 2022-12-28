@@ -1253,6 +1253,16 @@ nlu:
     - adios, hasta pronto
     - adios Vicky
     - a10
+    - dew
+    - adios
+    - me voy
+    - me largo
+    - que me largo
+    - cállate ya
+    - siau
+    - vete ya
+    - good bye
+    - bye bye
     
 - intent: confirm
   examples: |
