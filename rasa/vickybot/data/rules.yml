@@ -87,6 +87,7 @@ rules:
   steps:
   - intent: thanks
   - action: utter_thanks
+  - action: utter_retrieval
   
 - rule: please rephrase
   steps:

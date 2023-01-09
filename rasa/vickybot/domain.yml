@@ -375,7 +375,7 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   utter_sentiment_NEU:
   - text: "¡Anda! ¿Por qué no me cuentas un poco más sobre ello? Te escucho…"
   - text: "Tengo curiosidad para que me cuentes un poquito más… ¿Te animas?"
-  - text: "Entiendo…  ¿Te apetece contarme algo más  sobre esto 🙂? Mis oídos están muy puestos en esta conversación."
+  - text: "Entiendo…  ¿Te apetece contarme algo más  sobre esto? Mis oídos están muy puestos en esta conversación."
   - text: "Me has generado mucha curiosidad. ¿Me quieres contar algo más sobre esto?"
   - text: "¿Te apetece seguir hablando? Me interesa mucho lo que me dices."
   - text: "Me encantaría que me contaras un poquito más sobre este tema. Te escucho…"
@@ -1162,7 +1162,7 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
       title: "Trabajar las distorsiones"
     - payload: /confirm_retrieval
       title: "Continuar la conversación"
-    text: Me gustaría que empezaras a trabajar sobre esto. Solamente tienes que seguir el siguiente enlace.
+    text: "Me gustaría que empezaras a trabajar sobre esto. Solamente tienes que seguir el siguiente enlace."
   - buttons:
     - payload: /modulo_distorsiones
       title: "Trabajar las distorsiones"
