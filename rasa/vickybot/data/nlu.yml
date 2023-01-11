@@ -32,6 +32,9 @@ nlu:
     - estoy [bien](emotion)
     - estoy [feliz](emotion)
     - últimamente he estado muy [tranquila](emotion)
+    - tengo ansiedad
+    - estoy muy nerviosa
+    - no puedo dormir
 
 ### distorsiones - ejemplos extraidos directamente de su dataset. De momento con estos ejemplos el diet se comporta, pero es plausible su externalización en un componente custom
 - intent: sobregeneralizacion
@@ -1072,6 +1075,32 @@ nlu:
     - me folla siempre que quiere
     - no le importa si quiero follar o no
     - abusa de mí
+    - tengo miedo de mi [novio](valorPareja)
+    - mi [marido](valorPareja) me da miedo
+    - mi [marido](valorPareja) me va a matar
+    - tengo miedo de que me haga daño
+    - me va a pegar
+    - va a pegarme
+    - hará daño a los niños
+    - dice que matará a la niña
+    - abusa de mi hija
+    - le mete mano a la niña
+    - que se folla a mi niña
+    - creo que abusa de la niña
+    - estoy mal con mi [marido](valorPareja)
+    - nos peleamos todos los días
+    - todos los días tenemos pelea
+    - me da miedo volver a casa
+    - tengo miedo de volver a casa
+    - no quiero volver a casa
+    - ayer nos peleamos con mi [novia](valorPareja)
+    - nos hemos peleado muy fuerte
+    - mi [novio](valorPareja) y ho estamos fatal
+    - discutimos todo el día
+    - quiere pegarme
+    - está intentando pegarme
+    - va a pegarme
+    - que no estamos bien
 
 
 ### Selectores
@@ -1348,6 +1377,8 @@ nlu:
     - quiero que me ayudes
     - hablemos
     - ayúdame
+    - necesito que me ayudes
+    - me gustaría que me ayudaras
     
 - intent: chitchat/how_are_u
   examples: |
