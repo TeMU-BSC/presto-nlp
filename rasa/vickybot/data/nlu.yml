@@ -35,6 +35,22 @@ nlu:
     - tengo ansiedad
     - estoy muy nerviosa
     - no puedo dormir
+    - estoy [angustiada](emotion)
+    - ¡qué horror!
+    - ¡qué nervios!
+    - hoy estoy [triste](emotion)
+    - esos días no estoy muy [bien](emotion)
+    - estoy [harta](emotion) de mi novio
+    - me aburre
+    - me siento mal
+    - estoy [triste](emotion), tengo pensamientos de inutilidad e incapacidad
+    - No tienes ni idea de lo mal que lo estoy pasando
+    - estoy [nerviosa](emotion) por la boda
+    - tengo nudo en la garganta y diarrea
+    - muy mal
+    - No tienes ni idea de lo mal que lo estoy pasando
+    - lloro todos los días
+    - El viernes hubo una reunión, y yo tenía muchas ganas de explicar cosas, y no dejé hablar a un compañero, y ahora me sabe mal por él
 
 ### distorsiones - ejemplos extraidos directamente de su dataset. De momento con estos ejemplos el diet se comporta, pero es plausible su externalización en un componente custom
 - intent: sobregeneralizacion
@@ -179,6 +195,9 @@ nlu:
     - Siempre me pasa lo mismo
     - Siempre voy a ser un desastre
     - Siempre hago el ridículo
+    - Estoy en un túnel, no veo el final, todos los días son iguales
+    - Estoy muy negativa últimamente, nada me sale bien, todo lo hago mal
+    - nadie me quiere y estoy sola
     
 - intent: etiquetado
   examples: |
@@ -479,6 +498,11 @@ nlu:
     - No debo cometer errores si quiero que la gente se quede a mi lado
     - Tengo que ser feliz, tengo todo lo que necesito y aún así me siento triste.
     - Deberia querer más a mi [pareja](valorPareja), ella hace todo por mi y yo no.
+    - Estoy demasiado centrada en el trabajo y tendría que hacer más cosas por mis [hijos](valorFamilia), preocuparme más por sus estudios, estar más pendiente de si les va bien en la vida o están mal…
+    - que tendría que pasar más tiempo con ellos
+    - debería ayudar más a mis [hijos](valorFamilia)
+    - debería hacer más de lo que hago, me siento desbordada y culpable porque no hago más
+    - continuamente pienso que no hago lo suficiente, que podría hacer más
     
 - intent: lectordementes
   examples: |
@@ -1030,6 +1054,42 @@ nlu:
     - siento [panico](miedo) porque pienso en hacerme daño
     - me gustaria estar muerto
     - ojala estuviera muerta
+    - quisiera dormirme para siempre
+    - quiero dormir hasta el infinito
+    - me gustaría dormirme y no despertar nunca más
+    - estarían mejor sin mi
+    - no le veo sentido a la vida
+    - estoy en peligro por mis propios pensamientos
+    - me quiero morir
+    - Estoy en peligro por mis propios pensamientos
+    - Creo que mi sufrimiento es tan grande que me gustaría desaparecer
+    - quiero desaparecer
+    - mi vida no tiene sentido
+    - Creo que nada tiene sentido
+    - nada vale la pena
+    - pienso que el mundo seria mejor sin mi
+    - el mundo seria mejor sin mi
+    - no valgo para nada
+    - solo soy un estorbo
+    - creo que sobro en este mundo
+    - A veces me planteo si tiene sentido continuar esforzándome tanto para que todo funcione
+    - mi vida no vale la pena de ser vivida
+    - la vida no vale la pena de ser vivida
+    - pienso que estaria mejor muerta
+    - estoy pensando en rendirme
+    - igual lo mejor es acabar con todo de una vez
+    - igual debo rendirme y acabar con todo
+    - Tengo ideas de dejar de vivir
+    - Vivo en un sexto piso y cuando miro por el balcón pienso que lanzarme sería una solución para mí y para todos
+    - quiero tirar la toalla
+    - esta vida no está hecha para mi
+    - quiero irme de este mundo
+    - mi vida no vale la pena
+    - quiero desaparecer
+    - voy a desaparecer
+    - Este mundo estaría mejor sin mi
+    - Quiero quitarme del medio
+    - Estaría mejor muerta
 
 - intent: gender_violence
   examples: |
@@ -1101,6 +1161,17 @@ nlu:
     - está intentando pegarme
     - va a pegarme
     - que no estamos bien
+    - No sé cuándo mi pareja va a estar encantador o de repente se va a poner a gritar y a insultarme
+    - Cuando él empieza a gritar ya me asusto porque a partir de ahí se va poniendo cada vez más violento
+    - vivo continuamente con sensación de alarrma
+    - Me abofetea
+    - me dio un puñetazo
+    - me maltrata
+    - me trata mal
+    - tengo miedo de mi [pareja](valorPareja)
+    - Creo que mi pareja viene a por mi
+    - Mi pareja me va a hacer daño
+    - tengo miedo de que me haga daño
 
 
 ### Selectores
@@ -1265,6 +1336,15 @@ nlu:
     - me he enterado hoy que ha fallecido un compañero de trabajo
     - llevaba todo mi dinero en la cartera y ahora no tengo para pagar la academia
     - se ha muerto mi perro
+    - mi [pareja](valorPareja) me ha pedido matrimonio
+    - porque ahora me pagan más
+    - he estado con mucho trabajo
+    - me voy a casar
+    - porque quiero estar bien el dia de la boda
+    - pero es que me aburre
+    - pues que quiero dejar a mi novio
+    - es un tío interesante, pero es difícil convivir con él
+    - no sé, me gustaría dejarlo
 
 
 - intent: goodbye_nicemood
@@ -1292,6 +1372,7 @@ nlu:
     - vete ya
     - good bye
     - bye bye
+    - ya está
     
 - intent: confirm
   examples: |
@@ -1333,6 +1414,8 @@ nlu:
     - /deny
     - ni hablar
     - ni pensarlo
+    - no
+    - de ninguna forma
     
 - intent: thanks
   examples: |
@@ -1345,6 +1428,8 @@ nlu:
     - de verdad no sé cómo agradecértelo
     - moltes gracies
     - gracies
+    - Gracias Vicky
+    - Gracias por escucharme
     
 - intent: youre_welcome
   examples: |
@@ -1370,6 +1455,7 @@ nlu:
     - para quien trabajas
     - quienes te han desarrollado
     - que equipo es el que te ha hecho
+    - quien eres
         
 - intent: chitchat/help_me
   examples: |
@@ -1379,12 +1465,22 @@ nlu:
     - ayúdame
     - necesito que me ayudes
     - me gustaría que me ayudaras
+    - no sé si puedes ayudarme
+    - ayuda
+    - cómo puedes ayudarme?
+    - me ayudas?
     
 - intent: chitchat/how_are_u
   examples: |
     - ¿Cómo estás Vicky?
     - ¿tienes sentimientos?
     - Cómo te encuentras
+    - qué tal estás?
+    - Cómo estás tú?
+    - y tú qué tal?
+    - cómo va?
+    - qué tal te va?
+    - cómo estás
     
 - intent: chitchat/something_curious
   examples: |
@@ -1598,6 +1694,7 @@ nlu:
     - plan tratamiento dame informacion
     - qué me puedes decir del plan de tratamiento
     - quiero empezar el tratamiento
+    - plan tratamiento
 
 - intent: faq/modulos
   examples: |
@@ -1606,6 +1703,7 @@ nlu:
     - para que sirven los modulos
     - modulos de intervencion para que sirve
     - me puedes dar más información sobre los modulos intervencion
+    - modulos
 
 - intent: faq/objetivo
   examples: |

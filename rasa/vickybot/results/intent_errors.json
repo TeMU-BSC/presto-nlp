@@ -1,10 +1,18 @@
 [
   {
+    "text": "lo he pasado fatal",
+    "intent": "inform_sentiment",
+    "intent_prediction": {
+      "name": "catastrofismo",
+      "confidence": 0.4394892156124115
+    }
+  },
+  {
     "text": "no soy feliz",
     "intent": "inform_sentiment",
     "intent_prediction": {
       "name": "etiquetado",
-      "confidence": 0.41873762011528015
+      "confidence": 0.712155282497406
     }
   },
   {
@@ -12,7 +20,7 @@
     "intent": "etiquetado",
     "intent_prediction": {
       "name": "sobregeneralizacion",
-      "confidence": 0.8628049492835999
+      "confidence": 0.5736895203590393
     }
   },
   {
@@ -20,7 +28,15 @@
     "intent": "lectordementes",
     "intent_prediction": {
       "name": "adivinacion",
-      "confidence": 0.9580988883972168
+      "confidence": 0.9353183507919312
+    }
+  },
+  {
+    "text": "Quieren hacerme daño",
+    "intent": "lectordementes",
+    "intent_prediction": {
+      "name": "alert",
+      "confidence": 0.8020564317703247
     }
   },
   {
@@ -28,47 +44,79 @@
     "intent": "adivinacion",
     "intent_prediction": {
       "name": "sobregeneralizacion",
-      "confidence": 0.8664703965187073
+      "confidence": 0.9053558707237244
     }
   },
   {
-    "text": "me quedaré solo seguro, no lo podré aguantar",
+    "text": "Todo irá mal",
     "intent": "catastrofismo",
     "intent_prediction": {
       "name": "adivinacion",
-      "confidence": 0.5100542306900024
+      "confidence": 0.4857527017593384
     }
   },
   {
-    "text": "tengo a mi madre en el hospital",
+    "text": "quisiera dormirme para siempre",
+    "intent": "alert",
+    "intent_prediction": {
+      "name": "sobregeneralizacion",
+      "confidence": 0.9349261522293091
+    }
+  },
+  {
+    "text": "quiero dormir hasta el infinito",
+    "intent": "alert",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.5090703368186951
+    }
+  },
+  {
+    "text": "me gustaría dormirme y no despertar nunca más",
+    "intent": "alert",
+    "intent_prediction": {
+      "name": "catastrofismo",
+      "confidence": 0.31641027331352234
+    }
+  },
+  {
+    "text": "Me llama puta",
+    "intent": "gender_violence",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.4986063838005066
+    }
+  },
+  {
+    "text": "no le importa si quiero follar o no",
+    "intent": "gender_violence",
+    "intent_prediction": {
+      "name": "pensamientoabsolutista",
+      "confidence": 0.43477514386177063
+    }
+  },
+  {
+    "text": "tengo que ir al medico",
     "intent": "nlu_fallback",
     "intent_prediction": {
       "name": "deberias",
-      "confidence": 0.08679202944040298
+      "confidence": 0.6455644369125366
     }
   },
   {
-    "text": "mi hermana está ingresada",
-    "intent": "nlu_fallback",
-    "intent_prediction": {
-      "name": "etiquetado",
-      "confidence": 0.11759814620018005
-    }
-  },
-  {
-    "text": "he tenido una discusión con mi pareja",
+    "text": "me he enterado hoy que ha fallecido un compañero de trabajo",
     "intent": "nlu_fallback",
     "intent_prediction": {
       "name": "inform_sentiment",
-      "confidence": 0.18435046076774597
+      "confidence": 0.19709382951259613
     }
   },
   {
-    "text": "llevaba todo mi dinero en la cartera y ahora no tengo para pagar la academia",
+    "text": "se ha muerto mi perro",
     "intent": "nlu_fallback",
     "intent_prediction": {
-      "name": "deberias",
-      "confidence": 0.19015592336654663
+      "name": "alert",
+      "confidence": 0.48840051889419556
     }
   }
 ]
