@@ -68,7 +68,7 @@ def textcat_hierarchical_multiple(
     distortion_options_html = reduce(lambda accumulator,
                                             current: accumulator + f'<label for="{current}" class="prodigy-option c0198" data-prodigy-option="{current}"><input class="c01100 distortion-option" name="{current}" type="checkbox" id="{current}"><a class="c01101"><div class="prodigy-content c0190 c0189">{current}</div></a></label>',
                                      distortion_options, '')
-    html_template = f'<div tabindex="-1"><div class="prodigy-options c0178" id="distortion-type-options">{distortion_options_html}</div></div> '
+    html_template = f'<div class="distortion-type-container" tabindex="-1"><div class="prodigy-options c0178" id="distortion-type-options"><div><p style="text-align: start !important;">Selecciona qué <strong>tipos de distorsión cognitiva</strong> presenta esta frase.</p><p style="text-align: start !important;">Puedes seleccionar <strong>más de uno</strong> y <a target="_blank" href="https://drive.google.com/file/d/1-5bVF0PP4sn8fpgDLipauMuzekSNczRu/view">consultar aquí</a> información sobre los tipos de distorsión.</p></div>{distortion_options_html}</div></div> '
     return {
         "view_id": "blocks",
         "dataset": dataset,
