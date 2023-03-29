@@ -26,6 +26,9 @@ PRODIGY_PORT=8081 prodigy textcat.hierarchical_multiple -E presto_annotation fir
 ## Second phase
 
 ```
+ann0 = mireia
+ann1 = miriam
+ann2 = xavi
 PRODIGY_PORT=8081 prodigy textcat.hierarchical_multiple -E presto_annotation second_phase/RC_data_to_annotate_90%_ann_0.jsonl --label distorsión,"no distorsión" -F textcat_distortion.py
 
 PRODIGY_PORT=8082 prodigy textcat.hierarchical_multiple -E presto_annotation second_phase/RC_data_to_annotate_90%_ann_1.jsonl --label distorsión,"no distorsión" -F textcat_distortion.py
