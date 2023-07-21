@@ -976,8 +976,8 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   
 ## chitchat"
   utter_chitchat/ask_name:
-  - text: "Mi nombre es Vicky y soy tu terapeuta virtual. Mi función es ayudarte con tu salud mental. En este espacio, me voy a encargar de identificar y trabajar contigo sobre aquellos patrones de pensamiento que te hacen sentir mal. \nAdemás, si detecto una situación de riesgo intentaré ofrecerte la mejor ayuda./n ¿Empezamos?"
-  - text: "Soy Vicky, tu terapeuta virtual. Mi función es ayudarte con tu salud mental. En este espacio, me voy a encargar de identificar y trabajar contigo sobre aquellos patrones de pensamiento que te hacen sentir mal. "
+  - text: "Mi nombre es Vicky y soy tu terapeuta virtual. Mi función es ayudarte con tu salud mental. En este espacio, me voy a encargar de identificar y trabajar contigo sobre aquellos patrones de pensamiento que te hacen sentir mal. \nAdemás, si detecto una situación de riesgo intentaré ofrecerte la mejor ayuda.\n ¿Empezamos?"
+  - text: "Soy Vicky, tu terapeuta virtual. Mi función es ayudarte con tu salud mental. En este espacio, me voy a encargar de identificar y trabajar contigo sobre aquellos patrones de pensamiento que te hacen sentir mal. Estoy disponible las 24 horas."
   
   utter_chitchat/help_me:
   - text: "Vaya, lamento que te encuentres así… ¡Déjame ayudarte! Me gustaría conocer más a fondo lo que te ocurre. Explícame más sobre esto…"
