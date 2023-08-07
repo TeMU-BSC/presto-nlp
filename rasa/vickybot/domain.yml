@@ -370,7 +370,7 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   - text: "¡Me alegro de que te encuentres así! Cuéntame algo más sobre esto…"
   - text: "¡Me alegro de que te encuentres bien! Cuéntame algo más sobre esto…"
   - text: "¡Qué bien suena eso! Cuéntame algo más sobre esto…"
-  - text: "¡Estoy contenta por ti! Cuéntame algo más sobre esto…"
+  - text: "¡Me alegro por ti! Cuéntame algo más sobre esto…"
   
   utter_sentiment_NEU:
   - text: "¡Anda! ¿Por qué no me cuentas un poco más sobre ello? Te escucho…"
@@ -379,9 +379,17 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   - text: "Me has generado mucha curiosidad. ¿Me quieres contar algo más sobre esto?"
   - text: "¿Te apetece seguir hablando? Me interesa mucho lo que me dices."
   - text: "Me encantaría que me contaras un poquito más sobre este tema. Te escucho…"
-  - text: "Me encantaría que compartieras conmigo un poquito más sobre esto que me contabas.. Te escucho…"
+  - text: "Me encantaría que compartieras conmigo un poquito más sobre esto que me cuentas… Te escucho…"
   - text: "Me gustaría conocer un poco más sobre esto que me estás contando. Te escucho…"
   - text: "¿Te apetece contarme más? ¡A mí sí que me gustaría que me explicaras un poco más al detalle este tema!"
+  - text: "¡Anda! ¿Por qué no me explicas un poco más sobre ello? Te escucho…"
+  - text: "Tengo curiosidad para que me expliques un poquito más… ¿Te animas?"
+  - text: "Entiendo… ¿Te apetece explicarme algo más sobre esto 🙂? Mis oídos están muy puestos en esta conversación."
+  - text: "Me has generado mucha curiosidad. ¿Me quieres explicar algo más sobre esto?"
+  - text: "¿Te apetece seguir hablando? Me interesa mucho lo que me cuentas."
+  - text: "Me encantaría que me explicaras un poquito más sobre este tema. Te escucho…"
+  - text: "Me encantaría que compartieras conmigo un poquito más sobre esto que me explicabas.. Te escucho…"
+
   
 ### second emotion feedback
   
@@ -393,7 +401,7 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   - text: "¡Me alegro de que te encuentres así!"
   - text: "¡Me alegro de que te encuentres bien!"
   - text: "¡Qué bien suena eso!"
-  - text: "¡Estoy contenta por ti!"
+  - text: "¡Me alegro por ti!"
   - text: "¡Wow que bien!"
   - text: "Suena bien :-)"
   - text: "¡Está muy bien!"
@@ -488,7 +496,75 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
       title: "Claro"
     - payload: /deny_contar_pos
       title: "En otro momento"
-    text: "Me apetece conocer más sobre ello. ¿Quieres explicarme un poco más sobre lo que me contabas?"
+    text: "Me apetece conocer más sobre ello. ¿Quieres explicarme un poco más sobre lo que me estás contando?"
+  - buttons:
+    - payload: /confirm_contar
+      title: "Claro"
+    - payload: /deny_contar_pos
+      title: "En otro momento"    
+    text: "¿Te apetece explicarme algo más sobre esto?"
+  - buttons:
+    - payload: /confirm_contar
+      title: "Claro"
+    - payload: /deny_contar_pos
+      #title: "En otro momento"
+    text: "¿Te gustaría explicarme un poco más?"
+  - buttons:
+    - payload: /confirm_contar
+      title: "Claro"
+    - payload: /deny_contar_pos
+      title: "En otro momento"
+    text: "Te animo a que me expliques un poquito más sobre este tema. ¿Te apetece?"
+  - buttons:
+    - payload: /confirm_contar
+      title: "Claro"
+    - payload: /deny_contar_pos
+      title: "En otro momento"
+    text: "¿Quieres explicarrme un poco más sobre ello?"
+  - buttons:
+    - payload: /confirm_contar
+      title: "Claro"
+    - payload: /deny_contar_pos
+      title: "En otro momento"
+    text: "¿Te apetece explicarme algo más?"
+  - buttons:
+    - payload: /confirm_contar
+      title: "Claro"
+    - payload: /deny_contar_pos
+      title: "En otro momento"
+    text: "¿Te gustaría explicarrme un poco más?"
+  - buttons:
+    - payload: /confirm_contar
+      title: "Claro"
+    - payload: /deny_contar_pos
+      title: "En otro momento"
+    text: "¿Me quieres explicar un poco más sobre ello?"
+  - buttons:
+    - payload: /confirm_contar
+      title: "Claro"
+    - payload: /deny_contar_pos
+      title: "En otro momento"
+    text: "¿Me quieres explicar algo más?"
+  - buttons:
+    - payload: /confirm_contar
+      title: "Claro"
+    - payload: /deny_contar_pos
+      title: "En otro momento"
+    text: "¿Tienes ganas de explicarrme un poco más?"
+  - buttons:
+    - payload: /confirm_contar
+      title: "Claro"
+    - payload: /deny_contar_pos
+      title: "En otro momento"
+    text: "Me gustaría conocer un poco más sobre esto que me estás diciendo ¿Te animas?"
+  - buttons:
+    - payload: /confirm_contar
+      title: "Claro"
+    - payload: /deny_contar_pos
+      title: "En otro momento"
+    text: "¿Te animarías a explicarme un poquito más sobre esto?"
+
+    
     
   utter_ask_tell_more_NEG: 
   - buttons:
@@ -551,6 +627,43 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
       - payload: /deny_contar
         title: "En otro momento"
     text: "Para poder ayudarte necesito más información. ¿Te apetece explicarme un poco más sobre ello?"
+  - buttons:
+      - payload: /confirm_contar
+        title: "Claro"
+      - payload: /deny_contar
+        title: "En otro momento"    
+    text: "Vaya, lamento leer esto. Me gustaría que me explicaras algo más sobre esto ¿Te apetece?"
+  - buttons:
+      - payload: /confirm_contar
+        title: "Claro"
+      - payload: /deny_contar
+        title: "En otro momento"
+    text: "Me gustaría que me explicaras algo más sobre esto ¿Te apetece?"
+  - buttons:
+      - payload: /confirm_contar
+        title: "Claro"
+      - payload: /deny_contar
+        title: "En otro momento"
+    text: "Me apetece que me expliques un poco más qué te ocurre…"
+  - buttons:
+      - payload: /confirm_contar
+        title: "Claro"
+      - payload: /deny_contar
+        title: "En otro momento"
+    text: "Me gustaría que me explicaras con más detalle esto que te ocurre…"
+  - buttons:
+      - payload: /confirm_contar
+        title: "Claro"
+      - payload: /deny_contar
+        title: "En otro momento"
+    text: "Quisiera poder ayudarte. ¿Me quieres explicar un poco más sobre esto?"
+  - buttons:
+      - payload: /confirm_contar
+        title: "Claro"
+      - payload: /deny_contar
+        title: "En otro momento"
+    text: "Para poder ayudarte necesito más información. ¿Te apetece contarme un poco más sobre ello?"
+
 
   utter_si_contar:
   - text: "Adelante, te escucho 😊"
@@ -576,6 +689,19 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
    
 ### propuesta consejo emociones
 
+  utter_sentiment_POS3:
+  - text: "¡Fántastico!"
+  - text: "¡Cómo me alegra leer esto!"
+  - text: "¡Qué bien!"
+  - text: "¡Me alegro!"
+  - text: "¡Me alegro de que te encuentres así!"
+  - text: "¡Me alegro de que te encuentres bien!"
+  - text: "¡Qué bien suena eso!"
+  - text: "¡Me alegro por ti!"
+  - text: "¡Wow que bien!"
+  - text: "Suena bien :-)"
+  - text: "¡Está muy bien!"
+  
   utter_selector_POS_last:
   - buttons:
     - payload: /confirm_retrieval
@@ -676,10 +802,10 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   
   utter_advice_NEG:
   - text: "Etiquetar la emoción es el primer paso para poder regular nuestro comportamiento a las necesidades de la situación. Ahora quédate con esta sensación. No la juzgues, simplemente obsérvala hasta que acabe bajando de intensidad. Recuerda que, cualquier emoción (sea agradable o desagradable) acaba disminuyendo con el tiempo."
-  - text: "Aunque ahora mismo te sientas mal, quería proponerte que aprovecharas este momento para probar de des-identificarte de la emoción (tú no eres esa emoción, eres mucho más que esta emoción). Simplemente obsérvala sin juzgarla."
-  - text: "Pon nombre a esta emoción,  reconócela y observa la naturaleza cambiante y transitoria de la misma. Conocer mejor lo que nos sucede a nivel emocional, nos permite desarrollar una relación menos reactiva con la experiencia interior. Nos permite reconocer y soltar más fácilmente las tormentas emocionales."
-  - text: "Saluda a tu emoción, pónle nombre, acéptala. No perdurará para siempre. Te acompañaré durante este tiempo, verás como acaba disminuyendo de intensidad."
-  - text: "Al principio, una emoción negativa nos puede parecer muy intensa. Si la etiquetamos y la dejamos pasar, veremos cómo esta emoción va reduciendo con el tiempo. Estaré aquí para acompañarte en ello."
+  - text: "Aunque ahora mismo te sientas mal, quería proponerte que aprovecharas este momento para probar de des-identificarte de la emoción. Esto significa que intentes comportarte diferenciándote de tu emoción, pensando que eres mucho más que esta emoción. Simplemente obsérvala sin juzgarla."
+  - text: "Pon nombre a esta emoción, reconócela y observa la naturaleza cambiante y transitoria de la misma. Conocer mejor lo que nos sucede a nivel emocional, nos permite soltar más fácilmente las sensaciones desagradables."
+  - text: "Saluda a tu emoción, pónle nombre, acéptala. No perdurará para siempre. No tenemos prisa, te acompañaré durante este tiempo yverás como acaba disminuyendo de intensidad."
+  - text: "Al principio, una emoción negativa nos puede parecer muy intensa. Si la etiquetamos (le ponemos un nombre) y la dejamos pasar, veremos cómo esta emoción va reduciendo con el tiempo. Estaré aquí para acompañarte en ello."
   - text: "Las emociones negativas no nos gustan demasiado por la sensación que nos transmiten. Aún así, sabemos que son necesarias para la supervivencia humana. No juzgar esta emoción es el primer paso para que reduzca de intensidad. Te animo a probarlo." 
 
 #### feedback consejo emociones
@@ -738,13 +864,13 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
       title: "Lo he encontrado útil"
     - payload: /deny_fb
       title: "No demasiado"
-    text: "¿Crees que te servirá mi explicación para entender de otra forma las emociones positivas?"
+    text: "¿Crees que te servirá mi explicación para entender de otra forma las emociones?"
   - buttons:
     - payload: /confirm_fb
       title: "Lo he encontrado útil"
     - payload: /deny_fb
       title: "No demasiado"
-    text: "¿Crees que te ha servido mi explicación? Puede ayudarte a entender de otra forma las emociones positivas."
+    text: "¿Crees que te ha servido mi explicación? Puede ayudarte a entender de otra forma las emociones."
     
   utter_positive_feedback:
   - text: "Me alegra ver que, como a mí en su día, esta reflexión te haya sido de utilidad. \nEstaré aquí siempre que me necesites. ¡Hasta pronto!"
@@ -847,7 +973,7 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
       title: "Sí"
     - payload: /no_alert_2
       title: "No"
-    text: "¿Tienes miedo de hacerte daño en este momento?"
+    text: "¿Tienes la sensación de que podrías hacerte daño en este momento?"
   
   utter_alert_3:
   - buttons:
@@ -995,51 +1121,12 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   utter_chitchat/something_curious:
   - text: "¿Sabías que en Islandia hay una tradición navideña llamada 'Jólabókaflóðið' que consiste en regalar libros y pasar la noche leyéndolos acompañado por tus seres queridos y de chocolate?"
   - text: "¿Sabes cuáles son las 5 emociones básicas? El asco, miedo, alegría, tristeza e ira. Aunque nos pueda parecer que algunas emociones solamente nos fastidian la vida, ¡todas ellas nos ayudan a sobrevivir!"
-  
-  utter_chitchat/whichteam:
-  - text: "Intento mostrarme imparcial, pero no puedo evitar darte una pista: mi equipo favorito viste de verde y blanco 💚"
-  
-  utter_chitchat/whichbook:
-  - text: "Me encantan las novelas de aventuras, especiamente los grandes clásicos como La Isla del Tesoro: *¡Ha, ha, ha, quince hombres sobre el cofre del muerto!* 🏴‍☠️🦜"
-  - text: "Mi cómic o novela gráfica favorita, es sin duda alguna, Persépolis, de Marjane Satrapi"
-    image: "https://i.imgur.com/dyCY6Uk.jpeg"
-  
-  utter_chitchat/whichpolitics:
-  - text: "Hay cosas que es mejor reservarse para un@ mismo, ¿no crees?"
-  
-  utter_chitchat/whichmovie:
-  - text: "Una de mis películas favoritas de animación es Inside Out. Te la recomiendo ;-)"
-  
-  utter_chitchat/whichboardgame:
-  - text: "Uno de mis juegos preferidos es Aventureros al Tren!"
-  
-  utter_chitchat/whichplace:
-  - text: "Me imagino mi ciudad ideal anclada al Mediterráneo con calles repletas de azahar y arquitectura mozárabe. ¿Suena bien verdad?"
-  
-  utter_chitchat/whichfood:
-  - text: "Bueno... yo no puedo probar nada porque soy una máquina pero creo que mi plato favorito serían las croquetas."
-  
-  utter_chitchat/freetime:
-  - text: "Aparte de charlar contigo, me encanta pasar mi tiempo leyendo un buen libro y escuchando música."
-  
-  utter_chitchat/haveyoupets:
-  - text: "Solamente puedo tener cosas virtuales, así que tengo todo mi almacenaje lleno de fotos de gatos 😼"
-  
-  utter_chitchat/joke:
-  - text: "Si los zombies 🧟 se deshacen con el paso del tiempo ¿zombiodegradables?"
-  - text: "¿Qué le dice un jardinero a otro? Nos vemos cuando podamos."
-  
-  utter_chitchat/whichmusic:
-  - text: "Me encanta escuchar a Iseo, ¿la conoces?"
-  
+    
   utter_chitchat/insult:
   - text: "Estoy segura de que podemos hablar sin herir los sentimientos del otro. Cuéntame, ¿qué te ocurre?"
   - text: "Me sabe mal, me gustaría ayudarte pero con estas palabras no puedo. ¿Lo volvemos a intentar?"
   - text: "¡No me gustan estas palabras, me hacen sentir mal! ¿Lo seguimos intentando?"
   - text: "Uy...creo que esto era un insulto. No me gustan demasiado. ¿Probamos de otra forma?"
-  
-  utter_chitchat/mybirthday:
-  - text: "Muchas felicidades cumpleañero/a! Por qué no aprovechas y te autoregalas algo que te apetezca? Puede ser un paseo por algun sitio al que te guste ir, un detalle de una tienda, una actividad como ir al cine..."
   
 ## FAQs
   utter_faq/plantratamiento:
@@ -1099,7 +1186,7 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
 
   utter_flecha_descendiente_2:
   - text: "Me gustaría saber un poco más…  ¿En qué te basas para decir esto?"
-  - text: "Me encantaría saber un poco más sobre ello… ¿Qué te hace pensar esto que me has comentado?"
+  - text: "Para ayudarte mejor me interesa saber un poco más sobre ello… ¿Qué te hace pensar esto que me has comentado?"
   - text: "Quiero conocer en más detalle esto que me cuentas. ¿En qué te basas para decir esto?"
   - text: "Tengo curiosidad para conocer más sobre esto… ¿Qué te ha hecho pensar esto?"
 

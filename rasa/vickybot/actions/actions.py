@@ -119,6 +119,7 @@ class PositiveEmotion(Action):
             dispatcher.utter_message(response="utter_sentiment_POS2")
             new_action = "utter_ask_tell_more_POS"
         elif last_action == "utter_sentiment_POS2":
+            dispatcher.utter_message(response="utter_sentiment_POS3")
             new_action = "utter_selector_POS_last"
         else:
             new_action = "utter_sentiment_POS"
