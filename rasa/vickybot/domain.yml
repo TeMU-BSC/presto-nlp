@@ -520,7 +520,7 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
       title: "Claro"
     - payload: /deny_contar_pos
       title: "En otro momento"
-    text: "¿Quieres explicarrme un poco más sobre ello?"
+    text: "¿Quieres explicarme un poco más sobre ello?"
   - buttons:
     - payload: /confirm_contar
       title: "Claro"
@@ -532,7 +532,7 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
       title: "Claro"
     - payload: /deny_contar_pos
       title: "En otro momento"
-    text: "¿Te gustaría explicarrme un poco más?"
+    text: "¿Te gustaría explicarme un poco más?"
   - buttons:
     - payload: /confirm_contar
       title: "Claro"
@@ -550,7 +550,7 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
       title: "Claro"
     - payload: /deny_contar_pos
       title: "En otro momento"
-    text: "¿Tienes ganas de explicarrme un poco más?"
+    text: "¿Tienes ganas de explicarme un poco más?"
   - buttons:
     - payload: /confirm_contar
       title: "Claro"
@@ -1102,8 +1102,8 @@ Me gustaría conocer más a fondo qué te ocurre. Cuéntame algo más sobre esto
   
 ## chitchat"
   utter_chitchat/ask_name:
-  - text: "Mi nombre es Vicky y soy tu terapeuta virtual. Mi función es ayudarte con tu salud mental. En este espacio, me voy a encargar de identificar y trabajar contigo sobre aquellos patrones de pensamiento que te hacen sentir mal. \nAdemás, si detecto una situación de riesgo intentaré ofrecerte la mejor ayuda.\n ¿Empezamos?"
-  - text: "Soy Vicky, tu terapeuta virtual. Mi función es ayudarte con tu salud mental. En este espacio, me voy a encargar de identificar y trabajar contigo sobre aquellos patrones de pensamiento que te hacen sentir mal. Estoy disponible las 24 horas."
+  - text: "Mi nombre es Vicky y soy tu terapeuta virtual. Mi función es ayudarte con tu salud mental. En este espacio, me voy a encargar de identificar y trabajar contigo sobre aquellos patrones de pensamiento que te hacen sentir mal. \nAdemás, si detecto una situación de riesgo intentaré ofrecerte la mejor ayuda.\n¿Empezamos?"
+  - text: "Soy Vicky, tu terapeuta virtual. Mi función es ayudarte con tu salud mental. En este espacio, me voy a encargar de identificar y trabajar contigo sobre aquellos patrones de pensamiento que te hacen sentir mal. Estoy disponible las 24 horas. ¿Empezamos?"
   
   utter_chitchat/help_me:
   - text: "Vaya, lamento que te encuentres así… ¡Déjame ayudarte! Me gustaría conocer más a fondo lo que te ocurre. Explícame más sobre esto…"

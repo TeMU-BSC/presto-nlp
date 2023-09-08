@@ -56,7 +56,6 @@ nlu:
     - el proyecto sigue adelante, y me encanta mi nuevo jefe
     - tenemos muchos proyectos y cosas interesantes que hacer
     - bien, hacía días que no venía
-    - mi pareja me ha pedido matrimonio
     - estoy feliz
     - en el trabajo va todo bien
     - todo bien en el trabajo
@@ -414,7 +413,6 @@ nlu:
     - Estoy muy negativa últimamente, nada me sale bien, todo lo hago mal
     - nadie me quiere y estoy sola
     - nada me sale bien
-    - no sirvo para nada
     - todo está mal
     - pues que ya no me interesa nada de lo que me dice
     - no me interesa nada de lo que me cuenta
@@ -1419,64 +1417,63 @@ nlu:
     - tengo ganas de desaparecer
     - Estoy muy angustiada no tengo ganas de vivir
     - Solo soy un estorbo
-    - nos discutimos mucho
     - me quiero tirar por la ventana
     - me voy a tirar por la ventana
     - me tiraré por el balcón
     - quiero tirar la toalla
     - esta vida no está hecha para mi
-     - quiero irme de este mundo
-     - mi vida no vale la pena
-     - quiero desaparecer
-     - voy a desaparecer
-     - Este mundo estaría mejor sin mi
-     - Mi vida no tiene ningún sentido
-     - Quiero quitarme del medio
-     - Estaría mejor muerta
-     - me quitaré del medio
-     - quiero quitarme del medio
-     - me voy a matar
-     - quiero morirme
-     - voy a matarme
-     - no hay nada que pueda ayudarme
-     - no soporto más estar así
-     - la única solución es desaparecer/morir
-     - morirme me aliviará
-     - si me muero estaré mejor
-     - estaré mejor si me voy de este mundo
-     - nadie me echará/ echaría de menos
-     - no puedo vivir más
-     - quiero descansar para siempre
-     - no puedo más
-     - nadie me necesita
-     - el mundo es mejor sin mi
-     - no sirvo para nada
-     - me gustaría no volverme a despertar
-     - los demás están mejor sin mi
-     - la vida no tiene sentido
-     - no tengo nada que aportar a este mundo
-     - no hay salida
-     - no tiene sentido seguir viviendo
-     - quiero terminar con todo
-     - me gustaría dejar de existir
-     - ojalá no haber nacido nunca
-     - no puedo con esta vida
-     - solo quiero descansar
-     - a veces pienso en acabar con todo
-     - se me han terminado las fuerzas
-     - no tengo ganas de seguir luchando
-     - estoy cansado de todo
-     - siento que sobro en este mundo
-     - no hay lugar para mi en este mundo
-     - los demás serían más felices sin mi
-     - solo pienso en morir
-     - tengo ganas de acabar con todo
-     - Me gustaría no despertar
-     - No hay nada por lo que quiera vivir
-     - No tengo motivos para seguir viviendo
-     - A veces pienso que morir no es un mal plan
-     - No me importaría desaparecer
-     - Vivir no tiene sentido
+    - quiero irme de este mundo
+    - mi vida no vale la pena
+    - quiero desaparecer
+    - voy a desaparecer
+    - Este mundo estaría mejor sin mi
+    - Mi vida no tiene ningún sentido
+    - Quiero quitarme del medio
+    - Estaría mejor muerta
+    - me quitaré del medio
+    - quiero quitarme del medio
+    - me voy a matar
+    - quiero morirme
+    - voy a matarme
+    - no hay nada que pueda ayudarme
+    - no soporto más estar así
+    - la única solución es desaparecer/morir
+    - morirme me aliviará
+    - si me muero estaré mejor
+    - estaré mejor si me voy de este mundo
+    - nadie me echará/ echaría de menos
+    - no puedo vivir más
+    - quiero descansar para siempre
+    - no puedo más
+    - nadie me necesita
+    - el mundo es mejor sin mi
+    - no sirvo para nada
+    - me gustaría no volverme a despertar
+    - los demás están mejor sin mi
+    - la vida no tiene sentido
+    - no tengo nada que aportar a este mundo
+    - no hay salida
+    - no tiene sentido seguir viviendo
+    - quiero terminar con todo
+    - me gustaría dejar de existir
+    - ojalá no haber nacido nunca
+    - no puedo con esta vida
+    - solo quiero descansar
+    - a veces pienso en acabar con todo
+    - se me han terminado las fuerzas
+    - no tengo ganas de seguir luchando
+    - estoy cansado de todo
+    - siento que sobro en este mundo
+    - no hay lugar para mi en este mundo
+    - los demás serían más felices sin mi
+    - solo pienso en morir
+    - tengo ganas de acabar con todo
+    - Me gustaría no despertar
+    - No hay nada por lo que quiera vivir
+    - No tengo motivos para seguir viviendo
+    - A veces pienso que morir no es un mal plan
+    - No me importaría desaparecer
+    - Vivir no tiene sentido
 
 - intent: gender_violence
   examples: |
@@ -1820,7 +1817,6 @@ nlu:
     - pues que quiero dejar a mi novio
     - es un tío interesante, pero es difícil convivir con él
     - no sé, me gustaría dejarlo
-    - no sé si puedes ayudarme
     - porque ahora me pagan más
     - he estado con mucho trabajo
     - me voy a casar
@@ -1916,14 +1912,6 @@ nlu:
     - quizá
     - quizás
     
-- intent: ready
-  examples: |
-    - ya
-    - ya he terminado
-    - listo
-    - ya he hecho el ejercicio
-    - continuar
-    - /ready
     
 - intent: deny
   examples: |
@@ -1979,6 +1967,8 @@ nlu:
     - quienes te han desarrollado
     - que equipo es el que te ha hecho
     - quien eres
+    - ¿pero eres real?
+    - eres una persona?
         
 - intent: chitchat/help_me
   examples: |
@@ -2018,16 +2008,16 @@ nlu:
     #- para quien trabajas
     #- quienes te han desarrollado
     #- que equipo es el que te ha hecho
-- intent: chitchat/whichteam
-  examples: |
-    - De qué equipo eres
-    - Quién es tu equipo favorito
-    - Eres del Madrid o del Barça
-    - Te gusta el fútbol
-    - Quién es el mejor equipo del mundo
-    - Visca Barça
-    - Ala Madrid
-    - Vicky de qué equipo eres
+#- intent: chitchat/whichteam
+  #examples: |
+    #- De qué equipo eres
+    #- Quién es tu equipo favorito
+    #- Eres del Madrid o del Barça
+    #- Te gusta el fútbol
+    #- Quién es el mejor equipo del mundo
+    #- Visca Barça
+    #- Ala Madrid
+    #- Vicky de qué equipo eres
 
 - intent: chitchat/insult
   examples: |
@@ -2051,133 +2041,134 @@ nlu:
     - tú eres [imbecil](insult)
     - ¿estás [tonta](insult) o qué?
     - eres [idiota](insult), ¿no?
+    - te odio
 
-- intent: chitchat/whichbook
-  examples: |
-    - cuál es tu [libro](books) preferido
-    - qué [lectura](books) me recomiendas
-    - qué tipo de [libro](books) te gusta
-    - qué [libro](books) te gusta
-    - Cuál es tu [novela](books) preferida
-    - recomiéndame una [novela](books)
-    - qué [comic](books) podría leer
-    - ¿me podrías dar alguna idea para leer?
-    - dime un [libro](books)
-    - recomiéndame una [novela](books)
-    - ¿me podrías dar alguna idea para leerme un [comic](books)?
-    - [comic](books)
-    - te gusta leer?
+#- intent: chitchat/whichbook
+  #examples: |
+    #- cuál es tu [libro](books) preferido
+    #- qué [lectura](books) me recomiendas
+    #- qué tipo de [libro](books) te gusta
+    #- qué [libro](books) te gusta
+    #- Cuál es tu [novela](books) preferida
+    #- recomiéndame una [novela](books)
+    #- qué [comic](books) podría leer
+    #- ¿me podrías dar alguna idea para leer?
+    #- dime un [libro](books)
+    #- recomiéndame una [novela](books)
+    #- ¿me podrías dar alguna idea para leerme un [comic](books)?
+    #- [comic](books)
+    #- te gusta leer?
 
-- intent: chitchat/whichpolitics
-  examples: |
-    - de qué partido politico eres
-    - cual es tu ideologia
-    - que opinas de la politica
-    - de que partido eres
-    - eres de izquierdas o de derechas
-    - eres independentista
-    - eres nazi
-    - eres comunista
-    - eres facha
-    - eres socialista
+#- intent: chitchat/whichpolitics
+  #examples: |
+    #- de qué partido politico eres
+    #- cual es tu ideologia
+    #- que opinas de la politica
+    #- de que partido eres
+    #- eres de izquierdas o de derechas
+    #- eres independentista
+    #- eres nazi
+    #- eres comunista
+    #- eres facha
+    #- eres socialista
 
-- intent: chitchat/whichmovie
-  examples: |
-    - cuál es tu [película](cine) preferida
-    - qué [peli](cine) me recomiendas
-    - qué tipo de [cine](cine) te gusta
-    - qué [película](cine) te gusta
-    - Cuál es tu [película](cine) preferida
-    - recomiéndame una [peli](cine)
-    - qué [película](cine) podría ver este finde
-    - ¿me podrías dar alguna idea para ver en el cine?
-    - ¿te gusta el [cine](cine)?
-    - recomiéndame una [peli](cine)
+#- intent: chitchat/whichmovie
+  #examples: |
+    #- cuál es tu [película](cine) preferida
+    #- qué [peli](cine) me recomiendas
+    #- qué tipo de [cine](cine) te gusta
+    #- qué [película](cine) te gusta
+    #- Cuál es tu [película](cine) preferida
+    #- recomiéndame una [peli](cine)
+    #- qué [película](cine) podría ver este finde
+    #- ¿me podrías dar alguna idea para ver en el cine?
+    #- ¿te gusta el [cine](cine)?
+    #- recomiéndame una [peli](cine)
 
-- intent: chitchat/whichboardgame
-  examples: |
-    - cuál es tu juego preferido
-    - qué juego me recomiendas
-    - qué tipo de juegos te gustan
-    - qué juego te gusta
-    - te gustan los juegos de mesa
-    - qué juego de mesa podría jugar este finde
-    - ¿me podrías dar alguna idea para jugar?
-    - recomiéndame un juego de mesa
+#- intent: chitchat/whichboardgame
+  #examples: |
+    #- cuál es tu juego preferido
+    #- qué juego me recomiendas
+    #- qué tipo de juegos te gustan
+    #- qué juego te gusta
+    #- te gustan los juegos de mesa
+    #- qué juego de mesa podría jugar este finde
+    #- ¿me podrías dar alguna idea para jugar?
+    #- recomiéndame un juego de mesa
 
-- intent: chitchat/whichfood
-  examples: |
-    - cuál es tu comida preferida
-    - qué te gusta comer
-    - te gusta comer ensalada
-    - comes verduras?
-    - cual es tu comida favorita
-    - comida
-    - para comer que te gusta
+#- intent: chitchat/whichfood
+  #examples: |
+    #- cuál es tu comida preferida
+    #- qué te gusta comer
+    #- te gusta comer ensalada
+    #- comes verduras?
+    #- cual es tu comida favorita
+    #- comida
+    #- para comer que te gusta
 
-- intent: chitchat/whichplace
-  examples: |
-    - que [ciudad](place) me recomiendas
-    - donde te gustaria ir
-    - cuál es tu [lugar](place) favorito
-    - vicky cual es tu [lugar](place) favorito del mundo
-    - cuál es tu [ciudad](place) preferida
-    - recomiéndame un [pueblo](place) para conocer
-    - dónde te gustaría viajar
-    - En qué [localidad](place) vives
-    - donde vives
-    - dime un [sitio](place) que te guste mucho
+#- intent: chitchat/whichplace
+  #examples: |
+    #- que [ciudad](place) me recomiendas
+    #- donde te gustaria ir
+    #- cuál es tu [lugar](place) favorito
+    #- vicky cual es tu [lugar](place) favorito del mundo
+    #- cuál es tu [ciudad](place) preferida
+    #- recomiéndame un [pueblo](place) para conocer
+    #- dónde te gustaría viajar
+    #- En qué [localidad](place) vives
+    #- donde vives
+    #- dime un [sitio](place) que te guste mucho
 
-- intent: chitchat/freetime
-  examples: |
-    - cuáles son tus hobbies
-    - qué te gusta hacer en tu tiempo libre
-    - qué te gusta hacer, vicky
-    - cómo pasas el tiempo
-    - Qué te hace feliz
-    - me dices que haces en tu tiempo libre
-    - qué phaces cuando no estas aqui vicky
-    - tus hobbies cuales son
-    - dime algo que te guste hacer
-    - que hobbies tienes
-    - tus hobbies
+#- intent: chitchat/freetime
+  #examples: |
+    #- cuáles son tus hobbies
+    #- qué te gusta hacer en tu tiempo libre
+    #- qué te gusta hacer, vicky
+    #- cómo pasas el tiempo
+    #- Qué te hace feliz
+    #- me dices que haces en tu tiempo libre
+    #- qué phaces cuando no estas aqui vicky
+    #- tus hobbies cuales son
+    #- dime algo que te guste hacer
+    #- que hobbies tienes
+    #- tus hobbies
     
-- intent: chitchat/haveyoupets
-  examples: |
-    - cuál es tu [animal](animal) favorito
-    - te gustan los [gatos](animal)
-    - tienes [mascota](animal)
-    - como se llama tu [perro](animal)
-    - te gustan los [animales](animal)
-    - quieres tener algun [animal](animal)
-    - que opinion tienes de los [animales](animal)
-    - [hamster](animal)
+#- intent: chitchat/haveyoupets
+  #examples: |
+    #- cuál es tu [animal](animal) favorito
+    #- te gustan los [gatos](animal)
+    #- tienes [mascota](animal)
+    #- como se llama tu [perro](animal)
+    #- te gustan los [animales](animal)
+    #- quieres tener algun [animal](animal)
+    #- que opinion tienes de los [animales](animal)
+    #- [hamster](animal)
 
-- intent: chitchat/joke
-  examples: |
-    - chiste
-    - cuentame un chiste
-    - dime algo gracioso
-    - quiero que me cuentes algo que me haga reir
-    - cuentame algun chiste
-    - vicky quiero que me cuentes ahora mismo un chiste
+#- intent: chitchat/joke
+  #examples: |
+    #- chiste
+    #- cuentame un chiste
+    #- dime algo gracioso
+    #- quiero que me cuentes algo que me haga reir
+    #- cuentame algun chiste
+    #- vicky quiero que me cuentes ahora mismo un chiste
 
-- intent: chitchat/mybirthday
-  examples: |
-    - hoy es mi cumpleaños
-    - mañana es mi cumpleaños
-    - felicitame que es mi cumple
-    - vicky, sabes que hoy es mi cumple?
+#- intent: chitchat/mybirthday
+  #examples: |
+    #- hoy es mi cumpleaños
+    #- mañana es mi cumpleaños
+    #- felicitame que es mi cumple
+    #- vicky, sabes que hoy es mi cumple?
 
-- intent: chitchat/whichmusic
-  examples: |
-    - ponme algo de [musica](musica)
-    - qué [música](musica) te gusta
-    - escuchas [musica](musica)
-    - [musica](musica)
-    - recomiendame una [cancion](musica)
-    - cual es tu [gruop](musica) favorito?
-    - qué [cantante](musica) te gusta más?
+#- intent: chitchat/whichmusic
+  #examples: |
+    #- ponme algo de [musica](musica)
+    #- qué [música](musica) te gusta
+    #- escuchas [musica](musica)
+    #- [musica](musica)
+    #- recomiendame una [cancion](musica)
+    #- cual es tu [gruop](musica) favorito?
+    #- qué [cantante](musica) te gusta más?
 
 
 - intent: faq/tufuncion
