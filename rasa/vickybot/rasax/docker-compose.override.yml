@@ -1,13 +1,13 @@
 version: "3.4"
 services:
   rasa-production:
-    image: "bsctemu/presto-vickybot:1.0.4"
+    image: "bsctemu/presto-vickybot:1.2.0"
   rasa-worker:
-    image: "bsctemu/presto-vickybot:1.0.4"
+    image: "bsctemu/presto-vickybot:1.2.0"
     depends_on:
       - rasa-production
   app:
-    image: "bsctemu/presto-vickybot-actions-server:1.0.0"
+    image: "bsctemu/presto-vickybot-actions-server:1.2.0"
     expose:
       - "5055"
     depends_on:
